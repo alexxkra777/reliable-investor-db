@@ -1,0 +1,86 @@
+[
+  {
+    "id": "example-ventures",
+    "name": "Example Ventures",
+    "aliases": ["Example Ventures a.s."],
+    "type": "vc",
+    "hq": {"country": "SK", "city": "Bratislava"},
+    "website": "https://example.com/",
+    "legal_entities": [
+      {"name": "Example Ventures a.s.", "role": "manager", "id_type": "ICO", "id": "12345678",
+       "register_url": "https://example.com/register/12345678"}
+    ],
+    "decision": {"status": "included", "rules": ["I1", "I2", "I3", "I4"], "note": "Fixture record."},
+    "fields": {
+      "sectors": {"value": ["software", "deeptech"], "sources": [
+        {"url": "https://example.com/about", "tier": "B", "publisher": "Example Ventures",
+         "published": null, "accessed": "2026-10-01",
+         "quote": "We back software and deep-tech founders from Central Europe."}
+      ]},
+      "stages": null,
+      "geography": {"value": ["SK", "CZ"], "sources": [
+        {"url": "https://example.com/about", "tier": "B", "publisher": "Example Ventures",
+         "published": null, "accessed": "2026-10-01",
+         "quote": "We back software and deep-tech founders from Central Europe."}
+      ]},
+      "ticket": {"value": {"min": 200000, "max": 2000000, "currency": "EUR"}, "sources": [
+        {"url": "https://example.com/about", "tier": "B", "publisher": "Example Ventures",
+         "published": null, "accessed": "2026-10-01",
+         "quote": "Our first tickets range from €200 000 to €2 mil."}
+      ]},
+      "funds": {"value": [{"name": "Example Fund I", "size": 30000000, "currency": "EUR", "vintage": 2021}],
+        "sources": [
+        {"url": "https://example.org/fof/portfolio", "tier": "A", "publisher": "Example Fund of Funds",
+         "published": "2021-05-10", "accessed": "2026-10-01",
+         "quote": "Example Fund I closed at 30 mil. EUR in 2021."}
+      ]},
+      "aum": null
+    },
+    "investments": [
+      {"company": "Alpha Robotics", "date": "2025-03-12", "date_kind": "announced",
+       "round_size": {"amount": 1500000, "currency": "EUR"}, "fund": "Example Fund I",
+       "sources": [
+        {"url": "https://example.com/news/alpha", "tier": "B", "publisher": "Example Ventures",
+         "published": "2025-03-12", "accessed": "2026-10-01",
+         "quote": "Dňa 12. marca 2025 sme investovali 1,5 mil. eur do Alpha Robotics."}
+      ]},
+      {"company": "Beta Health", "date": "2023-06-01", "date_kind": "registry_entry", "round_size": null,
+       "sources": [
+        {"url": "https://example.org/registry/beta", "tier": "A", "publisher": "Example Registry",
+         "published": "2023-06-01", "accessed": "2026-10-01",
+         "quote": "Spoločník: Example Ventures a.s., zapísaný 01.06.2023."}
+      ]}
+    ]
+  },
+  {
+    "id": "sample-crowd",
+    "name": "Sample Crowd",
+    "type": "platform",
+    "hq": {"country": "CZ", "city": "Praha"},
+    "website": "https://example.net/",
+    "legal_entities": null,
+    "decision": {"status": "excluded", "rules": ["E1"], "note": "Fixture platform."},
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "demo-capital",
+    "name": "Demo Capital",
+    "type": "vc",
+    "hq": {"country": "SK", "city": "Košice"},
+    "website": null,
+    "legal_entities": [
+      {"name": "Demo Capital s.r.o.", "role": "manager", "id_type": "ICO", "id": "87654321", "register_url": null}
+    ],
+    "decision": {"status": "dormant", "rules": ["E4"], "note": "Fixture dormant record."},
+    "fields": {},
+    "investments": [
+      {"company": "Gamma Labs", "date": "2019-11-20", "date_kind": "announced", "round_size": null,
+       "sources": [
+        {"url": "https://example.com/news/gamma", "tier": "C", "publisher": "Example Daily",
+         "published": "2019-11-20", "accessed": "2026-10-01",
+         "quote": "Demo Capital invested in Gamma Labs on 20 November 2019."}
+      ]}
+    ]
+  }
+]

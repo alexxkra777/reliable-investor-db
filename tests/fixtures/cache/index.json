@@ -1,0 +1,67 @@
+{
+  "https://example.com/about": {
+    "body_content_type": "text/html",
+    "body_url": "https://example.com/about",
+    "content_type": "text/html",
+    "fetched_at": "2026-10-01T10:00:00+00:00",
+    "final_url": "https://example.com/about",
+    "sha256": "1014d65341b62a11370584936dc6b636810ec468d9f61aa96227e22bf30988a7",
+    "status": 200,
+    "text_chars": 126,
+    "text_file": "files/96c12942ac53a1240b100c5b1f128ce3c43ca175.txt",
+    "url": "https://example.com/about",
+    "used": "live"
+  },
+  "https://example.com/news/alpha": {
+    "body_content_type": "text/html",
+    "body_url": "https://example.com/news/alpha",
+    "content_type": "text/html",
+    "fetched_at": "2026-10-01T10:00:00+00:00",
+    "final_url": "https://example.com/news/alpha",
+    "sha256": "99759bedb1cf9f85c8f89e1398ed2ecadec35aef0be91beec1742548333a3ed8",
+    "status": 200,
+    "text_chars": 81,
+    "text_file": "files/e32df979f3154c23febe32682381d43e8ef87d07.txt",
+    "url": "https://example.com/news/alpha",
+    "used": "live"
+  },
+  "https://example.com/news/gamma": {
+    "body_content_type": null,
+    "body_url": null,
+    "content_type": "text/html",
+    "fetched_at": "2026-10-01T10:00:00+00:00",
+    "final_url": "https://example.com/news/gamma",
+    "sha256": null,
+    "status": 404,
+    "text_file": null,
+    "url": "https://example.com/news/gamma",
+    "used": null,
+    "wayback_url": null
+  },
+  "https://example.org/fof/portfolio": {
+    "body_content_type": "text/html",
+    "body_url": "https://example.org/fof/portfolio",
+    "content_type": "text/html",
+    "fetched_at": "2026-10-01T10:00:00+00:00",
+    "final_url": "https://example.org/fof/portfolio",
+    "sha256": "48c66546718c49d04826e59eb5cdabbc414a9f4c811187c82257f76e3e4de4a8",
+    "status": 404,
+    "text_chars": 67,
+    "text_file": "files/30cb4692eb7d68fde690b47a282b63aa707667c4.txt",
+    "url": "https://example.org/fof/portfolio",
+    "used": "wayback"
+  },
+  "https://example.org/registry/beta": {
+    "body_content_type": "text/html",
+    "body_url": "https://example.org/registry/beta",
+    "content_type": "text/html",
+    "fetched_at": "2026-10-01T10:00:00+00:00",
+    "final_url": "https://example.org/registry/beta",
+    "sha256": "f6bb01a0b0e435f59151482320e4846f781e851ef68e926b6462ade46ab29c83",
+    "status": 200,
+    "text_chars": 61,
+    "text_file": "files/92658756ff41351598434cb67f74146e5274ec7b.txt",
+    "url": "https://example.org/registry/beta",
+    "used": "live"
+  }
+}
