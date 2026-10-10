@@ -191,3 +191,24 @@ def date_match(d: date, text: str) -> str:
     if re.search(rf"\b{y}\b", text):
         return "year"
     return ""
+
+
+# --- names ---------------------------------------------------------------------
+
+_LEGAL_FORMS = {
+    "sro", "spol", "as", "ks", "vos", "se", "ltd", "limited", "llc", "lp", "llp", "gmbh", "ag",
+    "sa", "sas", "bv", "nv", "plc", "inc", "corp", "sicav", "sprav", "zrt", "kft", "spzoo", "oy",
+    "ab", "the",
+}
+
+
+def name_key(name: str) -> str:
+    """Loose key for matching organisation names across lists ("Neulogy Ventures a.s." ==
+    "NEULOGY VENTURES")."""
+    s = strip_diacritics(name.translate(_CHAR_MAP)).casefold().replace("&", " and ")
+    s = re.sub(r"[.,'\"()\-/]", " ", s)
+    s = " ".join(s.split())
+    # "s. r. o." ends up as "s r o"; glue the usual spaced forms back together
+    s = re.sub(r"\b(?:s r o|a s|k s|v o s)\b", lambda m: m.group(0).replace(" ", ""), s)
+    tokens = [t for t in s.split() if t not in _LEGAL_FORMS]
+    return " ".join(tokens)
