@@ -145,20 +145,21 @@ def number_in(value: float, text: str, rel_tol: float = 0.01) -> bool:
 
 # --- dates ---------------------------------------------------------------------
 
-# month names after normalize() (no diacritics, casefolded): English, Slovak, Czech
+# month names after normalize() (no diacritics, casefolded): English, Slovak, Czech;
+# nominative, genitive and locative forms
 MONTHS = {
-    1: ["january", "jan", "januar", "januara", "leden", "ledna"],
-    2: ["february", "feb", "februar", "februara", "unor", "unora"],
-    3: ["march", "mar", "marec", "marca", "brezen", "brezna"],
-    4: ["april", "apr", "aprila", "duben", "dubna"],
-    5: ["may", "maj", "maja", "kveten", "kvetna"],
-    6: ["june", "jun", "juna", "cerven", "cervna"],
-    7: ["july", "jul", "jula", "cervenec", "cervence"],
-    8: ["august", "aug", "augusta", "srpen", "srpna"],
-    9: ["september", "sep", "sept", "septembra", "zari"],
-    10: ["october", "oct", "oktober", "oktobra", "rijen", "rijna"],
-    11: ["november", "nov", "novembra", "listopad", "listopadu"],
-    12: ["december", "dec", "decembra", "prosinec", "prosince"],
+    1: ["january", "jan", "januar", "januara", "januari", "leden", "ledna", "lednu"],
+    2: ["february", "feb", "februar", "februara", "februari", "unor", "unora", "unoru"],
+    3: ["march", "mar", "marec", "marca", "marci", "brezen", "brezna", "breznu"],
+    4: ["april", "apr", "aprila", "aprili", "duben", "dubna", "dubnu"],
+    5: ["may", "maj", "maja", "maji", "kveten", "kvetna", "kvetnu"],
+    6: ["june", "jun", "juna", "juni", "cerven", "cervna", "cervnu"],
+    7: ["july", "jul", "jula", "juli", "cervenec", "cervence", "cervenci"],
+    8: ["august", "aug", "augusta", "auguste", "srpen", "srpna", "srpnu"],
+    9: ["september", "sep", "sept", "septembra", "septembri", "zari"],
+    10: ["october", "oct", "oktober", "oktobra", "oktobri", "rijen", "rijna", "rijnu"],
+    11: ["november", "nov", "novembra", "novembri", "listopad", "listopadu"],
+    12: ["december", "dec", "decembra", "decembri", "prosinec", "prosince", "prosinci"],
 }
 
 
