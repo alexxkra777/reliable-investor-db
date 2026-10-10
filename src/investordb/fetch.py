@@ -192,6 +192,11 @@ def fetch_one(session, throttle: HostThrottle, url: str, files_dir: Path,
         used, body, ctype = "live", r.content, entry["content_type"]
 
     entry["used"] = used
+    # status/final_url/content_type above describe the live request; these describe
+    # the bytes actually stored (live page or snapshot)
+    entry["body_url"] = (entry["final_url"] if used == "live"
+                         else entry.get("wayback_url") if used == "wayback" else None)
+    entry["body_content_type"] = ctype
     if body is not None:
         key = cache_key(url)
         entry["sha256"] = hashlib.sha256(body).hexdigest()
