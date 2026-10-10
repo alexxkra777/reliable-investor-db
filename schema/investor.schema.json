@@ -1,0 +1,564 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/investor-db/investor.schema.json",
+  "title": "Investor records",
+  "description": "A JSON array of investor records. Every non-null value carries its own sources.",
+  "type": "array",
+  "items": {
+    "$ref": "#/$defs/record"
+  },
+  "$defs": {
+    "date": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "format": "date"
+    },
+    "currency": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}$"
+    },
+    "money": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "url": {
+      "type": "string",
+      "pattern": "^https?://\\S+$"
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "url",
+        "tier",
+        "publisher",
+        "published",
+        "accessed",
+        "quote"
+      ],
+      "properties": {
+        "url": {
+          "$ref": "#/$defs/url"
+        },
+        "tier": {
+          "enum": [
+            "A",
+            "B",
+            "C"
+          ]
+        },
+        "publisher": {
+          "type": "string",
+          "minLength": 1
+        },
+        "published": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/date"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "accessed": {
+          "$ref": "#/$defs/date"
+        },
+        "quote": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/source"
+      }
+    },
+    "stringList": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "ticket": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "min",
+        "max",
+        "currency"
+      ],
+      "properties": {
+        "min": {
+          "$ref": "#/$defs/money"
+        },
+        "max": {
+          "$ref": "#/$defs/money"
+        },
+        "currency": {
+          "$ref": "#/$defs/currency"
+        }
+      }
+    },
+    "fund": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "size",
+        "currency",
+        "vintage"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "size": {
+          "$ref": "#/$defs/money"
+        },
+        "currency": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/currency"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "vintage": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1900,
+          "maximum": 2100
+        }
+      }
+    },
+    "aum": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "amount",
+        "currency",
+        "as_of"
+      ],
+      "properties": {
+        "amount": {
+          "type": "number",
+          "minimum": 0
+        },
+        "currency": {
+          "$ref": "#/$defs/currency"
+        },
+        "as_of": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/date"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "field": {
+      "description": "A sourced value, or null when unknown. Field definitions add a constraint on 'value' on top of this.",
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "value",
+            "sources"
+          ],
+          "properties": {
+            "value": {
+              "not": {
+                "type": "null"
+              }
+            },
+            "sources": {
+              "$ref": "#/$defs/sources"
+            }
+          }
+        }
+      ]
+    },
+    "legalEntity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "role",
+        "id_type",
+        "id"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "role": {
+          "enum": [
+            "manager",
+            "fund",
+            "vehicle"
+          ]
+        },
+        "id_type": {
+          "enum": [
+            "ICO",
+            "LEI",
+            "CRD",
+            "CIK",
+            "company_number"
+          ]
+        },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "register_url": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/url"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "investment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "company",
+        "date",
+        "date_kind",
+        "sources"
+      ],
+      "properties": {
+        "company": {
+          "type": "string",
+          "minLength": 1
+        },
+        "date": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/date"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "date_kind": {
+          "enum": [
+            "announced",
+            "registry_entry",
+            "portfolio_page"
+          ]
+        },
+        "round_size": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "amount",
+                "currency"
+              ],
+              "properties": {
+                "amount": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "currency": {
+                  "$ref": "#/$defs/currency"
+                }
+              }
+            }
+          ]
+        },
+        "fund": {
+          "description": "Optional name of the fund (from fields.funds) that made the investment.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sources": {
+          "$ref": "#/$defs/sources"
+        }
+      }
+    },
+    "record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "type",
+        "decision",
+        "fields"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "aliases": {
+          "description": "Other names, former names and brand spellings, used for matching.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "type": {
+          "enum": [
+            "vc",
+            "pe",
+            "cvc",
+            "family_office",
+            "angel",
+            "private_investor",
+            "accelerator",
+            "fund_of_funds",
+            "public_dfi",
+            "platform",
+            "adviser",
+            "other"
+          ]
+        },
+        "hq": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "country"
+              ],
+              "properties": {
+                "country": {
+                  "type": "string",
+                  "pattern": "^[A-Z]{2}$"
+                },
+                "city": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "website": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/url"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "legal_entities": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/legalEntity"
+              }
+            }
+          ]
+        },
+        "decision": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "rules"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "included",
+                "excluded",
+                "dormant",
+                "uncertain"
+              ]
+            },
+            "rules": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^(I[1-4]|E([1-9]|10))$"
+              },
+              "uniqueItems": true
+            },
+            "note": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "fields": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "sectors": {
+              "allOf": [
+                {
+                  "$ref": "#/$defs/field"
+                },
+                {
+                  "properties": {
+                    "value": {
+                      "$ref": "#/$defs/stringList"
+                    }
+                  }
+                }
+              ]
+            },
+            "stages": {
+              "allOf": [
+                {
+                  "$ref": "#/$defs/field"
+                },
+                {
+                  "properties": {
+                    "value": {
+                      "$ref": "#/$defs/stringList"
+                    }
+                  }
+                }
+              ]
+            },
+            "geography": {
+              "allOf": [
+                {
+                  "$ref": "#/$defs/field"
+                },
+                {
+                  "properties": {
+                    "value": {
+                      "$ref": "#/$defs/stringList"
+                    }
+                  }
+                }
+              ]
+            },
+            "ticket": {
+              "allOf": [
+                {
+                  "$ref": "#/$defs/field"
+                },
+                {
+                  "properties": {
+                    "value": {
+                      "$ref": "#/$defs/ticket"
+                    }
+                  }
+                }
+              ]
+            },
+            "ticket_observed": {
+              "description": "Ticket derived from observed round sizes, kept apart from the stated ticket.",
+              "allOf": [
+                {
+                  "$ref": "#/$defs/field"
+                },
+                {
+                  "properties": {
+                    "value": {
+                      "$ref": "#/$defs/ticket"
+                    }
+                  }
+                }
+              ]
+            },
+            "funds": {
+              "allOf": [
+                {
+                  "$ref": "#/$defs/field"
+                },
+                {
+                  "properties": {
+                    "value": {
+                      "type": "array",
+                      "minItems": 1,
+                      "items": {
+                        "$ref": "#/$defs/fund"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            "aum": {
+              "allOf": [
+                {
+                  "$ref": "#/$defs/field"
+                },
+                {
+                  "properties": {
+                    "value": {
+                      "$ref": "#/$defs/aum"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "investments": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/investment"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}
