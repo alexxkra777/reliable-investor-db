@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Investor claims review</title>
+<style>
+:root {
+  --bg: #f6f7f9; --card: #ffffff; --text: #1c2430; --muted: #5d6877; --line: #dde2e8;
+  --accent: #2456c7; --quote: #f1f4f8;
+  --ok: #1d7a46; --ok-bg: #e3f4ea; --bad: #b3261e; --bad-bg: #fbe7e6;
+  --unk: #8a5a00; --unk-bg: #fdf1d8;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #12161c; --card: #1b2129; --text: #e4e8ee; --muted: #9aa5b3; --line: #2c3540;
+    --accent: #7aa2ff; --quote: #222a34;
+    --ok: #6fd39b; --ok-bg: #173325; --bad: #ff8a80; --bad-bg: #3a1d1b;
+    --unk: #f1c26a; --unk-bg: #3a2f17;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text);
+  font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+header { position: sticky; top: 0; z-index: 2; background: var(--card);
+  border-bottom: 1px solid var(--line); }
+.bar { max-width: 780px; margin: 0 auto; padding: 10px 16px; display: flex; flex-wrap: wrap;
+  gap: 8px 12px; align-items: center; }
+.bar h1 { font-size: 17px; margin: 0; flex: 1 1 auto; }
+.progress { color: var(--muted); font-size: 14px; white-space: nowrap; }
+main { max-width: 780px; margin: 0 auto; padding: 16px; }
+details.help { background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+  padding: 10px 14px; margin-bottom: 16px; font-size: 15px; }
+details.help summary { cursor: pointer; font-weight: 600; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+  padding: 14px 16px; margin-bottom: 14px; }
+.card.correct { border-left: 5px solid var(--ok); }
+.card.wrong { border-left: 5px solid var(--bad); }
+.card.cant_verify { border-left: 5px solid var(--unk); }
+.meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 13px;
+  color: var(--muted); margin-bottom: 6px; }
+.badge { border: 1px solid var(--line); border-radius: 999px; padding: 1px 8px; }
+.claim { font-size: 17px; font-weight: 600; margin: 4px 0 10px; overflow-wrap: anywhere; }
+.quote { background: var(--quote); border-radius: 8px; padding: 10px 12px; margin: 0 0 8px;
+  font-style: italic; overflow-wrap: anywhere; }
+.src { font-size: 14px; overflow-wrap: anywhere; margin-bottom: 4px; }
+.src a { color: var(--accent); }
+.others { font-size: 13px; color: var(--muted); overflow-wrap: anywhere; }
+.others a { color: var(--muted); }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+button, select { font: inherit; font-size: 15px; border-radius: 8px; border: 1px solid var(--line);
+  background: var(--card); color: var(--text); padding: 8px 12px; cursor: pointer; }
+button:focus-visible, select:focus-visible, textarea:focus-visible, a:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 2px; }
+.actions button { flex: 1 1 120px; min-height: 44px; }
+button.correct[aria-pressed="true"] {
+  background: var(--ok-bg); color: var(--ok); border-color: var(--ok); }
+button.wrong[aria-pressed="true"] {
+  background: var(--bad-bg); color: var(--bad); border-color: var(--bad); }
+button.cant_verify[aria-pressed="true"] {
+  background: var(--unk-bg); color: var(--unk); border-color: var(--unk); }
+button.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+@media (prefers-color-scheme: dark) { button.primary { color: #0b1020; } }
+textarea { width: 100%; margin-top: 10px; min-height: 44px; font: inherit; font-size: 15px;
+  padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg);
+  color: var(--text); resize: vertical; }
+.stamp { font-size: 12px; color: var(--muted); margin-top: 4px; min-height: 1em; }
+.empty { color: var(--muted); text-align: center; padding: 30px 0; }
+.warn { color: var(--bad); font-size: 13px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <h1>Investor claims review</h1>
+    <span class="progress" id="progress"></span>
+    <label class="progress" for="filter">Show</label>
+    <select id="filter">
+      <option value="all">All claims</option>
+      <option value="todo">Not reviewed yet</option>
+      <option value="correct">Correct</option>
+      <option value="wrong">Wrong</option>
+      <option value="cant_verify">Can't verify</option>
+    </select>
+    <button class="primary" id="export" type="button">Export CSV</button>
+  </div>
+</header>
+<main>
+  <details class="help" open>
+    <summary>How to review</summary>
+    <p>Open the source link and check the claim against that page only.</p>
+    <ul>
+      <li><b>Correct</b>: the page supports the claim as written (value, date, company).</li>
+      <li><b>Wrong</b>: the page says something else, or doesn't contain the quote. A true claim
+        with a source that doesn't back it is still <b>Wrong</b>.</li>
+      <li><b>Can't verify</b>: the page doesn't load, is paywalled, or you can't decide. These
+        count against accuracy in the strict metric, so add a short note.</li>
+    </ul>
+    <p>Answers are kept in this browser. When done, press <b>Export CSV</b> and save the file
+      as <code>eval/labels.csv</code>. Pack fcf0cb3122, 60 claims, seed 7.</p>
+    <p class="warn" id="storage-warn" hidden>This browser blocks local storage: answers will be
+      lost on reload. Export before closing the page.</p>
+  </details>
+  <div id="list"></div>
+</main>
+<script>
+(function () {
+  "use strict";
+  var CLAIMS = [{"claim_id": "nation-1/field/aum", "record_name": "N1 (Nation 1)", "kind": "field", "field": "aum", "claim": "AUM of N1 (Nation 1): 35,000,000 EUR", "quote": "Volume of Funds Managed 35 milionů EUR", "url": "https://cvca.cz/en/nation1-2/", "tier": "B", "publisher": "CVCA", "published": "", "other_urls": ""}, {"claim_id": "bhm-ventures/field/existence", "record_name": "BHM Ventures (BHM group)", "kind": "field", "field": "existence", "claim": "existence of BHM Ventures (BHM group): [\"portfolio_page\"]", "quote": "Tech Startups Carebot Tech Startups Carebot Carebot, český zdravotnicko-technologický startup, vyvinul software využívající umělou inteligenci k lokalizaci nálezů na rentgenových snímcích. Tento software propojuje znalosti expertů a lékařů. Primárně cílí na evropská zdravotnická zařízení, zejména nemocnice a radiologická oddělení. Navštívit webové stránky Zpět na přehled portfolia Tech Startups CloudTalk Tech Startups CloudTalk Cloudtalk je rychle rostoucí SaaS cloudové virtuální telefonní systémy pro zákaznická a obchodní call-centra po celém světě. Již dnes patří mezi přední dodavatele pro malé a střední firmy. Mezi hlavní přednosti patří jednoduchost a rychlost zprovoznění, kvalita zvuku a integrace s existujícími interními systémy. Navštívit webové stránky Zpět na přehled portfolia Tech Startups GoRamp", "url": "https://www.bhmgroup.eu/portfolio?industry=tech-startups", "tier": "B", "publisher": "BHM Group", "published": "", "other_urls": ""}, {"claim_id": "vision-ventures/field/ticket", "record_name": "Vision Ventures", "kind": "field", "field": "ticket", "claim": "Ticket size of Vision Ventures: 100,000 - 1,600,000 EUR", "quote": "We usually make investments between €100 thousand and €800 thousand, maximum up to €1,6 million.", "url": "https://visionventures.vc/", "tier": "B", "publisher": "Vision Ventures", "published": "", "other_urls": ""}, {"claim_id": "inven-capital/field/aum", "record_name": "Inven Capital", "kind": "field", "field": "aum", "claim": "AUM of Inven Capital: 500,000,000 EUR", "quote": "As a venture capital fund we invest EUR 500m from institutional investors and global corporates", "url": "https://www.invencapital.cz/", "tier": "B", "publisher": "Inven Capital", "published": "", "other_urls": ""}, {"claim_id": "startupyard/existence", "record_name": "StartupYard", "kind": "existence", "field": "", "claim": "StartupYard is a real investor of type 'accelerator' that still invests (HQ Praha, CZ; ICO 22266852).", "quote": "Společník: StartupYard Batch 15 s.r.o. , IČ: 222 66 852 Perlová 371/5, Staré Město, 110 00 Praha 1 zapsáno 20. srpna 2026", "url": "https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=1018928&typ=UPLNY", "tier": "A", "publisher": "Obchodní rejstřík (justice.cz)", "published": "2026-08-20", "other_urls": "https://startupyard.com/the-next-wave-begins-startupyard-announces-batch-15/;https://startupyard.com/;https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/22266852"}, {"claim_id": "jt-ventures/investment/0", "record_name": "J&T Ventures", "kind": "investment", "field": "", "claim": "J&T Ventures invested in Supernova on 2025-09-30 (announced), round 9,200,000 USD.", "quote": "20/4/2025 Design to code se po letech snění stává skutečností, říká zakladatel Supernovy", "url": "https://www.jtventures.cz/blog", "tier": "B", "publisher": "J&T Ventures", "published": "2025-04-20", "other_urls": "https://tech.eu/2025/09/30/supernova-raises-92-million-series-a-to-bring-ai-powered-vibe-coding-to-enterprise-product-teams/"}, {"claim_id": "cb-investment-management/field/funds", "record_name": "CB Investment Management", "kind": "field", "field": "funds", "claim": "Funds of CB Investment Management: CB Growth ONE: 23,200,000 EUR, vintage 2019", "quote": "€23.2M Fund size 32 Companies 2019 Founded", "url": "https://www.cbim.sk/", "tier": "B", "publisher": "CB Investment Management", "published": "", "other_urls": ""}, {"claim_id": "cb-investment-management/field/existence", "record_name": "CB Investment Management", "kind": "field", "field": "existence", "claim": "existence of CB Investment Management: [\"regulator_register\", \"fund_of_funds_commitment\"]", "quote": "CB Investment Management s. r. o. 99.99.99 – 99.99.99 IČO: 52524531 99.99.99 – 99.99.99 Sídlo: Staromestská 3, 81103 Bratislava 99.99.99 – 99.99.99 Štát: Slovensko 99.99.99 – 99.99.99 Rozbaliť / Zbaliť Pôsobenie na finančnom trhu 99.99.99 – 99.99.99 registrovaný správca alternatívnych investičných fondov 20.08.19 – 99.99.99 Registračné číslo: 0018", "url": "https://subjekty.nbs.sk/sk/entity/5483/", "tier": "A", "publisher": "Národná banka Slovenska", "published": "", "other_urls": "https://www.sih.sk/en/investicie/investicie-cez-financnych-sprostredkovatelov/cb-investment-management-kapitalova-investicia"}, {"claim_id": "seed-starter-slovenskej-sporitelne/investment/1", "record_name": "Seed Starter Slovenskej sporiteľne", "kind": "investment", "field": "", "claim": "Seed Starter Slovenskej sporiteľne invested in IntellCRE on 2025-09-17 (announced).", "quote": "teraz získava investíciu vo výške 400 000 eur od Seed Startera Slovenskej sporiteľne", "url": "https://www.slsp.sk/sk/aktuality/2025/9/17/zo-slovenska-rovno-na-najvacsi-realitny-trh-intellcre-ziskava-investiciu-od-seed-startera-slovenskej-sporitelne", "tier": "B", "publisher": "Slovenská sporiteľňa", "published": "2025-09-17", "other_urls": ""}, {"claim_id": "miton/existence", "record_name": "Miton", "kind": "existence", "field": "", "claim": "Miton is a real investor of type 'vc' that still invests (HQ Praha, CZ; ICO 25417967).", "quote": "Oblasti, ve kterých investujeme AI, augmented workforce Krypto, web3 E-commerce Gastrotech Psychedelika, duševní zdraví", "url": "https://www.miton.cz/", "tier": "B", "publisher": "Miton", "published": "", "other_urls": "https://www.miton.cz/portfolio;https://www.miton.cz/blog/miton-investuje-do-ace-stravu-pro-padel-uz-pouziva-vice-nez-polovina-ceskych-hracu/;https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/25417967"}, {"claim_id": "neulogy-ventures/field/sectors", "record_name": "Neulogy Ventures", "kind": "field", "field": "sectors", "claim": "Sectors of Neulogy Ventures: ICT, energy, medical diagnostics", "quote": "Preferované odvetvie: Informačné a komunikačné technológie, energetika a medicínska diagnostika", "url": "https://www.slovca.sk/sk/riadni-clenovia/neulogy-ventures.html", "tier": "B", "publisher": "SLOVCA", "published": "", "other_urls": ""}, {"claim_id": "tensor-ventures/investment/0", "record_name": "Tensor Ventures", "kind": "investment", "field": "", "claim": "Tensor Ventures invested in Wultra on 2025-12-03 (registry_entry).", "quote": "Společník: Tensor Co-Investment Fund L-1748 Senningerberg, 7, Rue Lou Hemmer, Lucemburské velkovévodství Registrační číslo: B291248 Právní forma: Société en commandite spéciale zapsáno 3. prosince 2025", "url": "https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=883583&typ=UPLNY", "tier": "A", "publisher": "Obchodní rejstřík (justice.cz)", "published": "2025-12-03", "other_urls": ""}, {"claim_id": "venture-to-future-fund/investment/0", "record_name": "Venture to Future Fund", "kind": "investment", "field": "", "claim": "Venture to Future Fund invested in FaceUp on 2026-05-19 (announced), round 5,000,000 USD.", "quote": "Pridali sa aj slovenský Venture to Future Fund, pražský Gi21 Capital", "url": "https://www.startitup.sk/z-brna-do-dubaja-novy-fond-nalial-miliony-do-startupu-ktory-vznikol-ako-studentsky-projekt-teraz-mieri-aj-na-slovensko/", "tier": "C", "publisher": "Startitup", "published": "2026-05-19", "other_urls": ""}, {"claim_id": "czech-founders-vc/field/ticket", "record_name": "Czech Founders VC", "kind": "field", "field": "ticket", "claim": "Ticket size of Czech Founders VC: 50,000 - 350,000 EUR", "quote": "Typically €50-350k.", "url": "https://czechfounders.vc/", "tier": "B", "publisher": "Czech Founders VC", "published": "", "other_urls": ""}, {"claim_id": "zaka-vc/field/stages", "record_name": "ZAKA VC", "kind": "field", "field": "stages", "claim": "Stages of ZAKA VC: pre-seed, seed", "quote": "We are a seed & pre-seed VC fund, investing mainly in the US and Europe.", "url": "https://www.zaka.vc/", "tier": "B", "publisher": "ZAKA VC", "published": "", "other_urls": ""}, {"claim_id": "vision-ventures/field/existence", "record_name": "Vision Ventures", "kind": "field", "field": "existence", "claim": "existence of Vision Ventures: [\"regulator_register\", \"fund_of_funds_commitment\", \"association_full_member\"]", "quote": "Vision Ventures, s.r.o. 99.99.99 – 99.99.99 IČO: 52568288 99.99.99 – 99.99.99 Sídlo: Bottova 2/A, 81109 Bratislava 09.11.21 – 99.99.99 Štát: Slovensko 99.99.99 – 99.99.99 Rozbaliť / Zbaliť Pôsobenie na finančnom trhu 99.99.99 – 99.99.99 registrovaný správca alternatívnych investičných fondov 11.11.19 – 99.99.99 Registračné číslo: 0020", "url": "https://subjekty.nbs.sk/sk/entity/5484/", "tier": "A", "publisher": "Národná banka Slovenska", "published": "", "other_urls": "https://www.sih.sk/en/investicie/investicie-cez-financnych-sprostredkovatelov/vision-ventures-kapitalova-investicia;https://www.slovca.sk/sk/clenstvo/riadni-clenovia.html"}, {"claim_id": "jt-ventures/field/ticket", "record_name": "J&T Ventures", "kind": "field", "field": "ticket", "claim": "Ticket size of J&T Ventures: 300,000 - 3,000,000 EUR", "quote": "Velikost investice €300K – €3M", "url": "https://www.jtventures.cz/", "tier": "B", "publisher": "J&T Ventures", "published": "", "other_urls": ""}, {"claim_id": "zaka-vc/field/existence", "record_name": "ZAKA VC", "kind": "field", "field": "existence", "claim": "existence of ZAKA VC: [\"portfolio_page\"]", "quote": "WonderTx / Aerogen Systems / FinalDose / PerfectBit /", "url": "https://zaka.vc/portfolio/", "tier": "B", "publisher": "ZAKA VC", "published": "", "other_urls": ""}, {"claim_id": "vision-ventures/field/geography", "record_name": "Vision Ventures", "kind": "field", "field": "geography", "claim": "Geography of Vision Ventures: SK", "quote": "We invest in companies that are based and operate in Slovakia.", "url": "https://visionventures.vc/", "tier": "B", "publisher": "Vision Ventures", "published": "", "other_urls": ""}, {"claim_id": "vision-ventures/investment/0", "record_name": "Vision Ventures", "kind": "investment", "field": "", "claim": "Vision Ventures invested in Airvolute s.r.o. (follow-on) on 2026-01-09 (registry_entry).", "quote": "Vision Ventures Growth I, s. r. o. Vklad: 3 290 EUR ( peňažný vklad ) Splatené: 3 290 EUR (od: 09.01.2026)", "url": "https://www.orsr.sk/vypis.asp?ID=548451&SID=7&P=0", "tier": "A", "publisher": "Obchodný register SR (Ministry of Justice SR)", "published": "2026-01-09", "other_urls": "https://www.orsr.sk/vypis.asp?ID=548451&SID=7&P=1"}, {"claim_id": "vision-ventures/investment/2", "record_name": "Vision Ventures", "kind": "investment", "field": "", "claim": "Vision Ventures invested in Seerlinq s.r.o. on 2023-07-14 (registry_entry).", "quote": "Vision Ventures Growth I, s. r. o. Vklad: 1 050 EUR ( peňažný vklad ) Splatené: 1 050 EUR (od: 14.07.2023)", "url": "https://www.orsr.sk/vypis.asp?ID=665401&SID=7&P=0", "tier": "A", "publisher": "Obchodný register SR (Ministry of Justice SR)", "published": "2023-07-14", "other_urls": ""}, {"claim_id": "credo-ventures/investment/1", "record_name": "Credo Ventures", "kind": "investment", "field": "", "claim": "Credo Ventures invested in Upheal on 2025-01-25 (announced), round 10,000,000 USD.", "quote": "The round was led by Headline with participation from Credo Ventures and Kaya Ventures , bringing our total funding to $14.35 million.", "url": "https://www.upheal.io/blog/upheal-secures-10m-to-help-reduce-clinician-burnout-and-improve-client-outcomes-with-their-ai-powered-platform", "tier": "B", "publisher": "Upheal", "published": "", "other_urls": "https://www.credoventures.com/newsroom"}, {"claim_id": "tilia-impact-ventures/field/geography", "record_name": "Tilia Impact Ventures", "kind": "field", "field": "geography", "claim": "Geography of Tilia Impact Ventures: CZ, CEE", "quote": "Tilia Impact Ventures backs Czech and CEE region founders to make systemic environmental and social change, on a global scale.", "url": "https://www.tilia.vc/", "tier": "B", "publisher": "Tilia Impact Ventures", "published": "", "other_urls": ""}, {"claim_id": "credo-ventures/field/geography", "record_name": "Credo Ventures", "kind": "field", "field": "geography", "claim": "Geography of Credo Ventures: CEE, CEE diaspora", "quote": "From CEE, for CEE and its global diaspora.", "url": "https://www.credoventures.com/", "tier": "B", "publisher": "Credo Ventures", "published": "", "other_urls": ""}, {"claim_id": "depo-ventures/field/stages", "record_name": "DEPO Ventures", "kind": "field", "field": "stages", "claim": "Stages of DEPO Ventures: inception, pre-seed", "quote": "Stage Inception & Pre-seed", "url": "https://www.depoventures.com/", "tier": "B", "publisher": "DEPO Ventures", "published": "", "other_urls": ""}, {"claim_id": "tilia-impact-ventures/field/ticket", "record_name": "Tilia Impact Ventures", "kind": "field", "field": "ticket", "claim": "Ticket size of Tilia Impact Ventures: 300,000 - 1,200,000 EUR", "quote": "0.3 - 1.2m EUR initial ticket", "url": "https://www.tilia.vc/", "tier": "B", "publisher": "Tilia Impact Ventures", "published": "", "other_urls": ""}, {"claim_id": "neulogy-ventures/field/funds", "record_name": "Neulogy Ventures", "kind": "field", "field": "funds", "claim": "Funds of Neulogy Ventures: Slovak Venture Fund S.C.A., SICAR: ? , vintage ?", "quote": "Slovak Venture Fund S.C.A., SICAR Neulogy Ventures a.s. Slovakia CEFoF;EGF Slovakia Venture Capital ICT Balanced Fund 14/03/2027", "url": "https://www.eif.org/files/attachments/slovakia-equity-fundmanagers.pdf", "tier": "A", "publisher": "European Investment Fund", "published": "", "other_urls": ""}, {"claim_id": "jt-ventures/field/geography", "record_name": "J&T Ventures", "kind": "field", "field": "geography", "claim": "Geography of J&T Ventures: CEE, SEE, Baltics", "quote": "Region CEE & SEE & Baltics", "url": "https://www.jtventures.cz/", "tier": "B", "publisher": "J&T Ventures", "published": "", "other_urls": ""}, {"claim_id": "neulogy-ventures/existence", "record_name": "Neulogy Ventures", "kind": "existence", "field": "", "claim": "Neulogy Ventures is a real investor of type 'vc' that still invests (HQ Bratislava, SK; ICO 47367610, company_number B185175).", "quote": "Slovak Venture Fund S.C.A., SICAR Neulogy Ventures a.s. Slovakia CEFoF;EGF Slovakia Venture Capital ICT Balanced Fund 14/03/2027", "url": "https://www.eif.org/files/attachments/slovakia-equity-fundmanagers.pdf", "tier": "A", "publisher": "European Investment Fund", "published": "", "other_urls": "https://www.sih.sk/en/investicie/investicie-cez-financnych-sprostredkovatelov/neulogy-ventures-kapitalova-investicia;https://www.orsr.sk/vypis.asp?ID=554899&SID=2&P=0;https://www.neulogy.vc/;https://www.orsr.sk/vypis.asp?ID=276162&SID=2&P=0"}, {"claim_id": "rockawayx/field/stages", "record_name": "RockawayX", "kind": "field", "field": "stages", "claim": "Stages of RockawayX: early stage", "quote": "We invest in early-stage projects, then build alongside them.", "url": "https://rockawayx.com/", "tier": "B", "publisher": "RockawayX", "published": "", "other_urls": ""}, {"claim_id": "g-force/existence", "record_name": "G-Force", "kind": "existence", "field": "", "claim": "G-Force is a real investor of type 'accelerator' that still invests (HQ Bratislava, SK; ICO 53527798, ICO 53588398).", "quote": "G-Force, s.r.o. 99.99.99 – 99.99.99 IČO: 53527798 99.99.99 – 99.99.99 LEI: 097900CAKA0000144796 99.99.99 – 99.99.99 Sídlo: Pekárska 14, 91701 Trnava 99.99.99 – 99.99.99 Štát: Slovensko 99.99.99 – 99.99.99 Rozbaliť / Zbaliť Pôsobenie na finančnom trhu 99.99.99 – 99.99.99 registrovaný správca alternatívnych investičných fondov 16.08.21 – 99.99.99 Registračné číslo: 0029 16.08.21 – 99.99.99 Orgán dohľadu: Národná banka Slovenska 16.08.21 – 99.99.99 fondy G-Force Fund, j.s.a. 16.08.21 – 99.99.99 správca Európskych fondov rizikového kapitálu (EuVECA)", "url": "https://subjekty.nbs.sk/sk/entity/5492/", "tier": "A", "publisher": "Národná banka Slovenska", "published": "", "other_urls": "https://foundersfactory.com/g-force/;https://www.orsr.sk/vypis.asp?ID=608015&SID=2&P=0;https://www.orsr.sk/vypis.asp?ID=659572&SID=2&P=0"}, {"claim_id": "vision-ventures/investment/1", "record_name": "Vision Ventures", "kind": "investment", "field": "", "claim": "Vision Ventures invested in BiteBerry s. r. o. on 2023-08-09 (registry_entry).", "quote": "Vision Ventures Growth I, s. r. o. Vklad: 2 254 EUR ( peňažný vklad ) Splatené: 2 254 EUR (od: 09.08.2023)", "url": "https://www.orsr.sk/vypis.asp?ID=694090&SID=5&P=0", "tier": "A", "publisher": "Obchodný register SR (Ministry of Justice SR)", "published": "2023-08-09", "other_urls": ""}, {"claim_id": "venture-to-future-fund/investment/2", "record_name": "Venture to Future Fund", "kind": "investment", "field": "", "claim": "Venture to Future Fund invested in Talentiqa on 2025-09-29 (announced), round 1,100,000 EUR.", "quote": "has raised €1.1 million (CZK 25 million), with the investment equally split between Purple Ventures and the Venture to Future Fund", "url": "https://vestbee.com/insights/articles/talentiqa-raises-1-1-m", "tier": "C", "publisher": "Vestbee", "published": "2025-09-29", "other_urls": ""}, {"claim_id": "credo-ventures/field/aum", "record_name": "Credo Ventures", "kind": "field", "field": "aum", "claim": "AUM of Credo Ventures: 170,000,000 EUR", "quote": "Volume of Funds Managed EUR 170 million", "url": "https://cvca.cz/en/credo-ventures-2/", "tier": "B", "publisher": "CVCA", "published": "", "other_urls": ""}, {"claim_id": "tensor-ventures/field/ticket", "record_name": "Tensor Ventures", "kind": "field", "field": "ticket", "claim": "Ticket size of Tensor Ventures: 250,000 - 1,000,000 EUR", "quote": "Preferred Ammount of Investment EUR 250 000 – EUR 1 million", "url": "https://cvca.cz/en/tensor-ventures/", "tier": "B", "publisher": "CVCA", "published": "", "other_urls": ""}, {"claim_id": "zero-one-hundred/field/existence", "record_name": "Zero One Hundred (0100 Ventures)", "kind": "field", "field": "existence", "claim": "existence of Zero One Hundred (0100 Ventures): [\"regulator_register\", \"fund_of_funds_commitment\"]", "quote": "Zero Gravity Capital s.r.o. 99.99.99 – 99.99.99 IČO: 52651894 99.99.99 – 99.99.99 Sídlo: Staromestská 7830/3, Bratislava - mestská časť Staré Mesto 811 03 99.99.99 – 99.99.99 Štát: Slovensko 99.99.99 – 99.99.99 Rozbaliť / Zbaliť Pôsobenie na finančnom trhu 99.99.99 – 99.99.99 registrovaný správca alternatívnych investičných fondov 13.02.20 – 99.99.99 Registračné číslo: 0022", "url": "https://subjekty.nbs.sk/sk/entity/5486/", "tier": "A", "publisher": "Národná banka Slovenska", "published": "", "other_urls": "https://www.sih.sk/en/investicie/investicie-cez-financnych-sprostredkovatelov/zero-gravity-capital-kapitalova-investicia"}, {"claim_id": "zero-one-hundred/field/geography", "record_name": "Zero One Hundred (0100 Ventures)", "kind": "field", "field": "geography", "claim": "Geography of Zero One Hundred (0100 Ventures): Emerging Europe, Middle East", "quote": "backing the best startups from Emerging Europe and the Middle East.", "url": "https://0100.vc/", "tier": "B", "publisher": "Zero One Hundred", "published": "", "other_urls": ""}, {"claim_id": "inven-capital/field/sectors", "record_name": "Inven Capital", "kind": "field", "field": "sectors", "claim": "Sectors of Inven Capital: climate tech", "quote": "Topic Climate tech", "url": "https://www.invencapital.cz/", "tier": "B", "publisher": "Inven Capital", "published": "", "other_urls": ""}, {"claim_id": "jt-ventures/field/aum", "record_name": "J&T Ventures", "kind": "field", "field": "aum", "claim": "AUM of J&T Ventures: 120,000,000 EUR", "quote": "€120M Výše aktiv", "url": "https://www.jtventures.cz/", "tier": "B", "publisher": "J&T Ventures", "published": "", "other_urls": ""}, {"claim_id": "credo-ventures/existence", "record_name": "Credo Ventures", "kind": "existence", "field": "", "claim": "Credo Ventures is a real investor of type 'vc' that still invests (HQ Praha, CZ; ICO 28538137).", "quote": "Sector Preferences IT & internet, mobile communication", "url": "https://cvca.cz/en/credo-ventures-2/", "tier": "B", "publisher": "CVCA", "published": "", "other_urls": "https://www.credoventures.com/;https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/28538137"}, {"claim_id": "vision-ventures/field/stages", "record_name": "Vision Ventures", "kind": "field", "field": "stages", "claim": "Stages of Vision Ventures: pre-seed, seed", "quote": "VC fund focused on pre-seed and seed investments in Slovakia.", "url": "https://visionventures.vc/", "tier": "B", "publisher": "Vision Ventures", "published": "", "other_urls": ""}, {"claim_id": "depo-ventures/field/funds", "record_name": "DEPO Ventures", "kind": "field", "field": "funds", "claim": "Funds of DEPO Ventures: DEPO Ventures One SCSp: ? , vintage ?", "quote": "Vybraným finančním zprostředkovatelem se stal fond DEPO Ventures One SCSp", "url": "https://www.nrinvesticni.cz/", "tier": "A", "publisher": "Národní rozvojová investiční", "published": "2026-08-26", "other_urls": ""}, {"claim_id": "soulmates-ventures/field/sectors", "record_name": "Soulmates Ventures", "kind": "field", "field": "sectors", "claim": "Sectors of Soulmates Ventures: air, water, energy, mobility, education, healthcare, food and agriculture, circular economy", "quote": "focusing on key areas such as air, water, energy, mobility, education, healthcare, food and agriculture, and the circular economy", "url": "https://www.soulmates.ventures/", "tier": "B", "publisher": "Soulmates Ventures", "published": "", "other_urls": ""}, {"claim_id": "venture-to-future-fund/field/funds", "record_name": "Venture to Future Fund", "kind": "field", "field": "funds", "claim": "Funds of Venture to Future Fund: Venture to Future Fund: 55,000,000 EUR, vintage ?", "quote": "V rokoch 2020 - 2026 máme vyčlenených 55 mil. EUR", "url": "https://vff.sk/", "tier": "B", "publisher": "Venture to Future Fund", "published": "", "other_urls": "https://www.sih.sk/en/aktuality/venture-to-future-fund-navysuje-kapital-o-15-3-miliona-eur-na-podporu-slovenskych-startupov"}, {"claim_id": "baryon-fund/field/sectors", "record_name": "Baryon Fund", "kind": "field", "field": "sectors", "claim": "Sectors of Baryon Fund: defence tech", "quote": "We defend Europe by backing bold defence tech entrepreneurs", "url": "https://baryon.fund/", "tier": "B", "publisher": "Baryon Fund", "published": "", "other_urls": ""}, {"claim_id": "venture-to-future-fund/field/sectors", "record_name": "Venture to Future Fund", "kind": "field", "field": "sectors", "claim": "Sectors of Venture to Future Fund: innovative SMEs, technology SMEs", "quote": "Preferovaný sektor: inovatívne SME spoločnosti, technologické SME spoločnosti", "url": "https://www.slovca.sk/sk/riadni-clenovia/venture-to-future-fund.html", "tier": "B", "publisher": "SLOVCA", "published": "", "other_urls": ""}, {"claim_id": "jt-ventures/investment/2", "record_name": "J&T Ventures", "kind": "investment", "field": "", "claim": "J&T Ventures invested in Finlay on 2025-03-03 (announced), round 300,000 EUR.", "quote": "3/3/2025 Investice do náborového startupu Finlay", "url": "https://www.jtventures.cz/blog", "tier": "B", "publisher": "J&T Ventures", "published": "2025-03-03", "other_urls": "https://www.jtventures.cz/blog/investice-do-naboroveho-startupu-finlay"}, {"claim_id": "kaya-vc/field/stages", "record_name": "KAYA VC", "kind": "field", "field": "stages", "claim": "Stages of KAYA VC: pre-seed, seed", "quote": "$1–3M Ticket Pre+Seed Round", "url": "https://www.kaya.vc/", "tier": "B", "publisher": "KAYA", "published": "", "other_urls": ""}, {"claim_id": "czech-founders-vc/existence", "record_name": "Czech Founders VC", "kind": "existence", "field": "", "claim": "Czech Founders VC is a real investor of type 'vc' that still invests (HQ Praha, CZ; ICO 17051835).", "quote": "Společník: Czech Founders Ventures s.r.o., osoba rizikového kapitálu , IČ: 170 51 835 Salvátorská 931/8, Staré Město, 110 00 Praha 1 zapsáno 25. března 2026", "url": "https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=1199826&typ=UPLNY", "tier": "A", "publisher": "Obchodní rejstřík (justice.cz)", "published": "2026-03-25", "other_urls": "https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=1096675&typ=UPLNY;https://czechfounders.vc/;https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/17051835"}, {"claim_id": "credo-ventures/investment/0", "record_name": "Credo Ventures", "kind": "investment", "field": "", "claim": "Credo Ventures invested in Supernova on 2025-09-30 (announced), round 9,200,000 USD.", "quote": "Supernova raises $9.2 million Series A to bring AI efficiency to enterprise product teams Sep 30, 2025", "url": "https://www.credoventures.com/newsroom", "tier": "B", "publisher": "Credo Ventures", "published": "", "other_urls": "https://tech.eu/2025/09/30/supernova-raises-92-million-series-a-to-bring-ai-powered-vibe-coding-to-enterprise-product-teams/"}, {"claim_id": "reflex-capital/investment/0", "record_name": "Reflex Capital", "kind": "investment", "field": "", "claim": "Reflex Capital invested in Ranketta on 2026-10-07 (registry_entry).", "quote": "Společník: Reflex 3, osoba rizikového kapitálu SE , IČ: 193 81 263 Rašínovo nábřeží 2000/78, Nové Město, 120 00 Praha 2 zapsáno 7. října 2026", "url": "https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=1288906&typ=UPLNY", "tier": "A", "publisher": "Obchodní rejstřík (justice.cz)", "published": "2026-10-07", "other_urls": ""}, {"claim_id": "fond-inovacii-a-technologii/field/ticket", "record_name": "Fond inovácií a technológií", "kind": "field", "field": "ticket", "claim": "Ticket size of Fond inovácií a technológií: 20,000 - 1,500,000 EUR", "quote": "Výška investície: od 20 000 EUR do 1 500 000 EUR", "url": "https://www.slovca.sk/sk/riadni-clenovia/fond-inovacii-a-technologii.html", "tier": "B", "publisher": "SLOVCA", "published": "", "other_urls": ""}, {"claim_id": "limerock/field/existence", "record_name": "Limerock", "kind": "field", "field": "existence", "claim": "existence of Limerock: [\"regulator_register\", \"fund_of_funds_commitment\"]", "quote": "Limerock Investment Holding, s.r.o. 99.99.99 – 99.99.99 Právny predchodca alebo prevzatý subjekt: Limerock Fund Manager, s. r. o. 25.07.25 – 99.99.99 IČO: 47777028 99.99.99 – 99.99.99 LEI: 097900CAKA0000272933 99.99.99 – 99.99.99 Sídlo: Planét 5, 82102 Bratislava - mestská časť Ružinov 99.99.99 – 99.99.99 Štát: Slovensko 99.99.99 – 99.99.99 Rozbaliť / Zbaliť Pôsobenie na finančnom trhu 99.99.99 – 99.99.99 registrovaný správca alternatívnych investičných fondov 25.07.25 – 99.99.99 Registračné číslo: 0004", "url": "https://subjekty.nbs.sk/sk/entity/308293/", "tier": "A", "publisher": "Národná banka Slovenska", "published": "", "other_urls": "https://www.sih.sk/en/investicie/investicie-cez-financnych-sprostredkovatelov/limerock-fund-manager-kapitalova-investicia"}, {"claim_id": "czech-founders-vc/investment/1", "record_name": "Czech Founders VC", "kind": "investment", "field": "", "claim": "Czech Founders VC invested in SharpGrid on 2023-08-30 (registry_entry).", "quote": "Společník: Czech Founders Ventures s.r.o. , IČ: 170 51 835 Panská 854/2, Nové Město, 110 00 Praha 1 zapsáno 30. srpna 2023", "url": "https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=1096675&typ=UPLNY", "tier": "A", "publisher": "Obchodní rejstřík (justice.cz)", "published": "2023-08-30", "other_urls": ""}, {"claim_id": "venture-to-future-fund/field/existence", "record_name": "Venture to Future Fund", "kind": "field", "field": "existence", "claim": "existence of Venture to Future Fund: [\"regulator_register\", \"association_full_member\"]", "quote": "registrovaný alternatívny investičný fond 20.01.25 – 99.99.99 Správca: Slovak Capital Management, a. s.", "url": "https://subjekty.nbs.sk/sk/entity/5190/", "tier": "A", "publisher": "Národná banka Slovenska", "published": "", "other_urls": "https://www.slovca.sk/sk/clenstvo/riadni-clenovia.html"}, {"claim_id": "tensor-ventures/field/funds", "record_name": "Tensor Ventures", "kind": "field", "field": "funds", "claim": "Funds of Tensor Ventures: Tensor Ventures Fund I SCSp: ? , vintage ?; Tensor Co-Investment Fund SCSp: ? , vintage ?", "quote": "Tensor Co-Investment Fund SCSp Tensor Advisory s.r.o Czech Republic RRF Czech Republic", "url": "https://www.eif.org/files/attachments/czechia-equity-fundmanagers.pdf", "tier": "A", "publisher": "European Investment Fund", "published": "", "other_urls": "https://tensor.ventures/"}, {"claim_id": "czech-founders-vc/field/geography", "record_name": "Czech Founders VC", "kind": "field", "field": "geography", "claim": "Geography of Czech Founders VC: CEE", "quote": "CEE Region Based in Central or Eastern Europe (CEE) & aiming for a global scale.", "url": "https://czechfounders.vc/", "tier": "B", "publisher": "Czech Founders VC", "published": "", "other_urls": ""}, {"claim_id": "neulogy-ventures/investment/2", "record_name": "Neulogy Ventures", "kind": "investment", "field": "", "claim": "Neulogy Ventures invested in Trustmatic on 2023-10-24 (announced).", "quote": "We are proud to announce @trustmaticHQ as the latest addition to the Neulogy Ventures family.", "url": "https://neulogy.vc/news/", "tier": "B", "publisher": "Neulogy Ventures", "published": "2023-10-24", "other_urls": ""}, {"claim_id": "orbit-capital/field/stages", "record_name": "Orbit Capital", "kind": "field", "field": "stages", "claim": "Stages of Orbit Capital: growth", "quote": "Type of Investment Growth equity and venture debt", "url": "https://cvca.cz/en/orbit-capital-2/", "tier": "B", "publisher": "CVCA", "published": "", "other_urls": ""}, {"claim_id": "zaka-vc/field/sectors", "record_name": "ZAKA VC", "kind": "field", "field": "sectors", "claim": "Sectors of ZAKA VC: health & biotech, industrial tech", "quote": "Especially looking for startups in the Health & Biotech and Industrial Tech verticals.", "url": "https://www.zaka.vc/", "tier": "B", "publisher": "ZAKA VC", "published": "", "other_urls": ""}];
+  var KEY = "investordb-review-fcf0cb3122";
+  var LABELS = [["correct", "Correct"], ["wrong", "Wrong"], ["cant_verify", "Can't verify"]];
+  var state = {};
+  var storageOk = true;
+
+  try {
+    var raw = window.localStorage.getItem(KEY);
+    if (raw) { state = JSON.parse(raw) || {}; }
+  } catch (e) { storageOk = false; state = {}; }
+  if (!storageOk) { document.getElementById("storage-warn").hidden = false; }
+
+  function save() {
+    try { window.localStorage.setItem(KEY, JSON.stringify(state)); }
+    catch (e) { document.getElementById("storage-warn").hidden = false; }
+  }
+
+  function safeUrl(u) { return /^https?:\/\//i.test(u || "") ? u : null; }
+
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) { n.className = cls; }
+    if (text !== undefined && text !== null) { n.textContent = text; }
+    return n;
+  }
+
+  function link(url, text) {
+    var ok = safeUrl(url);
+    if (!ok) { return el("span", null, url || "(no link)"); }
+    var a = el("a", null, text || url);
+    a.href = ok; a.target = "_blank"; a.rel = "noopener noreferrer";
+    return a;
+  }
+
+  function progress() {
+    var done = 0;
+    CLAIMS.forEach(function (c) { if (state[c.claim_id] && state[c.claim_id].label) { done++; } });
+    document.getElementById("progress").textContent = done + " / " + CLAIMS.length + " reviewed";
+  }
+
+  function card(c, i) {
+    var s = state[c.claim_id] || {};
+    var box = el("article", "card" + (s.label ? " " + s.label : ""));
+    box.id = "c-" + i;
+    var meta = el("div", "meta");
+    meta.appendChild(el("span", null, "#" + (i + 1)));
+    meta.appendChild(el("span", "badge", c.kind === "field" ? c.field : c.kind));
+    if (c.tier) { meta.appendChild(el("span", "badge", "Tier " + c.tier)); }
+    meta.appendChild(el("span", null, c.record_name));
+    box.appendChild(meta);
+    box.appendChild(el("div", "claim", c.claim));
+    if (c.quote) { box.appendChild(el("blockquote", "quote", "“" + c.quote + "”")); }
+    var src = el("div", "src");
+    src.appendChild(document.createTextNode("Source: "));
+    src.appendChild(link(c.url));
+    var bits = [c.publisher, c.published].filter(Boolean).join(", ");
+    if (bits) { src.appendChild(document.createTextNode(" (" + bits + ")")); }
+    box.appendChild(src);
+    var others = (c.other_urls || "").split(";").filter(Boolean);
+    if (others.length) {
+      var o = el("div", "others", "Also: ");
+      others.forEach(function (u, k) {
+        if (k) { o.appendChild(document.createTextNode(" · ")); }
+        o.appendChild(link(u));
+      });
+      box.appendChild(o);
+    }
+    var actions = el("div", "actions");
+    LABELS.forEach(function (pair) {
+      var b = el("button", pair[0], pair[1]);
+      b.type = "button";
+      b.setAttribute("aria-pressed", s.label === pair[0] ? "true" : "false");
+      b.addEventListener("click", function () { setLabel(c.claim_id, pair[0]); });
+      actions.appendChild(b);
+    });
+    box.appendChild(actions);
+    var note = el("textarea");
+    note.placeholder = "Note (optional)";
+    note.setAttribute("aria-label", "Note for claim " + (i + 1));
+    note.value = s.note || "";
+    note.addEventListener("input", function () {
+      var cur = state[c.claim_id] || {};
+      cur.note = note.value;
+      if (cur.label) { cur.reviewed_at = new Date().toISOString(); }
+      state[c.claim_id] = cur;
+      save();
+    });
+    box.appendChild(note);
+    box.appendChild(el("div", "stamp", s.reviewed_at ? "Reviewed " + s.reviewed_at : ""));
+    return box;
+  }
+
+  function setLabel(id, label) {
+    var cur = state[id] || {};
+    cur.label = cur.label === label ? "" : label;  // second click clears
+    cur.reviewed_at = cur.label ? new Date().toISOString() : "";
+    state[id] = cur;
+    save();
+    render();
+  }
+
+  function render() {
+    var f = document.getElementById("filter").value;
+    var list = document.getElementById("list");
+    var y = window.scrollY;
+    list.textContent = "";
+    var shown = 0;
+    CLAIMS.forEach(function (c, i) {
+      var lab = (state[c.claim_id] || {}).label || "";
+      if (f === "todo" && lab) { return; }
+      if (f !== "all" && f !== "todo" && lab !== f) { return; }
+      list.appendChild(card(c, i));
+      shown++;
+    });
+    if (!shown) { list.appendChild(el("p", "empty", "Nothing here.")); }
+    progress();
+    window.scrollTo(0, y);
+  }
+
+  function csvCell(v) {
+    v = v === undefined || v === null ? "" : String(v);
+    return /[",\n\r]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v;
+  }
+
+  document.getElementById("export").addEventListener("click", function () {
+    var rows = [["claim_id", "label", "note", "reviewed_at"]];
+    CLAIMS.forEach(function (c) {
+      var s = state[c.claim_id];
+      if (s && s.label) { rows.push([c.claim_id, s.label, s.note || "", s.reviewed_at || ""]); }
+    });
+    var text = rows.map(function (r) { return r.map(csvCell).join(","); }).join("\r\n") + "\r\n";
+    var blob = new Blob([text], { type: "text/csv;charset=utf-8" });
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "labels.csv";
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+  });
+
+  document.getElementById("filter").addEventListener("change", render);
+  render();
+})();
+</script>
+</body>
+</html>
