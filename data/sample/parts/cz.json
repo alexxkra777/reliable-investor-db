@@ -1,0 +1,4391 @@
+[
+  {
+    "id": "credo-ventures",
+    "name": "Credo Ventures",
+    "type": "vc",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": "https://www.credoventures.com/",
+    "legal_entities": [
+      {
+        "name": "Credo Ventures a.s.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "28538137",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/28538137"
+      }
+    ],
+    "decision": {
+      "status": "included",
+      "rules": [
+        "I1",
+        "I2",
+        "I3",
+        "I4"
+      ],
+      "note": "CVCA full member; own portfolio of 100+ companies; Credo Stage IV L.P. entered as shareholder of Delta Green s.r.o. on 29 May 2024 (justice.cz)."
+    },
+    "fields": {
+      "sectors": {
+        "value": [
+          "IT & internet",
+          "mobile communication"
+        ],
+        "sources": [
+          {
+            "url": "https://cvca.cz/en/credo-ventures-2/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Sector Preferences IT & internet, mobile communication"
+          }
+        ]
+      },
+      "stages": {
+        "value": [
+          "pre-seed"
+        ],
+        "sources": [
+          {
+            "url": "https://www.credoventures.com/",
+            "tier": "B",
+            "publisher": "Credo Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Leading Pre-Seed rounds."
+          }
+        ]
+      },
+      "geography": {
+        "value": [
+          "CEE",
+          "CEE diaspora"
+        ],
+        "sources": [
+          {
+            "url": "https://www.credoventures.com/",
+            "tier": "B",
+            "publisher": "Credo Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "From CEE, for CEE and its global diaspora."
+          }
+        ]
+      },
+      "ticket": {
+        "value": {
+          "min": 1000000,
+          "max": 5000000,
+          "currency": "USD"
+        },
+        "sources": [
+          {
+            "url": "https://www.credoventures.com/",
+            "tier": "B",
+            "publisher": "Credo Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "$1M - $5M checks."
+          }
+        ]
+      },
+      "funds": {
+        "value": [
+          {
+            "name": "Credo Stage 5",
+            "size": 88000000,
+            "currency": "USD",
+            "vintage": 2026
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://tech.eu/2026/03/23/credo-ventures-raises-88m-fund-5-to-double-down-on-pre-seed-in-cee-and-its-global-diaspora/",
+            "tier": "C",
+            "publisher": "Tech.eu",
+            "published": "2026-03-23",
+            "accessed": "2026-10-11",
+            "quote": "Today, Credo Ventures announces Credo Stage 5, a $88 million fund"
+          }
+        ]
+      },
+      "aum": {
+        "value": {
+          "amount": 170000000,
+          "currency": "EUR",
+          "as_of": null
+        },
+        "sources": [
+          {
+            "url": "https://cvca.cz/en/credo-ventures-2/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Volume of Funds Managed EUR 170 million"
+          }
+        ]
+      }
+    },
+    "investments": [
+      {
+        "company": "Supernova",
+        "date": "2025-09-30",
+        "date_kind": "announced",
+        "round_size": {
+          "amount": 9200000,
+          "currency": "USD"
+        },
+        "sources": [
+          {
+            "url": "https://www.credoventures.com/newsroom",
+            "tier": "B",
+            "publisher": "Credo Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Supernova raises $9.2 million Series A to bring AI efficiency to enterprise product teams Sep 30, 2025"
+          },
+          {
+            "url": "https://tech.eu/2025/09/30/supernova-raises-92-million-series-a-to-bring-ai-powered-vibe-coding-to-enterprise-product-teams/",
+            "tier": "C",
+            "publisher": "Tech.eu",
+            "published": "2025-09-30",
+            "accessed": "2026-10-11",
+            "quote": "with participation from J&T Ventures, Reflex Capital, Kaya, Credo Ventures, EQT Ventures, Wing VC and Y Combinator."
+          }
+        ]
+      },
+      {
+        "company": "Upheal",
+        "date": "2025-01-25",
+        "date_kind": "announced",
+        "round_size": {
+          "amount": 10000000,
+          "currency": "USD"
+        },
+        "sources": [
+          {
+            "url": "https://www.upheal.io/blog/upheal-secures-10m-to-help-reduce-clinician-burnout-and-improve-client-outcomes-with-their-ai-powered-platform",
+            "tier": "B",
+            "publisher": "Upheal",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "The round was led by Headline with participation from Credo Ventures and Kaya Ventures , bringing our total funding to $14.35 million."
+          },
+          {
+            "url": "https://www.credoventures.com/newsroom",
+            "tier": "B",
+            "publisher": "Credo Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Headline leads Upheal's $10M Series A to help reduce provider burnout Jan 25, 2025"
+          }
+        ]
+      },
+      {
+        "company": "Axoflow",
+        "date": "2025-01-21",
+        "date_kind": "announced",
+        "round_size": {
+          "amount": 7000000,
+          "currency": "USD"
+        },
+        "sources": [
+          {
+            "url": "https://axoflow.com/7m-to-improve-security-data-quality/",
+            "tier": "B",
+            "publisher": "Axoflow",
+            "published": "2025-01-21",
+            "accessed": "2026-10-11",
+            "quote": "The $7 million seed funding we've received from EBRD Venture Capital and our existing investors, Credo Ventures and e2vc allows us to continue this work"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "presto-ventures",
+    "name": "Presto Ventures",
+    "type": "vc",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": "https://www.prestoventures.com/",
+    "legal_entities": [
+      {
+        "name": "Presto Ventures II a.s., osoba rizikového kapitálu",
+        "role": "fund",
+        "id_type": "ICO",
+        "id": "11678704",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/11678704"
+      }
+    ],
+    "decision": {
+      "status": "included",
+      "rules": [
+        "I1",
+        "I2",
+        "I3",
+        "I4"
+      ],
+      "note": "Own portfolio of 60+ companies; Presto Ventures II entered as shareholder of Lakmoos AI s.r.o. (9 June 2026) and Yieldigo, s.r.o. (10 May 2025) per justice.cz. Tech Horizons (with CSG) is Presto's defence fund; portfolio-page entry months are stored as the 1st of the month."
+    },
+    "fields": {
+      "sectors": {
+        "value": [
+          "security",
+          "defense",
+          "aerospace"
+        ],
+        "sources": [
+          {
+            "url": "https://www.prestoventures.com/",
+            "tier": "B",
+            "publisher": "Presto Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Security, defense, and aerospace."
+          }
+        ]
+      },
+      "stages": {
+        "value": [
+          "seed",
+          "series A"
+        ],
+        "sources": [
+          {
+            "url": "https://www.prestoventures.com/",
+            "tier": "B",
+            "publisher": "Presto Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Seed TO SERIES A Mostly post-revenue companies raising a €800k to €8M financing round"
+          }
+        ]
+      },
+      "geography": {
+        "value": [
+          "NATO countries and allies",
+          "Israel"
+        ],
+        "sources": [
+          {
+            "url": "https://www.prestoventures.com/",
+            "tier": "B",
+            "publisher": "Presto Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Supporting advanced tech innovators with foundations or a significant operational focus in the countries of NATO, its allies, and the startup nation of Israel."
+          }
+        ]
+      },
+      "ticket": {
+        "value": {
+          "min": 500000,
+          "max": 5000000,
+          "currency": "EUR"
+        },
+        "sources": [
+          {
+            "url": "https://www.prestoventures.com/",
+            "tier": "B",
+            "publisher": "Presto Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Tickets ranging from €500k to €5M."
+          }
+        ]
+      },
+      "funds": {
+        "value": [
+          {
+            "name": "Presto Tech Horizons",
+            "size": 150000000,
+            "currency": "EUR",
+            "vintage": null
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://www.prestoventures.com/",
+            "tier": "B",
+            "publisher": "Presto Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Our new €150M fund targets the best of security, defense, and aerospace tech, with focus on dual-use."
+          }
+        ]
+      },
+      "aum": null
+    },
+    "investments": [
+      {
+        "company": "Lakmoos AI",
+        "date": "2026-06-09",
+        "date_kind": "registry_entry",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=1205768&typ=UPLNY",
+            "tier": "A",
+            "publisher": "Obchodní rejstřík (justice.cz)",
+            "published": "2026-06-09",
+            "accessed": "2026-10-11",
+            "quote": "Společník: Presto Ventures II a.s., osoba rizikového kapitálu , IČ: 116 78 704 Revoluční 763/15, Staré Město, 110 00 Praha 1 zapsáno 9. června 2026"
+          }
+        ]
+      },
+      {
+        "company": "North Vector Dynamics",
+        "date": "2026-05-01",
+        "date_kind": "portfolio_page",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://www.prestotech.com/",
+            "tier": "B",
+            "publisher": "Tech Horizons (Presto Ventures)",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "North Vector Dynamics Air defence systems CA 05/2026"
+          }
+        ],
+        "fund": "Presto Tech Horizons"
+      },
+      {
+        "company": "Occam Industries",
+        "date": "2025-12-01",
+        "date_kind": "portfolio_page",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://www.prestotech.com/",
+            "tier": "B",
+            "publisher": "Tech Horizons (Presto Ventures)",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Occam Industries Spatial AI UK 12/2025"
+          }
+        ],
+        "fund": "Presto Tech Horizons"
+      }
+    ]
+  },
+  {
+    "id": "reflex-capital",
+    "name": "Reflex Capital",
+    "type": "vc",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": "https://www.reflexcapital.com/",
+    "legal_entities": [
+      {
+        "name": "Reflex Capital SE",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "24269158",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/24269158"
+      },
+      {
+        "name": "Reflex 2, osoba rizikového kapitálu SE",
+        "role": "fund",
+        "id_type": "ICO",
+        "id": "08240051",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/08240051"
+      },
+      {
+        "name": "Reflex 3, osoba rizikového kapitálu SE",
+        "role": "fund",
+        "id_type": "ICO",
+        "id": "19381263",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/19381263"
+      }
+    ],
+    "decision": {
+      "status": "included",
+      "rules": [
+        "I1",
+        "I2",
+        "I3",
+        "I4"
+      ],
+      "note": "Own portfolio of well over 3 companies; Reflex 2 and Reflex 3 vehicles appear as shareholders in several Czech startups in justice.cz (Product Fruits 14 Mar 2024, FaceUp 15 Jul 2024, Ranketta 7 Oct 2026)."
+    },
+    "fields": {
+      "sectors": {
+        "value": [
+          "AI",
+          "health and wellbeing"
+        ],
+        "sources": [
+          {
+            "url": "https://www.reflexcapital.com/blog/",
+            "tier": "B",
+            "publisher": "Reflex Capital",
+            "published": "2024-11-26",
+            "accessed": "2026-10-11",
+            "quote": "Reflex has opened its next fund R3. It weighs in heavily on the topic of AI, wellness being and other innovative concepts in health"
+          }
+        ]
+      },
+      "stages": null,
+      "geography": null,
+      "ticket": null,
+      "funds": {
+        "value": [
+          {
+            "name": "Reflex 3 (R3)",
+            "size": null,
+            "currency": null,
+            "vintage": 2024
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://www.reflexcapital.com/blog/",
+            "tier": "B",
+            "publisher": "Reflex Capital",
+            "published": "2024-11-26",
+            "accessed": "2026-10-11",
+            "quote": "November 26th, 2024 • Zdena Macháčková Reflex has opened its next fund R3."
+          }
+        ]
+      },
+      "aum": null
+    },
+    "investments": [
+      {
+        "company": "Ranketta",
+        "date": "2026-10-07",
+        "date_kind": "registry_entry",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=1288906&typ=UPLNY",
+            "tier": "A",
+            "publisher": "Obchodní rejstřík (justice.cz)",
+            "published": "2026-10-07",
+            "accessed": "2026-10-11",
+            "quote": "Společník: Reflex 3, osoba rizikového kapitálu SE , IČ: 193 81 263 Rašínovo nábřeží 2000/78, Nové Město, 120 00 Praha 2 zapsáno 7. října 2026"
+          }
+        ],
+        "fund": "Reflex 3 (R3)"
+      },
+      {
+        "company": "Supernova",
+        "date": "2025-09-30",
+        "date_kind": "announced",
+        "round_size": {
+          "amount": 9200000,
+          "currency": "USD"
+        },
+        "sources": [
+          {
+            "url": "https://tech.eu/2025/09/30/supernova-raises-92-million-series-a-to-bring-ai-powered-vibe-coding-to-enterprise-product-teams/",
+            "tier": "C",
+            "publisher": "Tech.eu",
+            "published": "2025-09-30",
+            "accessed": "2026-10-11",
+            "quote": "with participation from J&T Ventures, Reflex Capital, Kaya, Credo Ventures, EQT Ventures, Wing VC and Y Combinator."
+          }
+        ]
+      },
+      {
+        "company": "grid.online",
+        "date": "2025-04-20",
+        "date_kind": "announced",
+        "round_size": {
+          "amount": 1500000,
+          "currency": "EUR"
+        },
+        "sources": [
+          {
+            "url": "https://www.jtventures.cz/blog",
+            "tier": "B",
+            "publisher": "J&T Ventures",
+            "published": "2025-04-20",
+            "accessed": "2026-10-11",
+            "quote": "tým již získal investici 1,5 milionu eur od fondů Reflex Capital, J&T Ventures a Grid Invest"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "jt-ventures",
+    "name": "J&T Ventures",
+    "type": "vc",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": "https://www.jtventures.cz/",
+    "legal_entities": [
+      {
+        "name": "J&T Ventures III SICAV a.s.",
+        "role": "fund",
+        "id_type": "ICO",
+        "id": "22175903",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/22175903"
+      },
+      {
+        "name": "J&T Ventures CG SICAV a.s.",
+        "role": "fund",
+        "id_type": "ICO",
+        "id": "08220867",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/08220867"
+      },
+      {
+        "name": "J&T VENTURES I otevřený podílový fond",
+        "role": "fund",
+        "id_type": "ICO",
+        "id": "71508121",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/71508121"
+      }
+    ],
+    "decision": {
+      "status": "included",
+      "rules": [
+        "I1",
+        "I2",
+        "I3",
+        "I4"
+      ],
+      "note": "Self-published portfolio of 31 startups; fund vehicles are Czech SICAVs/unit trust registered in Prague. Management company not identified in this pass."
+    },
+    "fields": {
+      "sectors": {
+        "value": [
+          "B2B",
+          "B2C",
+          "marketplaces",
+          "sector agnostic"
+        ],
+        "sources": [
+          {
+            "url": "https://www.jtventures.cz/",
+            "tier": "B",
+            "publisher": "J&T Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "B2B B2C Marketplaces Sector Agnostic"
+          }
+        ]
+      },
+      "stages": {
+        "value": [
+          "pre-seed",
+          "seed",
+          "series A"
+        ],
+        "sources": [
+          {
+            "url": "https://www.jtventures.cz/",
+            "tier": "B",
+            "publisher": "J&T Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Fáze Pre-seed až Series A"
+          }
+        ]
+      },
+      "geography": {
+        "value": [
+          "CEE",
+          "SEE",
+          "Baltics"
+        ],
+        "sources": [
+          {
+            "url": "https://www.jtventures.cz/",
+            "tier": "B",
+            "publisher": "J&T Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Region CEE & SEE & Baltics"
+          }
+        ]
+      },
+      "ticket": {
+        "value": {
+          "min": 300000,
+          "max": 3000000,
+          "currency": "EUR"
+        },
+        "sources": [
+          {
+            "url": "https://www.jtventures.cz/",
+            "tier": "B",
+            "publisher": "J&T Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Velikost investice €300K – €3M"
+          }
+        ]
+      },
+      "funds": null,
+      "aum": {
+        "value": {
+          "amount": 120000000,
+          "currency": "EUR",
+          "as_of": null
+        },
+        "sources": [
+          {
+            "url": "https://www.jtventures.cz/",
+            "tier": "B",
+            "publisher": "J&T Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "€120M Výše aktiv"
+          }
+        ]
+      }
+    },
+    "investments": [
+      {
+        "company": "Supernova",
+        "date": "2025-09-30",
+        "date_kind": "announced",
+        "round_size": {
+          "amount": 9200000,
+          "currency": "USD"
+        },
+        "sources": [
+          {
+            "url": "https://tech.eu/2025/09/30/supernova-raises-92-million-series-a-to-bring-ai-powered-vibe-coding-to-enterprise-product-teams/",
+            "tier": "C",
+            "publisher": "Tech.eu",
+            "published": "2025-09-30",
+            "accessed": "2026-10-11",
+            "quote": "with participation from J&T Ventures, Reflex Capital, Kaya, Credo Ventures, EQT Ventures, Wing VC and Y Combinator."
+          },
+          {
+            "url": "https://www.jtventures.cz/blog",
+            "tier": "B",
+            "publisher": "J&T Ventures",
+            "published": "2025-04-20",
+            "accessed": "2026-10-11",
+            "quote": "20/4/2025 Design to code se po letech snění stává skutečností, říká zakladatel Supernovy"
+          }
+        ]
+      },
+      {
+        "company": "grid.online",
+        "date": "2025-04-20",
+        "date_kind": "announced",
+        "round_size": {
+          "amount": 1500000,
+          "currency": "EUR"
+        },
+        "sources": [
+          {
+            "url": "https://www.jtventures.cz/blog",
+            "tier": "B",
+            "publisher": "J&T Ventures",
+            "published": "2025-04-20",
+            "accessed": "2026-10-11",
+            "quote": "tým již získal investici 1,5 milionu eur od fondů Reflex Capital, J&T Ventures a Grid Invest"
+          }
+        ]
+      },
+      {
+        "company": "Finlay",
+        "date": "2025-03-03",
+        "date_kind": "announced",
+        "round_size": {
+          "amount": 300000,
+          "currency": "EUR"
+        },
+        "sources": [
+          {
+            "url": "https://www.jtventures.cz/blog",
+            "tier": "B",
+            "publisher": "J&T Ventures",
+            "published": "2025-03-03",
+            "accessed": "2026-10-11",
+            "quote": "3/3/2025 Investice do náborového startupu Finlay"
+          },
+          {
+            "url": "https://www.jtventures.cz/blog/investice-do-naboroveho-startupu-finlay",
+            "tier": "B",
+            "publisher": "J&T Ventures",
+            "published": "2025-03-03",
+            "accessed": "2026-10-11",
+            "quote": "Společnost Finlay byla založena teprve v roce 2024 a už získala 300 000 eur pre-seed investice."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tilia-impact-ventures",
+    "name": "Tilia Impact Ventures",
+    "type": "vc",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": "https://www.tilia.vc/",
+    "legal_entities": [
+      {
+        "name": "Tilia Impact Partners s.r.o.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "17621615",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/17621615"
+      },
+      {
+        "name": "Tilia Impact Ventures, osoba rizikového kapitálu, s.r.o.",
+        "role": "fund",
+        "id_type": "ICO",
+        "id": "17848911",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/17848911"
+      }
+    ],
+    "decision": {
+      "status": "included",
+      "rules": [
+        "I1",
+        "I2",
+        "I3",
+        "I4"
+      ],
+      "note": "CVCA honorary/full member; EIF-backed Fund II (EIF list as at 30 Sep 2026); Tilia Impact Ventures Fund II entered as shareholder of Delta Green s.r.o. on 29 May 2024 (justice.cz). Flox round date is from secondary media only; the Flox holding itself is on Tilia's own portfolio page."
+    },
+    "fields": {
+      "sectors": {
+        "value": [
+          "sector-agnostic",
+          "impact"
+        ],
+        "sources": [
+          {
+            "url": "https://www.tilia.vc/",
+            "tier": "B",
+            "publisher": "Tilia Impact Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Sector-agnostic, Impact-driven"
+          }
+        ]
+      },
+      "stages": {
+        "value": [
+          "early stage"
+        ],
+        "sources": [
+          {
+            "url": "https://www.tilia.vc/",
+            "tier": "B",
+            "publisher": "Tilia Impact Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Equity / Convertible debt Early stage"
+          }
+        ]
+      },
+      "geography": {
+        "value": [
+          "CZ",
+          "CEE"
+        ],
+        "sources": [
+          {
+            "url": "https://www.tilia.vc/",
+            "tier": "B",
+            "publisher": "Tilia Impact Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Tilia Impact Ventures backs Czech and CEE region founders to make systemic environmental and social change, on a global scale."
+          }
+        ]
+      },
+      "ticket": {
+        "value": {
+          "min": 300000,
+          "max": 1200000,
+          "currency": "EUR"
+        },
+        "sources": [
+          {
+            "url": "https://www.tilia.vc/",
+            "tier": "B",
+            "publisher": "Tilia Impact Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "0.3 - 1.2m EUR initial ticket"
+          }
+        ]
+      },
+      "funds": {
+        "value": [
+          {
+            "name": "Tilia Impact Ventures Fund II",
+            "size": null,
+            "currency": null,
+            "vintage": null
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://www.eif.org/files/attachments/czechia-equity-fundmanagers.pdf",
+            "tier": "A",
+            "publisher": "European Investment Fund",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Tilia Impact Ventures Fund II Tilia Impact Partners Czech Republic IEU - Equity - LP"
+          }
+        ]
+      },
+      "aum": null
+    },
+    "investments": [
+      {
+        "company": "Flox Intelligence",
+        "date": "2026-02-27",
+        "date_kind": "announced",
+        "round_size": {
+          "amount": 3000000,
+          "currency": "USD"
+        },
+        "sources": [
+          {
+            "url": "https://pulse2.com/flox-intelligence-3-million-raised-to-scale-ai-wildlife-intelligence-platform/",
+            "tier": "C",
+            "publisher": "Pulse 2.0",
+            "published": "2026-02-27",
+            "accessed": "2026-10-11",
+            "quote": "has raised $3 million in a Seed+ round led by Tilia Impact Ventures."
+          },
+          {
+            "url": "https://tilia.vc/flox/",
+            "tier": "B",
+            "publisher": "Tilia Impact Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Flox deploys AI that detects wildlife near critical infrastructure and guides animals safely away using species-specific signals"
+          }
+        ]
+      },
+      {
+        "company": "Delta Green",
+        "date": "2024-05-29",
+        "date_kind": "registry_entry",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=728808&typ=UPLNY",
+            "tier": "A",
+            "publisher": "Obchodní rejstřík (justice.cz)",
+            "published": "2024-05-29",
+            "accessed": "2026-10-11",
+            "quote": "Společník: Tilia Impact Ventures Fund II L-2146 Lucemburk, 51-53, rue de Merl, Lucemburské velkovévodství Registrační číslo: B277010 zapsáno 29. května 2024"
+          }
+        ],
+        "fund": "Tilia Impact Ventures Fund II"
+      }
+    ]
+  },
+  {
+    "id": "kaya-vc",
+    "name": "KAYA VC",
+    "type": "vc",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": "https://www.kaya.vc/",
+    "legal_entities": [
+      {
+        "name": "KAYA Advisory s.r.o.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "22585737",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/22585737"
+      }
+    ],
+    "decision": {
+      "status": "included",
+      "rules": [
+        "I1",
+        "I2",
+        "I3",
+        "I4"
+      ],
+      "note": "CVCA full member; EIF list (30 Sep 2026) names KAYA Advisory s.r.o. with team location Czech Republic as manager of Kaya 5 SCSp. Offices also in Warsaw, London and San Francisco; Prague is the registered seat. Homepage also states a $85M current fund, not tied to a fund name, so fund size is left empty."
+    },
+    "fields": {
+      "sectors": null,
+      "stages": {
+        "value": [
+          "pre-seed",
+          "seed"
+        ],
+        "sources": [
+          {
+            "url": "https://www.kaya.vc/",
+            "tier": "B",
+            "publisher": "KAYA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "$1–3M Ticket Pre+Seed Round"
+          }
+        ]
+      },
+      "geography": {
+        "value": [
+          "CEE"
+        ],
+        "sources": [
+          {
+            "url": "https://www.kaya.vc/",
+            "tier": "B",
+            "publisher": "KAYA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "We invest in ambitious & gritty founders from CEE; pre-seed through to meaningful scale."
+          }
+        ]
+      },
+      "ticket": {
+        "value": {
+          "min": 1000000,
+          "max": 3000000,
+          "currency": "USD"
+        },
+        "sources": [
+          {
+            "url": "https://www.kaya.vc/",
+            "tier": "B",
+            "publisher": "KAYA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "$1–3M Ticket"
+          }
+        ]
+      },
+      "funds": {
+        "value": [
+          {
+            "name": "Kaya 5 SCSp",
+            "size": null,
+            "currency": null,
+            "vintage": null
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://www.eif.org/files/attachments/czechia-equity-fundmanagers.pdf",
+            "tier": "A",
+            "publisher": "European Investment Fund",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Kaya 5 SCSp KAYA Advisory s.r.o. Czech Republic EIF;RCR"
+          }
+        ]
+      },
+      "aum": {
+        "value": {
+          "amount": 500000000,
+          "currency": "USD",
+          "as_of": null
+        },
+        "sources": [
+          {
+            "url": "https://www.kaya.vc/",
+            "tier": "B",
+            "publisher": "KAYA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "$500M AUM Total"
+          }
+        ]
+      }
+    },
+    "investments": [
+      {
+        "company": "Supernova",
+        "date": "2025-09-30",
+        "date_kind": "announced",
+        "round_size": {
+          "amount": 9200000,
+          "currency": "USD"
+        },
+        "sources": [
+          {
+            "url": "https://tech.eu/2025/09/30/supernova-raises-92-million-series-a-to-bring-ai-powered-vibe-coding-to-enterprise-product-teams/",
+            "tier": "C",
+            "publisher": "Tech.eu",
+            "published": "2025-09-30",
+            "accessed": "2026-10-11",
+            "quote": "with participation from J&T Ventures, Reflex Capital, Kaya, Credo Ventures, EQT Ventures, Wing VC and Y Combinator."
+          }
+        ]
+      },
+      {
+        "company": "E2B",
+        "date": "2025-07-28",
+        "date_kind": "announced",
+        "round_size": {
+          "amount": 21000000,
+          "currency": "USD"
+        },
+        "sources": [
+          {
+            "url": "https://e2b.dev/blog/series-a",
+            "tier": "B",
+            "publisher": "E2B",
+            "published": "2025-07-28",
+            "accessed": "2026-10-11",
+            "quote": "Today, we’re excited to announce that E2B has raised a $21M Series A funding round led by global software investor Insight Partners, with participation from Decibel, Sunflower Capital, and Kaya"
+          }
+        ]
+      },
+      {
+        "company": "Upheal",
+        "date": "2025-01-25",
+        "date_kind": "announced",
+        "round_size": {
+          "amount": 10000000,
+          "currency": "USD"
+        },
+        "sources": [
+          {
+            "url": "https://www.upheal.io/blog/upheal-secures-10m-to-help-reduce-clinician-burnout-and-improve-client-outcomes-with-their-ai-powered-platform",
+            "tier": "B",
+            "publisher": "Upheal",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "The round was led by Headline with participation from Credo Ventures and Kaya Ventures , bringing our total funding to $14.35 million."
+          },
+          {
+            "url": "https://www.credoventures.com/newsroom",
+            "tier": "B",
+            "publisher": "Credo Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Headline leads Upheal's $10M Series A to help reduce provider burnout Jan 25, 2025"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "lighthouse-ventures",
+    "name": "Lighthouse Ventures",
+    "type": "vc",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": "https://lhv.vc/",
+    "legal_entities": [
+      {
+        "name": "Lighthouse Ventures GP s.r.o.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "07500912",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/07500912"
+      }
+    ],
+    "decision": {
+      "status": "included",
+      "rules": [
+        "I1",
+        "I2",
+        "I3",
+        "I4"
+      ],
+      "note": "Lighthouse Seed Fund backed by the Czech ESIF Fund of Funds (EIF + MPO); Lighthouse Seed Fund II entered as shareholder of Ranketta s.r.o. on 7 Oct 2026 (justice.cz). Not to be confused with unrelated firms using the same name."
+    },
+    "fields": {
+      "sectors": {
+        "value": [
+          "B2B software",
+          "fintech",
+          "AI"
+        ],
+        "sources": [
+          {
+            "url": "https://lhv.vc/",
+            "tier": "B",
+            "publisher": "Lighthouse Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "B2B Software of various verticals, Fintech, AI Investment focus"
+          }
+        ]
+      },
+      "stages": {
+        "value": [
+          "idea",
+          "seed"
+        ],
+        "sources": [
+          {
+            "url": "https://lhv.vc/",
+            "tier": "B",
+            "publisher": "Lighthouse Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Idea / Seed Preferred investment stage"
+          }
+        ]
+      },
+      "geography": {
+        "value": [
+          "Europe",
+          "US"
+        ],
+        "sources": [
+          {
+            "url": "https://lhv.vc/",
+            "tier": "B",
+            "publisher": "Lighthouse Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Europe and US Geographies we invest in"
+          }
+        ]
+      },
+      "ticket": {
+        "value": {
+          "min": 200000,
+          "max": 1000000,
+          "currency": "EUR"
+        },
+        "sources": [
+          {
+            "url": "https://lhv.vc/",
+            "tier": "B",
+            "publisher": "Lighthouse Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "From €200k to €1m Investment in a single startup"
+          }
+        ]
+      },
+      "funds": {
+        "value": [
+          {
+            "name": "Lighthouse Seed Fund II",
+            "size": null,
+            "currency": null,
+            "vintage": 2024
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://lhv.vc/",
+            "tier": "B",
+            "publisher": "Lighthouse Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "2024 Start year of most recent Fund II"
+          }
+        ]
+      },
+      "aum": null
+    },
+    "investments": [
+      {
+        "company": "Hermetiq",
+        "date": "2026-08-31",
+        "date_kind": "announced",
+        "round_size": {
+          "amount": 2200000,
+          "currency": "USD"
+        },
+        "sources": [
+          {
+            "url": "https://lhv.vc/news-and-events/",
+            "tier": "B",
+            "publisher": "Lighthouse Ventures",
+            "published": "2026-08-31",
+            "accessed": "2026-10-11",
+            "quote": "Lighthouse Ventures Participates in Hermetiq’s $2.2M Pre-Seed Round As AI completely changes how code is written, the underlying infrastructure that […] 31 August 2026"
+          },
+          {
+            "url": "https://lhv.vc/news/lighthouse-ventures-participates-in-hermetiqs-2-2m-pre-seed-round/",
+            "tier": "B",
+            "publisher": "Lighthouse Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "That is exactly why we are excited to announce our participation in Hermetiq ‘s $2.2M pre-seed round."
+          }
+        ]
+      },
+      {
+        "company": "Merchantee",
+        "date": "2026-06-10",
+        "date_kind": "announced",
+        "round_size": {
+          "amount": 1800000,
+          "currency": "EUR"
+        },
+        "sources": [
+          {
+            "url": "https://lhv.vc/news-and-events/page/2/",
+            "tier": "B",
+            "publisher": "Lighthouse Ventures",
+            "published": "2026-06-10",
+            "accessed": "2026-10-11",
+            "quote": "Lighthouse Ventures Backs Merchantee in €1.8M Funding Round We are thrilled to announce our investment in Merchantee as part of […] 10 June 2026"
+          }
+        ]
+      },
+      {
+        "company": "Ranketta",
+        "date": "2025-12-03",
+        "date_kind": "announced",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=1288906&typ=UPLNY",
+            "tier": "A",
+            "publisher": "Obchodní rejstřík (justice.cz)",
+            "published": "2026-10-07",
+            "accessed": "2026-10-11",
+            "quote": "Společník: Lighthouse Seed Fund II L-8030 Strassen, Rue du Kiem 153-155, Lucemburské velkovévodství EUID: LURCSL.B280271 Registrační číslo: B280271 Právní forma: Komanditní společnost zapsáno 7. října 2026"
+          },
+          {
+            "url": "https://lhv.vc/news-and-events/page/2/",
+            "tier": "B",
+            "publisher": "Lighthouse Ventures",
+            "published": "2025-12-03",
+            "accessed": "2026-10-11",
+            "quote": "Lighthouse Ventures Invests in Ranketta – Helping Brands Thrive in the Era of AI Search! We’re excited to announce our investment in Ranketta, a fast-growing AI platform […] 3 December 2025"
+          }
+        ],
+        "fund": "Lighthouse Seed Fund II"
+      }
+    ]
+  },
+  {
+    "id": "zaka-vc",
+    "name": "ZAKA VC",
+    "type": "vc",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": "https://www.zaka.vc/",
+    "legal_entities": [
+      {
+        "name": "ZAKA Management s.r.o.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "21053987",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/21053987"
+      },
+      {
+        "name": "ZAKA VC I, osoba rizikového kapitálu, a.s.",
+        "role": "fund",
+        "id_type": "ICO",
+        "id": "21514992",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/21514992"
+      }
+    ],
+    "decision": {
+      "status": "included",
+      "rules": [
+        "I1",
+        "I2",
+        "I3",
+        "I4"
+      ],
+      "note": "Self-published portfolio of 97 companies; Czech fund vehicle registered in Prague, offices also in Bratislava, London and Silicon Valley. Homepage states a current fund size of 17M without a currency, so fund size is left empty."
+    },
+    "fields": {
+      "sectors": {
+        "value": [
+          "health & biotech",
+          "industrial tech"
+        ],
+        "sources": [
+          {
+            "url": "https://www.zaka.vc/",
+            "tier": "B",
+            "publisher": "ZAKA VC",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Especially looking for startups in the Health & Biotech and Industrial Tech verticals."
+          }
+        ]
+      },
+      "stages": {
+        "value": [
+          "pre-seed",
+          "seed"
+        ],
+        "sources": [
+          {
+            "url": "https://www.zaka.vc/",
+            "tier": "B",
+            "publisher": "ZAKA VC",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "We are a seed & pre-seed VC fund, investing mainly in the US and Europe."
+          }
+        ]
+      },
+      "geography": {
+        "value": [
+          "US",
+          "Europe"
+        ],
+        "sources": [
+          {
+            "url": "https://www.zaka.vc/",
+            "tier": "B",
+            "publisher": "ZAKA VC",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "We are a seed & pre-seed VC fund, investing mainly in the US and Europe."
+          }
+        ]
+      },
+      "ticket": null,
+      "funds": null,
+      "aum": null
+    },
+    "investments": [
+      {
+        "company": "PerfectBit",
+        "date": "2026-08-18",
+        "date_kind": "announced",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://www.zaka.vc/news/",
+            "tier": "B",
+            "publisher": "ZAKA VC",
+            "published": "2026-08-18",
+            "accessed": "2026-10-11",
+            "quote": "08/18/2026 Press releases Read more PerfectBit: Building the Verified Data Layer for Physical AI"
+          },
+          {
+            "url": "https://zaka.vc/perfectbit-building-the-verified-data-layer-for-physical-ai/",
+            "tier": "B",
+            "publisher": "ZAKA VC",
+            "published": "2026-08-18",
+            "accessed": "2026-10-11",
+            "quote": "Why we invested PerfectBit combines several characteristics we rarely see together at such an early stage"
+          }
+        ]
+      },
+      {
+        "company": "FinalDose",
+        "date": "2026-07-16",
+        "date_kind": "announced",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://www.zaka.vc/news/",
+            "tier": "B",
+            "publisher": "ZAKA VC",
+            "published": "2026-07-16",
+            "accessed": "2026-10-11",
+            "quote": "07/16/2026 LinkedIn Read more For decades, drug discovery has focused on proteins."
+          },
+          {
+            "url": "https://www.zaka.vc/news/",
+            "tier": "B",
+            "publisher": "ZAKA VC",
+            "published": "2026-07-16",
+            "accessed": "2026-10-11",
+            "quote": "That’s why we’re excited to announce our investment in FinalDose."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "purple-ventures",
+    "name": "Purple Ventures",
+    "type": "vc",
+    "hq": {
+      "country": "CZ",
+      "city": "Brno"
+    },
+    "website": "https://www.purple-ventures.com/",
+    "legal_entities": [
+      {
+        "name": "Purple Ventures s.r.o.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "05775574",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/05775574"
+      },
+      {
+        "name": "Purple Ventures Advisory s.r.o.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "19836155",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/19836155"
+      }
+    ],
+    "decision": {
+      "status": "included",
+      "rules": [
+        "I1",
+        "I2",
+        "I3",
+        "I4"
+      ],
+      "note": "Brno-based; Purple Ventures s.r.o. entered as shareholder of several Czech startups in justice.cz (Ringil 3 Jul 2024, Vrgineers 6 Jan 2025, Opravárna 7 Jan 2025, Hedepy 10 Jan 2025); PURPLE VENTURES 2 FUND (Luxembourg) entered in Delta Green on 29 May 2024."
+    },
+    "fields": {
+      "sectors": {
+        "value": [
+          "purpose-driven technology"
+        ],
+        "sources": [
+          {
+            "url": "https://www.purple-ventures.com/",
+            "tier": "B",
+            "publisher": "Purple Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "We invest into early-stage purpose-driven technology startups with initial revenue and global ambitions."
+          }
+        ]
+      },
+      "stages": {
+        "value": [
+          "pre-seed",
+          "seed"
+        ],
+        "sources": [
+          {
+            "url": "https://www.purple-ventures.com/",
+            "tier": "B",
+            "publisher": "Purple Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "We are a venture capital fund investing into CEE+ tech-enabled innovations in pre-seed and seed stages."
+          }
+        ]
+      },
+      "geography": {
+        "value": [
+          "CEE+"
+        ],
+        "sources": [
+          {
+            "url": "https://www.purple-ventures.com/",
+            "tier": "B",
+            "publisher": "Purple Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "We are a venture capital fund investing into CEE+ tech-enabled innovations in pre-seed and seed stages."
+          }
+        ]
+      },
+      "ticket": null,
+      "funds": {
+        "value": [
+          {
+            "name": "PURPLE VENTURES 2 FUND",
+            "size": null,
+            "currency": null,
+            "vintage": null
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=728808&typ=UPLNY",
+            "tier": "A",
+            "publisher": "Obchodní rejstřík (justice.cz)",
+            "published": "2024-05-29",
+            "accessed": "2026-10-11",
+            "quote": "Společník: PURPLE VENTURES 2 FUND L-8308 Capellen, Lucemburk, 2C Parc d’Activités, Lucemburské velkovévodství Registrační číslo: B284367 zapsáno 29. května 2024"
+          }
+        ]
+      },
+      "aum": null
+    },
+    "investments": [
+      {
+        "company": "Hedepy",
+        "date": "2025-01-10",
+        "date_kind": "registry_entry",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=1086756&typ=UPLNY",
+            "tier": "A",
+            "publisher": "Obchodní rejstřík (justice.cz)",
+            "published": "2025-01-10",
+            "accessed": "2026-10-11",
+            "quote": "Společník: Purple Ventures s.r.o. , IČ: 057 75 574 Masarykova 409/26, Brno-město, 602 00 Brno zapsáno 10. ledna 2025"
+          }
+        ]
+      },
+      {
+        "company": "Opravárna",
+        "date": "2025-01-07",
+        "date_kind": "registry_entry",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=879643&typ=UPLNY",
+            "tier": "A",
+            "publisher": "Obchodní rejstřík (justice.cz)",
+            "published": "2025-01-07",
+            "accessed": "2026-10-11",
+            "quote": "Společník: Purple Ventures s.r.o. , IČ: 057 75 574 Masarykova 409/26, Brno-město, 602 00 Brno zapsáno 7. ledna 2025"
+          }
+        ]
+      },
+      {
+        "company": "Vrgineers",
+        "date": "2025-01-06",
+        "date_kind": "registry_entry",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=977317&typ=UPLNY",
+            "tier": "A",
+            "publisher": "Obchodní rejstřík (justice.cz)",
+            "published": "2025-01-06",
+            "accessed": "2026-10-11",
+            "quote": "Společník: Purple Ventures s.r.o. , IČ: 057 75 574 Masarykova 409/26, Brno-město, 602 00 Brno zapsáno 6. ledna 2025"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rockaway-ventures",
+    "name": "Rockaway Ventures",
+    "type": "vc",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": "https://rockawayventures.com/",
+    "legal_entities": [
+      {
+        "name": "Rockaway Ventures Fund SICAV a.s.",
+        "role": "fund",
+        "id_type": "ICO",
+        "id": "14235781",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/14235781"
+      }
+    ],
+    "decision": {
+      "status": "included",
+      "rules": [
+        "I1",
+        "I2",
+        "I3",
+        "I4"
+      ],
+      "note": "Venture arm of the Rockaway Capital group (Jakub Havrlant); fund vehicle is a Czech SICAV. Distinct from RockawayX (crypto). Only one dated investment found on a first-party page."
+    },
+    "fields": {
+      "sectors": {
+        "value": [
+          "retail & e-commerce",
+          "travel & hospitality",
+          "digital logistics",
+          "digital media",
+          "cybersecurity",
+          "defence",
+          "cleantech",
+          "proptech"
+        ],
+        "sources": [
+          {
+            "url": "https://rockawayventures.com/",
+            "tier": "B",
+            "publisher": "Rockaway Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "primarily in retail and e-commerce, travel & hospitality, digital logistics, digital media, cybersecurity, defence, CleanTech, and PropTech"
+          }
+        ]
+      },
+      "stages": {
+        "value": [
+          "late seed",
+          "series A"
+        ],
+        "sources": [
+          {
+            "url": "https://rockawayventures.com/",
+            "tier": "B",
+            "publisher": "Rockaway Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "The goal of the Rockaway Ventures fund is to support startups with proven traction in the late seed or Series A stage"
+          }
+        ]
+      },
+      "geography": {
+        "value": [
+          "CEE",
+          "Western Europe"
+        ],
+        "sources": [
+          {
+            "url": "https://rockawayventures.com/",
+            "tier": "B",
+            "publisher": "Rockaway Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "both in Central and Eastern Europe (CEE) and Western European countries"
+          }
+        ]
+      },
+      "ticket": null,
+      "funds": null,
+      "aum": null
+    },
+    "investments": [
+      {
+        "company": "Filuta AI",
+        "date": "2025-06-24",
+        "date_kind": "announced",
+        "round_size": {
+          "amount": 4200000,
+          "currency": "USD"
+        },
+        "sources": [
+          {
+            "url": "https://rockawayventures.com/",
+            "tier": "B",
+            "publisher": "Rockaway Ventures",
+            "published": "2025-06-24",
+            "accessed": "2026-10-11",
+            "quote": "June 24, 2025 Rockaway Ventures Leads $4.2M Seed Round in Czech AI Startup Filuta AI"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tensor-ventures",
+    "name": "Tensor Ventures",
+    "type": "vc",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": "https://tensor.ventures/",
+    "legal_entities": [
+      {
+        "name": "Tensor Ventures a.s.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "06257241",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/06257241"
+      },
+      {
+        "name": "Tensor Advisory s.r.o.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "19987544",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/19987544"
+      }
+    ],
+    "decision": {
+      "status": "included",
+      "rules": [
+        "I1",
+        "I2",
+        "I3",
+        "I4"
+      ],
+      "note": "CVCA full member; EIF list names Tensor Advisory s.r.o (team location Czech Republic) for Tensor Co-Investment Fund SCSp under the RRF Czech Republic mandate. GP and Fund I are Luxembourg entities, team in Prague."
+    },
+    "fields": {
+      "sectors": {
+        "value": [
+          "AI",
+          "quantum",
+          "computational biotech",
+          "sustainable tech"
+        ],
+        "sources": [
+          {
+            "url": "https://tensor.ventures/",
+            "tier": "B",
+            "publisher": "Tensor Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "the rise of AI, Quantum Revolution, Computational Biotech or Sustainable Tech."
+          }
+        ]
+      },
+      "stages": {
+        "value": [
+          "seed",
+          "series A"
+        ],
+        "sources": [
+          {
+            "url": "https://tensor.ventures/",
+            "tier": "B",
+            "publisher": "Tensor Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "We participate in Seed and Series A rounds."
+          }
+        ]
+      },
+      "geography": {
+        "value": [
+          "EU",
+          "US"
+        ],
+        "sources": [
+          {
+            "url": "https://cvca.cz/en/tensor-ventures/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Geographical Focus EU, US"
+          }
+        ]
+      },
+      "ticket": {
+        "value": {
+          "min": 250000,
+          "max": 1000000,
+          "currency": "EUR"
+        },
+        "sources": [
+          {
+            "url": "https://cvca.cz/en/tensor-ventures/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Preferred Ammount of Investment EUR 250 000 – EUR 1 million"
+          }
+        ]
+      },
+      "funds": {
+        "value": [
+          {
+            "name": "Tensor Ventures Fund I SCSp",
+            "size": null,
+            "currency": null,
+            "vintage": null
+          },
+          {
+            "name": "Tensor Co-Investment Fund SCSp",
+            "size": null,
+            "currency": null,
+            "vintage": null
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://tensor.ventures/",
+            "tier": "B",
+            "publisher": "Tensor Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Tensor Ventures GP S.à r.l. & Tensor Ventures Fund I SCSp"
+          },
+          {
+            "url": "https://www.eif.org/files/attachments/czechia-equity-fundmanagers.pdf",
+            "tier": "A",
+            "publisher": "European Investment Fund",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Tensor Co-Investment Fund SCSp Tensor Advisory s.r.o Czech Republic RRF Czech Republic"
+          }
+        ]
+      },
+      "aum": {
+        "value": {
+          "amount": 20000000,
+          "currency": "EUR",
+          "as_of": null
+        },
+        "sources": [
+          {
+            "url": "https://cvca.cz/en/tensor-ventures/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Volume of Funds Managed EUR 20 million"
+          }
+        ]
+      }
+    },
+    "investments": [
+      {
+        "company": "Wultra",
+        "date": "2025-12-03",
+        "date_kind": "registry_entry",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=883583&typ=UPLNY",
+            "tier": "A",
+            "publisher": "Obchodní rejstřík (justice.cz)",
+            "published": "2025-12-03",
+            "accessed": "2026-10-11",
+            "quote": "Společník: Tensor Co-Investment Fund L-1748 Senningerberg, 7, Rue Lou Hemmer, Lucemburské velkovévodství Registrační číslo: B291248 Právní forma: Société en commandite spéciale zapsáno 3. prosince 2025"
+          }
+        ],
+        "fund": "Tensor Co-Investment Fund SCSp"
+      },
+      {
+        "company": "Wultra",
+        "date": "2024-12-30",
+        "date_kind": "registry_entry",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=883583&typ=UPLNY",
+            "tier": "A",
+            "publisher": "Obchodní rejstřík (justice.cz)",
+            "published": "2024-12-30",
+            "accessed": "2026-10-11",
+            "quote": "Společník: Tensor Warehouse s.r.o. , IČ: 222 45 031 Kaprova 42/14, Staré Město, 110 00 Praha 1 zapsáno 30. prosince 2024"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nation-1",
+    "name": "N1 (Nation 1)",
+    "aliases": [
+      "Nation 1",
+      "Nation1",
+      "N1"
+    ],
+    "type": "vc",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": null,
+    "legal_entities": [
+      {
+        "name": "Nation 1 SCSp",
+        "role": "fund",
+        "id_type": "company_number",
+        "id": "B230471",
+        "register_url": null
+      }
+    ],
+    "decision": {
+      "status": "included",
+      "rules": [
+        "I1",
+        "I2",
+        "I3",
+        "I4"
+      ],
+      "note": "CVCA full member (listed as Nation1); renamed N1 per press. Fund vehicle Nation 1 SCSp (Luxembourg RCS B230471) entered as shareholder of Ringil s.r.o. on 3 Jul 2024. Website www.nation1.vc did not respond on 2026-10-11. Smart Management VC s.r.o. (IČO 07723172) sits at the same Prague address as the CVCA profile and is a probable Czech management entity, not confirmed."
+    },
+    "fields": {
+      "sectors": {
+        "value": [
+          "technology"
+        ],
+        "sources": [
+          {
+            "url": "https://cvca.cz/en/nation1-2/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Sectore Preferences technologies"
+          }
+        ]
+      },
+      "stages": {
+        "value": [
+          "pre-seed",
+          "seed"
+        ],
+        "sources": [
+          {
+            "url": "https://cvca.cz/en/nation1-2/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Type of Investment pre-seed, seed, startup financing"
+          }
+        ]
+      },
+      "geography": {
+        "value": [
+          "CZ"
+        ],
+        "sources": [
+          {
+            "url": "https://cvca.cz/en/nation1-2/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Geographical Focus Czech Republic"
+          }
+        ]
+      },
+      "ticket": {
+        "value": {
+          "min": 50000,
+          "max": 1500000,
+          "currency": "EUR"
+        },
+        "sources": [
+          {
+            "url": "https://cvca.cz/en/nation1-2/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Preferred Ammount of Investment 50 tisíc – 1,5 milionů EUR"
+          }
+        ]
+      },
+      "funds": null,
+      "aum": {
+        "value": {
+          "amount": 35000000,
+          "currency": "EUR",
+          "as_of": null
+        },
+        "sources": [
+          {
+            "url": "https://cvca.cz/en/nation1-2/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Volume of Funds Managed 35 milionů EUR"
+          }
+        ]
+      }
+    },
+    "investments": [
+      {
+        "company": "Ringil",
+        "date": "2024-07-03",
+        "date_kind": "registry_entry",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=1086188&typ=UPLNY",
+            "tier": "A",
+            "publisher": "Obchodní rejstřík (justice.cz)",
+            "published": "2024-07-03",
+            "accessed": "2026-10-11",
+            "quote": "Společník: Nation 1 1450 Luxembourg, 1 Côte d'Eich, Lucemburské velkovévodství EUID: LURCSL.B230471 Registrační číslo: B230471 zapsáno 3. července 2024"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "depo-ventures",
+    "name": "DEPO Ventures",
+    "type": "vc",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": "https://www.depoventures.com/",
+    "legal_entities": [
+      {
+        "name": "DEPO VENTURES, s.r.o.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "04753101",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/04753101"
+      },
+      {
+        "name": "DEPO VENTURES AF II., osoba rizikového kapitálu, s.r.o.",
+        "role": "fund",
+        "id_type": "ICO",
+        "id": "11726377",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/11726377"
+      },
+      {
+        "name": "DEPO VENTURES AF III., osoba rizikového kapitálu, s.r.o.",
+        "role": "fund",
+        "id_type": "ICO",
+        "id": "17765838",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/17765838"
+      }
+    ],
+    "decision": {
+      "status": "included",
+      "rules": [
+        "I1",
+        "I2",
+        "I3",
+        "I4"
+      ],
+      "note": "CVCA full member; selected by NRI (state) as manager of DEPO Ventures One SCSp under Fond Ukrajina (26 Aug 2026). Also runs angel syndicates (DEPO Syndicate s.r.o. vehicles), rolled up here."
+    },
+    "fields": {
+      "sectors": {
+        "value": [
+          "defence",
+          "space",
+          "fintech",
+          "industry 4.0",
+          "energy"
+        ],
+        "sources": [
+          {
+            "url": "https://www.depoventures.com/",
+            "tier": "B",
+            "publisher": "DEPO Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Industry Defence, Space,FinTech, Industry 4.0, Energy"
+          }
+        ]
+      },
+      "stages": {
+        "value": [
+          "inception",
+          "pre-seed"
+        ],
+        "sources": [
+          {
+            "url": "https://www.depoventures.com/",
+            "tier": "B",
+            "publisher": "DEPO Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Stage Inception & Pre-seed"
+          }
+        ]
+      },
+      "geography": {
+        "value": [
+          "Europe",
+          "CEE",
+          "diaspora"
+        ],
+        "sources": [
+          {
+            "url": "https://www.depoventures.com/",
+            "tier": "B",
+            "publisher": "DEPO Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Geography Europe, CEE & Diaspora"
+          }
+        ]
+      },
+      "ticket": {
+        "value": {
+          "min": 250000,
+          "max": 500000,
+          "currency": "EUR"
+        },
+        "sources": [
+          {
+            "url": "https://www.depoventures.com/",
+            "tier": "B",
+            "publisher": "DEPO Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Ticket €250K - 500K"
+          }
+        ]
+      },
+      "funds": {
+        "value": [
+          {
+            "name": "DEPO Ventures One SCSp",
+            "size": null,
+            "currency": null,
+            "vintage": null
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://www.nrinvesticni.cz/",
+            "tier": "A",
+            "publisher": "Národní rozvojová investiční",
+            "published": "2026-08-26",
+            "accessed": "2026-10-11",
+            "quote": "Vybraným finančním zprostředkovatelem se stal fond DEPO Ventures One SCSp"
+          }
+        ]
+      },
+      "aum": null
+    },
+    "investments": [
+      {
+        "company": "readmio",
+        "date": "2024-08-26",
+        "date_kind": "registry_entry",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=1088142&typ=UPLNY",
+            "tier": "A",
+            "publisher": "Obchodní rejstřík (justice.cz)",
+            "published": "2024-08-26",
+            "accessed": "2026-10-11",
+            "quote": "Společník: DEPO ANGEL FUND II. s.r.o. , IČ: 117 26 377 Trojská 40/154, Troja, 171 00 Praha 7 zapsáno 26. srpna 2024"
+          }
+        ]
+      },
+      {
+        "company": "Ringil",
+        "date": "2024-07-03",
+        "date_kind": "registry_entry",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=1086188&typ=UPLNY",
+            "tier": "A",
+            "publisher": "Obchodní rejstřík (justice.cz)",
+            "published": "2024-07-03",
+            "accessed": "2026-10-11",
+            "quote": "Společník: DEPO ANGEL FUND II. s.r.o. , IČ: 117 26 377 Trojská 40/154, Troja, 171 00 Praha 7 zapsáno 3. července 2024"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "miton",
+    "name": "Miton",
+    "type": "vc",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": "https://www.miton.cz/",
+    "legal_entities": [
+      {
+        "name": "MITON CZ, s.r.o.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "25417967",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/25417967"
+      }
+    ],
+    "decision": {
+      "status": "included",
+      "rules": [
+        "I1",
+        "I2",
+        "I3",
+        "I4"
+      ],
+      "note": "Prague investment group/venture builder investing its partners' own capital (minority and co-founder stakes); self-published portfolio of 61 companies. Group operates through many MITON-named s.r.o./a.s. vehicles; MITON CZ, s.r.o. is the original company named on its history page."
+    },
+    "fields": {
+      "sectors": {
+        "value": [
+          "AI",
+          "crypto/web3",
+          "e-commerce",
+          "gastrotech",
+          "psychedelics & mental health"
+        ],
+        "sources": [
+          {
+            "url": "https://www.miton.cz/",
+            "tier": "B",
+            "publisher": "Miton",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Oblasti, ve kterých investujeme AI, augmented workforce Krypto, web3 E-commerce Gastrotech Psychedelika, duševní zdraví"
+          }
+        ]
+      },
+      "stages": null,
+      "geography": null,
+      "ticket": null,
+      "funds": null,
+      "aum": null
+    },
+    "investments": [
+      {
+        "company": "ACE",
+        "date": "2026-10-01",
+        "date_kind": "announced",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://www.miton.cz/blog/miton-investuje-do-ace-stravu-pro-padel-uz-pouziva-vice-nez-polovina-ceskych-hracu/",
+            "tier": "B",
+            "publisher": "Miton",
+            "published": "2026-10-01",
+            "accessed": "2026-10-11",
+            "quote": "Michala Gregorová 1. 10. 2026 nové investice"
+          },
+          {
+            "url": "https://www.miton.cz/blog/miton-investuje-do-ace-stravu-pro-padel-uz-pouziva-vice-nez-polovina-ceskych-hracu/",
+            "tier": "B",
+            "publisher": "Miton",
+            "published": "2026-10-01",
+            "accessed": "2026-10-11",
+            "quote": "se Miton stane rovnocenným partnerem a na začátek investuje řádově miliony korun"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "inven-capital",
+    "name": "Inven Capital",
+    "type": "cvc",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": "https://www.invencapital.cz/",
+    "legal_entities": [
+      {
+        "name": "Inven Capital, SICAV, a.s.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "02059533",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/02059533"
+      }
+    ],
+    "decision": {
+      "status": "included",
+      "rules": [
+        "I1",
+        "I2",
+        "I3",
+        "I4"
+      ],
+      "note": "Corporate VC of the ČEZ group; CVCA full member. Sub-funds A-D registered in ARES."
+    },
+    "fields": {
+      "sectors": {
+        "value": [
+          "climate tech"
+        ],
+        "sources": [
+          {
+            "url": "https://www.invencapital.cz/",
+            "tier": "B",
+            "publisher": "Inven Capital",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Topic Climate tech"
+          }
+        ]
+      },
+      "stages": {
+        "value": [
+          "later stage growth"
+        ],
+        "sources": [
+          {
+            "url": "https://cvca.cz/en/inven-capital-2/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Investments into small to middle-market innovative cleantech companies in later stage growth."
+          }
+        ]
+      },
+      "geography": {
+        "value": [
+          "Europe",
+          "Israel"
+        ],
+        "sources": [
+          {
+            "url": "https://www.invencapital.cz/",
+            "tier": "B",
+            "publisher": "Inven Capital",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Geography Europe and Israel"
+          }
+        ]
+      },
+      "ticket": {
+        "value": {
+          "min": 2000000,
+          "max": 30000000,
+          "currency": "EUR"
+        },
+        "sources": [
+          {
+            "url": "https://www.invencapital.cz/",
+            "tier": "B",
+            "publisher": "Inven Capital",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Ticket size 2-30m EUR"
+          }
+        ]
+      },
+      "funds": null,
+      "aum": {
+        "value": {
+          "amount": 500000000,
+          "currency": "EUR",
+          "as_of": null
+        },
+        "sources": [
+          {
+            "url": "https://www.invencapital.cz/",
+            "tier": "B",
+            "publisher": "Inven Capital",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "As a venture capital fund we invest EUR 500m from institutional investors and global corporates"
+          }
+        ]
+      }
+    },
+    "investments": [
+      {
+        "company": "Vytal",
+        "date": "2026-07-02",
+        "date_kind": "announced",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://www.invencapital.cz/file/edee/ivcp2/news/press-release-vytal.pdf",
+            "tier": "B",
+            "publisher": "Inven Capital",
+            "published": "2026-07-02",
+            "accessed": "2026-10-11",
+            "quote": "Cologne-based reuse platform Vytal has secured an additional multi-million-euro growth capital injection"
+          }
+        ]
+      },
+      {
+        "company": "Andercore",
+        "date": "2026-02-11",
+        "date_kind": "announced",
+        "round_size": {
+          "amount": 40000000,
+          "currency": "USD"
+        },
+        "sources": [
+          {
+            "url": "https://www.andercore.com/press/andercore-secures-40m-series-b-for-ai-driven-industrial-trade-platform",
+            "tier": "B",
+            "publisher": "Andercore",
+            "published": "2026-02-11",
+            "accessed": "2026-10-11",
+            "quote": "Participating investors include long-term partners Atomico and Project A, with Inven Capital joining this round"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ii-biotech-fund",
+    "name": "i&i Biotech Fund",
+    "type": "vc",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": "https://www.inibio.eu/",
+    "legal_entities": [
+      {
+        "name": "Biotech Investments s.r.o.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "10885978",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/10885978"
+      }
+    ],
+    "decision": {
+      "status": "included",
+      "rules": [
+        "I1",
+        "I2",
+        "I3",
+        "I4"
+      ],
+      "note": "CVCA full member (as i&i Biotech Investments); EIF-backed. Fund vehicle i&i Biotech Fund I SCSp is in Luxembourg; the Prague company Biotech Investments, s. r. o. is named as investment adviser. Theorema entry is year-precision only (portfolio table), stored as 1 Jan."
+    },
+    "fields": {
+      "sectors": {
+        "value": [
+          "drug discovery",
+          "medtech",
+          "diagnostics",
+          "AI"
+        ],
+        "sources": [
+          {
+            "url": "https://www.inibio.eu/",
+            "tier": "B",
+            "publisher": "i&i Bio",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "As a life sciences fund, we are comfortable with drug discovery , medtech , diagnostics , and AI verticals."
+          }
+        ]
+      },
+      "stages": {
+        "value": [
+          "early stage"
+        ],
+        "sources": [
+          {
+            "url": "https://www.inibio.eu/",
+            "tier": "B",
+            "publisher": "i&i Bio",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "We back Europe’s next wave of early-stage startups that address unmet medical needs"
+          }
+        ]
+      },
+      "geography": {
+        "value": [
+          "CEE",
+          "Europe"
+        ],
+        "sources": [
+          {
+            "url": "https://www.inibio.eu/",
+            "tier": "B",
+            "publisher": "i&i Bio",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "While our primary focus is on Central and Eastern Europe , we are open to collaborating with ambitious teams from all over the Europe."
+          }
+        ]
+      },
+      "ticket": {
+        "value": {
+          "min": 500000,
+          "max": 2000000,
+          "currency": "EUR"
+        },
+        "sources": [
+          {
+            "url": "https://www.inibio.eu/",
+            "tier": "B",
+            "publisher": "i&i Bio",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Our sweet spot lies between €0.5M and €2M ."
+          }
+        ]
+      },
+      "funds": {
+        "value": [
+          {
+            "name": "i&i Biotech Fund I SCSp",
+            "size": null,
+            "currency": null,
+            "vintage": null
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://www.inibio.eu/",
+            "tier": "B",
+            "publisher": "i&i Bio",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Headquarters i&i Biotech Fund I SCSp 42, rue de la Vallée, L-2661 Luxembourg"
+          }
+        ]
+      },
+      "aum": null
+    },
+    "investments": [
+      {
+        "company": "Theorema",
+        "date": "2026-01-01",
+        "date_kind": "portfolio_page",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://www.inibio.eu/",
+            "tier": "B",
+            "publisher": "i&i Bio",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Theorema 2026 drug discovery, AI"
+          }
+        ]
+      },
+      {
+        "company": "T-CURX",
+        "date": "2025-12-17",
+        "date_kind": "announced",
+        "round_size": {
+          "amount": 20000000,
+          "currency": "USD"
+        },
+        "sources": [
+          {
+            "url": "https://www.inibio.eu/",
+            "tier": "B",
+            "publisher": "i&i Bio",
+            "published": "2025-12-17",
+            "accessed": "2026-10-11",
+            "quote": "T-CURX announces $20M Series A first closing led by BiomedVC to fund pipeline of clinical-stage CAR-T programs and advance proprietary non-viral in vivo CAR-T platform 17. 12. 2025"
+          },
+          {
+            "url": "https://www.inibio.eu/",
+            "tier": "B",
+            "publisher": "i&i Bio",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "T-CURX 2025 drug discovery"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "soulmates-ventures",
+    "name": "Soulmates Ventures",
+    "type": "vc",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": "https://www.soulmates.ventures/",
+    "legal_entities": [
+      {
+        "name": "Soulmates Ventures, osoba rizikového kapitálu, s.r.o.",
+        "role": "fund",
+        "id_type": "ICO",
+        "id": "09789561",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/09789561"
+      },
+      {
+        "name": "Soulmates Ventures Fund SICAV, a.s.",
+        "role": "fund",
+        "id_type": "ICO",
+        "id": "23302054",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/23302054"
+      }
+    ],
+    "decision": {
+      "status": "included",
+      "rules": [
+        "I1",
+        "I2",
+        "I3",
+        "I4"
+      ],
+      "note": "Prague impact VC; self-published portfolio of 22 companies and 31 investments. The Sep 2026 follow-on date comes from the post's publication metadata, not its visible text."
+    },
+    "fields": {
+      "sectors": {
+        "value": [
+          "air",
+          "water",
+          "energy",
+          "mobility",
+          "education",
+          "healthcare",
+          "food and agriculture",
+          "circular economy"
+        ],
+        "sources": [
+          {
+            "url": "https://www.soulmates.ventures/",
+            "tier": "B",
+            "publisher": "Soulmates Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "focusing on key areas such as air, water, energy, mobility, education, healthcare, food and agriculture, and the circular economy"
+          }
+        ]
+      },
+      "stages": {
+        "value": [
+          "seed",
+          "series A"
+        ],
+        "sources": [
+          {
+            "url": "https://www.soulmates.ventures/",
+            "tier": "B",
+            "publisher": "Soulmates Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Target stage Seed/SA"
+          }
+        ]
+      },
+      "geography": null,
+      "ticket": {
+        "value": {
+          "min": null,
+          "max": 3000000,
+          "currency": "EUR"
+        },
+        "sources": [
+          {
+            "url": "https://www.soulmates.ventures/",
+            "tier": "B",
+            "publisher": "Soulmates Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Initial Ticket Size up to €3M"
+          }
+        ]
+      },
+      "funds": null,
+      "aum": {
+        "value": {
+          "amount": 62000000,
+          "currency": "EUR",
+          "as_of": null
+        },
+        "sources": [
+          {
+            "url": "https://www.soulmates.ventures/",
+            "tier": "B",
+            "publisher": "Soulmates Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Assets Under Management €62M"
+          }
+        ]
+      }
+    },
+    "investments": [
+      {
+        "company": "Rightcharge",
+        "date": "2026-09-07",
+        "date_kind": "announced",
+        "round_size": {
+          "amount": 500000,
+          "currency": "GBP"
+        },
+        "sources": [
+          {
+            "url": "https://www.soulmatesventures.com/rightcharge-follow-on-round/",
+            "tier": "B",
+            "publisher": "Soulmates Ventures",
+            "published": "2026-09-07",
+            "accessed": "2026-10-11",
+            "quote": "Why we led Rightcharge’s £500K follow-on round."
+          }
+        ]
+      },
+      {
+        "company": "Rightcharge",
+        "date": "2025-10-23",
+        "date_kind": "announced",
+        "round_size": {
+          "amount": 1600000,
+          "currency": "GBP"
+        },
+        "sources": [
+          {
+            "url": "https://www.soulmatesventures.com/soulmates-ventures-leads-1-6m-seed-round-in-rightcharge-to-accelerate-europes-fleet-electrification/",
+            "tier": "B",
+            "publisher": "Soulmates Ventures",
+            "published": "2025-10-23",
+            "accessed": "2026-10-11",
+            "quote": "Prague / London, 23 October 2025 — Soulmates Ventures has led a £1.6 million"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cs-seed-starter",
+    "name": "ČS Seed Starter",
+    "aliases": [
+      "Seed Starter",
+      "Seed Starter České spořitelny"
+    ],
+    "type": "cvc",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": "https://www.seedstarter.cz/",
+    "legal_entities": [
+      {
+        "name": "ČS Seed Starter, a.s.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "61058769",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/61058769"
+      }
+    ],
+    "decision": {
+      "status": "uncertain",
+      "rules": [
+        "I2"
+      ],
+      "note": "Czech (not Slovak) corporate venture arm of Česká spořitelna (Erste Group), self-described as CVC; a bank's startup equity programme is typed cvc. Only one dated investment found (Born Digital, 24 Nov 2023), which is inside the 36-month window by six weeks. I2 not demonstrated: the portfolio page returned 404 on 2026-10-11 and no licence or association membership was found."
+    },
+    "fields": {
+      "sectors": {
+        "value": [
+          "banking innovation",
+          "fintech"
+        ],
+        "sources": [
+          {
+            "url": "https://www.seedstarter.cz/en/home",
+            "tier": "B",
+            "publisher": "Česká spořitelna",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Since 2020 we have been investing in technologies that help banking thrive or bring innovation to our clients."
+          }
+        ]
+      },
+      "stages": {
+        "value": [
+          "pre-seed",
+          "seed"
+        ],
+        "sources": [
+          {
+            "url": "https://www.seedstarter.cz/en/home",
+            "tier": "B",
+            "publisher": "Česká spořitelna",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Pre-seed & Seed investment rounds"
+          }
+        ]
+      },
+      "geography": {
+        "value": [
+          "CEE"
+        ],
+        "sources": [
+          {
+            "url": "https://www.seedstarter.cz/en/home",
+            "tier": "B",
+            "publisher": "Česká spořitelna",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Startups active in CEE"
+          }
+        ]
+      },
+      "ticket": {
+        "value": {
+          "min": 200000,
+          "max": 1000000,
+          "currency": "EUR"
+        },
+        "sources": [
+          {
+            "url": "https://www.seedstarter.cz/en/home",
+            "tier": "B",
+            "publisher": "Česká spořitelna",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Ticket size 200k – 1M EUR"
+          }
+        ]
+      },
+      "funds": null,
+      "aum": null
+    },
+    "investments": [
+      {
+        "company": "Born Digital",
+        "date": "2023-11-24",
+        "date_kind": "registry_entry",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=1052822&typ=UPLNY",
+            "tier": "A",
+            "publisher": "Obchodní rejstřík (justice.cz)",
+            "published": "2023-11-24",
+            "accessed": "2026-10-11",
+            "quote": "Společník: ČS Seed Starter, a.s. , IČ: 610 58 769 Olbrachtova 1929/62, Krč, 140 00 Praha 4 zapsáno 24. listopadu 2023"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "startupyard",
+    "name": "StartupYard",
+    "type": "accelerator",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": "https://startupyard.com/",
+    "legal_entities": [
+      {
+        "name": "StartupYard Batch 15 s.r.o.",
+        "role": "vehicle",
+        "id_type": "ICO",
+        "id": "22266852",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/22266852"
+      }
+    ],
+    "decision": {
+      "status": "included",
+      "rules": [
+        "I1",
+        "I2",
+        "I3",
+        "I4"
+      ],
+      "note": "Prague accelerator taking equity through per-batch s.r.o. vehicles; tagged accelerator so it stays out of ticket statistics."
+    },
+    "fields": {
+      "sectors": null,
+      "stages": null,
+      "geography": null,
+      "ticket": null,
+      "funds": null,
+      "aum": null
+    },
+    "investments": [
+      {
+        "company": "SmartGuide",
+        "date": "2026-08-20",
+        "date_kind": "registry_entry",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=1018928&typ=UPLNY",
+            "tier": "A",
+            "publisher": "Obchodní rejstřík (justice.cz)",
+            "published": "2026-08-20",
+            "accessed": "2026-10-11",
+            "quote": "Společník: StartupYard Batch 15 s.r.o. , IČ: 222 66 852 Perlová 371/5, Staré Město, 110 00 Praha 1 zapsáno 20. srpna 2026"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "y-soft-ventures",
+    "name": "Y Soft Ventures",
+    "type": "cvc",
+    "hq": {
+      "country": "CZ",
+      "city": "Brno"
+    },
+    "website": "https://www.ysoftventures.com/",
+    "legal_entities": [
+      {
+        "name": "Y Soft Ventures Management, a.s.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "04504593",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/04504593"
+      },
+      {
+        "name": "Y Soft Ventures II, a.s.",
+        "role": "fund",
+        "id_type": "ICO",
+        "id": "07890150",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/07890150"
+      }
+    ],
+    "decision": {
+      "status": "dormant",
+      "rules": [
+        "E4"
+      ],
+      "note": "Corporate VC of Y Soft (Brno). Latest dated evidence found: Y Soft Ventures II entered NenoVision s.r.o. on 11 Jul 2019; no dated investment within 36 months was found."
+    },
+    "fields": {
+      "sectors": {
+        "value": [
+          "IoT",
+          "Industry 4.0",
+          "smart office"
+        ],
+        "sources": [
+          {
+            "url": "https://www.ysoftventures.com/",
+            "tier": "B",
+            "publisher": "Y Soft",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "The Internet of Things (IoT) represents the focal point of our investment strategy."
+          }
+        ]
+      },
+      "geography": {
+        "value": [
+          "CEE"
+        ],
+        "sources": [
+          {
+            "url": "https://www.ysoftventures.com/",
+            "tier": "B",
+            "publisher": "Y Soft",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "We invest in the people who build innovative B2B tech startups in Central and Eastern Europe."
+          }
+        ]
+      },
+      "stages": null,
+      "ticket": null,
+      "funds": null,
+      "aum": null
+    },
+    "investments": [
+      {
+        "company": "NenoVision",
+        "date": "2019-07-11",
+        "date_kind": "registry_entry",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=913443&typ=UPLNY",
+            "tier": "A",
+            "publisher": "Obchodní rejstřík (justice.cz)",
+            "published": "2019-07-11",
+            "accessed": "2026-10-11",
+            "quote": "Společník: Y Soft Ventures II, a.s. , IČ: 078 90 150 Technická 2948/13, Královo Pole, 616 00 Brno zapsáno 11. července 2019"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "startguide",
+    "name": "STARTGUIDE",
+    "aliases": [
+      "Startguide VC",
+      "Start Guide"
+    ],
+    "type": "vc",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": "https://startguide.cz/en/",
+    "legal_entities": [
+      {
+        "name": "START GUIDE ONE, a.s.",
+        "role": "fund",
+        "id_type": "ICO",
+        "id": "17323126",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/17323126"
+      }
+    ],
+    "decision": {
+      "status": "uncertain",
+      "rules": [
+        "I2"
+      ],
+      "note": "Self-described VC fund with two Tier A holdings (Ringil 3 Jul 2024, Carebot 18 Mar 2025). I2 not demonstrated: no licence, association membership or published portfolio of 3+ found."
+    },
+    "fields": {
+      "stages": {
+        "value": [
+          "pre-seed",
+          "seed"
+        ],
+        "sources": [
+          {
+            "url": "https://startguide.cz/en/",
+            "tier": "B",
+            "publisher": "STARTGUIDE",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "We consider investment opportunities up to seed"
+          }
+        ]
+      },
+      "geography": {
+        "value": [
+          "CEE"
+        ],
+        "sources": [
+          {
+            "url": "https://startguide.cz/en/",
+            "tier": "B",
+            "publisher": "STARTGUIDE",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "We prioritize investment in Central and Eastern European tech startups"
+          }
+        ]
+      },
+      "sectors": {
+        "value": [
+          "digital startups"
+        ],
+        "sources": [
+          {
+            "url": "https://startguide.cz/en/",
+            "tier": "B",
+            "publisher": "STARTGUIDE",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Enterprenerues investing in early‑stage digital startups in the CEE region."
+          }
+        ]
+      },
+      "ticket": null,
+      "funds": null,
+      "aum": null
+    },
+    "investments": [
+      {
+        "company": "Carebot",
+        "date": "2025-03-18",
+        "date_kind": "registry_entry",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=1124329&typ=UPLNY",
+            "tier": "A",
+            "publisher": "Obchodní rejstřík (justice.cz)",
+            "published": "2025-03-18",
+            "accessed": "2026-10-11",
+            "quote": "Společník: START GUIDE ONE, a.s. , IČ: 173 23 126 Opletalova 1015/55, Nové Město, 110 00 Praha 1 zapsáno 18. března 2025"
+          }
+        ]
+      },
+      {
+        "company": "Ringil",
+        "date": "2024-07-03",
+        "date_kind": "registry_entry",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=1086188&typ=UPLNY",
+            "tier": "A",
+            "publisher": "Obchodní rejstřík (justice.cz)",
+            "published": "2024-07-03",
+            "accessed": "2026-10-11",
+            "quote": "Společník: START GUIDE ONE, a.s. , IČ: 173 23 126 Karla Engliše 3201/6, Smíchov, 150 00 Praha 5 zapsáno 3. července 2024"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "gain-ventures",
+    "name": "GAIN Ventures",
+    "type": "vc",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": null,
+    "legal_entities": [
+      {
+        "name": "GAIN Ventures s.r.o.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "05690935",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/05690935"
+      }
+    ],
+    "decision": {
+      "status": "uncertain",
+      "rules": [
+        "I2"
+      ],
+      "note": "Named as co-investor in Carebot (CzechCrunch, March 2024) and entered as Carebot shareholder on 18 Mar 2025. No website, licence or published portfolio found, so I2 is not shown. Not the New York firm at gain.ventures."
+    },
+    "fields": {},
+    "investments": [
+      {
+        "company": "Carebot",
+        "date": "2025-03-18",
+        "date_kind": "registry_entry",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=1124329&typ=UPLNY",
+            "tier": "A",
+            "publisher": "Obchodní rejstřík (justice.cz)",
+            "published": "2025-03-18",
+            "accessed": "2026-10-11",
+            "quote": "Společník: GAIN Ventures s.r.o. , IČ: 056 90 935 Na strži 2102/61a, Krč, 140 00 Praha 4 zapsáno 18. března 2025"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bhm-ventures",
+    "name": "BHM Ventures (BHM group)",
+    "aliases": [
+      "BHM Group"
+    ],
+    "type": "private_investor",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": null,
+    "legal_entities": [
+      {
+        "name": "BHM Ventures a.s.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "05455464",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/05455464"
+      }
+    ],
+    "decision": {
+      "status": "uncertain",
+      "rules": [
+        "I2",
+        "I3"
+      ],
+      "note": "Startup arm of Tomáš Krsek's BHM group. Entered as shareholder of Yieldigo and Sharry Europe on the same day (22 May 2025), which may be an internal transfer from BHM Ventures I/II rather than new investments. Website bhm.cz belongs to an unrelated driving school."
+    },
+    "fields": {},
+    "investments": [
+      {
+        "company": "Yieldigo",
+        "date": "2025-05-22",
+        "date_kind": "registry_entry",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=949426&typ=UPLNY",
+            "tier": "A",
+            "publisher": "Obchodní rejstřík (justice.cz)",
+            "published": "2025-05-22",
+            "accessed": "2026-10-11",
+            "quote": "Společník: BHM Ventures a.s. , IČ: 054 55 464 Ovocný trh 1096/8, Staré Město, 110 00 Praha 1"
+          }
+        ]
+      },
+      {
+        "company": "Sharry",
+        "date": "2025-05-22",
+        "date_kind": "registry_entry",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=940334&typ=UPLNY",
+            "tier": "A",
+            "publisher": "Obchodní rejstřík (justice.cz)",
+            "published": "2025-05-22",
+            "accessed": "2026-10-11",
+            "quote": "Společník: BHM Ventures a.s. , IČ: 054 55 464 Ovocný trh 1096/8, Staré Město, 110 00 Praha 1 zapsáno 22. května 2025"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "czech-founders-vc",
+    "name": "Czech Founders VC",
+    "type": "vc",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": "https://czechfounders.vc/",
+    "legal_entities": [
+      {
+        "name": "Czech Founders Ventures s.r.o., osoba rizikového kapitálu",
+        "role": "fund",
+        "id_type": "ICO",
+        "id": "17051835",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/17051835"
+      }
+    ],
+    "decision": {
+      "status": "uncertain",
+      "rules": [
+        "I3"
+      ],
+      "note": "Self-published portfolio of 30+ startups (I2). Latest dated Tier A evidence found: SharpGrid s.r.o. shareholder entry of 30 Aug 2023, about six weeks outside the 36-month window; recent portfolio names (e.g. Merchantee, Edmund) are held through holdings not visible in the Czech register."
+    },
+    "fields": {
+      "stages": {
+        "value": [
+          "pre-seed"
+        ],
+        "sources": [
+          {
+            "url": "https://czechfounders.vc/",
+            "tier": "B",
+            "publisher": "Czech Founders VC",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Pre-seed Pre-seed tickets. Typically €50-350k."
+          }
+        ]
+      },
+      "ticket": {
+        "value": {
+          "min": 50000,
+          "max": 350000,
+          "currency": "EUR"
+        },
+        "sources": [
+          {
+            "url": "https://czechfounders.vc/",
+            "tier": "B",
+            "publisher": "Czech Founders VC",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Typically €50-350k."
+          }
+        ]
+      },
+      "geography": {
+        "value": [
+          "CEE"
+        ],
+        "sources": [
+          {
+            "url": "https://czechfounders.vc/",
+            "tier": "B",
+            "publisher": "Czech Founders VC",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "CEE Region Based in Central or Eastern Europe (CEE) & aiming for a global scale."
+          }
+        ]
+      },
+      "sectors": null,
+      "funds": null,
+      "aum": null
+    },
+    "investments": [
+      {
+        "company": "SharpGrid",
+        "date": "2023-08-30",
+        "date_kind": "registry_entry",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=1096675&typ=UPLNY",
+            "tier": "A",
+            "publisher": "Obchodní rejstřík (justice.cz)",
+            "published": "2023-08-30",
+            "accessed": "2026-10-11",
+            "quote": "Společník: Czech Founders Ventures s.r.o. , IČ: 170 51 835 Panská 854/2, Nové Město, 110 00 Praha 1 zapsáno 30. srpna 2023"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "orbit-capital",
+    "name": "Orbit Capital",
+    "type": "vc",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": "https://orbitcapital.com/",
+    "legal_entities": [
+      {
+        "name": "ORBIT Capital GP s.r.o.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "08319961",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/08319961"
+      },
+      {
+        "name": "OGD Advisory s.r.o.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "22269720",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/22269720"
+      }
+    ],
+    "decision": {
+      "status": "uncertain",
+      "rules": [
+        "I3"
+      ],
+      "note": "CVCA full member; growth equity for tech scale-ups plus venture debt (EIF lists Orbit Growth Debt II as a private credit fund, OGD Advisory s.r.o.). Website is script-only; no dated equity investment found in this pass. Growth equity side treated as late-stage VC."
+    },
+    "fields": {
+      "sectors": {
+        "value": [
+          "technology and technology-enabled scale-ups"
+        ],
+        "sources": [
+          {
+            "url": "https://cvca.cz/en/orbit-capital-2/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Sectore Preferences Technology and technology-enabled scale-ups"
+          }
+        ]
+      },
+      "stages": {
+        "value": [
+          "growth"
+        ],
+        "sources": [
+          {
+            "url": "https://cvca.cz/en/orbit-capital-2/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Type of Investment Growth equity and venture debt"
+          }
+        ]
+      },
+      "geography": {
+        "value": [
+          "CEE"
+        ],
+        "sources": [
+          {
+            "url": "https://cvca.cz/en/orbit-capital-2/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Geographical Focus CEE – Central and Eastern Europe"
+          }
+        ]
+      },
+      "ticket": {
+        "value": {
+          "min": 6000000,
+          "max": 15000000,
+          "currency": "EUR"
+        },
+        "sources": [
+          {
+            "url": "https://cvca.cz/en/orbit-capital-2/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Growth Equity: EUR 6 – 15 million"
+          }
+        ]
+      },
+      "funds": {
+        "value": [
+          {
+            "name": "Orbit Growth Debt II",
+            "size": null,
+            "currency": null,
+            "vintage": null
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://www.eif.org/files/attachments/czechia-equity-fundmanagers.pdf",
+            "tier": "A",
+            "publisher": "European Investment Fund",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Orbit Growth Debt II OGD Advisory s.r.o. Czech Republic"
+          }
+        ]
+      },
+      "aum": null
+    },
+    "investments": []
+  },
+  {
+    "id": "impulse-ventures",
+    "name": "Impulse Ventures",
+    "type": "vc",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": null,
+    "legal_entities": [
+      {
+        "name": "Impulse Ventures, a.s.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "08841471",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/08841471"
+      }
+    ],
+    "decision": {
+      "status": "uncertain",
+      "rules": [
+        "I2",
+        "I3"
+      ],
+      "note": "Investment vehicle of Ondřej Tomek (Centrum.cz, Mall.cz). Website impulseventures.com returned no content; no dated investment or published portfolio found. Its crypto vehicle IVBF is a separate record."
+    },
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "ivbf",
+    "name": "IVBF (Impulse Ventures Blockchain Fund)",
+    "type": "other",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": null,
+    "legal_entities": null,
+    "decision": {
+      "status": "excluded",
+      "rules": [
+        "E7"
+      ],
+      "note": "Crypto fund around Ondřej Tomek and Tomáš Hnilička (press: e15.cz) investing mainly in smart-contract blockchain tokens, not equity in private companies. No registry entity resolved."
+    },
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "koopeo-ventures",
+    "name": "KOOPEO Ventures",
+    "type": "vc",
+    "hq": {
+      "country": "CZ",
+      "city": "Brno"
+    },
+    "website": null,
+    "legal_entities": [
+      {
+        "name": "KOOPEO Ventures SE",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "05269113",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/05269113"
+      }
+    ],
+    "decision": {
+      "status": "uncertain",
+      "rules": [
+        "I2",
+        "I3"
+      ],
+      "note": "Listed by Vestbee as a CEE early-stage VC (Precisimo, Trifft, KeyGuru). koopeo.com is a parked domain; no dated investment found."
+    },
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "air-ventures",
+    "name": "Air Ventures",
+    "type": "vc",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": null,
+    "legal_entities": null,
+    "decision": {
+      "status": "uncertain",
+      "rules": [
+        "I1",
+        "I3"
+      ],
+      "note": "Prague early-stage investor listed in directories (Vestbee, Papermark). AIR VENTURES s.r.o. (IČO 04999851, Praha 8) exists in ARES but its link to the fund is unconfirmed; website airventures.co did not respond; no dated investment found."
+    },
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "springtide-ventures",
+    "name": "Springtide Ventures",
+    "type": "cvc",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": null,
+    "legal_entities": [
+      {
+        "name": "Springtide Ventures s.r.o.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "01726587",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/01726587"
+      }
+    ],
+    "decision": {
+      "status": "uncertain",
+      "rules": [
+        "I3"
+      ],
+      "note": "Venture arm of KKCG (Karel Komárek). Former partners left to start Tachles (CzechCrunch, Apr 2024); springtide.vc shows a parked page; no dated investment within 36 months found."
+    },
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "tachles-vc",
+    "name": "Tachles VC",
+    "type": "vc",
+    "hq": {
+      "country": "US",
+      "city": "Peachtree Corners"
+    },
+    "website": "https://tachlesvc.com/",
+    "legal_entities": [
+      {
+        "name": "Tachles VC Management s.r.o.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "14376032",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/14376032"
+      }
+    ],
+    "decision": {
+      "status": "out_of_scope",
+      "rules": [
+        "S1"
+      ],
+      "note": "Founded by ex-Springtide partners with a Prague s.r.o., but its own site gives a US address (Tachles VC Management, LLC, Georgia) and an Israel focus, so it is treated as a foreign-managed fund outside the Czech pilot slice. Not investigated further."
+    },
+    "fields": {
+      "sectors": {
+        "value": [
+          "cybersecurity",
+          "cloud",
+          "AI"
+        ],
+        "sources": [
+          {
+            "url": "https://tachlesvc.com/",
+            "tier": "B",
+            "publisher": "Tachles VC",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Early-stage specialist for cyber, cloud, AI"
+          }
+        ]
+      }
+    },
+    "investments": []
+  },
+  {
+    "id": "up21",
+    "name": "UP21",
+    "type": "accelerator",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": null,
+    "legal_entities": null,
+    "decision": {
+      "status": "uncertain",
+      "rules": [
+        "I1",
+        "I3"
+      ],
+      "note": "Karlín incubator of Karel Janeček and Vít Šubert (press: CzechCrunch, Forbes.cz); announced follow-on fund STAR*21 not confirmed as launched. No registry entity or dated investment found."
+    },
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "rockawayx",
+    "name": "RockawayX",
+    "type": "vc",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": "https://rockawayx.com/",
+    "legal_entities": [
+      {
+        "name": "RockawayX a.s.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "17457009",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/17457009"
+      }
+    ],
+    "decision": {
+      "status": "uncertain",
+      "rules": [
+        "I3"
+      ],
+      "note": "Crypto arm of the Rockaway group: early-stage token/equity investments alongside validator and on-chain liquidity businesses (partly E7-like). No dated equity investment checked in this pass."
+    },
+    "fields": {
+      "stages": {
+        "value": [
+          "early stage"
+        ],
+        "sources": [
+          {
+            "url": "https://rockawayx.com/",
+            "tier": "B",
+            "publisher": "RockawayX",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "We invest in early-stage projects, then build alongside them."
+          }
+        ]
+      }
+    },
+    "investments": []
+  },
+  {
+    "id": "nri",
+    "name": "Národní rozvojová investiční (NRI)",
+    "type": "public_dfi",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": "https://www.nrinvesticni.cz/",
+    "legal_entities": [
+      {
+        "name": "Národní rozvojová investiční, a.s., osoba rizikového kapitálu",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "08465797",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/08465797"
+      }
+    ],
+    "decision": {
+      "status": "out_of_scope",
+      "rules": [
+        "S1"
+      ],
+      "note": "State investor (NRB group) running programmes such as Fond Ukrajina; commits to funds rather than startups. Kept for the verification list (it named DEPO Ventures One SCSp on 26 Aug 2026), not a target VC."
+    },
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "abris-capital",
+    "name": "Abris Capital",
+    "type": "pe",
+    "hq": {
+      "country": "PL",
+      "city": "Warsaw"
+    },
+    "website": "https://www.abris-capital.com/",
+    "legal_entities": null,
+    "decision": {
+      "status": "out_of_scope",
+      "rules": [
+        "S1"
+      ],
+      "note": "CVCA full member; stated strategy is buyout/growth private equity, outside the VC pilot slice. Managed from outside the Czech Republic."
+    },
+    "fields": {
+      "stages": {
+        "value": [
+          "growth",
+          "buyout"
+        ],
+        "sources": [
+          {
+            "url": "https://cvca.cz/en/abris-capital-2/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Type of Investment Growth and buyout acquisitions – management buyouts (MBO & MBI), expansion financing, industry consolidation"
+          }
+        ]
+      }
+    },
+    "investments": []
+  },
+  {
+    "id": "arx-equity-partners",
+    "name": "ARX Equity Partners",
+    "type": "pe",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": "https://www.arxequity.com/",
+    "legal_entities": null,
+    "decision": {
+      "status": "out_of_scope",
+      "rules": [
+        "S1"
+      ],
+      "note": "CVCA full member; stated strategy is buyout/growth private equity, outside the VC pilot slice."
+    },
+    "fields": {
+      "stages": {
+        "value": [
+          "buyout",
+          "expansion"
+        ],
+        "sources": [
+          {
+            "url": "https://cvca.cz/en/arx-equity-partners-2/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Type of Investment acquisitions, management buyout (MBO & MBI), expansion capital, sector consolidation"
+          }
+        ]
+      }
+    },
+    "investments": []
+  },
+  {
+    "id": "cvi",
+    "name": "CVI",
+    "type": "pe",
+    "hq": {
+      "country": "PL",
+      "city": "Warsaw"
+    },
+    "website": "https://www.cvi.eu/",
+    "legal_entities": null,
+    "decision": {
+      "status": "out_of_scope",
+      "rules": [
+        "S1"
+      ],
+      "note": "CVCA full member; mainly direct lending, senior debt and mezzanine, outside the VC pilot slice. Managed from outside the Czech Republic."
+    },
+    "fields": {
+      "stages": {
+        "value": [
+          "private debt",
+          "mezzanine"
+        ],
+        "sources": [
+          {
+            "url": "https://cvca.cz/en/cvi-2/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Type of Investment Direct Lending, Senior Debt, Mezzanine, exceptionally Minority Equity Investments"
+          }
+        ]
+      }
+    },
+    "investments": []
+  },
+  {
+    "id": "enterprise-investors",
+    "name": "Enterprise Investors",
+    "type": "pe",
+    "hq": {
+      "country": "PL",
+      "city": "Warsaw"
+    },
+    "website": "https://www.ei.com.pl/",
+    "legal_entities": null,
+    "decision": {
+      "status": "out_of_scope",
+      "rules": [
+        "S1"
+      ],
+      "note": "CVCA full member; stated strategy is buyout/growth private equity, outside the VC pilot slice. Managed from outside the Czech Republic."
+    },
+    "fields": {
+      "stages": {
+        "value": [
+          "buyout",
+          "expansion"
+        ],
+        "sources": [
+          {
+            "url": "https://cvca.cz/en/enterprise-investors-2/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Type of Investment buyout (MBO & MBI), expansion capital"
+          }
+        ]
+      }
+    },
+    "investments": []
+  },
+  {
+    "id": "espira-investments",
+    "name": "Espira Investments",
+    "type": "pe",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": "https://www.espirainvestments.com/",
+    "legal_entities": null,
+    "decision": {
+      "status": "out_of_scope",
+      "rules": [
+        "S1"
+      ],
+      "note": "CVCA full member; stated strategy is buyout/growth private equity, outside the VC pilot slice."
+    },
+    "fields": {
+      "stages": {
+        "value": [
+          "growth",
+          "buyout"
+        ],
+        "sources": [
+          {
+            "url": "https://cvca.cz/en/espira-investments-2/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Type of Investment Growth financing, financing and support for acquisitions, support for ownership and capital restructuring, management buyout"
+          }
+        ]
+      }
+    },
+    "investments": []
+  },
+  {
+    "id": "everita-capital",
+    "name": "EVERITA Capital",
+    "type": "pe",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": "https://everitacap.com/",
+    "legal_entities": null,
+    "decision": {
+      "status": "out_of_scope",
+      "rules": [
+        "S1"
+      ],
+      "note": "CVCA full member; stated strategy is buyout/growth private equity, outside the VC pilot slice."
+    },
+    "fields": {
+      "stages": {
+        "value": [
+          "growth"
+        ],
+        "sources": [
+          {
+            "url": "https://cvca.cz/en/everita-capital-en/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Type of Investment Private Equity – growth capital"
+          }
+        ]
+      }
+    },
+    "investments": []
+  },
+  {
+    "id": "genesis-capital",
+    "name": "Genesis Capital",
+    "type": "pe",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": "https://www.genesis.cz/",
+    "legal_entities": null,
+    "decision": {
+      "status": "out_of_scope",
+      "rules": [
+        "S1"
+      ],
+      "note": "CVCA full member; stated strategy is buyout/growth private equity, outside the VC pilot slice."
+    },
+    "fields": {
+      "stages": {
+        "value": [
+          "buyout",
+          "growth"
+        ],
+        "sources": [
+          {
+            "url": "https://cvca.cz/en/genesis-capital-equity-s-r-o-2/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Type of Investment corporate acquisitions, management buyouts, sector consolidation, growth capital, secondary buyouts"
+          }
+        ]
+      }
+    },
+    "investments": []
+  },
+  {
+    "id": "innova-capital",
+    "name": "Innova Capital",
+    "type": "pe",
+    "hq": {
+      "country": "PL",
+      "city": "Warsaw"
+    },
+    "website": "https://www.innovacap.com/",
+    "legal_entities": null,
+    "decision": {
+      "status": "out_of_scope",
+      "rules": [
+        "S1"
+      ],
+      "note": "CVCA full member; stated strategy is buyout/growth private equity, outside the VC pilot slice. Managed from outside the Czech Republic."
+    },
+    "fields": {
+      "stages": {
+        "value": [
+          "expansion",
+          "buyout"
+        ],
+        "sources": [
+          {
+            "url": "https://cvca.cz/en/innova-capital-2/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Type of Investment Expansion&Develpment Capital, Bridge Financing, Replacement Capital, Buyout & Buyin"
+          }
+        ]
+      }
+    },
+    "investments": []
+  },
+  {
+    "id": "integral-capital-group",
+    "name": "Integral Capital Group",
+    "type": "pe",
+    "hq": {
+      "country": "HU",
+      "city": "Budapest"
+    },
+    "website": "https://integralcapgroup.com/",
+    "legal_entities": null,
+    "decision": {
+      "status": "out_of_scope",
+      "rules": [
+        "S1"
+      ],
+      "note": "CVCA full member; stated strategy is buyout/growth private equity, outside the VC pilot slice. Managed from outside the Czech Republic."
+    },
+    "fields": {
+      "stages": {
+        "value": [
+          "private equity"
+        ],
+        "sources": [
+          {
+            "url": "https://cvca.cz/en/integral-capital-group-2/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Type of Investment Private Equity"
+          }
+        ]
+      }
+    },
+    "investments": []
+  },
+  {
+    "id": "jet-investment",
+    "name": "Jet Investment",
+    "type": "pe",
+    "hq": {
+      "country": "CZ",
+      "city": "Brno"
+    },
+    "website": "https://www.jetinvestment.eu/",
+    "legal_entities": null,
+    "decision": {
+      "status": "out_of_scope",
+      "rules": [
+        "S1"
+      ],
+      "note": "CVCA full member; stated strategy is buyout/growth private equity, outside the VC pilot slice."
+    },
+    "fields": {
+      "stages": {
+        "value": [
+          "buyout",
+          "growth",
+          "turnaround",
+          "late-stage venture"
+        ],
+        "sources": [
+          {
+            "url": "https://cvca.cz/en/jet-investment-2/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Type of Investment Buy out, Growth, Rescue/Turnaround, Late-stage venture"
+          }
+        ]
+      }
+    },
+    "investments": []
+  },
+  {
+    "id": "mam-private-equity",
+    "name": "MAM Private Equity Fund SICAV a.s.",
+    "type": "pe",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": "https://www.mam-equity.cz/",
+    "legal_entities": null,
+    "decision": {
+      "status": "out_of_scope",
+      "rules": [
+        "S1"
+      ],
+      "note": "CVCA full member; stated strategy is buyout/growth private equity, outside the VC pilot slice."
+    },
+    "fields": {
+      "stages": {
+        "value": [
+          "buyout",
+          "growth"
+        ],
+        "sources": [
+          {
+            "url": "https://cvca.cz/en/mam-private-equity-fund-sicav-a-s/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Type of Investment management buyouts (MBO, MBI), LBO acquisitions, growth capital"
+          }
+        ]
+      }
+    },
+    "investments": []
+  },
+  {
+    "id": "mid-europa-partners",
+    "name": "Mid Europa Partners",
+    "type": "pe",
+    "hq": {
+      "country": "GB",
+      "city": "London"
+    },
+    "website": "https://www.mideuropa.com/",
+    "legal_entities": null,
+    "decision": {
+      "status": "out_of_scope",
+      "rules": [
+        "S1"
+      ],
+      "note": "CVCA full member; stated strategy is buyout/growth private equity, outside the VC pilot slice. Managed from outside the Czech Republic."
+    },
+    "fields": {
+      "stages": {
+        "value": [
+          "buyout",
+          "expansion"
+        ],
+        "sources": [
+          {
+            "url": "https://cvca.cz/en/mid-europa-partners-2/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Type of Investment acquisitions, management buyouts (MBO & MBI), expansion financing, industry consolidation"
+          }
+        ]
+      }
+    },
+    "investments": []
+  },
+  {
+    "id": "sandberg-capital",
+    "name": "Sandberg Capital",
+    "type": "pe",
+    "hq": {
+      "country": "SK",
+      "city": "Bratislava"
+    },
+    "website": "https://www.sandbergcapital.com/",
+    "legal_entities": null,
+    "decision": {
+      "status": "out_of_scope",
+      "rules": [
+        "S1"
+      ],
+      "note": "CVCA full member; stated strategy is buyout/growth private equity, outside the VC pilot slice. Managed from outside the Czech Republic."
+    },
+    "fields": {
+      "stages": {
+        "value": [
+          "buy-and-build",
+          "growth"
+        ],
+        "sources": [
+          {
+            "url": "https://cvca.cz/en/sandberg-capital/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Type of Investment Buy-and-build, Growth"
+          }
+        ]
+      }
+    },
+    "investments": []
+  },
+  {
+    "id": "skylimit-investments",
+    "name": "SkyLimit Investments",
+    "type": "pe",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": "https://www.skylimit.cz/",
+    "legal_entities": null,
+    "decision": {
+      "status": "out_of_scope",
+      "rules": [
+        "S1"
+      ],
+      "note": "CVCA full member; stated strategy is buyout/growth private equity, outside the VC pilot slice."
+    },
+    "fields": {
+      "stages": {
+        "value": [
+          "buyout"
+        ],
+        "sources": [
+          {
+            "url": "https://cvca.cz/en/skylimit-investments-2/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Type of Investment Management buyouts, leveraged buyouts, sector consolidations, occasionally also growth capital"
+          }
+        ]
+      }
+    },
+    "investments": []
+  },
+  {
+    "id": "stratum-partners",
+    "name": "Stratum Partners",
+    "type": "pe",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": "https://www.stratum.eu/",
+    "legal_entities": null,
+    "decision": {
+      "status": "out_of_scope",
+      "rules": [
+        "S1"
+      ],
+      "note": "CVCA full member; stated strategy is buyout/growth private equity, outside the VC pilot slice."
+    },
+    "fields": {
+      "stages": {
+        "value": [
+          "growth",
+          "buyout"
+        ],
+        "sources": [
+          {
+            "url": "https://cvca.cz/en/stratum-partners-en/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Type of Investment Growth equity investments, buyouts or recapitalization"
+          }
+        ]
+      }
+    },
+    "investments": []
+  },
+  {
+    "id": "thein",
+    "name": "Thein",
+    "type": "pe",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": "https://www.thein.eu/",
+    "legal_entities": null,
+    "decision": {
+      "status": "out_of_scope",
+      "rules": [
+        "S1"
+      ],
+      "note": "CVCA full member; stated strategy is buyout/growth private equity, outside the VC pilot slice."
+    },
+    "fields": {
+      "stages": {
+        "value": [
+          "buyout",
+          "growth"
+        ],
+        "sources": [
+          {
+            "url": "https://cvca.cz/en/thein-2/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Type of Investment LBO, Growth capital"
+          }
+        ]
+      }
+    },
+    "investments": []
+  },
+  {
+    "id": "v4c-investment-advisers",
+    "name": "V4C Investment Advisers Limited",
+    "type": "pe",
+    "hq": {
+      "country": "LU",
+      "city": "Luxembourg"
+    },
+    "website": null,
+    "legal_entities": null,
+    "decision": {
+      "status": "out_of_scope",
+      "rules": [
+        "S1"
+      ],
+      "note": "CVCA full member; stated strategy is buyout/growth private equity, outside the VC pilot slice. Managed from outside the Czech Republic."
+    },
+    "fields": {
+      "stages": {
+        "value": [
+          "buyout",
+          "expansion"
+        ],
+        "sources": [
+          {
+            "url": "https://cvca.cz/en/v4c-investment-advisers-limited-2/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Type of Investment buyouts, expansion capital"
+          }
+        ]
+      }
+    },
+    "investments": []
+  },
+  {
+    "id": "versute-investments",
+    "name": "Versute Investments",
+    "type": "pe",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": "https://www.versute.cz/",
+    "legal_entities": null,
+    "decision": {
+      "status": "out_of_scope",
+      "rules": [
+        "S1"
+      ],
+      "note": "CVCA full member; stated strategy is buyout/growth private equity, outside the VC pilot slice."
+    },
+    "fields": {
+      "stages": {
+        "value": [
+          "growth",
+          "buyout"
+        ],
+        "sources": [
+          {
+            "url": "https://cvca.cz/en/versute-investments-2/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Type of Investment Growth capital, Leveraged buyouts, Management buyouts (MBO’s and MBI´s)"
+          }
+        ]
+      }
+    },
+    "investments": []
+  },
+  {
+    "id": "pale-fire-capital",
+    "name": "Pale Fire Capital",
+    "type": "pe",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": "https://palefirecapital.com/",
+    "legal_entities": [
+      {
+        "name": "Pale Fire Capital SE",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "04165918",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/04165918"
+      }
+    ],
+    "decision": {
+      "status": "out_of_scope",
+      "rules": [
+        "S1"
+      ],
+      "note": "CVCA associate member investing its own long-term capital, typically hundreds of millions of CZK per company, into growth-stage tech companies; growth/PE profile, outside the VC pilot slice."
+    },
+    "fields": {
+      "stages": {
+        "value": [
+          "growth"
+        ],
+        "sources": [
+          {
+            "url": "https://palefirecapital.com/",
+            "tier": "B",
+            "publisher": "Pale Fire Capital",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Naše investice se typicky pohybují ve stovkách milionů až přes miliardu korun vlastních prostředků."
+          }
+        ]
+      }
+    },
+    "investments": []
+  }
+]
