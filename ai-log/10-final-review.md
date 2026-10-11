@@ -19,3 +19,7 @@ The completed run passed 117 tests, ruff and schema validation (91 records, zero
 Pilot token costs were recomputed from complete deduplicated response usage, correcting both an incorrect cache-read price and first-fragment output counters. The four collection agents total $43.70 in imputed API token costs at official prices checked on October 11. This is not a subscription invoice or the total project cost. See docs/COST.md for exact counters and exclusions.
 
 Changes are prepared and committed locally. Publication is held at the author's explicit request pending review of the package.
+
+## Human source verification confirmed
+
+Later on 11 October 2026, the author explicitly confirmed that he and a colleague checked all 60 claims in assignment A against their sources, rather than only reading the prepared findings. The final report and provenance now record that human source-by-source review. Earlier statements above describe the confirmation available when those notes were written. The numerical result remains 58 correct and two wrong on the original sample.

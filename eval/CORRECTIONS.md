@@ -3,12 +3,13 @@
 ## Historical assessment
 
 `claims.csv` and `review.html` preserve the original 60-claim stratified sample of 264 claims.
-`labels.csv` contains the author's confirmed labels from an AI-assisted source review: 58 correct,
-2 wrong, no unverifiable claims (96.7%, 95% Wilson CI 88.6–99.1%). AI reviewers read full sources
-and records; the author reviewed their findings and confirmed the labels. This does not assert
-that the author, a colleague, or a human reviewer independently opened every page or reviewed all
-91 records. `labels-model.csv` remains the unchanged original model review, including its two
-missed errors. Its historical 60/60 result is not the final accuracy result.
+`labels.csv` contains the labels confirmed after [redacted: name] and a colleague manually checked
+all 60 sampled claims against their sources: 58 correct, 2 wrong, no unverifiable claims
+(96.7%, 95% Wilson CI 88.6–99.1%). AI reviewers prepared findings and checked sources before
+this human verification. The author explicitly confirmed the source-by-source human check on
+11 October 2026. This sample review does not certify all 91 records. `labels-model.csv` remains
+the unchanged original model review, including its two missed errors. Its historical 60/60
+result is not the final accuracy result.
 
 These labels judge the original snapshot, not the corrected dataset. The sample is not redrawn,
 and the two wrong labels stay wrong after correction. The current claim population is 263 instead of 264 because Inven AUM is null; this was checked with `build_claims` without writing a new review pack. The historical sample and its denominator remain unchanged.
@@ -44,11 +45,11 @@ The schema and current CLI accept null investment dates; no workaround or fabric
 needed. `eval` joins labels to the unchanged `claims.csv` by claim ID. The adjacent
 `labels.metadata.json` records assessment type, author confirmation date and the SHA-256 hash
 of that historical claims file. If the claims hash changes, evaluation fails before overwriting
-reports. Rerunning `eval --labels eval/labels.csv` preserves the assisted-review attribution,
+reports. Rerunning `eval --labels eval/labels.csv` preserves the confirmed human source-review attribution,
 historical-model heading and snapshot note automatically.
 
 The legacy `human` JSON key names the labels input; `review_provenance` records how the labels
-were produced and explicitly says independent human source-by-source review was not performed.
+were produced and records the author-confirmed human source-by-source review.
 The sidecar binds the historical claims file, not the current corrected records; it does not
 establish accuracy of the corrected snapshot. Do not rerun `review-pack` over the historical
 `claims.csv` or `review.html` to make the corrected dataset appear to score 100%. To create a

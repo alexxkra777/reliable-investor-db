@@ -8,7 +8,7 @@ What was removed, and why:
 - context that the tool injects automatically (personal assistant settings, notes) and all tool outputs — tool calls are listed by their one-line description;
 - private details: email addresses, paths to private configuration, mailbox lookups and other administration unrelated to the assignment — each marked `[redacted: …]`;
 - a few private remarks and the replies to them, marked as such.
-Every sub-agent and Codex session is exported in full next to this file.
+Available sub-agent and Codex session records appear next to this file; long tool outputs may be abbreviated as described in README.md.
 
 ### Author
 

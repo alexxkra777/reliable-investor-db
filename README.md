@@ -5,7 +5,7 @@ investors) where every record is a real investor, and every value says where it 
 
 The approach in one line: **every value carries a verbatim quote and a URL, and a script re-opens
 the page and checks the quote is there and contains the number.** Language models do the reading;
-code checks them; a second model re-checks blind; the author reviews an AI-assisted assessment.
+code checks them; a second model re-checks blind; the author and a colleague verify the sampled claims against their sources.
 
 | Deliverable | Where |
 |---|---|
@@ -13,10 +13,11 @@ code checks them; a second model re-checks blind; the author reviews an AI-assis
 | Evidence behind the plan (sources, counts from SEC/ESMA/GLEIF bulk files, failure modes) | [research/sources-and-universe.md](research/sources-and-universe.md) |
 | Pilot data: VC investors managed from Czechia and Slovakia, a source and quote for every value | [data/sample/investors.json](data/sample/investors.json), flat: [investors.csv](data/sample/investors.csv) |
 | Every decision with the rule that made it | [data/sample/parts/sk-decisions.md](data/sample/parts/sk-decisions.md), [cz-decisions.md](data/sample/parts/cz-decisions.md) |
-| Accuracy: author-reviewed assessment, recall, automated checks | [eval/ACCURACY.md](eval/ACCURACY.md); [all 60 findings](eval/REVIEW.md) |
+| Accuracy: human-verified sample, recall, automated checks | [eval/ACCURACY.md](eval/ACCURACY.md); [all 60 findings](eval/REVIEW.md) |
 | Blind second review and how disagreements were settled | [eval/second-opinion/](eval/second-opinion/) |
 | Cost of scaling to the world, from measured pilot usage | [docs/COST.md](docs/COST.md) |
 | Verification pipeline (Python) | [src/investordb/](src/investordb/), tests in [tests/](tests/) |
+| Process and review stages | [docs/PROCESS.md](docs/PROCESS.md) |
 | Conversation exports | [ai-log/](ai-log/) |
 
 ## Results at a glance
@@ -34,8 +35,10 @@ original slice; it gave only 7 included investors, too few to measure anything, 
 | Recall against the CVCA full-member list | **27 / 27** |
 | Blind second review (other model family) agreed "is a real investor" | 44 / 45 after adjudication (43 / 45 before) |
 | Status errors the second review caught in the first pass | 4 of 45 (all "dormant" firms that had recent deals) |
-| Claim accuracy on the historical 60-claim sample, author-reviewed AI-assisted assessment | **58 / 60 (96.7%)**, 95% CI 88.6–99.1%; [method below](#author-reviewed-ai-assisted-assessment) |
+| Claim accuracy on the historical 60-claim sample, human source-by-source review | **58 / 60 (96.7%)**, 95% CI 88.6–99.1%; [method below](#human-review-and-final-sign-off) |
 | Imputed API token cost of four pilot collection agents (not subscription payments) | **$43.70 ≈ $0.40** per screened candidate; [exact counters and scope](docs/COST.md) |
+
+A concise account of decisions and review stages: [docs/PROCESS.md](docs/PROCESS.md).
 
 ## How a record is made and checked
 
@@ -45,7 +48,7 @@ discover ──> research agent ──> record with quotes ──> fetch every s
  registers,   verbatim quotes                            Wayback fallback)      rules engine
  press)       from raw HTML)                                                    confidence grade
                                                                         │
-                       blind second review (other model) ──> adjudicate ──> assisted sample ──> ACCURACY
+                       blind second review (other model) ──> adjudicate ──> human source review ──> ACCURACY
 ```
 
 ```sh
@@ -74,17 +77,20 @@ python3 -m venv .venv && .venv/bin/pip install -e '.[dev]'
 - **Angels are left out of the pilot.** They are private individuals under GDPR; the plan keeps only
   people with a public investor persona and needs a legal basis before collection.
 
-## Author-reviewed AI-assisted assessment
+## Human review and final sign-off
+
+**Reviewer: [redacted: name] · 11 October 2026.** I and a colleague manually checked all
+60 sampled claims against their sources and confirmed the final labels. AI-assisted preparation
+and automated tests are recorded separately from this human verification.
 
 The fixed historical sample of **60 claims out of 264** remains in [eval/claims.csv](eval/claims.csv)
 and [eval/review.html](eval/review.html). AI reviewers read full source pages and records, recorded
-English notes, and identified two unsupported claims. The author reviewed the findings and confirmed
-[eval/labels.csv](eval/labels.csv). This is **author-reviewed AI-assisted assessment**, not a claim
-that the author or a colleague independently opened all 60 source pages.
+English notes, and identified two unsupported claims. My confirmed labels are in
+[eval/labels.csv](eval/labels.csv). The reported accuracy measures this source-by-source human review of the original sample.
 
 | Review of the historical snapshot | Correct | Wrong | Can't verify | Accuracy (strict, 95% CI) |
 |---|---:|---:|---:|---|
-| Author-reviewed AI-assisted assessment | 58 | 2 | 0 | 96.7% (88.6–99.1) |
+| Human source-by-source review | 58 | 2 | 0 | 96.7% (88.6–99.1) |
 | Historical original model review, preserved unchanged | 60 | 0 | 0 | 100% (94.0–100) |
 
 The current dataset corrects Inven's unsupported AUM and IntellCRE's unsupported exact date.
@@ -140,7 +146,7 @@ log in [ai-log/](ai-log/).
   must be inside the quote; a rule engine recomputes every decision and lists disagreements.
 - A blind second review by another model on everything that was kept, then adjudication of each
   disagreement with the evidence re-fetched.
-- AI reviewers assess the historical stratified sample; the author reviews the findings and confirms labels. The reported number describes that assisted assessment.
+- AI reviewers prepare findings for the historical stratified sample; the author and a colleague manually verify all 60 claims against their sources and confirm labels. The reported number describes this human review.
 - Before every commit: grep for tool names and AI mentions in code and commit messages, and a look
   at screenshots for anything visual.
 

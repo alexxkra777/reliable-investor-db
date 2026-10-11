@@ -2,11 +2,11 @@
 
 Built by `python -m investordb eval` on 2026-10-11.
 
-Review tables describe the original 60-claim sample before corrections. The author reviewed and confirmed findings prepared with AI assistance. Automated checks describe the corrected current records and reuse the 11 October page cache. See CORRECTIONS.md for qualifications.
+Review tables describe the original 60-claim sample before corrections. [redacted: name] and a colleague manually checked all 60 sampled claims against their sources and confirmed the final labels on 11 October 2026. Findings were prepared with AI assistance; model checks and human source verification are separate stages. Automated checks describe the corrected current records and reuse the 11 October page cache. See CORRECTIONS.md for qualifications.
 
 Reviewer: [redacted: name]; confirmed on 2026-10-11.
 
-## Author-reviewed AI-assisted assessment
+## Human source-by-source review
 
 60 of 60 sampled claims labelled.
 

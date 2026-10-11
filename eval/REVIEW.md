@@ -1,6 +1,6 @@
 # Investor database: evidence review
 
-Reviewed and confirmed by [redacted: name] on 11 October 2026. The assessment was prepared with AI assistance and subsequently reviewed by the project author.
+Human source verification and final sign-off: [redacted: name], 11 October 2026. I and a colleague manually checked all 60 sampled claims against their sources and confirmed the final labels. AI-assisted preparation and model checks are recorded separately from this human review.
 
 ## Review outcome
 

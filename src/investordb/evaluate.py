@@ -172,7 +172,9 @@ def render_md(metrics: dict) -> str:
               "Reviewer: " + provenance.get("reviewer", "unspecified")
               + "; confirmed on " + provenance.get("reviewed_on", "unspecified") + ".", ""]
     hm = metrics.get("human")
-    L.append("## Author-reviewed AI-assisted assessment" if assisted else "## Human review")
+    L.append("## Human source-by-source review"
+             if provenance.get("independent_human_source_by_source_review")
+             else "## Author-reviewed AI-assisted assessment" if assisted else "## Human review")
     L.append("")
     if hm is None:
         L += [f"**No review labels found** ({metrics['labels_path']}). Only the automated "

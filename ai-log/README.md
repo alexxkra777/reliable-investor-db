@@ -11,4 +11,8 @@ Source quotations and executed code retain their original language where it matt
 - `0N-codex-*.md`: actual Codex CLI sessions and their tool evidence.
 - `*-final-review.md`: an editorial process summary of the October 11 continuation, explicitly not a transcript.
 
-AI models researched and checked sources. The author reviewed findings and confirmed the final 60-claim labels; this does not mean the author performed the source-reading steps recorded as model actions. The original model review and its disagreements with the author’s labels remain visible.
+AI models researched and checked sources. [redacted: name] and a colleague subsequently manually checked all 60 sampled claims against their sources and confirmed the final labels. Model actions in the transcripts retain their original attribution. The original model review and its disagreements with the author’s labels remain visible.
+
+## Native export status
+
+The assignment asks for Claude Code `/export` output. The records above were reconstructed from saved session logs, translated and edited as described; they are not presented as untouched native exports. A native `/export` was obtained from the resumed orchestrator on 11 October 2026, but it contains only the tail after compaction, rather than the full implementation history. That unedited file is retained privately for review. A complete native export, or an explicit explanation of the recovered transcript format, remains a submission-format check before publication.
