@@ -1,0 +1,139 @@
+{
+  "date": "2026-10-11",
+  "labels_path": "eval/labels.csv",
+  "human": null,
+  "recall": {
+    "cvca-full-members": {
+      "k": 27,
+      "n": 27,
+      "value": 1.0,
+      "ci95": [
+        0.8754,
+        1.0
+      ],
+      "by_status": {
+        "out_of_scope": 17,
+        "included": 8,
+        "excluded": 1,
+        "uncertain": 1
+      },
+      "missing": []
+    }
+  },
+  "automated": {
+    "quote_checks": {
+      "total": 300,
+      "by_status": {
+        "exact": 300
+      },
+      "pass_rate": {
+        "k": 300,
+        "n": 300,
+        "value": 1.0,
+        "ci95": [
+          0.9874,
+          1.0
+        ]
+      },
+      "reachable_pass_rate": {
+        "k": 300,
+        "n": 300,
+        "value": 1.0,
+        "ci95": [
+          0.9874,
+          1.0
+        ]
+      },
+      "by_tier": {
+        "A": {
+          "k": 62,
+          "n": 62,
+          "value": 1.0,
+          "ci95": [
+            0.9417,
+            1.0
+          ]
+        },
+        "B": {
+          "k": 210,
+          "n": 210,
+          "value": 1.0,
+          "ci95": [
+            0.982,
+            1.0
+          ]
+        },
+        "C": {
+          "k": 28,
+          "n": 28,
+          "value": 1.0,
+          "ci95": [
+            0.8794,
+            1.0
+          ]
+        }
+      }
+    },
+    "value_checks": {
+      "by_status": {
+        "n/a": 151,
+        "value_not_in_quote": 10,
+        "ok": 109,
+        "partial": 30
+      },
+      "value_in_quote_rate": {
+        "k": 109,
+        "n": 149,
+        "value": 0.7315,
+        "ci95": [
+          0.6552,
+          0.7962
+        ]
+      },
+      "claims_by_status": {
+        "value_not_in_quote": 1,
+        "ok": 107,
+        "partial": 15
+      },
+      "claim_backed_rate": {
+        "k": 107,
+        "n": 123,
+        "value": 0.8699,
+        "ci95": [
+          0.7991,
+          0.9183
+        ]
+      },
+      "claim_not_contradicted_rate": {
+        "k": 122,
+        "n": 123,
+        "value": 0.9919,
+        "ci95": [
+          0.9554,
+          0.9986
+        ]
+      }
+    },
+    "decision_agreement": {
+      "by_agreement": {
+        "agree": 41,
+        "human_only": 36,
+        "DISAGREE": 14
+      },
+      "agree_rate": {
+        "k": 41,
+        "n": 55,
+        "value": 0.7455,
+        "ci95": [
+          0.617,
+          0.8419
+        ]
+      }
+    },
+    "confidence": {
+      "A": 26,
+      "B": 2,
+      "C": 63
+    }
+  }
+}

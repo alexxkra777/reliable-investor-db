@@ -2243,6 +2243,9 @@
       }
     },
     "investments": [],
+    "aliases": [
+      "Genesis Capital Equity s.r.o."
+    ],
     "grade": {
       "confidence": "C",
       "reason": "no dated investment proven by Tier A/B; existence not proven (no Tier A, 0 A/B companies)",
@@ -2432,6 +2435,9 @@
           }
         ]
       }
+    ],
+    "aliases": [
+      "i&i Biotech Investments"
     ],
     "grade": {
       "confidence": "C",

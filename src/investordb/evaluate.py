@@ -106,17 +106,27 @@ def automated_metrics(verification, decision_check, graded) -> dict:
                         for t in ("A", "B", "C") if any(r["tier"] == t for r in rows)},
         }
         with_values = [r for r in rows if r["value_status"] != "n/a"]
+        # one row per claim: a claim is backed when its verified quotes together carry the values
+        claims = {(r["record_id"], r["target"]): r.get("claim_value_status") or r["value_status"]
+                  for r in rows}
+        claim_values = [v for v in claims.values() if v != "n/a"]
         out["value_checks"] = {
             "by_status": dict(vs),
             "value_in_quote_rate": rate(sum(r["value_status"] == "ok" for r in with_values),
                                         len(with_values)),
+            "claims_by_status": dict(Counter(claim_values)),
+            "claim_backed_rate": rate(sum(v == "ok" for v in claim_values), len(claim_values)),
+            "claim_not_contradicted_rate": rate(
+                sum(v != "value_not_in_quote" for v in claim_values), len(claim_values)),
         }
     if Path(decision_check).exists():
         with Path(decision_check).open(newline="", encoding="utf-8") as f:
             rows = list(csv.DictReader(f))
         ag = Counter(r["agreement"] for r in rows)
+        # human_only rows are decisions the engine can't make (scope, rules it has no data for)
+        decidable = ag["agree"] + ag["DISAGREE"]
         out["decision_agreement"] = {"by_agreement": dict(ag),
-                                     "agree_rate": rate(ag["agree"], len(rows))}
+                                     "agree_rate": rate(ag["agree"], decidable)}
     if Path(graded).exists():
         recs = json.loads(Path(graded).read_text(encoding="utf-8"))
         conf = Counter((r.get("grade") or {}).get("confidence", "?") for r in recs)
@@ -193,11 +203,22 @@ def render_md(metrics: dict) -> str:
         for t, r in q["by_tier"].items():
             L.append(f"| Quote found, Tier {t} | {_pct(r)} |")
         if "value_checks" in am:
-            L.append(f"| Number/date present in quote | "
-                     f"{_pct(am['value_checks']['value_in_quote_rate'])} |")
+            v = am["value_checks"]
+            if "claim_backed_rate" in v:
+                L.append(f"| Claims whose numbers/dates are all in their quotes | "
+                         f"{_pct(v['claim_backed_rate'])} |")
+                L.append(f"| Claims with at least part of the value in the quotes | "
+                         f"{_pct(v['claim_not_contradicted_rate'])} |")
+            L.append(f"| Number/date present, per single source | "
+                     f"{_pct(v['value_in_quote_rate'])} |")
         if "decision_agreement" in am:
-            L.append(f"| Stored decision = rule engine | "
-                     f"{_pct(am['decision_agreement']['agree_rate'])} |")
+            d = am["decision_agreement"]
+            L.append(f"| Stored decision = rule engine (decidable cases) | "
+                     f"{_pct(d['agree_rate'])} |")
+            L.append("")
+            L.append("Rule engine vs stored decisions: " + ", ".join(
+                f"{k} {n}" for k, n in sorted(d["by_agreement"].items())) + ". `human_only` = "
+                "a decision the engine can't make (pilot scope, or a rule it has no data for).")
         L.append("")
         L.append("Quote statuses: " + ", ".join(f"{k} {v}" for k, v in
                                                 sorted(q["by_status"].items())) + ".")

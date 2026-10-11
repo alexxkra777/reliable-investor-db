@@ -2600,7 +2600,10 @@
       "note": "Out of the Slovak pilot scope, no E rule applies: Czech private equity (EIF lists the team location as Czech Republic); SLOVCA full member. Evidence: https://www.eif.org/files/attachments/czechia-equity-fundmanagers.pdf — \"Genesis Private Equity Fund V SCSp Genesis Capital Equity s.r.o. Czech Republic EIF;RCR Growth and expansion\""
     },
     "fields": {},
-    "investments": []
+    "investments": [],
+    "aliases": [
+      "Genesis Capital Equity s.r.o."
+    ]
   },
   {
     "id": "arx-equity-partners",
