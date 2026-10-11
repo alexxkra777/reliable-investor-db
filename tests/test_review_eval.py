@@ -93,3 +93,25 @@ def test_eval_without_labels_says_so(records, fixtures_dir, tmp_path):
     metrics = json.loads((tmp_path / "metrics.json").read_text())
     assert metrics["human"] is None
     assert metrics["recall"]["example-association"]["k"] == 2
+
+
+def test_model_review_is_reported_apart_and_compared(records, fixtures_dir, tmp_path):
+    from investordb.review import write_claims_csv
+
+    claims = sample_claims(build_claims(records), 60, 7)
+    claims_path = tmp_path / "claims.csv"
+    write_claims_csv(claims, claims_path)
+    ids = [c["claim_id"] for c in claims][:2]
+    write_csv(tmp_path / "labels.csv", ["claim_id", "label", "note", "reviewed_at"],
+              [[ids[0], "correct", "", ""], [ids[1], "wrong", "", ""]])
+    write_csv(tmp_path / "labels-model.csv", ["claim_id", "label", "note", "reviewed_at"],
+              [[ids[0], "correct", "", ""], [ids[1], "correct", "", ""]])
+    run_eval(fixtures_dir / "investors.json", claims_path, tmp_path / "labels.csv",
+             fixtures_dir / "reference", tmp_path / "none.csv", tmp_path / "none.csv",
+             tmp_path / "none.json", tmp_path / "ACCURACY.md", tmp_path / "metrics.json",
+             tmp_path / "labels-model.csv")
+    md = (tmp_path / "ACCURACY.md").read_text()
+    assert "## Human review" in md and "## Model review" in md
+    m = json.loads((tmp_path / "metrics.json").read_text())
+    assert (m["reviewer_agreement"]["k"], m["reviewer_agreement"]["n"]) == (1, 2)
+    assert m["reviewer_agreement"]["disagreements"] == [ids[1]]

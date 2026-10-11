@@ -148,6 +148,19 @@ def _row(name: str, m: dict) -> str:
             f"{_pct(m['strict'])} | {_pct(m['lenient'])} |")
 
 
+def _review_table(hm: dict) -> list[str]:
+    L = [f"{hm['labelled_claims']} of {hm['sampled_claims']} sampled claims labelled.", "",
+         "| Metric | Labelled | Correct | Wrong | Can't verify | Strict (95 % CI) "
+         "| Lenient (95 % CI) |",
+         "|---|---:|---:|---:|---:|---|---|",
+         _row("Inclusion precision", hm["inclusion_precision"])]
+    for f, m in hm["field_accuracy"].items():
+        L.append(_row(f"Field: {f}", m))
+    L += [_row("Investment date", hm["investment_date_accuracy"]),
+          _row("**All claims**", hm["overall_claim_accuracy"]), ""]
+    return L
+
+
 def render_md(metrics: dict) -> str:
     L = ["# Accuracy report", "",
          f"Built by `python -m investordb eval` on {metrics['date']}.", ""]
@@ -160,17 +173,23 @@ def render_md(metrics: dict) -> str:
               "text, not whether the claims are right. Run `review-pack`, review "
               "`eval/review.html`, export `eval/labels.csv` and run `eval` again.", ""]
     else:
-        L += [f"{hm['labelled_claims']} of {hm['sampled_claims']} sampled claims labelled.", "",
-              "| Metric | Labelled | Correct | Wrong | Can't verify | Strict (95 % CI) "
-              "| Lenient (95 % CI) |",
-              "|---|---:|---:|---:|---:|---|---|",
-              _row("Inclusion precision", hm["inclusion_precision"])]
-        for f, m in hm["field_accuracy"].items():
-            L.append(_row(f"Field: {f}", m))
-        L += [_row("Investment date", hm["investment_date_accuracy"]),
-              _row("**All claims**", hm["overall_claim_accuracy"]), ""]
+        L += _review_table(hm)
         if metrics.get("label_problems"):
             L += ["Ignored label rows: " + "; ".join(metrics["label_problems"]), ""]
+
+    mm = metrics.get("model")
+    if mm is not None:
+        L += ["## Model review", "",
+              "The same sample judged by a separate model run that read each source page in full "
+              "(not only the quote) and the whole record. It is not a substitute for the human "
+              "review: it comes from the same model family that collected the data, so its "
+              "mistakes can line up with the collectors' mistakes.", ""]
+        L += _review_table(mm)
+        ag = metrics.get("reviewer_agreement")
+        if ag:
+            L += [f"Human and model labels agree on {ag['k']} of {ag['n']} claims "
+                  f"({_pct(ag)}). Claims they disagree on: "
+                  + (", ".join(ag["disagreements"]) or "none") + ".", ""]
 
     L += ["## Recall against reference lists", ""]
     rc = metrics.get("recall")
@@ -247,7 +266,7 @@ def render_md(metrics: dict) -> str:
 
 
 def run_eval(records_path, claims_path, labels_path, reference_dir, verification,
-             decision_check, graded, out_md, out_json) -> int:
+             decision_check, graded, out_md, out_json, model_labels_path=None) -> int:
     metrics: dict = {"date": date.today().isoformat(), "labels_path": str(labels_path)}
 
     if Path(labels_path).exists():
@@ -263,6 +282,18 @@ def run_eval(records_path, claims_path, labels_path, reference_dir, verification
     else:
         metrics["human"] = None
         print(f"note: {labels_path} not found - computing automated metrics only")
+
+    if model_labels_path and Path(model_labels_path).exists() and Path(claims_path).exists():
+        claims = read_claims_csv(claims_path)
+        model, _ = read_labels(model_labels_path)
+        metrics["model"] = human_metrics(claims, model)
+        if metrics.get("human"):
+            human, _ = read_labels(labels_path)
+            both = [c for c in human if c in model]
+            same = [c for c in both if human[c]["label"] == model[c]["label"]]
+            metrics["reviewer_agreement"] = {
+                **rate(len(same), len(both)),
+                "disagreements": sorted(c for c in both if c not in same)}
 
     try:
         records = load_records(records_path)

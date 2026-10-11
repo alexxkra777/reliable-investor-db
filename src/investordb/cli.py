@@ -72,7 +72,7 @@ def cmd_eval(a) -> int:
     from investordb.evaluate import run_eval
 
     return run_eval(a.records, a.claims, a.labels, a.reference, a.verification,
-                    a.decision_check, a.graded, a.out_md, a.out_json)
+                    a.decision_check, a.graded, a.out_md, a.out_json, a.model_labels)
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -120,6 +120,8 @@ def build_parser() -> argparse.ArgumentParser:
 
     sp = add("eval", cmd_eval, "accuracy metrics from review labels")
     sp.add_argument("--labels", default="eval/labels.csv")
+    sp.add_argument("--model-labels", default="eval/labels-model.csv",
+                    help="labels from a model review of the same sample, reported separately")
     sp.add_argument("--claims", default="eval/claims.csv")
     sp.add_argument("--reference", default="data/reference")
     sp.add_argument("--verification", default=VERIFICATION)
