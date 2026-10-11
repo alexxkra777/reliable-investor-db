@@ -1,0 +1,2529 @@
+[
+  {
+    "id": "neulogy-ventures",
+    "name": "Neulogy Ventures",
+    "aliases": [
+      "Neulogy Ventures, a. s.",
+      "Neulogy VC",
+      "Slovak Venture Fund S.C.A., SICAR"
+    ],
+    "type": "vc",
+    "hq": {
+      "country": "SK",
+      "city": "Bratislava"
+    },
+    "website": "https://www.neulogy.vc/",
+    "legal_entities": [
+      {
+        "name": "Neulogy Ventures, a. s.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "47367610",
+        "register_url": "https://www.orsr.sk/vypis.asp?ID=276162&SID=2&P=0"
+      },
+      {
+        "name": "Slovak Venture Fund S.C.A., SICAR",
+        "role": "fund",
+        "id_type": "company_number",
+        "id": "B185175",
+        "register_url": null
+      }
+    ],
+    "decision": {
+      "status": "included",
+      "rules": [
+        "I1",
+        "I2",
+        "I3",
+        "I4"
+      ],
+      "note": "SLOVCA full member; EIF lists Neulogy Ventures a.s. as manager of Slovak Venture Fund S.C.A., SICAR (end of investment period 14/03/2027). Latest dated investment: the fund re-entered MultiplexDX, s.r.o. as shareholder on 17.01.2026 (it had left in 2018), so this is most likely a follow-on in a known portfolio company, not a new deal. SIH says its own SIH-backed compartments invested in 2014-2016 and are divesting. The Staffino registry line dated 18.10.2024 is only an address change of the fund (shareholder since 2015), so it is not counted. No new-company deal found after StratifAI (2024, aggregator only, not stored)."
+    },
+    "fields": {
+      "sectors": {
+        "value": [
+          "ICT",
+          "energy",
+          "medical diagnostics"
+        ],
+        "sources": [
+          {
+            "url": "https://www.slovca.sk/sk/riadni-clenovia/neulogy-ventures.html",
+            "tier": "B",
+            "publisher": "SLOVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Preferované odvetvie: Informačné a komunikačné technológie, energetika a medicínska diagnostika"
+          }
+        ]
+      },
+      "stages": {
+        "value": [
+          "seed",
+          "venture"
+        ],
+        "sources": [
+          {
+            "url": "https://www.slovca.sk/sk/riadni-clenovia/neulogy-ventures.html",
+            "tier": "B",
+            "publisher": "SLOVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Typ investícií: Seed, Venture capital"
+          }
+        ]
+      },
+      "geography": {
+        "value": [
+          "SK"
+        ],
+        "sources": [
+          {
+            "url": "https://www.slovca.sk/sk/riadni-clenovia/neulogy-ventures.html",
+            "tier": "B",
+            "publisher": "SLOVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Geografické zameranie: SR"
+          }
+        ]
+      },
+      "ticket": {
+        "value": {
+          "min": 200000,
+          "max": 2500000,
+          "currency": "EUR"
+        },
+        "sources": [
+          {
+            "url": "https://www.slovca.sk/sk/riadni-clenovia/neulogy-ventures.html",
+            "tier": "B",
+            "publisher": "SLOVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Preferovaná výška jednej investície: 200,000 - 2.5 M EUR"
+          }
+        ]
+      },
+      "ticket_observed": null,
+      "funds": {
+        "value": [
+          {
+            "name": "Slovak Venture Fund S.C.A., SICAR",
+            "size": null,
+            "currency": null,
+            "vintage": null
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://www.eif.org/files/attachments/slovakia-equity-fundmanagers.pdf",
+            "tier": "A",
+            "publisher": "European Investment Fund",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Slovak Venture Fund S.C.A., SICAR Neulogy Ventures a.s. Slovakia CEFoF;EGF Slovakia Venture Capital ICT Balanced Fund 14/03/2027"
+          }
+        ]
+      },
+      "aum": {
+        "value": {
+          "amount": 26000000,
+          "currency": "EUR",
+          "as_of": null
+        },
+        "sources": [
+          {
+            "url": "https://www.slovca.sk/sk/riadni-clenovia/neulogy-ventures.html",
+            "tier": "B",
+            "publisher": "SLOVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Objem prostriedkov v správe: 26 M EUR"
+          }
+        ]
+      }
+    },
+    "investments": [
+      {
+        "company": "MultiplexDX, s.r.o.",
+        "date": "2026-01-17",
+        "date_kind": "registry_entry",
+        "round_size": null,
+        "fund": "Slovak Venture Fund S.C.A., SICAR",
+        "sources": [
+          {
+            "url": "https://www.orsr.sk/vypis.asp?ID=554899&SID=2&P=0",
+            "tier": "A",
+            "publisher": "Obchodný register SR (Ministry of Justice SR)",
+            "published": "2026-01-17",
+            "accessed": "2026-10-11",
+            "quote": "Slovak Venture Fund S.C.A., SICAR Avenue Emile Reuter 11 Luxembourg L-2420 Luxemburské veľkovojvodstvo Iné identifikačné číslo: B185175 (od: 17.01.2026)"
+          },
+          {
+            "url": "https://www.orsr.sk/vypis.asp?ID=554899&SID=2&P=1",
+            "tier": "A",
+            "publisher": "Obchodný register SR (Ministry of Justice SR)",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Slovak Venture Fund S.C.A., SICAR Avenue Emile Reuter 11 Luxemburg L-2420 Luxemburské veľkovojvodstvo (od: 11.02.2016 do: 27.09.2018)"
+          }
+        ]
+      },
+      {
+        "company": "GA Drilling",
+        "date": "2024-04-18",
+        "date_kind": "announced",
+        "round_size": {
+          "amount": 15000000,
+          "currency": "USD"
+        },
+        "sources": [
+          {
+            "url": "https://www.thinkgeoenergy.com/ga-drilling-secures-15-million-funding-to-accelerate-deep-geothermal/",
+            "tier": "C",
+            "publisher": "ThinkGeoEnergy",
+            "published": "2024-04-18",
+            "accessed": "2026-10-11",
+            "quote": "GA Drilling has secured $15 million in investment to accelerate technology deployment"
+          },
+          {
+            "url": "https://www.thinkgeoenergy.com/ga-drilling-secures-15-million-funding-to-accelerate-deep-geothermal/",
+            "tier": "C",
+            "publisher": "ThinkGeoEnergy",
+            "published": "2024-04-18",
+            "accessed": "2026-10-11",
+            "quote": "Slovakia-based, Neulogy Ventures"
+          }
+        ]
+      },
+      {
+        "company": "Trustmatic",
+        "date": "2023-10-24",
+        "date_kind": "announced",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://neulogy.vc/news/",
+            "tier": "B",
+            "publisher": "Neulogy Ventures",
+            "published": "2023-10-24",
+            "accessed": "2026-10-11",
+            "quote": "We are proud to announce @trustmaticHQ as the latest addition to the Neulogy Ventures family."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vision-ventures",
+    "name": "Vision Ventures",
+    "aliases": [
+      "Vision Ventures, s.r.o.",
+      "Vision Ventures Growth I, s. r. o."
+    ],
+    "type": "vc",
+    "hq": {
+      "country": "SK",
+      "city": "Bratislava"
+    },
+    "website": "https://visionventures.vc/",
+    "legal_entities": [
+      {
+        "name": "Vision Ventures, s.r.o.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "52568288",
+        "register_url": "https://www.orsr.sk/vypis.asp?ID=526709&SID=2&P=0"
+      },
+      {
+        "name": "Vision Ventures Growth I, s. r. o.",
+        "role": "fund",
+        "id_type": "ICO",
+        "id": "52656438",
+        "register_url": "https://www.orsr.sk/vypis.asp?ID=497651&SID=2&P=0"
+      }
+    ],
+    "decision": {
+      "status": "included",
+      "rules": [
+        "I1",
+        "I2",
+        "I3",
+        "I4"
+      ],
+      "note": "SLOVCA full member; fund vehicle co-owned by NDF II (SIH programme). Its own site says new investments were possible only until end-2023 and SIH says the fund is divesting. The only dated activity after Oct 2023 is a follow-on: its stake in Airvolute s.r.o. rose from 1 667 EUR to 3 290 EUR (registry entry 09.01.2026). The Airvolute and Spinbotics lines dated 29.03.2025 and 18.04.2024 are address changes, not new deals. Passes I3 on a follow-on only; the last new-company deals found are from 2023. Evidence: https://www.sih.sk/en/investicie/investicie-cez-financnych-sprostredkovatelov/vision-ventures-kapitalova-investicia — \"it launched operations in 2020 and finalised its investment period in December 2023.\""
+    },
+    "fields": {
+      "sectors": {
+        "value": [
+          "generalist"
+        ],
+        "sources": [
+          {
+            "url": "https://visionventures.vc/",
+            "tier": "B",
+            "publisher": "Vision Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "We have a generalist approach and we are open to various sectors."
+          }
+        ]
+      },
+      "stages": {
+        "value": [
+          "pre-seed",
+          "seed"
+        ],
+        "sources": [
+          {
+            "url": "https://visionventures.vc/",
+            "tier": "B",
+            "publisher": "Vision Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "VC fund focused on pre-seed and seed investments in Slovakia."
+          }
+        ]
+      },
+      "geography": {
+        "value": [
+          "SK"
+        ],
+        "sources": [
+          {
+            "url": "https://visionventures.vc/",
+            "tier": "B",
+            "publisher": "Vision Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "We invest in companies that are based and operate in Slovakia."
+          }
+        ]
+      },
+      "ticket": {
+        "value": {
+          "min": 100000,
+          "max": 1600000,
+          "currency": "EUR"
+        },
+        "sources": [
+          {
+            "url": "https://visionventures.vc/",
+            "tier": "B",
+            "publisher": "Vision Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "We usually make investments between €100 thousand and €800 thousand, maximum up to €1,6 million."
+          }
+        ]
+      },
+      "ticket_observed": null,
+      "funds": {
+        "value": [
+          {
+            "name": "Vision Ventures Growth I",
+            "size": null,
+            "currency": null,
+            "vintage": null
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://www.orsr.sk/vypis.asp?ID=497651&SID=2&P=0",
+            "tier": "A",
+            "publisher": "Obchodný register SR (Ministry of Justice SR)",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Spoločníci: National Development Fund II., a.s. IČO: 47 759 224 Grösslingová 44 Bratislava - mestská časť Staré Mesto 811 09 (od: 23.09.2022) Vision Ventures, s.r.o. IČO: 52 568 288"
+          }
+        ]
+      },
+      "aum": null
+    },
+    "investments": [
+      {
+        "company": "Airvolute s.r.o. (follow-on)",
+        "date": "2026-01-09",
+        "date_kind": "registry_entry",
+        "round_size": null,
+        "fund": "Vision Ventures Growth I",
+        "sources": [
+          {
+            "url": "https://www.orsr.sk/vypis.asp?ID=548451&SID=7&P=0",
+            "tier": "A",
+            "publisher": "Obchodný register SR (Ministry of Justice SR)",
+            "published": "2026-01-09",
+            "accessed": "2026-10-11",
+            "quote": "Vision Ventures Growth I, s. r. o. Vklad: 3 290 EUR ( peňažný vklad ) Splatené: 3 290 EUR (od: 09.01.2026)"
+          },
+          {
+            "url": "https://www.orsr.sk/vypis.asp?ID=548451&SID=7&P=1",
+            "tier": "A",
+            "publisher": "Obchodný register SR (Ministry of Justice SR)",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Vision Ventures Growth I, s. r. o. Vklad: 1 667 EUR ( peňažný vklad ) Splatené: 1 667 EUR (od: 29.03.2025 do: 10.11.2025)"
+          }
+        ]
+      },
+      {
+        "company": "BiteBerry s. r. o.",
+        "date": "2023-08-09",
+        "date_kind": "registry_entry",
+        "round_size": null,
+        "fund": "Vision Ventures Growth I",
+        "sources": [
+          {
+            "url": "https://www.orsr.sk/vypis.asp?ID=694090&SID=5&P=0",
+            "tier": "A",
+            "publisher": "Obchodný register SR (Ministry of Justice SR)",
+            "published": "2023-08-09",
+            "accessed": "2026-10-11",
+            "quote": "Vision Ventures Growth I, s. r. o. Vklad: 2 254 EUR ( peňažný vklad ) Splatené: 2 254 EUR (od: 09.08.2023)"
+          }
+        ]
+      },
+      {
+        "company": "Seerlinq s.r.o.",
+        "date": "2023-07-14",
+        "date_kind": "registry_entry",
+        "round_size": null,
+        "fund": "Vision Ventures Growth I",
+        "sources": [
+          {
+            "url": "https://www.orsr.sk/vypis.asp?ID=665401&SID=7&P=0",
+            "tier": "A",
+            "publisher": "Obchodný register SR (Ministry of Justice SR)",
+            "published": "2023-07-14",
+            "accessed": "2026-10-11",
+            "quote": "Vision Ventures Growth I, s. r. o. Vklad: 1 050 EUR ( peňažný vklad ) Splatené: 1 050 EUR (od: 14.07.2023)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "venture-to-future-fund",
+    "name": "Venture to Future Fund",
+    "aliases": [
+      "VFF",
+      "Venture to Future Fund, a.s."
+    ],
+    "type": "vc",
+    "hq": {
+      "country": "SK",
+      "city": "Bratislava"
+    },
+    "website": "https://vff.sk/",
+    "legal_entities": [
+      {
+        "name": "Venture to Future Fund, a.s.",
+        "role": "fund",
+        "id_type": "ICO",
+        "id": "52380483",
+        "register_url": "https://www.orsr.sk/vypis.asp?ID=464212&SID=2&P=0"
+      }
+    ],
+    "decision": {
+      "status": "included",
+      "rules": [
+        "I1",
+        "I2",
+        "I3",
+        "I4"
+      ],
+      "note": "State-backed (EIB, Ministry of Finance and SIH money) but invests directly and pari passu with a private co-investor, so it is a direct VC investor, not a fund-of-funds. A 2020 SIH statement names Slovak Asset Management (SIH group) as the licensed manager; no separate ORSR entry was found under that name, so the record is kept at the fund level. SLOVCA full member. Investment period extended to end-2026."
+    },
+    "fields": {
+      "sectors": {
+        "value": [
+          "innovative SMEs",
+          "technology SMEs"
+        ],
+        "sources": [
+          {
+            "url": "https://www.slovca.sk/sk/riadni-clenovia/venture-to-future-fund.html",
+            "tier": "B",
+            "publisher": "SLOVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Preferovaný sektor: inovatívne SME spoločnosti, technologické SME spoločnosti"
+          }
+        ]
+      },
+      "stages": {
+        "value": [
+          "late seed",
+          "Series A",
+          "Series B"
+        ],
+        "sources": [
+          {
+            "url": "https://vff.sk/",
+            "tier": "B",
+            "publisher": "Venture to Future Fund",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Cielime na malé a stredné podniky v rastovej fáze od neskoršieho Seed kola po Series A,B"
+          }
+        ]
+      },
+      "geography": {
+        "value": [
+          "SK",
+          "EU"
+        ],
+        "sources": [
+          {
+            "url": "https://vff.sk/",
+            "tier": "B",
+            "publisher": "Venture to Future Fund",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Zameriavame sa predovšetkým spoločnosti založené a pôsobiace na Slovensku a zahraničné spoločnosti (EÚ) s kapitálovým prepojením na Slovensko"
+          }
+        ]
+      },
+      "ticket": {
+        "value": {
+          "min": 400000,
+          "max": 7000000,
+          "currency": "EUR"
+        },
+        "sources": [
+          {
+            "url": "https://vff.sk/",
+            "tier": "B",
+            "publisher": "Venture to Future Fund",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Minimálna výška našej investície je 400tis. EUR, aj keď optimálne investujeme medzi 1,5 – 2,0 mil. EUR."
+          },
+          {
+            "url": "https://vff.sk/",
+            "tier": "B",
+            "publisher": "Venture to Future Fund",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "až do výšky 7mil. EUR, vrátane follow-on investícií"
+          }
+        ]
+      },
+      "ticket_observed": null,
+      "funds": {
+        "value": [
+          {
+            "name": "Venture to Future Fund",
+            "size": 55000000,
+            "currency": "EUR",
+            "vintage": null
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://vff.sk/",
+            "tier": "B",
+            "publisher": "Venture to Future Fund",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "V rokoch 2020 - 2026 máme vyčlenených 55 mil. EUR"
+          },
+          {
+            "url": "https://www.sih.sk/en/aktuality/venture-to-future-fund-navysuje-kapital-o-15-3-miliona-eur-na-podporu-slovenskych-startupov",
+            "tier": "B",
+            "publisher": "Slovak Investment Holding",
+            "published": "2024-05-28",
+            "accessed": "2026-10-11",
+            "quote": "Additional financing from the Recovery and Resilience Plan through Slovak Investment Holding will extend the investment period of the VFF fund until the end of 2026."
+          }
+        ]
+      },
+      "aum": null
+    },
+    "investments": [
+      {
+        "company": "FaceUp",
+        "date": "2026-05-19",
+        "date_kind": "announced",
+        "round_size": {
+          "amount": 5000000,
+          "currency": "USD"
+        },
+        "sources": [
+          {
+            "url": "https://www.startitup.sk/z-brna-do-dubaja-novy-fond-nalial-miliony-do-startupu-ktory-vznikol-ako-studentsky-projekt-teraz-mieri-aj-na-slovensko/",
+            "tier": "C",
+            "publisher": "Startitup",
+            "published": "2026-05-19",
+            "accessed": "2026-10-11",
+            "quote": "Pridali sa aj slovenský Venture to Future Fund, pražský Gi21 Capital"
+          },
+          {
+            "url": "https://www.startitup.sk/z-brna-do-dubaja-novy-fond-nalial-miliony-do-startupu-ktory-vznikol-ako-studentsky-projekt-teraz-mieri-aj-na-slovensko/",
+            "tier": "C",
+            "publisher": "Startitup",
+            "published": "2026-05-19",
+            "accessed": "2026-10-11",
+            "quote": "JIC Ventures vstúpil do investičného kola Series A spoločnosti FaceUp v hodnote 5 miliónov dolárov."
+          }
+        ]
+      },
+      {
+        "company": "MultiplexDX, s.r.o.",
+        "date": "2026-01-17",
+        "date_kind": "registry_entry",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://www.orsr.sk/vypis.asp?ID=554899&SID=2&P=0",
+            "tier": "A",
+            "publisher": "Obchodný register SR (Ministry of Justice SR)",
+            "published": "2026-01-17",
+            "accessed": "2026-10-11",
+            "quote": "Venture to Future Fund, a.s. IČO: 52 380 483 Grösslingová 44 Bratislava - mestská časť Staré Mesto 811 09 (od: 17.01.2026)"
+          }
+        ]
+      },
+      {
+        "company": "Talentiqa",
+        "date": "2025-09-29",
+        "date_kind": "announced",
+        "round_size": {
+          "amount": 1100000,
+          "currency": "EUR"
+        },
+        "sources": [
+          {
+            "url": "https://vestbee.com/insights/articles/talentiqa-raises-1-1-m",
+            "tier": "C",
+            "publisher": "Vestbee",
+            "published": "2025-09-29",
+            "accessed": "2026-10-11",
+            "quote": "has raised €1.1 million (CZK 25 million), with the investment equally split between Purple Ventures and the Venture to Future Fund"
+          }
+        ]
+      },
+      {
+        "company": "IAG",
+        "date": "2025-05-22",
+        "date_kind": "announced",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://www.e15.cz/byznys/fait-investuje-miliony-do-online-distribuce-autodilu-platformu-iag-podpori-i-slovaci-1424729",
+            "tier": "C",
+            "publisher": "E15",
+            "published": "2025-05-22",
+            "accessed": "2026-10-11",
+            "quote": "slovenský Venture to Future Fund částku 1,6 milionu eur, tedy téměř 40 milionů korun"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "zero-one-hundred",
+    "name": "Zero One Hundred (0100 Ventures)",
+    "aliases": [
+      "0100 Ventures s. r. o.",
+      "0100 VC",
+      "Zero 100 VC",
+      "Zero Gravity Capital",
+      "0100 VC RAIF F.C.I.C. PLC"
+    ],
+    "type": "vc",
+    "hq": {
+      "country": "SK",
+      "city": "Bratislava"
+    },
+    "website": "https://0100.vc/",
+    "legal_entities": [
+      {
+        "name": "0100 Ventures s. r. o.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "50209728",
+        "register_url": "https://www.orsr.sk/vypis.asp?ID=346365&SID=2&P=0"
+      },
+      {
+        "name": "Zero Gravity Capital s.r.o.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "52651894",
+        "register_url": "https://www.orsr.sk/vypis.asp?ID=498371&SID=2&P=0"
+      },
+      {
+        "name": "ZGC Fund I., s.r.o.",
+        "role": "fund",
+        "id_type": "ICO",
+        "id": "52768058",
+        "register_url": "https://www.orsr.sk/vypis.asp?ID=503429&SID=2&P=0"
+      }
+    ],
+    "decision": {
+      "status": "included",
+      "rules": [
+        "I1",
+        "I2",
+        "I3",
+        "I4"
+      ],
+      "note": "One manager group, two funds: Fund I is run through Zero Gravity Capital s.r.o. (100% owned by 0100 Ventures s. r. o.) and ZGC Fund I. (co-owned by NDF II); Fund II is 0100 VC RAIF F.C.I.C. PLC in Nicosia. The group parent and Fund I are Bratislava entities, so the record is kept as Slovak-managed, but flag it: the managing partner lives mostly in Cyprus and Fund II also targets the Middle East. Zero Gravity Capital is rolled into this record (E9). Dated activity after Oct 2023: ZGC Fund I raised its BinarBase stake 3 000 -> 3 161 EUR (ORSR 01.11.2024, follow-on); the Reno (UAE) round of 04.12.2025 names 'Zero 100 VC', taken to be this firm (media only)."
+    },
+    "fields": {
+      "sectors": null,
+      "stages": null,
+      "geography": {
+        "value": [
+          "Emerging Europe",
+          "Middle East"
+        ],
+        "sources": [
+          {
+            "url": "https://0100.vc/",
+            "tier": "B",
+            "publisher": "Zero One Hundred",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "backing the best startups from Emerging Europe and the Middle East."
+          }
+        ]
+      },
+      "ticket": null,
+      "ticket_observed": null,
+      "funds": {
+        "value": [
+          {
+            "name": "ZGC Fund I.",
+            "size": 23000000,
+            "currency": "EUR",
+            "vintage": null
+          },
+          {
+            "name": "0100 VC RAIF F.C.I.C. PLC (Fund II)",
+            "size": null,
+            "currency": null,
+            "vintage": null
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://cc.cz/podporili-nejvetsi-startupove-nadeje-na-slovensku-s-novym-fondem-maji-i-pro-ceske-firmy-15-miliardy/",
+            "tier": "C",
+            "publisher": "CzechCrunch",
+            "published": "2022-12-20",
+            "accessed": "2026-10-11",
+            "quote": "Investiční aktivity Zero One Hundred začaly před třemi lety založením samostatného fondu Zero Gravity Capital s prostředky v hodnotě 23 milionů eur"
+          },
+          {
+            "url": "https://0100.vc/",
+            "tier": "B",
+            "publisher": "Zero One Hundred",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "This website and all its content belong exclusively to 0100 VC RAIF F.C.I.C. PLC., with a registered office at 5 Esperidon Street 2001, Strovolos, Nicosia, Cyprus."
+          }
+        ]
+      },
+      "aum": null
+    },
+    "investments": [
+      {
+        "company": "Reno",
+        "date": "2025-12-04",
+        "date_kind": "announced",
+        "round_size": {
+          "amount": 4000000,
+          "currency": "USD"
+        },
+        "sources": [
+          {
+            "url": "https://www.wamda.com/2025/12/uae-reno-raises-4-million-equity-debt-round",
+            "tier": "C",
+            "publisher": "Wamda",
+            "published": "2025-12-04",
+            "accessed": "2026-10-11",
+            "quote": "The round was led by 500 Sanabil, Hub71, Plus VC, Zero 100 VC, FlyerOne Ventures, Sandstorm VC, AngelSpark and Swiss Founders Fund."
+          }
+        ]
+      },
+      {
+        "company": "BinarBase s. r. o. (follow-on)",
+        "date": "2024-11-01",
+        "date_kind": "registry_entry",
+        "round_size": null,
+        "fund": "ZGC Fund I.",
+        "sources": [
+          {
+            "url": "https://www.orsr.sk/vypis.asp?ID=621204&SID=2&P=0",
+            "tier": "A",
+            "publisher": "Obchodný register SR (Ministry of Justice SR)",
+            "published": "2024-11-01",
+            "accessed": "2026-10-11",
+            "quote": "ZGC Fund I., s.r.o. Vklad: 3 161 EUR ( peňažný vklad ) Splatené: 3 161 EUR (od: 01.11.2024)"
+          },
+          {
+            "url": "https://www.orsr.sk/vypis.asp?ID=621204&SID=2&P=1",
+            "tier": "A",
+            "publisher": "Obchodný register SR (Ministry of Justice SR)",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "ZGC Fund I., s.r.o. Vklad: 3 000 EUR ( peňažný vklad ) Splatené: 3 000 EUR (od: 03.08.2023 do: 31.10.2024)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "g-force",
+    "name": "G-Force",
+    "aliases": [
+      "G-Force, s. r. o.",
+      "G-Force Fund, j. s. a.",
+      "G-Force Climate Seed Program"
+    ],
+    "type": "accelerator",
+    "hq": {
+      "country": "SK",
+      "city": "Bratislava"
+    },
+    "website": null,
+    "legal_entities": [
+      {
+        "name": "G-Force, s. r. o.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "53527798",
+        "register_url": "https://www.orsr.sk/vypis.asp?ID=608015&SID=2&P=0"
+      },
+      {
+        "name": "G-Force Fund, j. s. a.",
+        "role": "fund",
+        "id_type": "ICO",
+        "id": "53588398",
+        "register_url": "https://www.orsr.sk/vypis.asp?ID=659572&SID=2&P=0"
+      }
+    ],
+    "decision": {
+      "status": "included",
+      "rules": [
+        "I1",
+        "I2",
+        "I3",
+        "I4"
+      ],
+      "note": "Was uncertain. Bratislava-registered manager and fund (ORSR); shareholders include Founders Factory Limited (UK) and Hungarian and Slovak investors. Typed as accelerator: it runs the G-Force Climate Seed Program with Founders Factory (fixed EUR 250k cheque plus a 6-month operator programme), so its tickets must stay out of VC ticket statistics. Global scope, not Slovak-focused. Latest dated deal: Enzidia, announced 11.03.2025 on the Founders Factory page (archived copy used because the live page has no date). Fund II (EUR 20M, opened May 2023) is offered to Seedrs investors; its legal vehicle was not identified."
+    },
+    "fields": {
+      "sectors": {
+        "value": [
+          "climate tech"
+        ],
+        "sources": [
+          {
+            "url": "https://foundersfactory.com/g-force/",
+            "tier": "B",
+            "publisher": "Founders Factory",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Backing stellar founders who are helping to accelerate to a net zero future"
+          }
+        ]
+      },
+      "stages": {
+        "value": [
+          "pre-seed",
+          "seed"
+        ],
+        "sources": [
+          {
+            "url": "https://foundersfactory.com/g-force/",
+            "tier": "B",
+            "publisher": "Founders Factory",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "We’re looking for pre/seed stage companies with scalable technology, early traction and an impact-led mission."
+          }
+        ]
+      },
+      "geography": null,
+      "ticket": {
+        "value": {
+          "min": 250000,
+          "max": 250000,
+          "currency": "EUR"
+        },
+        "sources": [
+          {
+            "url": "https://foundersfactory.com/g-force/",
+            "tier": "B",
+            "publisher": "Founders Factory",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Receive €250k in capital to build out your proposition, product, team and momentum."
+          }
+        ]
+      },
+      "ticket_observed": null,
+      "funds": {
+        "value": [
+          {
+            "name": "G-Force Fund II",
+            "size": 20000000,
+            "currency": "EUR",
+            "vintage": 2023
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://www.crowdfundinsider.com/2023/10/214476-seedrs-offers-investors-access-to-green-fund-by-g-force/",
+            "tier": "C",
+            "publisher": "Crowdfund Insider",
+            "published": "2023-10-17",
+            "accessed": "2026-10-11",
+            "quote": "The G-Force Fund II is a €20 million vehicle that Seedrs investors will be able to participate in at a lower cost."
+          },
+          {
+            "url": "https://www.crowdfundinsider.com/2023/10/214476-seedrs-offers-investors-access-to-green-fund-by-g-force/",
+            "tier": "C",
+            "publisher": "Crowdfund Insider",
+            "published": "2023-10-17",
+            "accessed": "2026-10-11",
+            "quote": "The G-Force Fund II opened in May 2023 and has already made its first investment."
+          }
+        ]
+      },
+      "aum": null
+    },
+    "investments": [
+      {
+        "company": "Enzidia",
+        "date": "2025-03-11",
+        "date_kind": "announced",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://web.archive.org/web/20250327124335id_/https://foundersfactory.com/articles/investing-in-enzidia/",
+            "tier": "B",
+            "publisher": "Founders Factory (Wayback Machine copy of 27.03.2025)",
+            "published": "2025-03-11",
+            "accessed": "2026-10-11",
+            "quote": "Founders Factory March 11th 2025 / 3 min read We’re excited to announce our latest G-Force climate investment— Enzidia"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cb-investment-management",
+    "name": "CB Investment Management",
+    "aliases": [
+      "CB Investment Management s. r. o.",
+      "CB IM",
+      "CB Growth ONE s. r. o.",
+      "CB Investment Management Growth One"
+    ],
+    "type": "vc",
+    "hq": {
+      "country": "SK",
+      "city": "Bratislava"
+    },
+    "website": "https://www.cbim.sk/",
+    "legal_entities": [
+      {
+        "name": "CB Investment Management s. r. o.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "52524531",
+        "register_url": "https://www.orsr.sk/vypis.asp?ID=482767&SID=2&P=0"
+      },
+      {
+        "name": "CB Growth ONE s. r. o.",
+        "role": "fund",
+        "id_type": "ICO",
+        "id": "52656136",
+        "register_url": "https://www.orsr.sk/vypis.asp?ID=497750&SID=2&P=0"
+      }
+    ],
+    "decision": {
+      "status": "included",
+      "rules": [
+        "I1",
+        "I2",
+        "I3",
+        "I4"
+      ],
+      "note": "Was uncertain. Separate manager from the Crowdberry platform (owned by Crowdberry SK39 j. s. a.); fund vehicle CB Growth ONE co-owned by NDF II (SIH programme), so I2 holds via the fund-of-funds commitment. SIH says its investment period ended in December 2023 and the fund is divesting. The latest dated investment is a follow-on in Forvio s. r. o. registered 30.12.2023 (stake 1 669 -> 2 145 EUR), which is inside the 36-month window only until 30.12.2026; after that the record becomes dormant (E4). Forvio was sold to Smarter Ecommerce GmbH (ORSR 25.06.2026). Evidence: https://www.sih.sk/en/investicie/investicie-cez-financnych-sprostredkovatelov/cb-investment-management-kapitalova-investicia — \"commencing its operations in 2020 and concluding its active investment period in December 2023.\""
+    },
+    "fields": {
+      "sectors": null,
+      "stages": {
+        "value": [
+          "pre-seed",
+          "seed"
+        ],
+        "sources": [
+          {
+            "url": "https://www.cbim.sk/",
+            "tier": "B",
+            "publisher": "CB Investment Management",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "CB Investment Management Growth One fund was founded in 2019 in order to help seed and pre-seed businesses based in Slovakia."
+          }
+        ]
+      },
+      "geography": {
+        "value": [
+          "SK"
+        ],
+        "sources": [
+          {
+            "url": "https://www.cbim.sk/",
+            "tier": "B",
+            "publisher": "CB Investment Management",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "CB Investment Management Growth One fund was founded in 2019 in order to help seed and pre-seed businesses based in Slovakia."
+          }
+        ]
+      },
+      "ticket": {
+        "value": {
+          "min": null,
+          "max": 1600000,
+          "currency": "EUR"
+        },
+        "sources": [
+          {
+            "url": "https://www.vestbee.com/insights/articles/top-vc-funds-in-slovakia-to-finance-your-startup",
+            "tier": "C",
+            "publisher": "Vestbee",
+            "published": "2020-10-08",
+            "accessed": "2026-10-11",
+            "quote": "CB Investment Management Geography: Slovakia Preferred industries: Various industries Investment ticket: up to €1.6M"
+          }
+        ]
+      },
+      "ticket_observed": null,
+      "funds": {
+        "value": [
+          {
+            "name": "CB Growth ONE",
+            "size": 23200000,
+            "currency": "EUR",
+            "vintage": 2019
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://www.cbim.sk/",
+            "tier": "B",
+            "publisher": "CB Investment Management",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "€23.2M Fund size 32 Companies 2019 Founded"
+          }
+        ]
+      },
+      "aum": null
+    },
+    "investments": [
+      {
+        "company": "Forvio s. r. o. (follow-on)",
+        "date": "2023-12-30",
+        "date_kind": "registry_entry",
+        "round_size": null,
+        "fund": "CB Growth ONE",
+        "sources": [
+          {
+            "url": "https://www.orsr.sk/vypis.asp?ID=610947&SID=4&P=1",
+            "tier": "A",
+            "publisher": "Obchodný register SR (Ministry of Justice SR)",
+            "published": "2023-12-30",
+            "accessed": "2026-10-11",
+            "quote": "CB Growth ONE s. r. o. Vklad: 1 669 EUR ( peňažný vklad ) Splatené: 1 669 EUR (od: 10.06.2023 do: 29.12.2023) CB Growth ONE s. r. o. Vklad: 2 145 EUR ( peňažný vklad ) Splatené: 2 145 EUR (od: 30.12.2023 do: 24.06.2026)"
+          }
+        ]
+      },
+      {
+        "company": "DNA ERA",
+        "date": null,
+        "date_kind": "portfolio_page",
+        "round_size": null,
+        "fund": "CB Growth ONE",
+        "sources": [
+          {
+            "url": "https://www.cbim.sk/",
+            "tier": "B",
+            "publisher": "CB Investment Management",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "In 2021, DNA ERA received investment worth 250,000 € from the CB Growth One fund managed by CB Investment Management."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "seed-starter-slovenskej-sporitelne",
+    "name": "Seed Starter Slovenskej sporiteľne",
+    "aliases": [
+      "Seed Starter",
+      "Slovenská sporiteľňa, a.s."
+    ],
+    "type": "cvc",
+    "hq": {
+      "country": "SK",
+      "city": "Bratislava"
+    },
+    "website": null,
+    "legal_entities": [
+      {
+        "name": "Slovenská sporiteľňa, a.s.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "00151653",
+        "register_url": "https://www.orsr.sk/vypis.asp?ID=19812&SID=2&P=0"
+      }
+    ],
+    "decision": {
+      "status": "included",
+      "rules": [
+        "I1",
+        "I2",
+        "I3",
+        "I4"
+      ],
+      "note": "Changed from exclude: PLAN has no rule that excludes corporate VC (cvc is a kept type), and E3 does not apply because the programme takes equity (7% of SmartHead), not loans. Flag for review: the parent is a bank (Erste Group), and PLAN defines cvc as the arm of a non-financial corporation, so the type is the nearest fit, not an exact one. The investing entity is the bank itself; no separate vehicle was found. I2 by own statements: IntellCRE was its sixth portfolio company."
+    },
+    "fields": {
+      "sectors": null,
+      "stages": null,
+      "geography": null,
+      "ticket": null,
+      "ticket_observed": null,
+      "funds": {
+        "value": [
+          {
+            "name": "Seed Starter Slovenskej sporiteľne (first phase)",
+            "size": 5000000,
+            "currency": "EUR",
+            "vintage": null
+          }
+        ],
+        "sources": [
+          {
+            "url": "https://cc.cz/ceska-sporitelna-jde-podporovat-startupy-i-na-slovensko-pro-tamni-mlade-firmy-ma-pres-120-milionu/",
+            "tier": "C",
+            "publisher": "CzechCrunch",
+            "published": "2022-09-08",
+            "accessed": "2026-10-11",
+            "quote": "Pět milionů eur, tedy v přepočtu více než 123 milionů korun, si připravila Slovenská spořitelna na první fázi podpory startupů na Slovensku."
+          }
+        ]
+      },
+      "aum": null
+    },
+    "investments": [
+      {
+        "company": "Webout",
+        "date": "2026-06-08",
+        "date_kind": "announced",
+        "round_size": {
+          "amount": 1650000,
+          "currency": "EUR"
+        },
+        "sources": [
+          {
+            "url": "https://www.omediach.com/internet/30236-seed-starter-slovenskej-sporitelne-investuje-400-tisic-eur-do-startupu-webout-ten-ziskava-spolu-1-65-miliona-eur-a-mieri-do-silicon-valley",
+            "tier": "B",
+            "publisher": "Slovenská sporiteľňa (press release on Omediach)",
+            "published": "2026-06-08",
+            "accessed": "2026-10-11",
+            "quote": "Seed Starter Slovenskej sporiteľne investuje 400-tisíc eur do startupu Webout. Ten získava spolu 1,65 milióna eur a mieri do Silicon Valley"
+          }
+        ]
+      },
+      {
+        "company": "IntellCRE",
+        "date": "2025-09-17",
+        "date_kind": "announced",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://www.slsp.sk/sk/aktuality/2025/9/17/zo-slovenska-rovno-na-najvacsi-realitny-trh-intellcre-ziskava-investiciu-od-seed-startera-slovenskej-sporitelne",
+            "tier": "B",
+            "publisher": "Slovenská sporiteľňa",
+            "published": "2025-09-17",
+            "accessed": "2026-10-11",
+            "quote": "teraz získava investíciu vo výške 400 000 eur od Seed Startera Slovenskej sporiteľne"
+          },
+          {
+            "url": "https://www.slsp.sk/sk/aktuality/2025/9/17/zo-slovenska-rovno-na-najvacsi-realitny-trh-intellcre-ziskava-investiciu-od-seed-startera-slovenskej-sporitelne",
+            "tier": "B",
+            "publisher": "Slovenská sporiteľňa",
+            "published": "2025-09-17",
+            "accessed": "2026-10-11",
+            "quote": "Celkovo ide už o šiesty zainvestovaný startup v portfóliu Seed Startera."
+          }
+        ]
+      },
+      {
+        "company": "SmartHead",
+        "date": "2023-09-05",
+        "date_kind": "announced",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://sita.sk/seed-starter-slovenskej-sporitelne-hlasi-prvu-investiciu-podporil-slovensky-startup-smarthead/",
+            "tier": "C",
+            "publisher": "SITA",
+            "published": "2023-09-05",
+            "accessed": "2026-10-11",
+            "quote": "Seed Starter Slovenskej sporiteľne získal 7 % podiel v slovenskom startupe SmartHead"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "baryon-fund",
+    "name": "Baryon Fund",
+    "aliases": [
+      "BARYON",
+      "Baryon Fund SCSp",
+      "BARYON FUND MANAGEMENT"
+    ],
+    "type": "vc",
+    "hq": null,
+    "website": "https://www.baryon.fund/",
+    "legal_entities": [
+      {
+        "name": "Baryon Fund SCSp",
+        "role": "fund",
+        "id_type": "company_number",
+        "id": "B299800",
+        "register_url": null
+      }
+    ],
+    "decision": {
+      "status": "uncertain",
+      "rules": [
+        "I2"
+      ],
+      "note": "Kept uncertain because two facts are missing. (1) Where it is managed from: the fund is a Luxembourg SCSp and its site names a 'BARYON FUND MANAGEMENT' entity without a seat; the founders run Slovak SEC Technologies and the advisory side is GLOBSEC-linked (Bratislava), but directories say Prague. No Slovak entity named Baryon is in ORSR. (2) I2: the site lists only two portfolio companies and no licence or fund-of-funds commitment was found. It has a Tier A dated investment (Airvolute s.r.o., ORSR 09.01.2026), so it becomes 'included' once a third portfolio company or a CSSF/ESMA registration and a Slovak management seat are confirmed."
+    },
+    "fields": {
+      "sectors": {
+        "value": [
+          "defence tech"
+        ],
+        "sources": [
+          {
+            "url": "https://baryon.fund/",
+            "tier": "B",
+            "publisher": "Baryon Fund",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "We defend Europe by backing bold defence tech entrepreneurs"
+          }
+        ]
+      },
+      "stages": null,
+      "geography": null,
+      "ticket": null,
+      "ticket_observed": null,
+      "funds": null,
+      "aum": null
+    },
+    "investments": [
+      {
+        "company": "Airvolute s.r.o.",
+        "date": "2026-01-09",
+        "date_kind": "registry_entry",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://www.orsr.sk/vypis.asp?ID=548451&SID=7&P=0",
+            "tier": "A",
+            "publisher": "Obchodný register SR (Ministry of Justice SR)",
+            "published": "2026-01-09",
+            "accessed": "2026-10-11",
+            "quote": "Baryon Fund SCSp Parc d'Activités 2-4 Capellen L-8308 Luxemburské veľkovojvodstvo Iné identifikačné číslo: B299800 (od: 09.01.2026)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "lrj-capital",
+    "name": "LRJ Capital",
+    "aliases": [
+      "GROWWS SICAV, a.s."
+    ],
+    "type": "vc",
+    "hq": null,
+    "website": null,
+    "legal_entities": null,
+    "decision": {
+      "status": "dormant",
+      "rules": [
+        "E4"
+      ],
+      "note": "Was uncertain. Latest dated investment found is Finax (15.03.2019) via its fund GROWWS SICAV, a.s.; nothing after that. lrjcapital.com is a parked domain for sale. No Slovak legal entity found (ORSR 'LRJ' matches an unrelated company); a directory places it in Cyprus, not verified. Evidence: https://lrjcapital.com/ — \"LrjCapital.com is for sale\""
+    },
+    "fields": {},
+    "investments": [
+      {
+        "company": "Finax",
+        "date": "2019-03-15",
+        "date_kind": "announced",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://www.startitup.sk/slovensky-startup-ziskal-investiciu-15-miliona-eur/",
+            "tier": "C",
+            "publisher": "Startitup",
+            "published": "2019-03-15",
+            "accessed": "2026-10-11",
+            "quote": "LRJ Capital cez svoj fond GROWWS SICAV, a.s. podporil inovátora v inteligentnom investovaní, Finax investíciou 1,5 milióna eur."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ipm-group",
+    "name": "IPM Group",
+    "aliases": [
+      "IPM Growth s.r.o.",
+      "IPM Group Holdings Limited"
+    ],
+    "type": "vc",
+    "hq": {
+      "country": "GB",
+      "city": "London"
+    },
+    "website": null,
+    "legal_entities": [
+      {
+        "name": "IPM Growth s.r.o.",
+        "role": "vehicle",
+        "id_type": "ICO",
+        "id": "52151573",
+        "register_url": "https://www.orsr.sk/vypis.asp?ID=450600&SID=3&P=0"
+      }
+    ],
+    "decision": {
+      "status": "dormant",
+      "rules": [
+        "E4"
+      ],
+      "note": "Was uncertain. Investment group led by Marián Boček; the Slovak entity IPM Growth s.r.o. (Banská Bystrica) is owned by IPM Group Holdings Limited (UK), so it is UK-controlled with a Slovak presence. Last third-party startup deal found: led Photoneo's Series B (07.12.2021). Its Dec 2024 InoBat participation is listed but not counted for I3: InoBat is a project IPM itself started (TASR/OTS, 02.12.2019), so it is investing in its own group (E8 logic), not third-party VC. Borderline: a reviewer who counts InoBat would make this 'included'. ipmllp.com (InfraPartners Management LLP) could not be tied to IPM Group with certainty, so no website is stored. Evidence: https://www.orsr.sk/vypis.asp?ID=450600&SID=3&P=0 — \"IPM Group Holdings Limited Augentius, Two London Bridge Londýn SE1 9RA\"; https://www.teraz.sk/ekonomika/peter-gajdos-sa-pripojil-k-ipm-do-tim/432852-clanok.html — \"ktoré sa teraz prenášajú do Európy ako súčasť projektu InoBat\""
+    },
+    "fields": {},
+    "investments": [
+      {
+        "company": "InoBat (own group project)",
+        "date": "2024-12-20",
+        "date_kind": "announced",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://www.batterypoweronline.com/view-press-releases/entry/5335/",
+            "tier": "B",
+            "publisher": "InoBat (press release on Battery Power Online)",
+            "published": "2024-12-20",
+            "accessed": "2026-10-11",
+            "quote": "complemented with significant contributions from SIH (Slovakia’s sovereign wealth fund), Lilium, Bromo Capital, IPM Group and Cielo Capital (InoBat’s founders)"
+          }
+        ]
+      },
+      {
+        "company": "Photoneo",
+        "date": "2021-12-07",
+        "date_kind": "announced",
+        "round_size": {
+          "amount": 21000000,
+          "currency": "USD"
+        },
+        "sources": [
+          {
+            "url": "https://www.automate.org/robotics/news/photoneo-raises-21-million-in-series-b/anc",
+            "tier": "B",
+            "publisher": "Photoneo (member update on A3 / automate.org)",
+            "published": "2021-12-08",
+            "accessed": "2026-10-11",
+            "quote": "The investment round was led by IPM Group, a global asset manager focusing on technology companies"
+          }
+        ]
+      },
+      {
+        "company": "Matsuko",
+        "date": "2019-10-11",
+        "date_kind": "announced",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://www.startitup.sk/kosicky-startup-matsuko-ziskal-takmer-milionovu-investiciu-obsadzuje-svetovy-trh/",
+            "tier": "C",
+            "publisher": "Startitup",
+            "published": "2019-10-11",
+            "accessed": "2026-10-11",
+            "quote": "V prvom A kole investície sú hlavnými investormi anglicko-slovenský fond IPM spolu so súčasnými investormi z Neulogy Ventures"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fond-inovacii-a-technologii",
+    "name": "Fond inovácií a technológií",
+    "aliases": [
+      "FIT",
+      "Fond inovácií a technológií, a.s."
+    ],
+    "type": "vc",
+    "hq": {
+      "country": "SK",
+      "city": "Bratislava"
+    },
+    "website": "https://www.fondfit.sk/",
+    "legal_entities": [
+      {
+        "name": "Fond inovácií a technológií, a.s.",
+        "role": "fund",
+        "id_type": "ICO",
+        "id": "47051981",
+        "register_url": "https://www.orsr.sk/vypis.asp?ID=260666&SID=2&P=0"
+      }
+    ],
+    "decision": {
+      "status": "dormant",
+      "rules": [
+        "E4"
+      ],
+      "note": "Public-private fund set up with Slovak Business Agency. Own site says it entered the post-investment phase in 2025; no dated investment was found. Evidence: https://www.fondfit.sk/ — \"Fond inovácií a technológií vstúpil v roku 2025 do post-investičnej fázy.\""
+    },
+    "fields": {
+      "ticket": {
+        "value": {
+          "min": 20000,
+          "max": 1500000,
+          "currency": "EUR"
+        },
+        "sources": [
+          {
+            "url": "https://www.slovca.sk/sk/riadni-clenovia/fond-inovacii-a-technologii.html",
+            "tier": "B",
+            "publisher": "SLOVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Výška investície: od 20 000 EUR do 1 500 000 EUR"
+          }
+        ]
+      }
+    },
+    "investments": []
+  },
+  {
+    "id": "limerock",
+    "name": "Limerock",
+    "aliases": [
+      "Limerock Investment Holding, s.r.o.",
+      "Limerock Fund Manager, s. r. o."
+    ],
+    "type": "vc",
+    "hq": {
+      "country": "SK",
+      "city": "Bratislava"
+    },
+    "website": null,
+    "legal_entities": [
+      {
+        "name": "Limerock Investment Holding, s.r.o.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "47777028",
+        "register_url": "https://www.orsr.sk/vypis.asp?ID=307952&SID=2&P=0"
+      }
+    ],
+    "decision": {
+      "status": "dormant",
+      "rules": [
+        "E4"
+      ],
+      "note": "Its SIH co-investment fund invested in 2014-2016, has divested and is in liquidation; no later dated investment found. Successor of Limerock Fund Manager, s. r. o. by merger (ORSR). Evidence: https://sih.sk/en/investicie/investicie-cez-financnych-sprostredkovatelov/limerock-fund-manager-kapitalova-investicia — \"The fund has completed its divestment process and is currently undergoing liquidation.\""
+    },
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "365-fintech",
+    "name": "365.fintech",
+    "aliases": [
+      "365.fintech, a.s."
+    ],
+    "type": "cvc",
+    "hq": {
+      "country": "SK",
+      "city": "Bratislava"
+    },
+    "website": "https://365fintech.sk/",
+    "legal_entities": [
+      {
+        "name": "365.fintech, a.s.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "51301547",
+        "register_url": "https://www.orsr.sk/vypis.asp?ID=410247&SID=2&P=0"
+      }
+    ],
+    "decision": {
+      "status": "dormant",
+      "rules": [
+        "E4"
+      ],
+      "note": "Corporate VC: 100% owned by 365.bank, a. s. (ORSR). Kept as cvc (no PLAN rule excludes CVC), but no dated investment within 36 months was found; its site lists portfolio companies without dates. Evidence: https://www.orsr.sk/vypis.asp?ID=410247&SID=2&P=0 — \"Akcionár: 365.bank, a. s. IČO: 31 340 890\""
+    },
+    "fields": {
+      "sectors": {
+        "value": [
+          "fintech",
+          "insurtech",
+          "big data"
+        ],
+        "sources": [
+          {
+            "url": "https://365fintech.sk/",
+            "tier": "B",
+            "publisher": "365.fintech",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "We are a fintech venture investor focusing on innovative b2b or b2b2c FinTech, InsurTech and Big Data startups."
+          }
+        ]
+      }
+    },
+    "investments": []
+  },
+  {
+    "id": "monogram-ventures",
+    "name": "Monogram Ventures",
+    "aliases": [
+      "MONOGRAM Ventures a. s."
+    ],
+    "type": "vc",
+    "hq": {
+      "country": "SK",
+      "city": "Bratislava"
+    },
+    "website": null,
+    "legal_entities": [
+      {
+        "name": "MONOGRAM Ventures a. s.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "44071574",
+        "register_url": "https://www.orsr.sk/vypis.asp?ID=124603&SID=2&P=0"
+      }
+    ],
+    "decision": {
+      "status": "dormant",
+      "rules": [
+        "E4"
+      ],
+      "note": "Entity still registered (ORSR); latest evidenced investments are from 2011."
+    },
+    "fields": {},
+    "investments": [
+      {
+        "company": "Piano",
+        "date": null,
+        "date_kind": "announced",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://www.caplight.com/investor/monogram",
+            "tier": "C",
+            "publisher": "Caplight",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Piano Sep 2011 Series A Lead"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "zero-gravity-capital",
+    "name": "Zero Gravity Capital",
+    "aliases": [
+      "Zero Gravity Capital s.r.o.",
+      "ZGC Fund I., s.r.o."
+    ],
+    "type": "vc",
+    "hq": {
+      "country": "SK",
+      "city": "Bratislava"
+    },
+    "website": null,
+    "legal_entities": [
+      {
+        "name": "Zero Gravity Capital s.r.o.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "52651894",
+        "register_url": "https://www.orsr.sk/vypis.asp?ID=498371&SID=2&P=0"
+      }
+    ],
+    "decision": {
+      "status": "excluded",
+      "rules": [
+        "E9"
+      ],
+      "note": "Fund I manager entity, 100% owned by 0100 Ventures s. r. o.; rolled up into the record zero-one-hundred (one manager group, Fund I and Fund II). Its investment window closed in December 2023. Evidence: https://www.orsr.sk/vypis.asp?ID=498371&SID=2&P=0 — \"Spoločníci: 0100 Ventures s. r. o. IČO: 50 209 728\"; https://www.sih.sk/en/investicie/investicie-cez-financnych-sprostredkovatelov/zero-gravity-capital-kapitalova-investicia — \"initiating its activities in 2020 and closing its investment window in December 2023.\""
+    },
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "zaka-vc",
+    "name": "ZAKA VC",
+    "aliases": [
+      "ZAKA VC I, osoba rizikového kapitálu, a.s.",
+      "ZAKA Ventures"
+    ],
+    "type": "vc",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": "https://zaka.vc/",
+    "legal_entities": [
+      {
+        "name": "ZAKA VC I, osoba rizikového kapitálu, a.s.",
+        "role": "fund",
+        "id_type": "company_number",
+        "id": "21514992",
+        "register_url": null
+      }
+    ],
+    "decision": {
+      "status": "out_of_scope",
+      "rules": [
+        "S1"
+      ],
+      "note": "Was uncertain. Out of the Slovak pilot scope, no E rule applies: an active VC, but its fund and the website operator is a Czech alternative fund registered with the Czech National Bank (Prague), and the press describes its seat as San Francisco. The Slovak link is family capital (Kasper, Zálešák), a Slovak partner and Bratislava SPVs 'ZAKA Startup N j.s.a.' that are owned by the Czech fund. Belongs in a CZ pass (id is the Czech IČ). Evidence: https://zaka.vc/privacy-policy/ — \"The operator of the website and personal data is the company ZAKA VC I, osoba rizikového kapitálu, a.s., with its registered office at Italská 2581/67, 120 00 Prague 2, ID number: 215 14 992\"; https://www.orsr.sk/vypis.asp?ID=515739&SID=2&P=0 — \"Akcionár: ZAKA VC I, osoba rizikového kapitálu, a.s. Panská 854/2 Praha 1 - Nové Město 110 00 Česká republika\""
+    },
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "impact-ventures-zilina",
+    "name": "Impact Ventures, s. r. o.",
+    "aliases": [],
+    "type": "other",
+    "hq": {
+      "country": "SK",
+      "city": "Žilina"
+    },
+    "website": null,
+    "legal_entities": [
+      {
+        "name": "Impact Ventures, s. r. o.",
+        "role": "vehicle",
+        "id_type": "ICO",
+        "id": "55927033",
+        "register_url": "https://www.orsr.sk/vypis.asp?ID=679020&SID=5&P=0"
+      }
+    ],
+    "decision": {
+      "status": "excluded",
+      "rules": [
+        "E9"
+      ],
+      "note": "Co-investment vehicle founded 08.12.2023 and owned by three impact funds; rolled up to its owners. It became a Seerlinq s.r.o. shareholder on 08.09.2026. Evidence: https://www.orsr.sk/vypis.asp?ID=679020&SID=5&P=0 — \"Spoločníci: CB ESPRI Impact One s. r. o. IČO: 54 546 702\""
+    },
+    "fields": {},
+    "investments": [
+      {
+        "company": "Seerlinq s.r.o.",
+        "date": "2026-09-08",
+        "date_kind": "registry_entry",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://www.orsr.sk/vypis.asp?ID=665401&SID=7&P=0",
+            "tier": "A",
+            "publisher": "Obchodný register SR (Ministry of Justice SR)",
+            "published": "2026-09-08",
+            "accessed": "2026-10-11",
+            "quote": "Impact Ventures, s. r. o. IČO: 55 927 033 Framborská ulica 283/58 Žilina 010 01 (od: 08.09.2026)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "crowdberry",
+    "name": "Crowdberry",
+    "aliases": [
+      "Crowdberry a.s."
+    ],
+    "type": "platform",
+    "hq": {
+      "country": "SK",
+      "city": "Bratislava"
+    },
+    "website": "https://www.crowdberry.eu/en",
+    "legal_entities": [
+      {
+        "name": "Crowdberry a.s.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "48236993",
+        "register_url": null
+      }
+    ],
+    "decision": {
+      "status": "excluded",
+      "rules": [
+        "E1"
+      ],
+      "note": "ECSPR-licensed investment platform routing its users' money; also on the negative list. Its VC manager is assessed separately as cb-investment-management. Evidence: https://www.crowdberry.eu/en — \"Only verified opportunities ECSPR licensed\""
+    },
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "cb-espri-impact-one",
+    "name": "CB ESPRI Impact One",
+    "aliases": [
+      "CB ESPRI Impact One s. r. o.",
+      "CB ESPRI s. r. o."
+    ],
+    "type": "other",
+    "hq": {
+      "country": "SK",
+      "city": "Bratislava"
+    },
+    "website": null,
+    "legal_entities": [
+      {
+        "name": "CB ESPRI Impact One s. r. o.",
+        "role": "fund",
+        "id_type": "ICO",
+        "id": "54546702",
+        "register_url": "https://www.orsr.sk/vypis.asp?ID=618739&SID=2&P=0"
+      }
+    ],
+    "decision": {
+      "status": "excluded",
+      "rules": [
+        "E9"
+      ],
+      "note": "Fund vehicle (co-owned by NDF II and its manager CB ESPRI s. r. o.), rolled up to the manager. The manager is a social-economy impact investor (social enterprises and NGOs, EUR 10k-500k, investing window 2022-2023), outside the VC pilot scope. Note: through Impact Ventures, s. r. o. it took a stake in Seerlinq in 09/2026. Evidence: https://www.orsr.sk/vypis.asp?ID=618739&SID=2&P=0 — \"CB ESPRI s. r. o. IČO: 54 486 343\"; https://www.podnikajte.sk/financie-na-podnikanie/cb-espri-impact-one-novy-fond — \"V roku 2022 a 2023 plánuje fond investovať kapitál 10,5 miliónov eur, pričom firmám ponúka výšku investície od 10 000 eur do 500 000 eur\""
+    },
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "sandberg-capital",
+    "name": "Sandberg Capital",
+    "aliases": [
+      "Sandberg Capital, správ. spol., a.s."
+    ],
+    "type": "pe",
+    "hq": {
+      "country": "SK",
+      "city": "Bratislava"
+    },
+    "website": null,
+    "legal_entities": [
+      {
+        "name": "Sandberg Capital, správ. spol., a.s.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "47255277",
+        "register_url": "https://www.orsr.sk/vypis.asp?ID=311602&SID=2&P=0"
+      }
+    ],
+    "decision": {
+      "status": "out_of_scope",
+      "rules": [
+        "S1"
+      ],
+      "note": "Out of the VC pilot scope, no E rule applies: lower-mid-market private equity (EUR 4-15M tickets). Valid pe record for the full database. Evidence: https://www.eif.org/files/attachments/slovakia-equity-fundmanagers.pdf — \"Sandberg Investment Fund II SCSp Sandberg Capital, sprav. spol., a.s. Slovakia CEFoF;COSME-EFG;EIF Multi-Country Private Equity Generalist Lower-Mid Market Fund\""
+    },
+    "fields": {
+      "ticket": {
+        "value": {
+          "min": 4000000,
+          "max": 15000000,
+          "currency": "EUR"
+        },
+        "sources": [
+          {
+            "url": "https://www.slovca.sk/sk/riadni-clenovia/sandberg-capital.html",
+            "tier": "B",
+            "publisher": "SLOVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Preferovaná výška investície: €4M - €15M"
+          }
+        ]
+      }
+    },
+    "investments": []
+  },
+  {
+    "id": "eterus-capital",
+    "name": "Eterus Capital",
+    "aliases": [
+      "Eterus Capital, a. s."
+    ],
+    "type": "pe",
+    "hq": {
+      "country": "SK",
+      "city": "Bratislava"
+    },
+    "website": "https://www.eterus.sk/",
+    "legal_entities": [
+      {
+        "name": "Eterus Capital, a. s.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "44193025",
+        "register_url": "https://www.orsr.sk/vypis.asp?ID=129737&SID=2&P=0"
+      }
+    ],
+    "decision": {
+      "status": "out_of_scope",
+      "rules": [
+        "S1"
+      ],
+      "note": "Out of the VC pilot scope, no E rule applies: growth private equity (SLOVCA type 'Private equity', EUR 2-2.5M preferred). Last deal found: Dr. Martin dental clinics, May 2024. Evidence: https://www.slovca.sk/sk/riadni-clenovia/eterus-capital.html — \"Typ investícií: Private equity\""
+    },
+    "fields": {
+      "ticket": {
+        "value": {
+          "min": 2000000,
+          "max": 2500000,
+          "currency": "EUR"
+        },
+        "sources": [
+          {
+            "url": "https://www.eterus.sk/",
+            "tier": "B",
+            "publisher": "Eterus Capital",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Zameriavame sa na investície v rozmedzí 2 - 2,5 mil. EUR"
+          }
+        ]
+      }
+    },
+    "investments": []
+  },
+  {
+    "id": "ethernum-capital",
+    "name": "Ethernum Capital",
+    "aliases": [
+      "Ethernum Capital s. r. o."
+    ],
+    "type": "private_investor",
+    "hq": {
+      "country": "SK",
+      "city": "Bratislava"
+    },
+    "website": null,
+    "legal_entities": [
+      {
+        "name": "Ethernum Capital s. r. o.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "55356907",
+        "register_url": "https://www.orsr.sk/vypis.asp?ID=653149&SID=2&P=0"
+      }
+    ],
+    "decision": {
+      "status": "out_of_scope",
+      "rules": [
+        "S1"
+      ],
+      "note": "Out of the VC pilot scope, no E rule applies: holding of three private holding companies that co-invests with Eterus in buy-and-build deals (dental clinics); no startup deals found. Evidence: https://oaklins.com/ar/en/deals/110583 — \"has received a significant investment from Eterus Capital and Ethernum Capital to support its expansion across the country\""
+    },
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "narodny-holdingovy-fond",
+    "name": "Národný holdingový fond",
+    "aliases": [
+      "Národný holdingový fond s. r. o.",
+      "NHF"
+    ],
+    "type": "public_dfi",
+    "hq": {
+      "country": "SK",
+      "city": "Bratislava"
+    },
+    "website": "https://www.nhfond.sk/",
+    "legal_entities": [
+      {
+        "name": "Národný holdingový fond s. r. o.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "31384943",
+        "register_url": "https://www.orsr.sk/vypis.asp?ID=10228&SID=2&P=0"
+      }
+    ],
+    "decision": {
+      "status": "out_of_scope",
+      "rules": [
+        "S1"
+      ],
+      "note": "Out of the VC target list, no E rule applies: state-owned subsidiary of Slovak Business Agency that holds the public risk-capital funds (FIT, Eterus). Kept for the public_dfi verification list. Evidence: https://www.orsr.sk/vypis.asp?ID=10228&SID=2&P=0 — \"Spoločníci: Slovak Business Agency IČO: 30 845 301\""
+    },
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "slovak-investment-holding",
+    "name": "Slovak Investment Holding",
+    "aliases": [
+      "SIH",
+      "Slovak Investment Holding, a. s."
+    ],
+    "type": "public_dfi",
+    "hq": {
+      "country": "SK",
+      "city": "Bratislava"
+    },
+    "website": "https://www.sih.sk/",
+    "legal_entities": [
+      {
+        "name": "Slovak Investment Holding, a. s.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "47759097",
+        "register_url": "https://www.orsr.sk/vypis.asp?ID=307221&SID=2&P=0"
+      }
+    ],
+    "decision": {
+      "status": "out_of_scope",
+      "rules": [
+        "S1"
+      ],
+      "note": "Out of the VC target list, no E rule applies: state fund-of-funds owned by SZRB; also makes direct convertible loans from the Recovery Plan. Kept for the public_dfi verification list (its portfolio pages name the private managers). Evidence: https://www.orsr.sk/vypis.asp?ID=307221&SID=2&P=0 — \"Akcionár: Slovenská záručná a rozvojová banka, a. s. IČO: 00 682 420\""
+    },
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "national-development-fund-ii",
+    "name": "National Development Fund II., a.s.",
+    "aliases": [
+      "NDF II"
+    ],
+    "type": "public_dfi",
+    "hq": {
+      "country": "SK",
+      "city": "Bratislava"
+    },
+    "website": null,
+    "legal_entities": [
+      {
+        "name": "National Development Fund II., a.s.",
+        "role": "vehicle",
+        "id_type": "ICO",
+        "id": "47759224",
+        "register_url": "https://www.orsr.sk/vypis.asp?ID=306999&SID=2&P=0"
+      }
+    ],
+    "decision": {
+      "status": "excluded",
+      "rules": [
+        "E9"
+      ],
+      "note": "Vehicle 100% owned by SIH; co-owns the private managers' fund vehicles and co-invests directly (e.g. Seerlinq, ORSR 08.09.2026). Rolled up to slovak-investment-holding. Evidence: https://www.orsr.sk/vypis.asp?ID=306999&SID=2&P=0 — \"Akcionár: Slovak Investment Holding, a. s. IČO: 47 759 097\""
+    },
+    "fields": {},
+    "investments": [
+      {
+        "company": "Seerlinq s.r.o.",
+        "date": "2026-09-08",
+        "date_kind": "registry_entry",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://www.orsr.sk/vypis.asp?ID=665401&SID=7&P=0",
+            "tier": "A",
+            "publisher": "Obchodný register SR (Ministry of Justice SR)",
+            "published": "2026-09-08",
+            "accessed": "2026-10-11",
+            "quote": "National Development Fund II., a.s. IČO: 47 759 224 Grösslingová 44 Bratislava - mestská časť Staré Mesto 811 09 (od: 08.09.2026)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tatra-banka",
+    "name": "Tatra banka",
+    "aliases": [
+      "Tatra banka, a.s."
+    ],
+    "type": "other",
+    "hq": {
+      "country": "SK",
+      "city": "Bratislava"
+    },
+    "website": null,
+    "legal_entities": [
+      {
+        "name": "Tatra banka, a.s.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "00686930",
+        "register_url": "https://www.orsr.sk/vypis.asp?ID=21634&SID=2&P=0"
+      }
+    ],
+    "decision": {
+      "status": "excluded",
+      "rules": [
+        "E3"
+      ],
+      "note": "Bank: deposits and loans; no startup equity programme of its own was found (LP commitments to funds do not count). Evidence: https://www.orsr.sk/vypis.asp?ID=21634&SID=2&P=0 — \"prijímanie vkladov (od: 07.07.2005) poskytovanie úverov (od: 07.07.2005)\""
+    },
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "vub-banka",
+    "name": "VÚB banka",
+    "aliases": [
+      "Všeobecná úverová banka, a.s.",
+      "VÚB, a.s."
+    ],
+    "type": "other",
+    "hq": {
+      "country": "SK",
+      "city": "Bratislava"
+    },
+    "website": null,
+    "legal_entities": [
+      {
+        "name": "Všeobecná úverová banka, a.s.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "31320155",
+        "register_url": "https://www.orsr.sk/vypis.asp?ID=21601&SID=2&P=0"
+      }
+    ],
+    "decision": {
+      "status": "excluded",
+      "rules": [
+        "E3"
+      ],
+      "note": "Bank: deposits and loans; no startup equity programme of its own was found (LP commitments to funds do not count). Evidence: https://www.orsr.sk/vypis.asp?ID=21601&SID=2&P=0 — \"prijímanie vkladov (od: 08.07.2002) poskytovanie úverov (od: 08.07.2002)\""
+    },
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "kpas",
+    "name": "Klub podnikateľských anjelov Slovenska",
+    "aliases": [
+      "KPAS"
+    ],
+    "type": "other",
+    "hq": {
+      "country": "SK",
+      "city": null
+    },
+    "website": null,
+    "legal_entities": null,
+    "decision": {
+      "status": "excluded",
+      "rules": [
+        "E1"
+      ],
+      "note": "Angel club that connects founders with member angels, who invest their own money individually; the club itself is an intermediary, not an investor (I4 fails; E1 is the closest exclusion). No current activity found. Evidence: https://www.podnikajte.sk/investor/vznikol-klub-podnikatelskych-anjelov — \"sprostredkovanie kontaktu s investormi – podnikateľskými anjelmi\""
+    },
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "aceon-accelerator",
+    "name": "AceON Accelerator",
+    "aliases": [
+      "AceOn Accelerator"
+    ],
+    "type": "accelerator",
+    "hq": {
+      "country": "SK",
+      "city": "Bratislava"
+    },
+    "website": null,
+    "legal_entities": null,
+    "decision": {
+      "status": "excluded",
+      "rules": [
+        "E9"
+      ],
+      "note": "Programme brand created by ZAKA VC with the advisory group Accace (an adviser, E2); no own legal entity found. Rolled up to ZAKA VC, which is itself outside the SK scope. Last deal: EUR 40k into JST 3D (Italy), announced 22.12.2025. Evidence: https://accace.com/winners-of-our-international-startup-accelerator — \"AceON Accelerator was created by ZAKA VC, a venture capital fund with more than 80 investments worldwide and offices in Europe and the United States, in partnership with the international BPO and advisory group Accace.\""
+    },
+    "fields": {},
+    "investments": [
+      {
+        "company": "JST 3D",
+        "date": "2025-12-22",
+        "date_kind": "announced",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://accace.com/winners-of-our-international-startup-accelerator",
+            "tier": "B",
+            "publisher": "Accace",
+            "published": "2025-12-22",
+            "accessed": "2026-10-11",
+            "quote": "one startup received a direct investment from AceON"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "launcher",
+    "name": "Launcher",
+    "aliases": [],
+    "type": "accelerator",
+    "hq": {
+      "country": "SK",
+      "city": "Bratislava"
+    },
+    "website": null,
+    "legal_entities": null,
+    "decision": {
+      "status": "excluded",
+      "rules": [
+        "E4"
+      ],
+      "note": "Accelerator announced in 2014; no fund, legal entity or dated investment was ever found. Evidence: https://www.startitup.sk/launcher-postavi-vas-projekt-na-nohy/ — \"Pred pár týždňami bol v Bratislave spustení nový akcelerátor - Launcher.\""
+    },
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "bic-bratislava",
+    "name": "BIC Bratislava",
+    "aliases": [
+      "B I C Bratislava spol. s r.o."
+    ],
+    "type": "other",
+    "hq": {
+      "country": "SK",
+      "city": "Bratislava"
+    },
+    "website": null,
+    "legal_entities": [
+      {
+        "name": "B I C Bratislava spol. s r.o.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "30840007",
+        "register_url": "https://www.orsr.sk/vypis.asp?ID=4814&SID=2&P=0"
+      }
+    ],
+    "decision": {
+      "status": "excluded",
+      "rules": [
+        "E4"
+      ],
+      "note": "Business & innovation centre owned by the chamber of commerce and individuals. Only an SEO directory claims seed co-investment; no fund or dated investment was found. Evidence: https://www.orsr.sk/vypis.asp?ID=4814&SID=2&P=0 — \"Spoločníci: Slovenská obchodná a priemyselná komora, zast. Bratislavskou regionálnou komorou\""
+    },
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "arca-capital-slovakia",
+    "name": "Arca Capital Slovakia",
+    "aliases": [
+      "Arca Capital Slovakia, a.s."
+    ],
+    "type": "pe",
+    "hq": {
+      "country": "SK",
+      "city": "Bratislava"
+    },
+    "website": null,
+    "legal_entities": [
+      {
+        "name": "Arca Capital Slovakia, a.s.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "35868856",
+        "register_url": "https://www.orsr.sk/vypis.asp?ID=39276&SID=2&P=0"
+      }
+    ],
+    "decision": {
+      "status": "excluded",
+      "rules": [
+        "E4"
+      ],
+      "note": "Private equity group (not VC); its parent Arca Investments, a.s. is in restructuring and no dated investment was found. Evidence: https://www.orsr.sk/vypis.asp?ID=39276&SID=2&P=0 — \"Akcionár: Arca Investments, a.s., v reštrukturalizácii\""
+    },
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "pro-partners-holding",
+    "name": "Pro Partners Holding",
+    "aliases": [
+      "Pro Partners Holding, a.s."
+    ],
+    "type": "private_investor",
+    "hq": {
+      "country": "SK",
+      "city": "Bratislava"
+    },
+    "website": null,
+    "legal_entities": [
+      {
+        "name": "Pro Partners Holding, a.s.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "47257521",
+        "register_url": "https://www.orsr.sk/vypis.asp?ID=325650&SID=2&P=0"
+      }
+    ],
+    "decision": {
+      "status": "excluded",
+      "rules": [
+        "E4"
+      ],
+      "note": "Investment group (private equity, real estate, finance); its VC status is only asserted by aggregators and no dated startup investment was found. Evidence: https://altss.com/profile/pro-partners-holding — \"Pro Partners is a significant investment group operating in the Central and Eastern Europe region, particularly in private equity, real-estate and finance.\""
+    },
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "credo-ventures",
+    "name": "Credo Ventures",
+    "type": "vc",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": "https://www.credoventures.com/",
+    "legal_entities": null,
+    "decision": {
+      "status": "out_of_scope",
+      "rules": [
+        "S1"
+      ],
+      "note": "Out of the Slovak pilot scope, no E rule applies: Czech VC with offices in Prague and Kraków, no Slovak office or entity. Evidence: https://www.credoventures.com/ — \"Prague Karlovo Náměstí 10 120 00, Prague Czech Republic\""
+    },
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "presto-ventures",
+    "name": "Presto Ventures",
+    "type": "vc",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": null,
+    "legal_entities": null,
+    "decision": {
+      "status": "out_of_scope",
+      "rules": [
+        "S1"
+      ],
+      "note": "Out of the Slovak pilot scope, no E rule applies: Prague-based VC. Evidence: https://tech.eu/2022/06/23/presto-ventures-pulls-eur30-million-out-of-its-hat-with-second-fund-aimed-squarely-at-cee-region-startups/ — \"Prague-based Presto Ventures has announced the close of its second fund at a magnificent €30 million.\""
+    },
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "jt-ventures",
+    "name": "J&T Ventures",
+    "type": "vc",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": "https://www.jtventures.cz/",
+    "legal_entities": null,
+    "decision": {
+      "status": "out_of_scope",
+      "rules": [
+        "S1"
+      ],
+      "note": "Out of the Slovak pilot scope, no E rule applies: Prague-based early-stage fund of the J&T group. Evidence: https://www.jtventures.cz/ — \"Praha 8 – Karlín, 186 00\""
+    },
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "nation-1",
+    "name": "Nation 1",
+    "type": "vc",
+    "hq": {
+      "country": "CZ",
+      "city": null
+    },
+    "website": null,
+    "legal_entities": null,
+    "decision": {
+      "status": "out_of_scope",
+      "rules": [
+        "S1"
+      ],
+      "note": "Out of the Slovak pilot scope, no E rule applies: Czech fund; Slovakia is only part of its target region. Evidence: https://cc.cz/novy-cesky-investicni-fond-nation-1-ma-pro-startupy-500-milionu-korun-do-konce-roku-nabere-temer-miliardu/ — \"Nový český investiční fond Nation 1 má pro startupy 500 milionů korun.\""
+    },
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "jet-investment",
+    "name": "Jet Investment / Jet Ventures",
+    "type": "pe",
+    "hq": {
+      "country": "CZ",
+      "city": "Brno"
+    },
+    "website": null,
+    "legal_entities": null,
+    "decision": {
+      "status": "out_of_scope",
+      "rules": [
+        "S1"
+      ],
+      "note": "Out of the Slovak pilot scope, no E rule applies: SLOVCA full member but Brno-based; its vehicle Jet Venture 1 SICAV, a.s. invested in Slovak Cequence s. r. o. (ORSR 14.10.2025). Evidence: https://www.orsr.sk/vypis.asp?ID=640476&SID=8&P=0 — \"Jet Venture 1 SICAV, a.s. Hlinky 49/126 Pisárky, Brno 603 00 Česká republika Iné identifikačné číslo: 22030417 (od: 14.10.2025)\""
+    },
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "genesis-capital",
+    "name": "Genesis Capital",
+    "type": "pe",
+    "hq": {
+      "country": "CZ",
+      "city": null
+    },
+    "website": null,
+    "legal_entities": null,
+    "decision": {
+      "status": "out_of_scope",
+      "rules": [
+        "S1"
+      ],
+      "note": "Out of the Slovak pilot scope, no E rule applies: Czech private equity (EIF lists the team location as Czech Republic); SLOVCA full member. Evidence: https://www.eif.org/files/attachments/czechia-equity-fundmanagers.pdf — \"Genesis Private Equity Fund V SCSp Genesis Capital Equity s.r.o. Czech Republic EIF;RCR Growth and expansion\""
+    },
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "arx-equity-partners",
+    "name": "ARX Equity Partners",
+    "type": "pe",
+    "hq": {
+      "country": "CZ",
+      "city": null
+    },
+    "website": null,
+    "legal_entities": null,
+    "decision": {
+      "status": "out_of_scope",
+      "rules": [
+        "S1"
+      ],
+      "note": "Out of the Slovak pilot scope, no E rule applies: Central European private equity, EUR 10-50M tickets; EIF lists the team location as Czech Republic. Evidence: https://www.slovca.sk/sk/riadni-clenovia/arx-equity-partners.html — \"Preferovaná výška investície : EUR 10-50 mil.\"; https://www.eif.org/files/attachments/czechia-equity-fundmanagers.pdf — \"ARX CE V Cooperatief U.A ARX Equity Partners B.V. Czech Republic\""
+    },
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "enterprise-investors",
+    "name": "Enterprise Investors",
+    "type": "pe",
+    "hq": {
+      "country": "PL",
+      "city": "Warszawa"
+    },
+    "website": "https://www.ei.com.pl/en/",
+    "legal_entities": null,
+    "decision": {
+      "status": "out_of_scope",
+      "rules": [
+        "S1"
+      ],
+      "note": "Out of the Slovak pilot scope, no E rule applies: Polish private equity, SLOVCA full member. Evidence: https://www.ei.com.pl/en/ — \"We are the most experienced private equity investor in Central and Eastern Europe.\""
+    },
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "united-founders",
+    "name": "United Founders",
+    "type": "vc",
+    "hq": null,
+    "website": null,
+    "legal_entities": null,
+    "decision": {
+      "status": "out_of_scope",
+      "rules": [
+        "S1"
+      ],
+      "note": "Out of the Slovak pilot scope, no E rule applies: Multi-office European fund (Cambridge, Paris, Zürich, Berlin, Bratislava) with an EUR 80M target; one managing partner sits in Bratislava but the fund is not managed from Slovakia. Evidence: https://www.startitup.sk/od-cambridge-az-po-bratislavu-vznikol-novy-fond-na-podporu-europskych-talentov-chce-investovat-80-milionov-eur/ — \"Fond má fyzické zastúpenie v hlavných technologických centrách Európy – od Cambridge, Paríža, Zürichu a Berlína, až po Bratislavu\""
+    },
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "energy-venture-pals",
+    "name": "Energy Venture Pals",
+    "type": "vc",
+    "hq": {
+      "country": "CZ",
+      "city": "Praha"
+    },
+    "website": null,
+    "legal_entities": null,
+    "decision": {
+      "status": "out_of_scope",
+      "rules": [
+        "S1"
+      ],
+      "note": "Out of the Slovak pilot scope, no E rule applies: Prague-based investor (directory data only); co-investor in Webout (2026). Evidence: https://nordic9.com/companies/energy-venture-pals/ — \"Offices: Prague\""
+    },
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "cvi",
+    "name": "CVI",
+    "aliases": [
+      "CVI Dom Maklerski Sp. Z O.O."
+    ],
+    "type": "other",
+    "hq": {
+      "country": "PL",
+      "city": "Warszawa"
+    },
+    "website": null,
+    "legal_entities": null,
+    "decision": {
+      "status": "excluded",
+      "rules": [
+        "E3"
+      ],
+      "note": "Warsaw private-debt manager (direct lending, senior debt, mezzanine; equity only exceptionally). Also outside the Slovak scope. Evidence: https://www.slovca.sk/sk/riadni-clenovia/cvi.html — \"Direct Lending, Senior Debt, Mezzanine, Výnimočne minoritná ekvitná investícia\""
+    },
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "swiss-re-bratislava",
+    "name": "Swiss Re (Bratislava)",
+    "aliases": [],
+    "type": "other",
+    "hq": {
+      "country": "SK",
+      "city": "Bratislava"
+    },
+    "website": null,
+    "legal_entities": null,
+    "decision": {
+      "status": "excluded",
+      "rules": [
+        "I2"
+      ],
+      "note": "Swiss Re's Bratislava unit is a corporate service centre; no venture investing found (investing is not its activity, I2 fails; no E rule fits better). Evidence: https://www.profesia.sk/praca/swiss-re/O3760981 — \"Swiss Re's center in Bratislava opened 10 years ago and has already grown into one of the most important locations within the Group.\""
+    },
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "slovak-business-agency",
+    "name": "Slovak Business Agency",
+    "aliases": [
+      "SBA"
+    ],
+    "type": "public_dfi",
+    "hq": {
+      "country": "SK",
+      "city": "Bratislava"
+    },
+    "website": "https://www.sbagency.sk/",
+    "legal_entities": null,
+    "decision": {
+      "status": "excluded",
+      "rules": [
+        "E6"
+      ],
+      "note": "Public SME support agency (advice, education, programmes, grants); owner of Národný holdingový fond. Not an equity investor itself. Not registered in ORSR (the colleague's ORSR link was NHF's). Evidence: https://www.sbagency.sk/ — \"Naše služby spájajú poradenstvo, vzdelávanie, financovanie, podporu startupov, rozvoj rodinných podnikov aj pomoc pri vstupe na nové trhy.\""
+    },
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "prva-kapitalova",
+    "name": "Prvá kapitálová",
+    "type": "other",
+    "hq": null,
+    "website": null,
+    "legal_entities": null,
+    "decision": {
+      "status": "excluded",
+      "rules": [
+        "I1"
+      ],
+      "note": "No match in ORSR and no web trace; possibly a wrong name in the seed list. Identity cannot be resolved (I1 fails). Evidence: https://www.orsr.sk/hladaj_subjekt.asp?OBMENO=Prv%E1+kapit%E1lov%E1&PF=0&R=on — \"Obchodné meno začína: prvakapitalova Právna forma: akákoľvek Súd: akýkoľvek Stránka: 0 / 0 Záznamy: 0 - 0 / 0\""
+    },
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "gapfunding",
+    "name": "Gapfunding",
+    "type": "other",
+    "hq": null,
+    "website": null,
+    "legal_entities": null,
+    "decision": {
+      "status": "excluded",
+      "rules": [
+        "I1"
+      ],
+      "note": "No match in ORSR and no web trace. Identity cannot be resolved (I1 fails). Evidence: https://www.orsr.sk/hladaj_subjekt.asp?OBMENO=Gapfunding&PF=0&R=on — \"Obchodné meno začína: gapfunding Právna forma: akákoľvek Súd: akýkoľvek Stránka: 0 / 0 Záznamy: 0 - 0 / 0\""
+    },
+    "fields": {},
+    "investments": []
+  },
+  {
+    "id": "monopoly-ventures",
+    "name": "Monopoly Ventures",
+    "type": "other",
+    "hq": null,
+    "website": null,
+    "legal_entities": null,
+    "decision": {
+      "status": "excluded",
+      "rules": [
+        "I1"
+      ],
+      "note": "Appears only in one directory (no city, website or legal entity); its blurb describes a bonds/alternatives/PE/VC mix. Identity cannot be resolved (I1 fails). Evidence: https://incubatorlist.com/top-vcs-in-slovakia — \"Monopoly Ventures focuses on diversified strategies including bonds, alternative investments, private equity, venture capital, and distressed assets.\""
+    },
+    "fields": {},
+    "investments": []
+  }
+]
