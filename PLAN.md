@@ -61,7 +61,7 @@ that slice (a PE firm in a VC pilot, a foreign manager, a state fund-of-funds) g
 `out_of_scope` with rule `S1` instead of `excluded`. They are valid records for the full database,
 and they are kept out of the precision numbers so the pilot doesn't look better or worse than it is.
 
-Edge cases are decided in [`data/sample/decisions.md`](data/sample/decisions.md) with the rule ID that
+Edge cases are decided in [`data/sample/parts/sk-decisions.md`](data/sample/parts/sk-decisions.md) and [`cz-decisions.md`](data/sample/parts/cz-decisions.md) with the rule ID that
 decided each one, so the rules are testable rather than vibes.
 
 ---
