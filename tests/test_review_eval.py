@@ -115,3 +115,31 @@ def test_model_review_is_reported_apart_and_compared(records, fixtures_dir, tmp_
     m = json.loads((tmp_path / "metrics.json").read_text())
     assert (m["reviewer_agreement"]["k"], m["reviewer_agreement"]["n"]) == (1, 2)
     assert m["reviewer_agreement"]["disagreements"] == [ids[1]]
+
+
+def test_eval_preserves_review_provenance_and_rejects_changed_snapshot(
+        records, fixtures_dir, tmp_path):
+    import hashlib
+
+    from investordb.review import write_claims_csv
+
+    claims_path = tmp_path / "claims.csv"
+    write_claims_csv(sample_claims(build_claims(records), 60, 7), claims_path)
+    cid = build_claims(records)[0]["claim_id"]
+    write_csv(tmp_path / "labels.csv", ["claim_id", "label"], [[cid, "correct"]])
+    metadata = {"type": "author-reviewed AI-assisted assessment", "reviewer": "Reviewer",
+                "reviewed_on": "2026-10-11", "historical_model": True,
+                "claims_sha256": hashlib.sha256(claims_path.read_bytes()).hexdigest(),
+                "snapshot_note": "Historical sample; current records have corrections."}
+    (tmp_path / "labels.metadata.json").write_text(json.dumps(metadata))
+    args = (fixtures_dir / "investors.json", claims_path, tmp_path / "labels.csv",
+            fixtures_dir / "reference", tmp_path / "none.csv", tmp_path / "none.csv",
+            tmp_path / "none.json", tmp_path / "ACCURACY.md", tmp_path / "metrics.json")
+    assert run_eval(*args) == 0
+    md = (tmp_path / "ACCURACY.md").read_text()
+    assert "## Author-reviewed AI-assisted assessment" in md
+    assert "Historical sample; current records have corrections." in md
+    assert json.loads((tmp_path / "metrics.json").read_text())["review_provenance"] == metadata
+    claims_path.write_text(claims_path.read_text() + "\n")
+    assert run_eval(*args) == 2
+    assert (tmp_path / "ACCURACY.md").read_text() == md

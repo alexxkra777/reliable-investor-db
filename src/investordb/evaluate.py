@@ -1,4 +1,5 @@
 import csv
+import hashlib
 import json
 from collections import Counter
 from datetime import date
@@ -164,8 +165,14 @@ def _review_table(hm: dict) -> list[str]:
 def render_md(metrics: dict) -> str:
     L = ["# Accuracy report", "",
          f"Built by `python -m investordb eval` on {metrics['date']}.", ""]
+    provenance = metrics.get("review_provenance") or {}
+    assisted = provenance.get("type") == "author-reviewed AI-assisted assessment"
+    if provenance:
+        L += [provenance.get("snapshot_note", ""), "",
+              "Reviewer: " + provenance.get("reviewer", "unspecified")
+              + "; confirmed on " + provenance.get("reviewed_on", "unspecified") + ".", ""]
     hm = metrics.get("human")
-    L.append("## Human review")
+    L.append("## Author-reviewed AI-assisted assessment" if assisted else "## Human review")
     L.append("")
     if hm is None:
         L += [f"**No review labels found** ({metrics['labels_path']}). Only the automated "
@@ -179,7 +186,8 @@ def render_md(metrics: dict) -> str:
 
     mm = metrics.get("model")
     if mm is not None:
-        L += ["## Model review", "",
+        L += ["## Historical original model review" if provenance.get("historical_model")
+              else "## Model review", "",
               "The same sample judged by a separate model run that read each source page in full "
               "(not only the quote) and the whole record. It is not a substitute for the human "
               "review: it comes from the same model family that collected the data, so its "
@@ -187,7 +195,7 @@ def render_md(metrics: dict) -> str:
         L += _review_table(mm)
         ag = metrics.get("reviewer_agreement")
         if ag:
-            L += [f"Human and model labels agree on {ag['k']} of {ag['n']} claims "
+            L += [f"Author-confirmed and model labels agree on {ag['k']} of {ag['n']} claims "
                   f"({_pct(ag)}). Claims they disagree on: "
                   + (", ".join(ag["disagreements"]) or "none") + ".", ""]
 
@@ -224,9 +232,9 @@ def render_md(metrics: dict) -> str:
         if "value_checks" in am:
             v = am["value_checks"]
             if "claim_backed_rate" in v:
-                L.append(f"| Claims whose numbers/dates are all in their quotes | "
+                L.append(f"| Claims with complete checked value support (company/number/date) | "
                          f"{_pct(v['claim_backed_rate'])} |")
-                L.append(f"| Claims with at least part of the value in the quotes | "
+                L.append(f"| Claims not classified as wholly unsupported (includes partial) | "
                          f"{_pct(v['claim_not_contradicted_rate'])} |")
             L.append(f"| Number/date present, per single source | "
                      f"{_pct(v['value_in_quote_rate'])} |")
@@ -301,6 +309,22 @@ def run_eval(records_path, claims_path, labels_path, reference_dir, verification
     except DataError as e:
         metrics["recall"] = None
         metrics["recall_note"] = f"Recall not computed: {e}."
+
+    metadata_path = Path(labels_path).with_suffix(".metadata.json")
+    if metrics.get("human") and metadata_path.exists():
+        try:
+            provenance = json.loads(metadata_path.read_text(encoding="utf-8"))
+            digest = hashlib.sha256(Path(claims_path).read_bytes()).hexdigest()
+            if not isinstance(provenance, dict) or provenance.get("claims_sha256") != digest:
+                print("error: review metadata does not match the claims snapshot")
+                return 2
+            if provenance.get("type") != "author-reviewed AI-assisted assessment":
+                print("error: unsupported review metadata type")
+                return 2
+        except (ValueError, OSError) as e:
+            print(f"error: invalid review metadata: {e}")
+            return 2
+        metrics["review_provenance"] = provenance
 
     metrics["automated"] = automated_metrics(verification, decision_check, graded)
 
