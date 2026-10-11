@@ -543,6 +543,31 @@
                   }
                 }
               ]
+            },
+            "existence": {
+              "description": "Evidence for rule I2 (investing is a core activity): regulator register, fund-of-funds commitment, full association membership, or a portfolio page with 3+ companies.",
+              "allOf": [
+                {
+                  "$ref": "#/$defs/field"
+                },
+                {
+                  "properties": {
+                    "value": {
+                      "type": "array",
+                      "minItems": 1,
+                      "uniqueItems": true,
+                      "items": {
+                        "enum": [
+                          "regulator_register",
+                          "fund_of_funds_commitment",
+                          "association_full_member",
+                          "portfolio_page"
+                        ]
+                      }
+                    }
+                  }
+                }
+              ]
             }
           }
         },

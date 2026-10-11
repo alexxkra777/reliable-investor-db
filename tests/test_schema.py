@@ -74,7 +74,8 @@ def test_out_of_scope_status(records, validator):
     assert not rep.errors
     assert not any("out_of_scope" in w for w in rep.warnings)
     recs[1]["decision"]["rules"] = []
-    assert any("out_of_scope without S1" in w for w in validate(recs, validator, today=TODAY).warnings)
+    warnings = validate(recs, validator, today=TODAY).warnings
+    assert any("out_of_scope without S1" in w for w in warnings)
 
 
 def test_cli_validate(fixtures_dir, tmp_path, capsys):

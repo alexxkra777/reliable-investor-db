@@ -97,3 +97,17 @@ def test_agreement(example, stored, computed, expected):
     d = decide(example, {}, REF)
     d.status = computed
     assert agreement(example, d) == expected
+
+
+def test_existence_evidence_satisfies_core_activity(example):
+    rec = with_last_investment(example, "2026-01-05")
+    rec["fields"]["funds"] = None  # drop the Tier A fund-of-funds source
+    d = decide(rec, {}, REF)
+    assert d.status == "uncertain" and "I2?" in d.rules
+    rec["fields"]["existence"] = {"value": ["association_full_member"], "sources": [
+        {"url": "https://example.org/members", "tier": "B", "publisher": "Example VC Association",
+         "published": None, "accessed": "2026-10-11", "quote": "Full members: Example Ventures"}]}
+    assert decide(rec, {}, REF).status == "included"
+    # a Tier C mention isn't enough
+    rec["fields"]["existence"]["sources"][0]["tier"] = "C"
+    assert decide(rec, {}, REF).status == "uncertain"

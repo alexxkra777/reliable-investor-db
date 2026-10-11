@@ -83,6 +83,12 @@ def core_activity(rec: dict) -> tuple[bool, str]:
     for t in iter_targets(rec):
         if t.kind != "investment" and any(s.get("tier") == "A" for s in t.sources):
             return True, f"Tier A source for {t.kind}"
+    existence = (rec.get("fields") or {}).get("existence") or {}
+    # full association membership or a self-published portfolio is first-party (Tier B) and
+    # PLAN I2 accepts it; a website blurb about "investing" isn't on the list on purpose
+    sources = existence.get("sources") or []
+    if existence.get("value") and any(s.get("tier") in ("A", "B") for s in sources):
+        return True, "existence evidence: " + ", ".join(existence["value"])
     companies = {
         name_key(inv.get("company", ""))
         for inv in rec.get("investments") or []
