@@ -22,7 +22,7 @@ would triple the database with noise.
 |---|---|
 | `vc` | Manages third-party or own capital and takes minority equity / convertible stakes in young private companies (pre-seed to growth). |
 | `pe` | Buyout, growth or mezzanine investor in established private companies, usually majority or significant minority stakes. |
-| `cvc` | Investment arm of a non-financial corporation that invests in third-party startups. |
+| `cvc` | Investment arm of a corporation (banks and insurers included) that puts balance-sheet money into third-party startups. A bank's lending is E3; a bank's startup equity program is `cvc`. |
 | `family_office` | Single or multi-family office that makes **direct** investments into private companies (not only allocates to funds or manages a portfolio of listed securities). |
 | `angel` | Natural person investing own money into startups, with a **public investor persona** (self-published profile, or named in at least two deal announcements). |
 | `private_investor` | High-net-worth individual or their holding company with repeated direct investments in private companies. |
@@ -52,6 +52,14 @@ would triple the database with noise.
 | **E8** | Single-business holding groups | Buying operating companies for their own group (strategic M&A) is not third-party investing. Included as `private_investor` only if they invest repeatedly in unrelated startups. |
 | **E9** | Fund vehicles, SPVs, compartments | Rolled up to their manager (rule "unit of record"). |
 | **E10** | Angels without a public investor persona | GDPR: names of private individuals are personal data. We only keep people who present themselves publicly as investors. |
+
+On an excluded record the `rules` list names the rule that decided it: an E rule, or an I rule
+that the entity failed (e.g. `I2` = investing isn't shown to be a core activity).
+
+**Pilot scope (S1).** The pilot covers one slice of the database, so a real investor that falls outside
+that slice (a PE firm in a VC pilot, a foreign manager, a state fund-of-funds) gets status
+`out_of_scope` with rule `S1` instead of `excluded`. They are valid records for the full database,
+and they are kept out of the precision numbers so the pilot doesn't look better or worse than it is.
 
 Edge cases are decided in [`data/sample/decisions.md`](data/sample/decisions.md) with the rule ID that
 decided each one, so the rules are testable rather than vibes.
