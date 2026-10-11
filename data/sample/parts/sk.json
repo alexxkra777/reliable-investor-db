@@ -1719,11 +1719,11 @@
       }
     ],
     "decision": {
-      "status": "dormant",
+      "status": "uncertain",
       "rules": [
-        "E4"
+        "I3"
       ],
-      "note": "Corporate VC: 100% owned by 365.bank, a. s. (ORSR). Kept as cvc (no PLAN rule excludes CVC), but no dated investment within 36 months was found; its site lists portfolio companies without dates. Evidence: https://www.orsr.sk/vypis.asp?ID=410247&SID=2&P=0 — \"Akcionár: 365.bank, a. s. IČO: 31 340 890\""
+      "note": "Blind second review found Ctrl Alt (26 Oct 2023), inside the 36-month window, but only on an aggregator (Tier C). Previous status: dormant."
     },
     "fields": {
       "sectors": {
@@ -1759,7 +1759,24 @@
         ]
       }
     },
-    "investments": []
+    "investments": [
+      {
+        "company": "Ctrl Alt",
+        "date": "2023-10-26",
+        "date_kind": "announced",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://www.gaebler.com/VC-Funding-6AFD2FC7-C9AF-4DA6-AC47-2B1240324F7C-Ctrl-Alt-10-26-2023",
+            "tier": "C",
+            "publisher": "Gaebler (aggregator)",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Forward Partners, MiddleGame Ventures and 365.fintech participated in a $2.6 million capital raise for Ctrl Alt."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "monogram-ventures",

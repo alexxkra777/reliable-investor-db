@@ -21,11 +21,11 @@
       }
     ],
     "decision": {
-      "status": "dormant",
+      "status": "uncertain",
       "rules": [
-        "E4"
+        "I3"
       ],
-      "note": "Corporate VC: 100% owned by 365.bank, a. s. (ORSR). Kept as cvc (no PLAN rule excludes CVC), but no dated investment within 36 months was found; its site lists portfolio companies without dates. Evidence: https://www.orsr.sk/vypis.asp?ID=410247&SID=2&P=0 — \"Akcionár: 365.bank, a. s. IČO: 31 340 890\""
+      "note": "Blind second review found Ctrl Alt (26 Oct 2023), inside the 36-month window, but only on an aggregator (Tier C). Previous status: dormant."
     },
     "fields": {
       "sectors": {
@@ -61,7 +61,24 @@
         ]
       }
     },
-    "investments": []
+    "investments": [
+      {
+        "company": "Ctrl Alt",
+        "date": "2023-10-26",
+        "date_kind": "announced",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://www.gaebler.com/VC-Funding-6AFD2FC7-C9AF-4DA6-AC47-2B1240324F7C-Ctrl-Alt-10-26-2023",
+            "tier": "C",
+            "publisher": "Gaebler (aggregator)",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Forward Partners, MiddleGame Ventures and 365.fintech participated in a $2.6 million capital raise for Ctrl Alt."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "abris-capital",
@@ -3008,14 +3025,31 @@
       }
     ],
     "decision": {
-      "status": "excluded",
+      "status": "uncertain",
       "rules": [
-        "I2"
+        "I3"
       ],
-      "note": "Was uncertain. KOOPEO Ventures SE (Brno) is registered for property rental and general trade (justice.cz); koopeo.com is parked, and no dated investment, portfolio page, licence or membership was found. The only trace is a Vestbee directory listing (Precisimo, Trifft, KeyGuru), so investing is not shown to be a core activity."
+      "note": "Blind second review found a July 2025 pre-seed deal (TRIFFT) on an aggregator only; contradicts the parked-domain finding, so left uncertain. Previous status: excluded."
     },
     "fields": {},
-    "investments": []
+    "investments": [
+      {
+        "company": "TRIFFT Loyalty Platform",
+        "date": "2025-07-17",
+        "date_kind": "announced",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://shizune.co/investors/profile/koopeo-ventures",
+            "tier": "C",
+            "publisher": "Shizune (aggregator)",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "$638K / Pre-Seed / Jul 17, 2025"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "kpas",
@@ -5538,16 +5572,32 @@
       }
     ],
     "decision": {
-      "status": "dormant",
+      "status": "uncertain",
       "rules": [
-        "E4"
+        "I2"
       ],
-      "note": "Was uncertain. Venture arm of KKCG (Karel Komárek). Last dated deal found: lead investor in Source Defense (Series B) and NetOp.Cloud, 27 Apr 2022 (Lupa.cz, Tier C); nothing later. Former partners left to start Tachles VC (Apr 2024) and springtide.vc shows a parked page. No I2 evidence (regulator register, fund-of-funds commitment, full association membership or a portfolio page naming 3+ companies) was found, so existence is left empty."
+      "note": "Blind second review found an $8M convertible note into ThreatMark (Jan 2025, company press release), so I3 holds; but no register, fund-of-funds, association or portfolio-page evidence for I2 yet. Previous status: dormant."
     },
     "fields": {
       "existence": null
     },
     "investments": [
+      {
+        "company": "ThreatMark",
+        "date": "2025-01-07",
+        "date_kind": "announced",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://www.threatmark.com/newsroom/threatmark-to-advance-the-fight-against-online-fraud/",
+            "tier": "B",
+            "publisher": "ThreatMark",
+            "published": "2025-01-07",
+            "accessed": "2026-10-11",
+            "quote": "and an $8 million convertible note from Springtide Ventures Fund."
+          }
+        ]
+      },
       {
         "company": "Source Defense",
         "date": "2022-04-27",
@@ -6995,11 +7045,14 @@
       }
     ],
     "decision": {
-      "status": "dormant",
+      "status": "included",
       "rules": [
-        "E4"
+        "I1",
+        "I2",
+        "I3",
+        "I4"
       ],
-      "note": "Corporate VC of Y Soft (Brno). Latest dated evidence found: Y Soft Ventures II entered NenoVision s.r.o. on 11 Jul 2019; no dated investment within 36 months was found."
+      "note": "Re-opened after the blind second review found a June 2025 pre-seed deal (RoboTwin) the first pass missed. Previous status: dormant."
     },
     "fields": {
       "sectors": {
@@ -7055,6 +7108,22 @@
       }
     },
     "investments": [
+      {
+        "company": "RoboTwin",
+        "date": "2025-06-23",
+        "date_kind": "announced",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://www.novalia.cz/blogpost/novalia-zastupovala-robotwin-cesky-startup-ktery-meni-budoucnost-prumyslove-automatizace",
+            "tier": "B",
+            "publisher": "Novalia (RoboTwin transaction counsel)",
+            "published": "2025-06-23",
+            "accessed": "2026-10-11",
+            "quote": "Y Soft Ventures, EIT Manufacturing a investor Jörg Rupp."
+          }
+        ]
+      },
       {
         "company": "NenoVision",
         "date": "2019-07-11",

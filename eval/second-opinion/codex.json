@@ -1,0 +1,716 @@
+[
+  {
+    "id": "365-fintech",
+    "is_investor": "yes",
+    "type": "cvc",
+    "managed_from": "SK",
+    "latest_investment": {
+      "company": "Ctrl Alt",
+      "date": "2023-10-26",
+      "date_precision": "day",
+      "url": "https://www.gaebler.com/VC-Funding-6AFD2FC7-C9AF-4DA6-AC47-2B1240324F7C-Ctrl-Alt-10-26-2023",
+      "quote": "Forward Partners, MiddleGame Ventures and 365.fintech participated in a $2.6 million capital raise for Ctrl Alt."
+    },
+    "active_36m": "yes",
+    "confidence": "high",
+    "note": "The Bratislava-based 365.bank investment subsidiary makes seed equity investments, and the latest verified transaction is Ctrl Alt's October 2023 funding announcement."
+  },
+  {
+    "id": "air-ventures",
+    "is_investor": "yes",
+    "type": "vc",
+    "managed_from": "CZ",
+    "latest_investment": {
+      "company": "Cross Network Intelligence",
+      "date": "2019-10-24",
+      "date_precision": "day",
+      "url": "https://feedit.cz/2019/10/24/air-ventures-investuje-do-hitech-startupu-cross-network-intelligence-ktery-pomaha-budovat-efektivni-site-mobilnim-operatorum-ve-svete-i-u-nas/",
+      "quote": "Ve startupu se zaměřením na síťovou infrastrukturu získává fond Air Ventures 15% podíl."
+    },
+    "active_36m": "no",
+    "confidence": "medium",
+    "note": "The official site identifies a Prague-based VC, but recent Jiant funding records conflate it with an American namesake and no newer verified investment was found."
+  },
+  {
+    "id": "baryon-fund",
+    "is_investor": "yes",
+    "type": "vc",
+    "managed_from": "SK",
+    "latest_investment": {
+      "company": "Airlogix",
+      "date": "2026-07-21",
+      "date_precision": "day",
+      "url": "https://scroll.media/2026/07/21/baryon-fund-airlogix/",
+      "quote": "український defence-tech стартап Airlogix входить до його портфеля."
+    },
+    "active_36m": "yes",
+    "confidence": "medium",
+    "note": "The Slovak founding investment team backs defence startups, while Luxembourg is the fund domicile and the Airlogix announcement does not disclose the closing date."
+  },
+  {
+    "id": "bhm-ventures",
+    "is_investor": "yes",
+    "type": "vc",
+    "managed_from": "CZ",
+    "latest_investment": {
+      "company": "Carebot",
+      "date": "2025-01-01",
+      "date_precision": "year",
+      "url": "https://www.bhmgroup.eu/en/news/blog/bhm-group-in-2025-capital-that-withstands-economic-cycles",
+      "quote": "Simultaneously, the group made a full capital entry into the Czech startup Carebot"
+    },
+    "active_36m": "yes",
+    "confidence": "medium",
+    "note": "BHM's Czech venture arm holds startup equity, and the group's official 2025 review confirms a Carebot capital investment without an exact closing date."
+  },
+  {
+    "id": "cb-investment-management",
+    "is_investor": "yes",
+    "type": "vc",
+    "managed_from": "SK",
+    "latest_investment": {
+      "company": "Wewell",
+      "date": "2023-12-07",
+      "date_precision": "day",
+      "url": "https://www.linkedin.com/posts/wewellapp_exciting-news-from-wewell-wewell-has-activity-7138486649600053249-fdHZ",
+      "quote": "Wewell has secured an investment of €1.25 million led by CB Investment Management"
+    },
+    "active_36m": "yes",
+    "confidence": "medium",
+    "note": "The Bratislava manager invests through CB Growth One, and Wewell's dated December 2023 announcement verifies activity although newer databases misattribute some portfolio companies' subsequent rounds."
+  },
+  {
+    "id": "credo-ventures",
+    "is_investor": "yes",
+    "type": "vc",
+    "managed_from": "CZ",
+    "latest_investment": {
+      "company": "Minerva Humanoids",
+      "date": "2026-10-06",
+      "date_precision": "day",
+      "url": "https://via.ritzau.dk/pressemeddelelse/15210014/minerva-humanoids?publisherId=90446",
+      "quote": "with Long Journey Ventures and Credo Ventures as co-leads"
+    },
+    "active_36m": "yes",
+    "confidence": "high",
+    "note": "Credo is an early-stage VC managed from Prague with a Krakow office, and the October 2026 company announcement confirms its co-led Minerva pre-seed investment."
+  },
+  {
+    "id": "cs-seed-starter",
+    "is_investor": "yes",
+    "type": "cvc",
+    "managed_from": "CZ",
+    "latest_investment": {
+      "company": "Definic",
+      "date": "2026-06-18",
+      "date_precision": "day",
+      "url": "https://www.sih.sk/en/aktuality/sih-podporil-definic-slovensku-technologicku-spolocnost-s-globalnymi-ambiciami",
+      "quote": "ČS Seed Starter (Česká sporiteľňa), participated in a €2.5 million investment round in the technology company Definic."
+    },
+    "active_36m": "yes",
+    "confidence": "high",
+    "note": "Česká spořitelna's Prague-based corporate venture subsidiary invests in startup equity, and SIH's June 2026 announcement explicitly names it in Definic's round."
+  },
+  {
+    "id": "czech-founders-vc",
+    "is_investor": "yes",
+    "type": "vc",
+    "managed_from": "CZ",
+    "latest_investment": {
+      "company": "Merchantee",
+      "date": "2026-06-09",
+      "date_precision": "day",
+      "url": "https://tech.eu/2026/06/09/merchantee-secures-eur18m-for-european-marketplace-expansion/",
+      "quote": "with participation from Czech Founders VC and Lighthouse Ventures"
+    },
+    "active_36m": "yes",
+    "confidence": "high",
+    "note": "The Prague-based founder-backed fund offers pre-seed equity tickets and participated in Merchantee's June 2026 financing."
+  },
+  {
+    "id": "depo-ventures",
+    "is_investor": "yes",
+    "type": "vc",
+    "managed_from": "CZ",
+    "latest_investment": {
+      "company": "ArcSpace",
+      "date": "2026-08-01",
+      "date_precision": "month",
+      "url": "https://spacebandits.io/startups/arcspace",
+      "quote": "A €2 million seed round closed in August 2026, led by the Czech fund DEPO Ventures"
+    },
+    "active_36m": "yes",
+    "confidence": "medium",
+    "note": "DEPO manages Czech early-stage funds alongside its angel network, and ArcSpace's reported August 2026 seed is the newest verified deal."
+  },
+  {
+    "id": "fond-inovacii-a-technologii",
+    "is_investor": "yes",
+    "type": "public_dfi",
+    "managed_from": "SK",
+    "latest_investment": {
+      "company": "Datamolino",
+      "date": "2014-02-08",
+      "date_precision": "day",
+      "url": "https://www.teraz.sk/najnovsie/fit-investicia-faktury-spracovanie/73190-clanok.html",
+      "quote": "Fond inovácií a technológií (FIT) zrealizoval investíciu do slovenského start-up projektu Datamolino."
+    },
+    "active_36m": "no",
+    "confidence": "medium",
+    "note": "The state-backed Slovak risk-capital fund entered its post-investment phase in 2025, and later aggregate investment statistics did not identify a dated company transaction beyond Datamolino."
+  },
+  {
+    "id": "g-force",
+    "is_investor": "yes",
+    "type": "vc",
+    "managed_from": "SK",
+    "latest_investment": {
+      "company": "Brightly",
+      "date": "2025-01-09",
+      "date_precision": "day",
+      "url": "https://foundersfactory.com/articles/investing-in-brightly/",
+      "quote": "We’re excited to announce our latest G-Force Climate investment"
+    },
+    "active_36m": "yes",
+    "confidence": "medium",
+    "note": "G-Force's Slovak registered manager offers cash for minority equity with a Bratislava–London team, and Brightly's January 2025 article is dated in its published page data while newer holdings are undated."
+  },
+  {
+    "id": "gain-ventures",
+    "is_investor": "yes",
+    "type": "vc",
+    "managed_from": "CZ",
+    "latest_investment": {
+      "company": "Carebot",
+      "date": "2026-08-03",
+      "date_precision": "day",
+      "url": "https://www.carebot.com/news/carebot-closes-the-largest-investment-round-in-its-history",
+      "quote": "with JIC Ventures joining the company alongside existing investors Gain Ventures and Eva Janečková."
+    },
+    "active_36m": "yes",
+    "confidence": "medium",
+    "note": "Czech registry records connect Prague-managed GAIN Ventures s.r.o. to Carebot's equity ownership, corroborating the August 2026 announcement despite erroneous California attribution in some databases."
+  },
+  {
+    "id": "ii-biotech-fund",
+    "is_investor": "yes",
+    "type": "vc",
+    "managed_from": "CZ",
+    "latest_investment": {
+      "company": "Ternary Therapeutics",
+      "date": "2026-03-17",
+      "date_precision": "day",
+      "url": "https://itbrief.co.uk/story/ternary-raises-gbp-3-6m-to-engineer-ai-molecular-glues",
+      "quote": "with participation from Pace Ventures, the i&i Biotech Fund and the UK Innovation & Science Seed Fund"
+    },
+    "active_36m": "yes",
+    "confidence": "high",
+    "note": "The Luxembourg-domiciled life-science VC has its investment team in Prague and participated in Ternary's March 2026 seed financing."
+  },
+  {
+    "id": "impulse-ventures",
+    "is_investor": "yes",
+    "type": "vc",
+    "managed_from": "CZ",
+    "latest_investment": {
+      "company": "Safetica",
+      "date": "2025-01-24",
+      "date_precision": "day",
+      "url": "https://en.ain.ua/2025/01/24/safetica-announces-a-4m-investment/",
+      "quote": "Czech entrepreneur Ondrej Tomek, co-founder and CEO at Impulse Ventures, led the investment round."
+    },
+    "active_36m": "yes",
+    "confidence": "high",
+    "note": "The Prague-based venture investor deploys its own capital, and Safetica's January 2025 financing is the newest verified investment rather than its later Taikun exit."
+  },
+  {
+    "id": "inven-capital",
+    "is_investor": "yes",
+    "type": "cvc",
+    "managed_from": "CZ",
+    "latest_investment": {
+      "company": "Wint",
+      "date": "2026-09-09",
+      "date_precision": "day",
+      "url": "https://www.prnewswire.com/news-releases/wint-raises-36-million-in-series-d-funding-to-scale-ai-powered-water-intelligence-globally-302873443.html",
+      "quote": "Series D funding co-led by LIP Ventures and Inven Capital."
+    },
+    "active_36m": "yes",
+    "confidence": "high",
+    "note": "ČEZ's Prague-based venture investment manager co-led Wint's $36 million Series D announced in September 2026."
+  },
+  {
+    "id": "ipm-group",
+    "is_investor": "yes",
+    "type": "pe",
+    "managed_from": "SK",
+    "latest_investment": {
+      "company": "Hilo EV",
+      "date": "2022-06-14",
+      "date_precision": "day",
+      "url": "https://www.ipmgrp.com/ipm-group-invests-in-micromobility-company-hilo-ev/",
+      "quote": "today announces that it has invested in Hilo EV"
+    },
+    "active_36m": "no",
+    "confidence": "medium",
+    "note": "The growth-equity manager operates from Bratislava and London, with Bratislava its principal published contact, and Hilo EV is the latest dated investment verified."
+  },
+  {
+    "id": "jt-ventures",
+    "is_investor": "yes",
+    "type": "vc",
+    "managed_from": "CZ",
+    "latest_investment": {
+      "company": "Wultra",
+      "date": "2026-06-29",
+      "date_precision": "day",
+      "url": "https://www.wultra.com/blog/wultra-raises-68-million-eur-in-series-a",
+      "quote": "and existing investors J&T Ventures and Elevator Ventures."
+    },
+    "active_36m": "yes",
+    "confidence": "high",
+    "note": "The Prague-based venture fund is explicitly identified by Wultra as a participant in its dated Series A announcement."
+  },
+  {
+    "id": "kaya-vc",
+    "is_investor": "yes",
+    "type": "vc",
+    "managed_from": "CZ",
+    "latest_investment": {
+      "company": "Minerva Humanoids",
+      "date": "2026-10-06",
+      "date_precision": "day",
+      "url": "https://lasvegas.newsnetmedia.com/story/484299/minerva-humanoids-emerges-from-stealth-with-10m-pre-seed-round-led-by-general-catalyst-to-build-humanoid-robots-for-the-worlds-most-dangerous-jobs/",
+      "quote": "participation from MVP Ventures, Kaya, RunwayVC, Compound"
+    },
+    "active_36m": "yes",
+    "confidence": "high",
+    "note": "KAYA is a Prague-based venture manager and the dated funding announcement names it among Minerva's pre-seed investors."
+  },
+  {
+    "id": "koopeo-ventures",
+    "is_investor": "yes",
+    "type": "vc",
+    "managed_from": "CZ",
+    "latest_investment": {
+      "company": "TRIFFT Loyalty Platform",
+      "date": "2025-07-17",
+      "date_precision": "day",
+      "url": "https://shizune.co/investors/profile/koopeo-ventures",
+      "quote": "$638K / Pre-Seed / Jul 17, 2025"
+    },
+    "active_36m": "yes",
+    "confidence": "medium",
+    "note": "Its official website confirms direct startup investing and Czech operations, while a public investor transaction table dates its latest TRIFFT investment."
+  },
+  {
+    "id": "lighthouse-ventures",
+    "is_investor": "yes",
+    "type": "vc",
+    "managed_from": "CZ",
+    "latest_investment": {
+      "company": "Hermetiq",
+      "date": "2026-08-31",
+      "date_precision": "day",
+      "url": "https://lhv.vc/news/lighthouse-ventures-participates-in-hermetiqs-2-2m-pre-seed-round/",
+      "quote": "Lighthouse Ventures Participates in Hermetiq’s $2.2M Pre-Seed Round"
+    },
+    "active_36m": "yes",
+    "confidence": "high",
+    "note": "The Prague-based fund's own dated announcement confirms its participation in Hermetiq's pre-seed financing."
+  },
+  {
+    "id": "limerock",
+    "is_investor": "yes",
+    "type": "vc",
+    "managed_from": "SK",
+    "latest_investment": {
+      "company": "GEVORKYAN",
+      "date": "2016-01-01",
+      "date_precision": "year",
+      "url": "https://gevorkyan.eu/wp-content/uploads/2024_EN_Annual-report-1.pdf",
+      "quote": "Each of these companies acquired a 3.5% interest in GEVORKYAN, Inc. in 2016"
+    },
+    "active_36m": "no",
+    "confidence": "high",
+    "note": "Limerock manages an equity portfolio from Bratislava, but its official SFDR disclosure states that its legacy fund has made no new investment decisions since November 2016: https://www.limerock.sk/sfdr."
+  },
+  {
+    "id": "lrj-capital",
+    "is_investor": "yes",
+    "type": "private_investor",
+    "managed_from": "SK",
+    "latest_investment": {
+      "company": "Finax",
+      "date": "2019-03-15",
+      "date_precision": "day",
+      "url": "https://www.startitup.sk/slovensky-startup-ziskal-investiciu-15-miliona-eur/",
+      "quote": "LRJ Capital cez svoj fond GROWWS SICAV, a.s. podporil inovátora v inteligentnom investovaní, Finax investíciou 1,5 milióna eur."
+    },
+    "active_36m": "no",
+    "confidence": "medium",
+    "note": "Slovak sources identify a private investment holding investing through GROWWS, and Finax is the latest dated transaction verified."
+  },
+  {
+    "id": "miton",
+    "is_investor": "yes",
+    "type": "vc",
+    "managed_from": "CZ",
+    "latest_investment": {
+      "company": "ACE",
+      "date": "2026-10-01",
+      "date_precision": "day",
+      "url": "https://www.miton.cz/en/blog/miton-is-investing-in-ace-strava-but-for-padel-is-already-used-by-more-than-half-of-czech-players/",
+      "quote": "Miton would become an equal partner and, to start with, invest several million crowns."
+    },
+    "active_36m": "yes",
+    "confidence": "high",
+    "note": "Miton's dated announcement describes its equity partnership and initial investment in ACE, with its investment team based in Prague."
+  },
+  {
+    "id": "monogram-ventures",
+    "is_investor": "yes",
+    "type": "vc",
+    "managed_from": "SK",
+    "latest_investment": {
+      "company": "Websupport",
+      "date": "2013-05-01",
+      "date_precision": "month",
+      "url": "https://zive.aktuality.sk/clanok/65772/do-websupportu-vstupil-investor-ziskal-15-percentny-podiel/",
+      "quote": "Do slovenskej webhostingovej firmy Websupport začiatkom mája investoval Monogram Ventures."
+    },
+    "active_36m": "no",
+    "confidence": "medium",
+    "note": "The Slovak investment firm acquired a 15% Websupport stake in May 2013, while later references to its Streamstar shareholding do not establish a newer investment date."
+  },
+  {
+    "id": "nation-1",
+    "is_investor": "yes",
+    "type": "vc",
+    "managed_from": "CZ",
+    "latest_investment": {
+      "company": "Myriad AI",
+      "date": "2025-09-12",
+      "date_precision": "day",
+      "url": "https://nordic9.com/news/myriad-ai-in-a-78m-seed-round-led-by-category-ventures-and-joined-by-long-journey-10vc-n1-breakwater-caesar-vc-bd-partners-and-preston-werner/",
+      "quote": "Round investors: Caesar Business Angels Plug and Play Preston-Werner Ventures Nation 1 VC"
+    },
+    "active_36m": "yes",
+    "confidence": "medium",
+    "note": "N1 manages early-stage equity funds with a team split between Prague and San Francisco, and the Myriad seed announcement explicitly lists Nation 1 VC."
+  },
+  {
+    "id": "neulogy-ventures",
+    "is_investor": "yes",
+    "type": "vc",
+    "managed_from": "SK",
+    "latest_investment": {
+      "company": "BiteBerry",
+      "date": "2024-01-01",
+      "date_precision": "year",
+      "url": "https://neulogy.vc/portfolio/biteberry/",
+      "quote": "Invested: 2024"
+    },
+    "active_36m": "yes",
+    "confidence": "medium",
+    "note": "The Slovak manager's own portfolio dates its BiteBerry investment to 2024; a newer GA Drilling database record could not be verified in accessible page text."
+  },
+  {
+    "id": "orbit-capital",
+    "is_investor": "yes",
+    "type": "vc",
+    "managed_from": "CZ",
+    "latest_investment": {
+      "company": "Sloneek",
+      "date": "2026-06-23",
+      "date_precision": "day",
+      "url": "https://www.sloneek.com/blog/sloneek-raises-6m-to-give-hr-a-smarter-way-to-work/",
+      "quote": "new funding from Orbit Capital and Venture to Future Fund"
+    },
+    "active_36m": "yes",
+    "confidence": "high",
+    "note": "Orbit's Czech manager operates both growth-equity and debt strategies, and Sloneek's own equity-round announcement was selected rather than later debt transactions."
+  },
+  {
+    "id": "presto-ventures",
+    "is_investor": "yes",
+    "type": "vc",
+    "managed_from": "CZ",
+    "latest_investment": {
+      "company": "Choice",
+      "date": "2026-03-01",
+      "date_precision": "month",
+      "url": "https://www.vestbee.com/insights/articles/vc-funding-in-cee-report-q1-2026",
+      "quote": "Choice raised €6 million from J&T Ventures, Reflex Capital, and Presto Ventures."
+    },
+    "active_36m": "yes",
+    "confidence": "medium",
+    "note": "A CEE funding report names Presto in Choice's March 2026 round, while newer Tech Horizons transactions belong to a separately managed fund."
+  },
+  {
+    "id": "purple-ventures",
+    "is_investor": "yes",
+    "type": "vc",
+    "managed_from": "CZ",
+    "latest_investment": {
+      "company": "Rightcharge",
+      "date": "2026-09-03",
+      "date_precision": "day",
+      "url": "https://tech.eu/2026/09/03/rightcharge-raises-ps500k-to-scale-fleet-ev-charging-payments-across-europe",
+      "quote": "with participation from BlackWood Ventures and Purple Ventures"
+    },
+    "active_36m": "yes",
+    "confidence": "high",
+    "note": "The Brno-based venture fund invests for minority equity stakes and is named in Rightcharge's latest dated funding announcement."
+  },
+  {
+    "id": "reflex-capital",
+    "is_investor": "yes",
+    "type": "vc",
+    "managed_from": "CZ",
+    "latest_investment": {
+      "company": "Merchantee",
+      "date": "2026-06-09",
+      "date_precision": "day",
+      "url": "https://startupkitchen.community/agentic-marketplace-intelligence-startup-merchantee-raises-e1-8m-to-expand-across-europe/",
+      "quote": "a €1.8M round led by Reflex Capital, with support from Czech Founders VC and Lighthouse Ventures."
+    },
+    "active_36m": "yes",
+    "confidence": "high",
+    "note": "The Prague-based venture investor is named as the lead in Merchantee's dated pre-seed round and extension announcement."
+  },
+  {
+    "id": "rockaway-ventures",
+    "is_investor": "yes",
+    "type": "vc",
+    "managed_from": "CZ",
+    "latest_investment": {
+      "company": "Remix",
+      "date": "2025-12-19",
+      "date_precision": "day",
+      "url": "https://www.rockawaycapital.com/en/news/rockaway-ventures-invests-in-remix-a-technology-platform-for-circular-fashion",
+      "quote": "As part of a Series A investment round, the fund is acquiring a 20% stake in the company."
+    },
+    "active_36m": "yes",
+    "confidence": "high",
+    "note": "The Prague-based venture fund announced a 20% equity investment in Remix."
+  },
+  {
+    "id": "rockawayx",
+    "is_investor": "yes",
+    "type": "vc",
+    "managed_from": "CZ",
+    "latest_investment": {
+      "company": "Relayer Capital",
+      "date": "2026-08-25",
+      "date_precision": "day",
+      "url": "https://www.rockawayx.com/insights/rockawayx-acquires-crypto-focused-hedge-fund-firm-relayer-capital-and-launches-liquid-opportunities-fund",
+      "quote": "today announced the acquisition of Relayer Capital, a digital asset hedge fund founded by Austin Barack."
+    },
+    "active_36m": "yes",
+    "confidence": "medium",
+    "note": "The latest confirmed transaction is a private-firm acquisition dated August 25 in its official news index, while investment operations span Prague and other international offices."
+  },
+  {
+    "id": "seed-starter-slovenskej-sporitelne",
+    "is_investor": "yes",
+    "type": "cvc",
+    "managed_from": "SK",
+    "latest_investment": {
+      "company": "Pointee",
+      "date": "2026-04-21",
+      "date_precision": "day",
+      "url": "https://blog.tensor.ventures/p/portfolio-news-pointee-raises-14m",
+      "quote": "Seed round led by Tensor Ventures, with Seed Starter České spořitelny and Seed Starter Slovenskej sporiteľne participating."
+    },
+    "active_36m": "yes",
+    "confidence": "high",
+    "note": "Slovenská sporiteľňa's Slovak corporate venture programme participated in Pointee's seed financing."
+  },
+  {
+    "id": "soulmates-ventures",
+    "is_investor": "yes",
+    "type": "vc",
+    "managed_from": "CZ",
+    "latest_investment": {
+      "company": "Rightcharge",
+      "date": "2026-09-03",
+      "date_precision": "day",
+      "url": "https://tech.eu/2026/09/03/rightcharge-raises-ps500k-to-scale-fleet-ev-charging-payments-across-europe/",
+      "quote": "The round was led by existing investor Soulmates Ventures"
+    },
+    "active_36m": "yes",
+    "confidence": "high",
+    "note": "The Prague-based venture investor led Rightcharge's September 2026 equity funding round."
+  },
+  {
+    "id": "springtide-ventures",
+    "is_investor": "yes",
+    "type": "vc",
+    "managed_from": "CZ",
+    "latest_investment": {
+      "company": "ThreatMark",
+      "date": "2025-01-07",
+      "date_precision": "day",
+      "url": "https://www.threatmark.com/newsroom/threatmark-to-advance-the-fight-against-online-fraud/",
+      "quote": "and an $8 million convertible note from Springtide Ventures Fund."
+    },
+    "active_36m": "yes",
+    "confidence": "high",
+    "note": "The Czech KKCG-backed fund provided convertible financing to ThreatMark; similarly named US healthcare investors were excluded."
+  },
+  {
+    "id": "startguide",
+    "is_investor": "yes",
+    "type": "vc",
+    "managed_from": "CZ",
+    "latest_investment": {
+      "company": "Carebot",
+      "date": "2024-03-22",
+      "date_precision": "day",
+      "url": "https://cc.cz/ceska-umela-inteligence-analyzuje-rentgeny-plic-a-miri-do-evropy-carebot-zaroven-ziskal-investici/",
+      "quote": "venture kapitálová společnost Startguide VC, skupina BHM group Tomáše Krska a Gain Ventures."
+    },
+    "active_36m": "yes",
+    "confidence": "medium",
+    "note": "Its official Prague-based VC mandate and Carebot participation are confirmed, but later database-reported deals lacked verifiable round-specific evidence; the date is the announcement date."
+  },
+  {
+    "id": "startupyard",
+    "is_investor": "yes",
+    "type": "accelerator",
+    "managed_from": "CZ",
+    "latest_investment": null,
+    "active_36m": "unclear",
+    "confidence": "medium",
+    "note": "The Prague accelerator offers cash convertible notes and targets equity, but recent programme admissions do not establish completed dated investments: https://startupyard.com/faq/."
+  },
+  {
+    "id": "tensor-ventures",
+    "is_investor": "yes",
+    "type": "vc",
+    "managed_from": "CZ",
+    "latest_investment": {
+      "company": "Cnuic",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "url": "https://blog.tensor.ventures/p/new-investment-cnuic-raises-3m-to",
+      "quote": "Cnuic has raised $3M in a pre-seed round led by Tensor Ventures and Blank Space Ventures"
+    },
+    "active_36m": "yes",
+    "confidence": "high",
+    "note": "The Czech deep-tech venture manager confirms co-leading Cnuic's pre-seed round; later portfolio fundraising alone does not prove its participation."
+  },
+  {
+    "id": "tilia-impact-ventures",
+    "is_investor": "yes",
+    "type": "vc",
+    "managed_from": "CZ",
+    "latest_investment": {
+      "company": "FaceUp",
+      "date": "2026-05-19",
+      "date_precision": "day",
+      "url": "https://www.faceup.com/en/blog/series-a",
+      "quote": "strong participation from returning investors, Tilia Impact V entures (supported by the InvestEU Fund) and Reflex Capital"
+    },
+    "active_36m": "yes",
+    "confidence": "high",
+    "note": "FaceUp confirms participation by the Prague-based impact venture fund in its Series A."
+  },
+  {
+    "id": "up21",
+    "is_investor": "yes",
+    "type": "accelerator",
+    "managed_from": "CZ",
+    "latest_investment": {
+      "company": "NutritionPro",
+      "date": "2021-06-24",
+      "date_precision": "day",
+      "url": "https://cc.cz/2021/06/krabickove-diety-vhodne-i-pro-diabetiky-cesky-nutritionpro-v-praze-rozvezl-uz-250-tisic-jidel-a-nabira-35-milionu-korun/",
+      "quote": "Karel Janeček a UP21 21,1 % a Lighthouse Ventures 8 %"
+    },
+    "active_36m": "no",
+    "confidence": "medium",
+    "note": "The Prague incubator invested for equity; June 2021 is the latest verifiable transaction found, while an uncorroborated June 2023 database entry was excluded."
+  },
+  {
+    "id": "venture-to-future-fund",
+    "is_investor": "yes",
+    "type": "public_dfi",
+    "managed_from": "SK",
+    "latest_investment": {
+      "company": "Sloneek",
+      "date": "2026-06-23",
+      "date_precision": "day",
+      "url": "https://www.sloneek.com/blog/sloneek-raises-6m-to-give-hr-a-smarter-way-to-work/",
+      "quote": "$6 million in new funding from Orbit Capital and Venture to Future Fund"
+    },
+    "active_36m": "yes",
+    "confidence": "high",
+    "note": "The Bratislava-managed EIB and Slovak-government venture vehicle directly co-invests in companies, and Sloneek confirms its participation."
+  },
+  {
+    "id": "vision-ventures",
+    "is_investor": "yes",
+    "type": "vc",
+    "managed_from": "SK",
+    "latest_investment": {
+      "company": "CultureBoard",
+      "date": "2024-04-05",
+      "date_precision": "day",
+      "url": "https://cc.cz/jsou-mu-jen-dva-roky-ale-mezi-klienty-ma-disney-nike-ci-metu-pomaha-jim-s-firemni-kulturou/",
+      "quote": "Slovenská společnost Vision Ventures posílá 400 tisíc eur (10 milionů korun)"
+    },
+    "active_36m": "yes",
+    "confidence": "medium",
+    "note": "The Slovak VC provided follow-on financing to CultureBoard, although its original fund's investment period has ended."
+  },
+  {
+    "id": "y-soft-ventures",
+    "is_investor": "yes",
+    "type": "cvc",
+    "managed_from": "CZ",
+    "latest_investment": {
+      "company": "RoboTwin",
+      "date": "2025-06-23",
+      "date_precision": "day",
+      "url": "https://www.novalia.cz/blogpost/novalia-zastupovala-robotwin-cesky-startup-ktery-meni-budoucnost-prumyslove-automatizace",
+      "quote": "Y Soft Ventures, EIT Manufacturing a investor Jörg Rupp."
+    },
+    "active_36m": "yes",
+    "confidence": "high",
+    "note": "Y Soft's Brno-based corporate venture arm participated in RoboTwin's pre-seed financing, confirmed by the company's transaction counsel."
+  },
+  {
+    "id": "zaka-vc",
+    "is_investor": "yes",
+    "type": "vc",
+    "managed_from": "CZ",
+    "latest_investment": {
+      "company": "PerfectBit",
+      "date": "2026-08-18",
+      "date_precision": "day",
+      "url": "https://zaka.vc/perfectbit-building-the-verified-data-layer-for-physical-ai/",
+      "quote": "Why we invested PerfectBit combines several characteristics"
+    },
+    "active_36m": "yes",
+    "confidence": "medium",
+    "note": "The Prague-origin VC explicitly confirms investing in PerfectBit; later Sensible news describes previous investments without confirming participation in its new financing."
+  },
+  {
+    "id": "zero-one-hundred",
+    "is_investor": "yes",
+    "type": "vc",
+    "managed_from": "SK",
+    "latest_investment": {
+      "company": "Reno",
+      "date": "2025-12-04",
+      "date_precision": "day",
+      "url": "https://www.wamda.com/ar/2025/12/uae-reno-raises-4-million-equity-debt-round",
+      "quote": "The round was led by 500 Sanabil, Hub71, Plus VC, Zero 100 VC, FlyerOne Ventures"
+    },
+    "active_36m": "yes",
+    "confidence": "medium",
+    "note": "The Bratislava CEE entity and Slovak investment partners support Slovakia as the decision team's base, with additional Cyprus and UAE operations and conflicting newer BotBot database dates."
+  }
+]

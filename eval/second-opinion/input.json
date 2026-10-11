@@ -1,0 +1,272 @@
+[
+  {
+    "id": "365-fintech",
+    "name": "365.fintech",
+    "country": "SK",
+    "website": "https://365fintech.sk/"
+  },
+  {
+    "id": "air-ventures",
+    "name": "Air Ventures",
+    "country": "CZ",
+    "website": null
+  },
+  {
+    "id": "baryon-fund",
+    "name": "Baryon Fund",
+    "country": null,
+    "website": "https://www.baryon.fund/"
+  },
+  {
+    "id": "bhm-ventures",
+    "name": "BHM Ventures (BHM group)",
+    "country": "CZ",
+    "website": null
+  },
+  {
+    "id": "cb-investment-management",
+    "name": "CB Investment Management",
+    "country": "SK",
+    "website": "https://www.cbim.sk/"
+  },
+  {
+    "id": "credo-ventures",
+    "name": "Credo Ventures",
+    "country": "CZ",
+    "website": "https://www.credoventures.com/"
+  },
+  {
+    "id": "cs-seed-starter",
+    "name": "ČS Seed Starter",
+    "country": "CZ",
+    "website": "https://www.seedstarter.cz/"
+  },
+  {
+    "id": "czech-founders-vc",
+    "name": "Czech Founders VC",
+    "country": "CZ",
+    "website": "https://czechfounders.vc/"
+  },
+  {
+    "id": "depo-ventures",
+    "name": "DEPO Ventures",
+    "country": "CZ",
+    "website": "https://www.depoventures.com/"
+  },
+  {
+    "id": "fond-inovacii-a-technologii",
+    "name": "Fond inovácií a technológií",
+    "country": "SK",
+    "website": "https://www.fondfit.sk/"
+  },
+  {
+    "id": "g-force",
+    "name": "G-Force",
+    "country": "SK",
+    "website": null
+  },
+  {
+    "id": "gain-ventures",
+    "name": "GAIN Ventures",
+    "country": "CZ",
+    "website": null
+  },
+  {
+    "id": "ii-biotech-fund",
+    "name": "i&i Biotech Fund",
+    "country": "CZ",
+    "website": "https://www.inibio.eu/"
+  },
+  {
+    "id": "impulse-ventures",
+    "name": "Impulse Ventures",
+    "country": "CZ",
+    "website": null
+  },
+  {
+    "id": "inven-capital",
+    "name": "Inven Capital",
+    "country": "CZ",
+    "website": "https://www.invencapital.cz/"
+  },
+  {
+    "id": "ipm-group",
+    "name": "IPM Group",
+    "country": "GB",
+    "website": null
+  },
+  {
+    "id": "jt-ventures",
+    "name": "J&T Ventures",
+    "country": "CZ",
+    "website": "https://www.jtventures.cz/"
+  },
+  {
+    "id": "kaya-vc",
+    "name": "KAYA VC",
+    "country": "CZ",
+    "website": "https://www.kaya.vc/"
+  },
+  {
+    "id": "koopeo-ventures",
+    "name": "KOOPEO Ventures",
+    "country": "CZ",
+    "website": null
+  },
+  {
+    "id": "lighthouse-ventures",
+    "name": "Lighthouse Ventures",
+    "country": "CZ",
+    "website": "https://lhv.vc/"
+  },
+  {
+    "id": "limerock",
+    "name": "Limerock",
+    "country": "SK",
+    "website": null
+  },
+  {
+    "id": "lrj-capital",
+    "name": "LRJ Capital",
+    "country": null,
+    "website": null
+  },
+  {
+    "id": "miton",
+    "name": "Miton",
+    "country": "CZ",
+    "website": "https://www.miton.cz/"
+  },
+  {
+    "id": "monogram-ventures",
+    "name": "Monogram Ventures",
+    "country": "SK",
+    "website": null
+  },
+  {
+    "id": "nation-1",
+    "name": "N1 (Nation 1)",
+    "country": "CZ",
+    "website": null
+  },
+  {
+    "id": "neulogy-ventures",
+    "name": "Neulogy Ventures",
+    "country": "SK",
+    "website": "https://www.neulogy.vc/"
+  },
+  {
+    "id": "orbit-capital",
+    "name": "Orbit Capital",
+    "country": "CZ",
+    "website": "https://orbitcapital.com/"
+  },
+  {
+    "id": "presto-ventures",
+    "name": "Presto Ventures",
+    "country": "CZ",
+    "website": "https://www.prestoventures.com/"
+  },
+  {
+    "id": "purple-ventures",
+    "name": "Purple Ventures",
+    "country": "CZ",
+    "website": "https://www.purple-ventures.com/"
+  },
+  {
+    "id": "reflex-capital",
+    "name": "Reflex Capital",
+    "country": "CZ",
+    "website": "https://www.reflexcapital.com/"
+  },
+  {
+    "id": "rockaway-ventures",
+    "name": "Rockaway Ventures",
+    "country": "CZ",
+    "website": "https://rockawayventures.com/"
+  },
+  {
+    "id": "rockawayx",
+    "name": "RockawayX",
+    "country": "CZ",
+    "website": "https://rockawayx.com/"
+  },
+  {
+    "id": "seed-starter-slovenskej-sporitelne",
+    "name": "Seed Starter Slovenskej sporiteľne",
+    "country": "SK",
+    "website": null
+  },
+  {
+    "id": "soulmates-ventures",
+    "name": "Soulmates Ventures",
+    "country": "CZ",
+    "website": "https://www.soulmates.ventures/"
+  },
+  {
+    "id": "springtide-ventures",
+    "name": "Springtide Ventures",
+    "country": "CZ",
+    "website": null
+  },
+  {
+    "id": "startguide",
+    "name": "STARTGUIDE",
+    "country": "CZ",
+    "website": "https://startguide.cz/en/"
+  },
+  {
+    "id": "startupyard",
+    "name": "StartupYard",
+    "country": "CZ",
+    "website": "https://startupyard.com/"
+  },
+  {
+    "id": "tensor-ventures",
+    "name": "Tensor Ventures",
+    "country": "CZ",
+    "website": "https://tensor.ventures/"
+  },
+  {
+    "id": "tilia-impact-ventures",
+    "name": "Tilia Impact Ventures",
+    "country": "CZ",
+    "website": "https://www.tilia.vc/"
+  },
+  {
+    "id": "up21",
+    "name": "UP21",
+    "country": "CZ",
+    "website": null
+  },
+  {
+    "id": "venture-to-future-fund",
+    "name": "Venture to Future Fund",
+    "country": "SK",
+    "website": "https://vff.sk/"
+  },
+  {
+    "id": "vision-ventures",
+    "name": "Vision Ventures",
+    "country": "SK",
+    "website": "https://visionventures.vc/"
+  },
+  {
+    "id": "y-soft-ventures",
+    "name": "Y Soft Ventures",
+    "country": "CZ",
+    "website": "https://www.ysoftventures.com/"
+  },
+  {
+    "id": "zaka-vc",
+    "name": "ZAKA VC",
+    "country": "CZ",
+    "website": "https://www.zaka.vc/"
+  },
+  {
+    "id": "zero-one-hundred",
+    "name": "Zero One Hundred (0100 Ventures)",
+    "country": "SK",
+    "website": "https://0100.vc/"
+  }
+]
