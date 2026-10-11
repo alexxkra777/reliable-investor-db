@@ -24,19 +24,19 @@ Accessed 2026-10-11. One line per candidate: name — status — rule IDs — re
 - ČS Seed Starter — uncertain — I2 — Česká spořitelna's Prague bank CVC (Czech, not Slovak); one Tier A deal (Born Digital, 24 Nov 2023) but no published portfolio found, so I2 is unproven.
 - StartupYard — included — I1, I2, I3, I4 — Prague accelerator; StartupYard Batch 15 entered SmartGuide on 20 Aug 2026; tagged accelerator.
 - Y Soft Ventures — dormant — E4 — Y Soft's Brno CVC; latest dated evidence is NenoVision (11 Jul 2019), nothing within 36 months.
-- STARTGUIDE — uncertain — I2 — Prague fund with Tier A holdings in Carebot (Mar 2025) and Ringil (Jul 2024), but no licence, membership or 3+ portfolio found.
-- GAIN Ventures — uncertain — I2 — Prague vehicle that entered Carebot (Mar 2025); no website or portfolio, so investing as a core activity is unproven.
-- BHM Ventures (BHM group) — uncertain — I2, I3 — Tomáš Krsek's startup vehicle; two same-day register entries (May 2025) may be internal transfers, so recency and I2 are unproven.
-- Czech Founders VC — uncertain — I3 — Founder-backed pre-seed fund with a 30+ portfolio; latest Tier A evidence (SharpGrid, Aug 2023) is just outside 36 months.
+- STARTGUIDE — included — I1, I2, I3, I4 — Was uncertain. Prague VC; own SG One page names portfolio companies DTS, BikeFair and Ringil (I2); START GUIDE ONE entered Carebot on 18 Mar 2025 (justice.cz).
+- GAIN Ventures — excluded — I2 — Was uncertain. Single known holding (Carebot, Mar 2025); no website, portfolio, licence, membership or fund-of-funds commitment, so investing is not shown to be a core activity.
+- BHM Ventures (BHM group) — uncertain — I3 — I2 now shown by the group's portfolio page (13 tech startups); the May 2025 register lines are a rename of Bohemia Venture Capital (same IČ), and the Aug 2025 Carebot stake is held by vehicles not named BHM, so recency rests on press only.
+- Czech Founders VC — included — I1, I2, I3, I4 — Was uncertain. Self-published portfolio of 30+ startups; fund entered Edmund s.r.o. on 25 Mar 2026 (justice.cz).
 - Orbit Capital — uncertain — I3 — Prague growth equity and venture debt investor, CVCA full member; no dated equity investment found.
 - Impulse Ventures — uncertain — I2, I3 — Ondřej Tomek's vehicle; no website, portfolio or dated investment found.
 - IVBF (Impulse Ventures Blockchain Fund) — excluded — E7 — Crypto token fund linked to Impulse Ventures, not private-company equity.
-- KOOPEO Ventures — uncertain — I2, I3 — Brno vehicle listed by Vestbee; domain parked and no dated investment found.
-- Air Ventures — uncertain — I1, I3 — Directory-listed Prague investor; legal entity link and dated investments unconfirmed.
-- Springtide Ventures — uncertain — I3 — KKCG venture arm; partners left, site parked, no recent dated investment found.
+- KOOPEO Ventures — excluded — I2 — Was uncertain. Registered for property rental and trade, parked domain, no dated investment or portfolio; only a directory listing.
+- Air Ventures — uncertain — I2, I3 — Entity now resolved (AIR VENTURES s.r.o., run by the Czech Founders partners); recent deals appear only in commercial databases and no portfolio page was found.
+- Springtide Ventures — dormant — E4 — Was uncertain. KKCG venture arm; last dated deal Source Defense / NetOp.Cloud (27 Apr 2022, media); partners left in 2024, site parked.
 - Tachles VC — out_of_scope — S1 — Ex-Springtide team with a Prague s.r.o., but the management company is US-based and the focus is Israel, so it is a foreign-managed fund.
-- UP21 — uncertain — I1, I3 — Karlín incubator; planned STAR*21 fund unconfirmed, no registry entity or dated deal found.
-- RockawayX — uncertain — I3 — Rockaway's crypto arm mixing venture with validator and liquidity businesses; no dated equity deal checked.
+- UP21 — dormant — E4 — Was uncertain. Karlín incubator; last dated deal Spaceflow (6 Aug 2019, media); STAR*21 fund not found to have launched; no registry entity identified.
+- RockawayX — uncertain — I2 — Own posts date equity deals (OnRe Series A, May 2026; BetHog, Apr 2026), but most of the business is validators, liquidity and a liquid hedge fund and no portfolio, licence or membership was found.
 - Národní rozvojová investiční (NRI) — out_of_scope — S1 — State development investor and fund-of-funds programme owner; kept for verification, not a target VC.
 - Abris Capital — out_of_scope — S1 — CVCA full member whose stated strategy is buyout or growth private equity rather than venture, managed from outside the Czech Republic.
 - ARX Equity Partners — out_of_scope — S1 — CVCA full member whose stated strategy is buyout or growth private equity rather than venture.

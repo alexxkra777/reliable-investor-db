@@ -44,6 +44,21 @@
             "quote": "We are a fintech venture investor focusing on innovative b2b or b2b2c FinTech, InsurTech and Big Data startups."
           }
         ]
+      },
+      "existence": {
+        "value": [
+          "portfolio_page"
+        ],
+        "sources": [
+          {
+            "url": "https://365fintech.sk/",
+            "tier": "B",
+            "publisher": "365.fintech",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Our Portfolio Ondato Ondato is a Vilnius based KYC platform, allowing for services from simple onboarding to \"live\" compliance and AML checks. Velaris Velaris is a London based platform for customer success management and operations. Tapline Tapline"
+          }
+        ]
       }
     },
     "investments": []
@@ -134,16 +149,26 @@
       "city": "Praha"
     },
     "website": null,
-    "legal_entities": null,
+    "legal_entities": [
+      {
+        "name": "AIR VENTURES s.r.o.",
+        "role": "manager",
+        "id_type": "ICO",
+        "id": "04999851",
+        "register_url": "https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/04999851"
+      }
+    ],
     "decision": {
       "status": "uncertain",
       "rules": [
-        "I1",
+        "I2",
         "I3"
       ],
-      "note": "Prague early-stage investor listed in directories (Vestbee, Papermark). AIR VENTURES s.r.o. (IČO 04999851, Praha 8) exists in ARES but its link to the fund is unconfirmed; website airventures.co did not respond; no dated investment found."
+      "note": "Identity now resolved: AIR VENTURES s.r.o. (IČO 04999851, Praha) is run by Václav Pavlečka and Ivan Kristeľ, the same people behind Czech Founders VC and United Founders. Recent deals (e.g. Kimba 2026, Feel Goods 2025) appear only in commercial databases, which PLAN uses for discovery only; airventures.vc is a parked page and no first-party or register evidence of a deal within 36 months was found. No I2 evidence (regulator register, fund-of-funds commitment, full association membership or a portfolio page naming 3+ companies) was found, so existence is left empty."
     },
-    "fields": {},
+    "fields": {
+      "existence": null
+    },
     "investments": []
   },
   {
@@ -170,7 +195,7 @@
     "decision": {
       "status": "excluded",
       "rules": [
-        "E4"
+        "I3"
       ],
       "note": "Private equity group (not VC); its parent Arca Investments, a.s. is in restructuring and no dated investment was found. Evidence: https://www.orsr.sk/vypis.asp?ID=39276&SID=2&P=0 — \"Akcionár: Arca Investments, a.s., v reštrukturalizácii\""
     },
@@ -239,7 +264,7 @@
       "rules": [
         "I2"
       ],
-      "note": "Kept uncertain because two facts are missing. (1) Where it is managed from: the fund is a Luxembourg SCSp and its site names a 'BARYON FUND MANAGEMENT' entity without a seat; the founders run Slovak SEC Technologies and the advisory side is GLOBSEC-linked (Bratislava), but directories say Prague. No Slovak entity named Baryon is in ORSR. (2) I2: the site lists only two portfolio companies and no licence or fund-of-funds commitment was found. It has a Tier A dated investment (Airvolute s.r.o., ORSR 09.01.2026), so it becomes 'included' once a third portfolio company or a CSSF/ESMA registration and a Slovak management seat are confirmed."
+      "note": "Kept uncertain because two facts are missing. (1) Where it is managed from: the fund is a Luxembourg SCSp and its site names a 'BARYON FUND MANAGEMENT' entity without a seat; the founders run Slovak SEC Technologies and the advisory side is GLOBSEC-linked (Bratislava), but directories say Prague. No Slovak entity named Baryon is in ORSR or the NBS register, and none in the ESMA register. (2) I2: the site still lists only two unnamed portfolio companies. It has a Tier A dated investment (Airvolute s.r.o., ORSR 09.01.2026), so it becomes 'included' once a third portfolio company or a CSSF/ESMA registration and a Slovak management seat are confirmed. No I2 evidence (regulator register, fund-of-funds commitment, full association membership or a portfolio page naming 3+ companies) was found, so existence is left empty."
     },
     "fields": {
       "sectors": {
@@ -262,7 +287,8 @@
       "ticket": null,
       "ticket_observed": null,
       "funds": null,
-      "aum": null
+      "aum": null,
+      "existence": null
     },
     "investments": [
       {
@@ -294,7 +320,7 @@
       "country": "CZ",
       "city": "Praha"
     },
-    "website": null,
+    "website": "https://www.bhmgroup.eu/",
     "legal_entities": [
       {
         "name": "BHM Ventures a.s.",
@@ -307,32 +333,47 @@
     "decision": {
       "status": "uncertain",
       "rules": [
-        "I2",
         "I3"
       ],
-      "note": "Startup arm of Tomáš Krsek's BHM group. Entered as shareholder of Yieldigo and Sharry Europe on the same day (22 May 2025), which may be an internal transfer from BHM Ventures I/II rather than new investments. Website bhm.cz belongs to an unrelated driving school."
+      "note": "Startup arm of Tomáš Krsek's BHM group (a diversified holding that also invests in unrelated tech startups). I2 now shown: the group's own portfolio page lists 13 tech startups, including Carebot, Sharry and Yieldigo. I3 still open: the Yieldigo and Sharry register lines of 22 May 2025 are not new deals, because BHM Ventures a.s. has the same IČ 05455464 as Bohemia Venture Capital a.s., which already held the same shares since 31 Oct 2016 (Yieldigo) and 21 Feb 2019 (Sharry); the investments are re-dated to those entries. The only recent deal is a 4.6% Carebot stake (Aug 2025), named in press only; in the register the 4.59% stake sits with Tahoe Invest a.s. (BHM's Prague address, 18 Mar 2025) and then ERGOAPEX LIMITED, Cyprus (4 Aug 2025), neither named BHM. Becomes included once the vehicle's link to BHM is confirmed. Website bhm.cz belongs to an unrelated driving school; the group site is bhmgroup.eu."
     },
-    "fields": {},
+    "fields": {
+      "existence": {
+        "value": [
+          "portfolio_page"
+        ],
+        "sources": [
+          {
+            "url": "https://www.bhmgroup.eu/portfolio?industry=tech-startups",
+            "tier": "B",
+            "publisher": "BHM Group",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Tech Startups Carebot Tech Startups Carebot Carebot, český zdravotnicko-technologický startup, vyvinul software využívající umělou inteligenci k lokalizaci nálezů na rentgenových snímcích. Tento software propojuje znalosti expertů a lékařů. Primárně cílí na evropská zdravotnická zařízení, zejména nemocnice a radiologická oddělení. Navštívit webové stránky Zpět na přehled portfolia Tech Startups CloudTalk Tech Startups CloudTalk Cloudtalk je rychle rostoucí SaaS cloudové virtuální telefonní systémy pro zákaznická a obchodní call-centra po celém světě. Již dnes patří mezi přední dodavatele pro malé a střední firmy. Mezi hlavní přednosti patří jednoduchost a rychlost zprovoznění, kvalita zvuku a integrace s existujícími interními systémy. Navštívit webové stránky Zpět na přehled portfolia Tech Startups GoRamp"
+          }
+        ]
+      }
+    },
     "investments": [
       {
-        "company": "Yieldigo",
-        "date": "2025-05-22",
-        "date_kind": "registry_entry",
+        "company": "Carebot",
+        "date": "2025-08-20",
+        "date_kind": "announced",
         "round_size": null,
         "sources": [
           {
-            "url": "https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=949426&typ=UPLNY",
-            "tier": "A",
-            "publisher": "Obchodní rejstřík (justice.cz)",
-            "published": "2025-05-22",
+            "url": "https://www.startitup.sk/milionar-tomas-krsek-vstupuje-do-startupu-ktory-pomaha-lekarom-odhalit-rakovinu-uz-v-rannom-stadiu/",
+            "tier": "C",
+            "publisher": "Startitup",
+            "published": "2025-08-20",
             "accessed": "2026-10-11",
-            "quote": "Společník: BHM Ventures a.s. , IČ: 054 55 464 Ovocný trh 1096/8, Staré Město, 110 00 Praha 1"
+            "quote": "Investičná skupina BHM Group , ktorú založil milionár Tomáš Kršek a riadi ju managing director Jan Černý, získala 4,6-percentný podiel v českom medtech startupe Carebot ."
           }
         ]
       },
       {
         "company": "Sharry",
-        "date": "2025-05-22",
+        "date": "2019-02-21",
         "date_kind": "registry_entry",
         "round_size": null,
         "sources": [
@@ -340,9 +381,25 @@
             "url": "https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=940334&typ=UPLNY",
             "tier": "A",
             "publisher": "Obchodní rejstřík (justice.cz)",
-            "published": "2025-05-22",
+            "published": "2019-02-21",
             "accessed": "2026-10-11",
-            "quote": "Společník: BHM Ventures a.s. , IČ: 054 55 464 Ovocný trh 1096/8, Staré Město, 110 00 Praha 1 zapsáno 22. května 2025"
+            "quote": "Společník: Bohemia Venture Capital a.s. , IČ: 054 55 464 Ovocný trh 573/12, Staré Město, 110 00 Praha 1 zapsáno 21. února 2019"
+          }
+        ]
+      },
+      {
+        "company": "Yieldigo",
+        "date": "2016-10-31",
+        "date_kind": "registry_entry",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=949426&typ=UPLNY",
+            "tier": "A",
+            "publisher": "Obchodní rejstřík (justice.cz)",
+            "published": "2016-10-31",
+            "accessed": "2026-10-11",
+            "quote": "Společník: Bohemia Venture Capital a.s. , IČ: 054 55 464 Ovocný trh 573/12, Staré Město, 110 00 Praha 1 Společník vlastní 1.750 preferenčních podílů, a to podílů č. 6.501 až č. 8.250. zapsáno 31. října 2016"
           }
         ]
       }
@@ -372,7 +429,7 @@
     "decision": {
       "status": "excluded",
       "rules": [
-        "E4"
+        "I3"
       ],
       "note": "Business & innovation centre owned by the chamber of commerce and individuals. Only an SEO directory claims seed co-investment; no fund or dated investment was found. Evidence: https://www.orsr.sk/vypis.asp?ID=4814&SID=2&P=0 — \"Spoločníci: Slovenská obchodná a priemyselná komora, zast. Bratislavskou regionálnou komorou\""
     },
@@ -523,7 +580,31 @@
           }
         ]
       },
-      "aum": null
+      "aum": null,
+      "existence": {
+        "value": [
+          "regulator_register",
+          "fund_of_funds_commitment"
+        ],
+        "sources": [
+          {
+            "url": "https://subjekty.nbs.sk/sk/entity/5483/",
+            "tier": "A",
+            "publisher": "Národná banka Slovenska",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "CB Investment Management s. r. o. 99.99.99 – 99.99.99 IČO: 52524531 99.99.99 – 99.99.99 Sídlo: Staromestská 3, 81103 Bratislava 99.99.99 – 99.99.99 Štát: Slovensko 99.99.99 – 99.99.99 Rozbaliť / Zbaliť Pôsobenie na finančnom trhu 99.99.99 – 99.99.99 registrovaný správca alternatívnych investičných fondov 20.08.19 – 99.99.99 Registračné číslo: 0018"
+          },
+          {
+            "url": "https://www.sih.sk/en/investicie/investicie-cez-financnych-sprostredkovatelov/cb-investment-management-kapitalova-investicia",
+            "tier": "A",
+            "publisher": "Slovak Investment Holding",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Slovak Investment Holding is an investor in the fund managed by CB Investment Management"
+          }
+        ]
+      }
     },
     "investments": [
       {
@@ -691,6 +772,21 @@
             "quote": "Volume of Funds Managed EUR 170 million"
           }
         ]
+      },
+      "existence": {
+        "value": [
+          "association_full_member"
+        ],
+        "sources": [
+          {
+            "url": "https://cvca.cz/en/membership/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Credo Ventures dk 14. 1. 2020 Full members"
+          }
+        ]
       }
     },
     "investments": [
@@ -827,7 +923,7 @@
       "rules": [
         "I2"
       ],
-      "note": "Czech (not Slovak) corporate venture arm of Česká spořitelna (Erste Group), self-described as CVC; a bank's startup equity programme is typed cvc. Only one dated investment found (Born Digital, 24 Nov 2023), which is inside the 36-month window by six weeks. I2 not demonstrated: the portfolio page returned 404 on 2026-10-11 and no licence or association membership was found."
+      "note": "Czech (not Slovak) corporate venture arm of Česká spořitelna (Erste Group), self-described as CVC; a bank's startup equity programme is typed cvc. One Tier A deal: Born Digital (24 Nov 2023), inside the 36-month window only until 24 Nov 2026. I2 still not shown in quotable form: seedstarter.cz shows its portfolio only as logos (no company names in the page text), there is no licence or association membership, and later deals (Vestberry Mar 2025, Repsense Dec 2025) are in media only. No I2 evidence (regulator register, fund-of-funds commitment, full association membership or a portfolio page naming 3+ companies) was found, so existence is left empty."
     },
     "fields": {
       "sectors": {
@@ -895,7 +991,8 @@
         ]
       },
       "funds": null,
-      "aum": null
+      "aum": null,
+      "existence": null
     },
     "investments": [
       {
@@ -958,11 +1055,14 @@
       }
     ],
     "decision": {
-      "status": "uncertain",
+      "status": "included",
       "rules": [
-        "I3"
+        "I1",
+        "I2",
+        "I3",
+        "I4"
       ],
-      "note": "Self-published portfolio of 30+ startups (I2). Latest dated Tier A evidence found: SharpGrid s.r.o. shareholder entry of 30 Aug 2023, about six weeks outside the 36-month window; recent portfolio names (e.g. Merchantee, Edmund) are held through holdings not visible in the Czech register."
+      "note": "Was uncertain. Founder-backed pre-seed fund with a self-published portfolio of 30+ startups (I2). I3: Czech Founders Ventures s.r.o., osoba rizikového kapitálu entered Edmund s.r.o. (fka EDIMA solutions) on 25 Mar 2026 (justice.cz); the SharpGrid entry of 30 Aug 2023 is outside the window. The team has since launched United Founders (separate record), so new deals may move there."
     },
     "fields": {
       "stages": {
@@ -1014,9 +1114,40 @@
       },
       "sectors": null,
       "funds": null,
-      "aum": null
+      "aum": null,
+      "existence": {
+        "value": [
+          "portfolio_page"
+        ],
+        "sources": [
+          {
+            "url": "https://czechfounders.vc/",
+            "tier": "B",
+            "publisher": "Czech Founders VC",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Our portfolio young startups with global ambitions and strong founders GitGut.ai DTS StreamBee Filuta AI"
+          }
+        ]
+      }
     },
     "investments": [
+      {
+        "company": "Edmund",
+        "date": "2026-03-25",
+        "date_kind": "registry_entry",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=1199826&typ=UPLNY",
+            "tier": "A",
+            "publisher": "Obchodní rejstřík (justice.cz)",
+            "published": "2026-03-25",
+            "accessed": "2026-10-11",
+            "quote": "Společník: Czech Founders Ventures s.r.o., osoba rizikového kapitálu , IČ: 170 51 835 Salvátorská 931/8, Staré Město, 110 00 Praha 1 zapsáno 25. března 2026"
+          }
+        ]
+      },
       {
         "company": "SharpGrid",
         "date": "2023-08-30",
@@ -1167,7 +1298,31 @@
           }
         ]
       },
-      "aum": null
+      "aum": null,
+      "existence": {
+        "value": [
+          "fund_of_funds_commitment",
+          "association_full_member"
+        ],
+        "sources": [
+          {
+            "url": "https://www.nrinvesticni.cz/fond-ukrajina/",
+            "tier": "A",
+            "publisher": "Národní rozvojová investiční",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Vybraným dodavatelem je fond DEPO Ventures Sàrl, Lucemburské velkovévodství ( https://depoventures.cz/ ), který od NRI obdrží commitment ve výši 94 000 000 Kč"
+          },
+          {
+            "url": "https://cvca.cz/en/membership/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Depo Ventures dk 23. 1. 2020 Full members"
+          }
+        ]
+      }
     },
     "investments": [
       {
@@ -1443,6 +1598,30 @@
             "quote": "Výška investície: od 20 000 EUR do 1 500 000 EUR"
           }
         ]
+      },
+      "existence": {
+        "value": [
+          "regulator_register",
+          "association_full_member"
+        ],
+        "sources": [
+          {
+            "url": "https://subjekty.nbs.sk/sk/entity/276769/",
+            "tier": "A",
+            "publisher": "Národná banka Slovenska",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Fond inovácií a technológií, a.s. 21.08.23 – 99.99.99 IČO: 47051981 99.99.99 – 99.99.99 LEI: 097900BIBJ0000117865 99.99.99 – 99.99.99 Sídlo: Karadžičova 2, 81109 Bratislava - mestská časť Staré Mesto 21.08.23 – 99.99.99 Štát: Slovensko 99.99.99 – 99.99.99 Rozbaliť / Zbaliť Pôsobenie na finančnom trhu 99.99.99 – 99.99.99 registrovaný samosprávny alternatívny investičný fond 21.08.23 – 99.99.99 Registračné číslo: 0041"
+          },
+          {
+            "url": "https://www.slovca.sk/sk/clenstvo/riadni-clenovia.html",
+            "tier": "B",
+            "publisher": "SLOVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Riadni členovia ARX Equity Partners CVI Enterprise Investors Eterus Capital Fond inovácií a technológií"
+          }
+        ]
       }
     },
     "investments": []
@@ -1566,7 +1745,22 @@
           }
         ]
       },
-      "aum": null
+      "aum": null,
+      "existence": {
+        "value": [
+          "regulator_register"
+        ],
+        "sources": [
+          {
+            "url": "https://subjekty.nbs.sk/sk/entity/5492/",
+            "tier": "A",
+            "publisher": "Národná banka Slovenska",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "G-Force, s.r.o. 99.99.99 – 99.99.99 IČO: 53527798 99.99.99 – 99.99.99 LEI: 097900CAKA0000144796 99.99.99 – 99.99.99 Sídlo: Pekárska 14, 91701 Trnava 99.99.99 – 99.99.99 Štát: Slovensko 99.99.99 – 99.99.99 Rozbaliť / Zbaliť Pôsobenie na finančnom trhu 99.99.99 – 99.99.99 registrovaný správca alternatívnych investičných fondov 16.08.21 – 99.99.99 Registračné číslo: 0029 16.08.21 – 99.99.99 Orgán dohľadu: Národná banka Slovenska 16.08.21 – 99.99.99 fondy G-Force Fund, j.s.a. 16.08.21 – 99.99.99 správca Európskych fondov rizikového kapitálu (EuVECA)"
+          }
+        ]
+      }
     },
     "investments": [
       {
@@ -1606,11 +1800,11 @@
       }
     ],
     "decision": {
-      "status": "uncertain",
+      "status": "excluded",
       "rules": [
         "I2"
       ],
-      "note": "Named as co-investor in Carebot (CzechCrunch, March 2024) and entered as Carebot shareholder on 18 Mar 2025. No website, licence or published portfolio found, so I2 is not shown. Not the New York firm at gain.ventures."
+      "note": "Was uncertain. Only one known holding: GAIN Ventures s.r.o. entered Carebot on 18 Mar 2025 (justice.cz). A further search found no website, published portfolio, licence, association membership or fund-of-funds commitment, so investing is not shown to be a core activity. Re-assess if a second holding or a public investor profile appears. Not the New York firm at gain.ventures."
     },
     "fields": {},
     "investments": [
@@ -1801,7 +1995,22 @@
           }
         ]
       },
-      "aum": null
+      "aum": null,
+      "existence": {
+        "value": [
+          "association_full_member"
+        ],
+        "sources": [
+          {
+            "url": "https://cvca.cz/en/membership/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "i&i Biotech Investments dk 18. 1. 2020 Full members"
+          }
+        ]
+      }
     },
     "investments": [
       {
@@ -1919,10 +2128,29 @@
         "I2",
         "I3"
       ],
-      "note": "Investment vehicle of Ondřej Tomek (Centrum.cz, Mall.cz). Website impulseventures.com returned no content; no dated investment or published portfolio found. Its crypto vehicle IVBF is a separate record."
+      "note": "Investment vehicle of Ondřej Tomek (Centrum.cz, Mall.cz), run by Samuel Huba. Latest dated deal: Dataddo's fourth round from Impulse Ventures, 20 Dec 2023 (CzechCrunch, Tier C only); in the register Dataddo shows only the 2020 SPV Impulse Ventures DD s.r.o. Website impulseventures.com returns no content and no portfolio page was found. No I2 evidence (regulator register, fund-of-funds commitment, full association membership or a portfolio page naming 3+ companies) was found, so existence is left empty. Becomes dormant after 20 Dec 2026 unless a newer Tier A/B deal appears. Its crypto vehicle IVBF is a separate record."
     },
-    "fields": {},
-    "investments": []
+    "fields": {
+      "existence": null
+    },
+    "investments": [
+      {
+        "company": "Dataddo",
+        "date": "2023-12-20",
+        "date_kind": "announced",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://cc.cz/ceske-dataddo-ma-ctvrtou-investici-od-miliardare-ondreje-tomka-z-datoveho-startupu-se-stava-globalni-hrac/",
+            "tier": "C",
+            "publisher": "CzechCrunch",
+            "published": "2023-12-20",
+            "accessed": "2026-10-11",
+            "quote": "Pražský startup Dataddo teď uzavřel své čtvrté investiční kolo, a to opět od fondu Impulse Ventures."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "innova-capital",
@@ -2106,6 +2334,30 @@
             "quote": "As a venture capital fund we invest EUR 500m from institutional investors and global corporates"
           }
         ]
+      },
+      "existence": {
+        "value": [
+          "regulator_register",
+          "association_full_member"
+        ],
+        "sources": [
+          {
+            "url": "https://registers.esma.europa.eu/solr/esma_registers_upreg/select?q=id:ae15502&wt=json",
+            "tier": "A",
+            "publisher": "ESMA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "\"ae_entityName\":\"Inven Capital, SICAV, a.s.\", \"collectorParent\":[\"Inven Capital, SICAV, a.s.\"], \"ae_officeType\":\"Head office\", \"ae_competentAuthority\":\"Czech National Bank (CNB)\""
+          },
+          {
+            "url": "https://cvca.cz/en/membership/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Inven Capital dk 14. 1. 2020 Full members"
+          }
+        ]
       }
     },
     "investments": [
@@ -2173,9 +2425,11 @@
       "rules": [
         "E4"
       ],
-      "note": "Was uncertain. Investment group led by Marián Boček; the Slovak entity IPM Growth s.r.o. (Banská Bystrica) is owned by IPM Group Holdings Limited (UK), so it is UK-controlled with a Slovak presence. Last third-party startup deal found: led Photoneo's Series B (07.12.2021). Its Dec 2024 InoBat participation is listed but not counted for I3: InoBat is a project IPM itself started (TASR/OTS, 02.12.2019), so it is investing in its own group (E8 logic), not third-party VC. Borderline: a reviewer who counts InoBat would make this 'included'. ipmllp.com (InfraPartners Management LLP) could not be tied to IPM Group with certainty, so no website is stored. Evidence: https://www.orsr.sk/vypis.asp?ID=450600&SID=3&P=0 — \"IPM Group Holdings Limited Augentius, Two London Bridge Londýn SE1 9RA\"; https://www.teraz.sk/ekonomika/peter-gajdos-sa-pripojil-k-ipm-do-tim/432852-clanok.html — \"ktoré sa teraz prenášajú do Európy ako súčasť projektu InoBat\""
+      "note": "Was uncertain. Investment group led by Marián Boček; the Slovak entity IPM Growth s.r.o. (Banská Bystrica) is owned by IPM Group Holdings Limited (UK), so it is UK-controlled with a Slovak presence. Last third-party startup deal found: led Photoneo's Series B (07.12.2021). Its Dec 2024 InoBat participation is listed but not counted for I3: InoBat is a project IPM itself started (TASR/OTS, 02.12.2019), so it is investing in its own group (E8 logic), not third-party VC. Borderline: a reviewer who counts InoBat would make this 'included'. ipmllp.com (InfraPartners Management LLP) could not be tied to IPM Group with certainty, so no website is stored. Evidence: https://www.orsr.sk/vypis.asp?ID=450600&SID=3&P=0 — \"IPM Group Holdings Limited Augentius, Two London Bridge Londýn SE1 9RA\"; https://www.teraz.sk/ekonomika/peter-gajdos-sa-pripojil-k-ipm-do-tim/432852-clanok.html — \"ktoré sa teraz prenášajú do Európy ako súčasť projektu InoBat\" No I2 evidence (regulator register, fund-of-funds commitment, full association membership or a portfolio page naming 3+ companies) was found, so existence is left empty."
     },
-    "fields": {},
+    "fields": {
+      "existence": null
+    },
     "investments": [
       {
         "company": "InoBat (own group project)",
@@ -2434,6 +2688,21 @@
             "quote": "€120M Výše aktiv"
           }
         ]
+      },
+      "existence": {
+        "value": [
+          "portfolio_page"
+        ],
+        "sources": [
+          {
+            "url": "https://www.jtventures.cz/portfolio",
+            "tier": "B",
+            "publisher": "J&T Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Supernova.io Oddin.gg Grid.online XUND Finlay"
+          }
+        ]
       }
     },
     "investments": [
@@ -2626,6 +2895,30 @@
             "quote": "$500M AUM Total"
           }
         ]
+      },
+      "existence": {
+        "value": [
+          "fund_of_funds_commitment",
+          "association_full_member"
+        ],
+        "sources": [
+          {
+            "url": "https://www.eif.org/files/attachments/czechia-equity-fundmanagers.pdf",
+            "tier": "A",
+            "publisher": "European Investment Fund",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Kaya 5 SCSp KAYA Advisory s.r.o. Czech Republic EIF;RCR"
+          },
+          {
+            "url": "https://cvca.cz/en/membership/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "KAYA VC dk 16. 10. 2020 Full members"
+          }
+        ]
       }
     },
     "investments": [
@@ -2715,12 +3008,11 @@
       }
     ],
     "decision": {
-      "status": "uncertain",
+      "status": "excluded",
       "rules": [
-        "I2",
-        "I3"
+        "I2"
       ],
-      "note": "Listed by Vestbee as a CEE early-stage VC (Precisimo, Trifft, KeyGuru). koopeo.com is a parked domain; no dated investment found."
+      "note": "Was uncertain. KOOPEO Ventures SE (Brno) is registered for property rental and general trade (justice.cz); koopeo.com is parked, and no dated investment, portfolio page, licence or membership was found. The only trace is a Vestbee directory listing (Precisimo, Trifft, KeyGuru), so investing is not shown to be a core activity."
     },
     "fields": {},
     "investments": []
@@ -2762,7 +3054,7 @@
     "decision": {
       "status": "excluded",
       "rules": [
-        "E4"
+        "I3"
       ],
       "note": "Accelerator announced in 2014; no fund, legal entity or dated investment was ever found. Evidence: https://www.startitup.sk/launcher-postavi-vas-projekt-na-nohy/ — \"Pred pár týždňami bol v Bratislave spustení nový akcelerátor - Launcher.\""
     },
@@ -2795,7 +3087,7 @@
         "I3",
         "I4"
       ],
-      "note": "Lighthouse Seed Fund backed by the Czech ESIF Fund of Funds (EIF + MPO); Lighthouse Seed Fund II entered as shareholder of Ranketta s.r.o. on 7 Oct 2026 (justice.cz). Not to be confused with unrelated firms using the same name."
+      "note": "Lighthouse Seed Fund backed by the Czech ESIF Fund of Funds (EIF + MPO); Lighthouse Seed Fund II entered as shareholder of Ranketta s.r.o. on 7 Oct 2026 (justice.cz). Not to be confused with unrelated firms using the same name. Existence rests on the fund's own statement of Czech ESIF Fund of Funds (EIF) backing; no EIF page naming it was found, and its portfolio page shows logos only."
     },
     "fields": {
       "sectors": {
@@ -2884,7 +3176,22 @@
           }
         ]
       },
-      "aum": null
+      "aum": null,
+      "existence": {
+        "value": [
+          "fund_of_funds_commitment"
+        ],
+        "sources": [
+          {
+            "url": "https://lhv.vc/",
+            "tier": "B",
+            "publisher": "Lighthouse Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Lighthouse Seed Fund benefits from the support and financing of the Czech ESIF Fund of Funds (CZFoF)."
+          }
+        ]
+      }
     },
     "investments": [
       {
@@ -2989,7 +3296,32 @@
       ],
       "note": "Its SIH co-investment fund invested in 2014-2016, has divested and is in liquidation; no later dated investment found. Successor of Limerock Fund Manager, s. r. o. by merger (ORSR). Evidence: https://sih.sk/en/investicie/investicie-cez-financnych-sprostredkovatelov/limerock-fund-manager-kapitalova-investicia — \"The fund has completed its divestment process and is currently undergoing liquidation.\""
     },
-    "fields": {},
+    "fields": {
+      "existence": {
+        "value": [
+          "regulator_register",
+          "fund_of_funds_commitment"
+        ],
+        "sources": [
+          {
+            "url": "https://subjekty.nbs.sk/sk/entity/308293/",
+            "tier": "A",
+            "publisher": "Národná banka Slovenska",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Limerock Investment Holding, s.r.o. 99.99.99 – 99.99.99 Právny predchodca alebo prevzatý subjekt: Limerock Fund Manager, s. r. o. 25.07.25 – 99.99.99 IČO: 47777028 99.99.99 – 99.99.99 LEI: 097900CAKA0000272933 99.99.99 – 99.99.99 Sídlo: Planét 5, 82102 Bratislava - mestská časť Ružinov 99.99.99 – 99.99.99 Štát: Slovensko 99.99.99 – 99.99.99 Rozbaliť / Zbaliť Pôsobenie na finančnom trhu 99.99.99 – 99.99.99 registrovaný správca alternatívnych investičných fondov 25.07.25 – 99.99.99 Registračné číslo: 0004"
+          },
+          {
+            "url": "https://www.sih.sk/en/investicie/investicie-cez-financnych-sprostredkovatelov/limerock-fund-manager-kapitalova-investicia",
+            "tier": "A",
+            "publisher": "Slovak Investment Holding",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Slovak Investment Holding was an investor in a fund managed by Limerock Investment Holding (formerly Limerock Fund Manager)"
+          }
+        ]
+      }
+    },
     "investments": []
   },
   {
@@ -3007,9 +3339,11 @@
       "rules": [
         "E4"
       ],
-      "note": "Was uncertain. Latest dated investment found is Finax (15.03.2019) via its fund GROWWS SICAV, a.s.; nothing after that. lrjcapital.com is a parked domain for sale. No Slovak legal entity found (ORSR 'LRJ' matches an unrelated company); a directory places it in Cyprus, not verified. Evidence: https://lrjcapital.com/ — \"LrjCapital.com is for sale\""
+      "note": "Was uncertain. Latest dated investment found is Finax (15.03.2019) via its fund GROWWS SICAV, a.s.; nothing after that. lrjcapital.com is a parked domain for sale. No Slovak legal entity found (ORSR 'LRJ' matches an unrelated company); a directory places it in Cyprus, not verified. Evidence: https://lrjcapital.com/ — \"LrjCapital.com is for sale\" No I2 evidence (regulator register, fund-of-funds commitment, full association membership or a portfolio page naming 3+ companies) was found, so existence is left empty."
     },
-    "fields": {},
+    "fields": {
+      "existence": null
+    },
     "investments": [
       {
         "company": "Finax",
@@ -3155,7 +3489,22 @@
       "geography": null,
       "ticket": null,
       "funds": null,
-      "aum": null
+      "aum": null,
+      "existence": {
+        "value": [
+          "portfolio_page"
+        ],
+        "sources": [
+          {
+            "url": "https://www.miton.cz/portfolio",
+            "tier": "B",
+            "publisher": "Miton",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Rohlik.cz Knihobot Coinmate Confirmo"
+          }
+        ]
+      }
     },
     "investments": [
       {
@@ -3210,9 +3559,11 @@
       "rules": [
         "E4"
       ],
-      "note": "Entity still registered (ORSR); latest evidenced investments are from 2011."
+      "note": "Entity still registered (ORSR); latest evidenced investments are from 2011. No I2 evidence (regulator register, fund-of-funds commitment, full association membership or a portfolio page naming 3+ companies) was found, so existence is left empty."
     },
-    "fields": {},
+    "fields": {
+      "existence": null
+    },
     "investments": [
       {
         "company": "Piano",
@@ -3393,6 +3744,21 @@
             "published": null,
             "accessed": "2026-10-11",
             "quote": "Volume of Funds Managed 35 milionů EUR"
+          }
+        ]
+      },
+      "existence": {
+        "value": [
+          "association_full_member"
+        ],
+        "sources": [
+          {
+            "url": "https://cvca.cz/en/membership/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Nation1 dk 14. 1. 2020 Full members"
           }
         ]
       }
@@ -3607,6 +3973,38 @@
             "quote": "Objem prostriedkov v správe: 26 M EUR"
           }
         ]
+      },
+      "existence": {
+        "value": [
+          "fund_of_funds_commitment",
+          "association_full_member"
+        ],
+        "sources": [
+          {
+            "url": "https://www.eif.org/files/attachments/slovakia-equity-fundmanagers.pdf",
+            "tier": "A",
+            "publisher": "European Investment Fund",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Slovak Venture Fund S.C.A., SICAR Neulogy Ventures a.s. Slovakia CEFoF;EGF"
+          },
+          {
+            "url": "https://www.sih.sk/en/investicie/investicie-cez-financnych-sprostredkovatelov/neulogy-ventures-kapitalova-investicia",
+            "tier": "A",
+            "publisher": "Slovak Investment Holding",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Slovak Investment Holding is an investor in a Luxembourg-based fund managed by Neulogy Ventures"
+          },
+          {
+            "url": "https://www.slovca.sk/sk/clenstvo/riadni-clenovia.html",
+            "tier": "B",
+            "publisher": "SLOVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Riadni členovia ARX Equity Partners CVI Enterprise Investors Eterus Capital Fond inovácií a technológií Genesis Capital Jet Investment Národný holdingový fond s.r.o. Neulogy Ventures"
+          }
+        ]
       }
     },
     "investments": [
@@ -3738,7 +4136,7 @@
       "rules": [
         "I3"
       ],
-      "note": "CVCA full member; growth equity for tech scale-ups plus venture debt (EIF lists Orbit Growth Debt II as a private credit fund, OGD Advisory s.r.o.). Website is script-only; no dated equity investment found in this pass. Growth equity side treated as late-stage VC."
+      "note": "CVCA full member; EIF lists Orbit Growth Debt II (OGD Advisory s.r.o.) as a private credit fund. Growth equity plus venture debt; the site is script-only and names no portfolio. The recent deals found (Sloneek, IAG, 2026) are reported in media as Growth Debt Fund II loans, and no dated equity investment within 36 months was found. Kept uncertain: whether these loans carry warrants (PLAN: venture debt with warrants is vc with a flag) is not public."
     },
     "fields": {
       "sectors": {
@@ -3823,7 +4221,31 @@
           }
         ]
       },
-      "aum": null
+      "aum": null,
+      "existence": {
+        "value": [
+          "fund_of_funds_commitment",
+          "association_full_member"
+        ],
+        "sources": [
+          {
+            "url": "https://www.eif.org/files/attachments/czechia-equity-fundmanagers.pdf",
+            "tier": "A",
+            "publisher": "European Investment Fund",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Orbit Growth Debt II OGD Advisory s.r.o. Czech Republic"
+          },
+          {
+            "url": "https://cvca.cz/en/membership/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Orbit Capital dk 12. 1. 2020 Full members"
+          }
+        ]
+      }
     },
     "investments": []
   },
@@ -3986,7 +4408,22 @@
           }
         ]
       },
-      "aum": null
+      "aum": null,
+      "existence": {
+        "value": [
+          "portfolio_page"
+        ],
+        "sources": [
+          {
+            "url": "https://www.prestoventures.com/portfolio",
+            "tier": "B",
+            "publisher": "Presto Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Adam Czechia 2022 Current Next-day interior painting services in 15+ countries Required Nest Link Behavio Czechia 2021 Current Ad-testing platform for maximum marketing effectiveness Required Nest Link Blindspot Tech"
+          }
+        ]
+      }
     },
     "investments": [
       {
@@ -4065,7 +4502,7 @@
     "decision": {
       "status": "excluded",
       "rules": [
-        "E4"
+        "I3"
       ],
       "note": "Investment group (private equity, real estate, finance); its VC status is only asserted by aggregators and no dated startup investment was found. Evidence: https://altss.com/profile/pro-partners-holding — \"Pro Partners is a significant investment group operating in the Central and Eastern Europe region, particularly in private equity, real-estate and finance.\""
     },
@@ -4192,7 +4629,22 @@
           }
         ]
       },
-      "aum": null
+      "aum": null,
+      "existence": {
+        "value": [
+          "portfolio_page"
+        ],
+        "sources": [
+          {
+            "url": "https://www.purple-ventures.com/",
+            "tier": "B",
+            "publisher": "Purple Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "TASS Vision brings \"Google Analytics\" into brick-and-mortar stores, using edge AI cameras to track customer journeys, optimize shelves, and measure campaign performance – all without sending data to the cloud. With deployments in 2,000+ stores across 10 countries and partnerships with 100+ brands, the traction is undeniable www.tassvision.ai PV 2 | Invested in 2025 Clearly combines video sessions with licensed therapists, 24/7 AI companions, and standalone AI therapy to deliver accessible and effective psychological care for both individuals and businesses. www.clearly.help PV 2 | Invested in 2025 In collaboration with veterinarians and with the help of AI, Vetstor creates"
+          }
+        ]
+      }
     },
     "investments": [
       {
@@ -4327,7 +4779,22 @@
           }
         ]
       },
-      "aum": null
+      "aum": null,
+      "existence": {
+        "value": [
+          "portfolio_page"
+        ],
+        "sources": [
+          {
+            "url": "https://www.reflexcapital.com/",
+            "tier": "B",
+            "publisher": "Reflex Capital",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Sony, signage OS partner for pro Bravia display integration Read More Bringing the entire data stack to one platform, Keboola raises $4.5M Read More Sequoia-Backed Productboard Raises $125 Million in New Round"
+          }
+        ]
+      }
     },
     "investments": [
       {
@@ -4472,7 +4939,22 @@
       },
       "ticket": null,
       "funds": null,
-      "aum": null
+      "aum": null,
+      "existence": {
+        "value": [
+          "portfolio_page"
+        ],
+        "sources": [
+          {
+            "url": "https://rockawayventures.com/for-investors/",
+            "tier": "B",
+            "publisher": "Rockaway Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Show website CulturePulse Deep tech company that uses AI to simulate and predict human behavior in real time. By combining insights from psychology, linguistics, and machine learning, their platform helps companies and institutions understand cultural dynamics and audience responses across markets. Their technology is used in sectors such as media, policy, and crisis communication, enabling smarter decisions through behavioral modeling. Show website Cruxo Cruxo.io is a data-driven platform that simplifies and optimizes retail media management for e-commerce businesses. It enables automated campaign management at scale, maximizing on-site ad revenue and enhancing ad relevance for customers. Backed by Rockaway Ventures and Czech Founders VC, Cruxo has secured funding to expand internationally. Key clients include major e-shops like Dr. Max, Astratex, and Lékárna.cz. Show website Valpas"
+          }
+        ]
+      }
     },
     "investments": [
       {
@@ -4517,9 +4999,9 @@
     "decision": {
       "status": "uncertain",
       "rules": [
-        "I3"
+        "I2"
       ],
-      "note": "Crypto arm of the Rockaway group: early-stage token/equity investments alongside validator and on-chain liquidity businesses (partly E7-like). No dated equity investment checked in this pass."
+      "note": "Rockaway group's digital-asset firm. I3 now met by its own posts: co-led OnRe's USD 5M Series A (5 May 2026) and invested in BetHog (22 Apr 2026). Kept uncertain on I2 and type: most of the business is validators, on-chain liquidity, vault curation and a liquid long/short hedge fund (E7-like), its VC I and VC II funds are closed and mix equity with tokens, and no portfolio page, licence or membership naming 3+ companies was found. No I2 evidence (regulator register, fund-of-funds commitment, full association membership or a portfolio page naming 3+ companies) was found, so existence is left empty."
     },
     "fields": {
       "stages": {
@@ -4536,9 +5018,62 @@
             "quote": "We invest in early-stage projects, then build alongside them."
           }
         ]
-      }
+      },
+      "existence": null
     },
-    "investments": []
+    "investments": [
+      {
+        "company": "OnRe",
+        "date": "2026-05-05",
+        "date_kind": "announced",
+        "round_size": {
+          "amount": 5000000,
+          "currency": "USD"
+        },
+        "sources": [
+          {
+            "url": "https://rockawayx.com/insights",
+            "tier": "B",
+            "publisher": "RockawayX",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "RockawayX and Forward Industries Co-Lead Strategic Investment in OnRe May 5, 2026"
+          },
+          {
+            "url": "https://rockawayx.com/insights/rockawayx-and-forward-industries-co-lead-strategic-investment-in-onre",
+            "tier": "B",
+            "publisher": "RockawayX",
+            "published": "2026-05-05",
+            "accessed": "2026-10-11",
+            "quote": "The two firms co-led OnRe's $5 million Series A round."
+          }
+        ]
+      },
+      {
+        "company": "BetHog",
+        "date": "2026-04-22",
+        "date_kind": "announced",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://rockawayx.com/insights",
+            "tier": "B",
+            "publisher": "RockawayX",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Our Investment in BetHog: An AI-Native Gaming Platform April 22, 2026"
+          },
+          {
+            "url": "https://rockawayx.com/insights/our-investment-in-bethog-an-ai-native-gaming-platform",
+            "tier": "B",
+            "publisher": "RockawayX",
+            "published": "2026-04-22",
+            "accessed": "2026-10-11",
+            "quote": "We're excited to announce our investment in BetHog , a consumer platform pioneering AI-driven experiences in real-money gaming."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "sandberg-capital",
@@ -4647,7 +5182,22 @@
           }
         ]
       },
-      "aum": null
+      "aum": null,
+      "existence": {
+        "value": [
+          "portfolio_page"
+        ],
+        "sources": [
+          {
+            "url": "https://cdn0.erstegroup.com/content/dam/sk/slsp/www_slsp_sk/en/aktuality/slsp-infographic-2025-english.pdf",
+            "tier": "B",
+            "publisher": "Slovenská sporiteľňa",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "€3.14 million has been invested by Slovenská spo- riteľňaʼs Seed Starter over three years into seven Slovak startups – Blockmate, Smart- Head, Vestberry, Eatster, Resitech, IntellCRE and Pointee."
+          }
+        ]
+      }
     },
     "investments": [
       {
@@ -4911,6 +5461,21 @@
             "quote": "Assets Under Management €62M"
           }
         ]
+      },
+      "existence": {
+        "value": [
+          "portfolio_page"
+        ],
+        "sources": [
+          {
+            "url": "https://www.soulmatesventures.com/portfolio/",
+            "tier": "B",
+            "publisher": "Soulmates Ventures",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Twin Science empowers children with STEM and AI skills to prepare them for the sustainable jobs of the future, driving innovation in education and fostering a new generation of environmentally conscious leaders. Education Youni transforms global education by effortlessly linking students with universities worldwide through its advanced AI-driven platform. Healthcare Signapse employs"
+          }
+        ]
       }
     },
     "investments": [
@@ -4973,14 +5538,33 @@
       }
     ],
     "decision": {
-      "status": "uncertain",
+      "status": "dormant",
       "rules": [
-        "I3"
+        "E4"
       ],
-      "note": "Venture arm of KKCG (Karel Komárek). Former partners left to start Tachles (CzechCrunch, Apr 2024); springtide.vc shows a parked page; no dated investment within 36 months found."
+      "note": "Was uncertain. Venture arm of KKCG (Karel Komárek). Last dated deal found: lead investor in Source Defense (Series B) and NetOp.Cloud, 27 Apr 2022 (Lupa.cz, Tier C); nothing later. Former partners left to start Tachles VC (Apr 2024) and springtide.vc shows a parked page. No I2 evidence (regulator register, fund-of-funds commitment, full association membership or a portfolio page naming 3+ companies) was found, so existence is left empty."
     },
-    "fields": {},
-    "investments": []
+    "fields": {
+      "existence": null
+    },
+    "investments": [
+      {
+        "company": "Source Defense",
+        "date": "2022-04-27",
+        "date_kind": "announced",
+        "round_size": null,
+        "sources": [
+          {
+            "url": "https://www.lupa.cz/aktuality/komarek-investuje-250-milionu-do-dvou-izraelskych-sitovych-a-bezpecnostnich-startupu/",
+            "tier": "C",
+            "publisher": "Lupa.cz",
+            "published": "2022-04-27",
+            "accessed": "2026-10-11",
+            "quote": "Springtide působí jako vedoucí fond v rámci investic do Source Defense a NetOp.Cloud ."
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "startguide",
@@ -5005,11 +5589,14 @@
       }
     ],
     "decision": {
-      "status": "uncertain",
+      "status": "included",
       "rules": [
-        "I2"
+        "I1",
+        "I2",
+        "I3",
+        "I4"
       ],
-      "note": "Self-described VC fund with two Tier A holdings (Ringil 3 Jul 2024, Carebot 18 Mar 2025). I2 not demonstrated: no licence, association membership or published portfolio of 3+ found."
+      "note": "Was uncertain. Prague VC (Start Guide, s.r.o., fund START GUIDE ONE, a.s.). I2 via its own SG One fund page, which names portfolio companies DTS, BikeFair and Ringil. I3: START GUIDE ONE entered Carebot s.r.o. on 18 Mar 2025 and Ringil on 3 Jul 2024 (justice.cz)."
     },
     "fields": {
       "stages": {
@@ -5060,7 +5647,22 @@
       },
       "ticket": null,
       "funds": null,
-      "aum": null
+      "aum": null,
+      "existence": {
+        "value": [
+          "portfolio_page"
+        ],
+        "sources": [
+          {
+            "url": "https://startguide.cz/en/sgone/",
+            "tier": "B",
+            "publisher": "STARTGUIDE",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "We Are Already Helping Milan Moravec Founder of DTS “StartGuide is helping us to build our company strategy for the mid-term and long-term, scale the product, and is providing advice on further steps. StartGuide investors have significant experience with various startups, and they will help us to specify the priorities and avoid common mistakes.” Jan Pecník Founder of BikeFair “One of StartGuide's main strengths is marketing trategy & data analysis, perfectly filling BikeFair's immediate need. The collaboration in this area, both strategic and hands-on, is already going on for a couple of months, and so far it's been extremely insightful, practically helpful, and all-around fun cooperation.” André Dravecký Founder of Ringil"
+          }
+        ]
+      }
     },
     "investments": [
       {
@@ -5131,7 +5733,22 @@
       "geography": null,
       "ticket": null,
       "funds": null,
-      "aum": null
+      "aum": null,
+      "existence": {
+        "value": [
+          "portfolio_page"
+        ],
+        "sources": [
+          {
+            "url": "https://startupyard.com/the-next-wave-begins-startupyard-announces-batch-15/",
+            "tier": "B",
+            "publisher": "StartupYard",
+            "published": "2025-09-11",
+            "accessed": "2026-10-11",
+            "quote": "from Rossum to Gjirafa, Carebot, SwapIn and FeedYou, to name a few."
+          }
+        ]
+      }
     },
     "investments": [
       {
@@ -5440,6 +6057,30 @@
             "quote": "Volume of Funds Managed EUR 20 million"
           }
         ]
+      },
+      "existence": {
+        "value": [
+          "fund_of_funds_commitment",
+          "association_full_member"
+        ],
+        "sources": [
+          {
+            "url": "https://www.eif.org/files/attachments/czechia-equity-fundmanagers.pdf",
+            "tier": "A",
+            "publisher": "European Investment Fund",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Tensor Co-Investment Fund SCSp Tensor Advisory s.r.o Czech Republic RRF Czech Republic"
+          },
+          {
+            "url": "https://cvca.cz/en/membership/",
+            "tier": "B",
+            "publisher": "CVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Tensor Ventures dk 20. 6. 2023 Full members"
+          }
+        ]
       }
     },
     "investments": [
@@ -5635,7 +6276,22 @@
           }
         ]
       },
-      "aum": null
+      "aum": null,
+      "existence": {
+        "value": [
+          "fund_of_funds_commitment"
+        ],
+        "sources": [
+          {
+            "url": "https://www.eif.org/files/attachments/czechia-equity-fundmanagers.pdf",
+            "tier": "A",
+            "publisher": "European Investment Fund",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Tilia Impact Ventures Fund II Tilia Impact Partners Czech Republic IEU - Equity - LP"
+          }
+        ]
+      }
     },
     "investments": [
       {
@@ -5712,15 +6368,36 @@
     "website": null,
     "legal_entities": null,
     "decision": {
-      "status": "uncertain",
+      "status": "dormant",
       "rules": [
-        "I1",
-        "I3"
+        "E4"
       ],
-      "note": "Karlín incubator of Karel Janeček and Vít Šubert (press: CzechCrunch, Forbes.cz); announced follow-on fund STAR*21 not confirmed as launched. No registry entity or dated investment found."
+      "note": "Was uncertain. Karlín incubator of Karel Janeček and Vít Šubert. Last dated deal found: joined Spaceflow's CZK 41M round led by Credo Ventures, 6 Aug 2019 (CzechCrunch, Tier C). The STAR*21 follow-on fund announced in Mar 2019 was not found to have launched. No registry entity was identified (I1 open). No I2 evidence (regulator register, fund-of-funds commitment, full association membership or a portfolio page naming 3+ companies) was found, so existence is left empty."
     },
-    "fields": {},
-    "investments": []
+    "fields": {
+      "existence": null
+    },
+    "investments": [
+      {
+        "company": "Spaceflow",
+        "date": "2019-08-06",
+        "date_kind": "announced",
+        "round_size": {
+          "amount": 41000000,
+          "currency": "CZK"
+        },
+        "sources": [
+          {
+            "url": "https://cc.cz/cesti-spaceflow-nabiraji-na-digitalizaci-budov-41-milionu-korun-investici-vedou-credo-ventures-pripojil-se-i-up21/",
+            "tier": "C",
+            "publisher": "CzechCrunch",
+            "published": "2019-08-06",
+            "accessed": "2026-10-11",
+            "quote": "České Spaceflow nabírá na digitalizaci budov 41 milionů korun. Investici vedou Credo Ventures, připojil se i UP21"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "v4c-investment-advisers",
@@ -5895,7 +6572,31 @@
           }
         ]
       },
-      "aum": null
+      "aum": null,
+      "existence": {
+        "value": [
+          "regulator_register",
+          "association_full_member"
+        ],
+        "sources": [
+          {
+            "url": "https://subjekty.nbs.sk/sk/entity/5190/",
+            "tier": "A",
+            "publisher": "Národná banka Slovenska",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "registrovaný alternatívny investičný fond 20.01.25 – 99.99.99 Správca: Slovak Capital Management, a. s."
+          },
+          {
+            "url": "https://www.slovca.sk/sk/clenstvo/riadni-clenovia.html",
+            "tier": "B",
+            "publisher": "SLOVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Riadni členovia ARX Equity Partners CVI Enterprise Investors Eterus Capital Fond inovácií a technológií Genesis Capital Jet Investment Národný holdingový fond s.r.o. Neulogy Ventures Sandberg Capital Venture to Future Fund"
+          }
+        ]
+      }
     },
     "investments": [
       {
@@ -6139,7 +6840,40 @@
           }
         ]
       },
-      "aum": null
+      "aum": null,
+      "existence": {
+        "value": [
+          "regulator_register",
+          "fund_of_funds_commitment",
+          "association_full_member"
+        ],
+        "sources": [
+          {
+            "url": "https://subjekty.nbs.sk/sk/entity/5484/",
+            "tier": "A",
+            "publisher": "Národná banka Slovenska",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Vision Ventures, s.r.o. 99.99.99 – 99.99.99 IČO: 52568288 99.99.99 – 99.99.99 Sídlo: Bottova 2/A, 81109 Bratislava 09.11.21 – 99.99.99 Štát: Slovensko 99.99.99 – 99.99.99 Rozbaliť / Zbaliť Pôsobenie na finančnom trhu 99.99.99 – 99.99.99 registrovaný správca alternatívnych investičných fondov 11.11.19 – 99.99.99 Registračné číslo: 0020"
+          },
+          {
+            "url": "https://www.sih.sk/en/investicie/investicie-cez-financnych-sprostredkovatelov/vision-ventures-kapitalova-investicia",
+            "tier": "A",
+            "publisher": "Slovak Investment Holding",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Slovak Investment Holding is an investor in the fund managed by Vision Ventures"
+          },
+          {
+            "url": "https://www.slovca.sk/sk/clenstvo/riadni-clenovia.html",
+            "tier": "B",
+            "publisher": "SLOVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Riadni členovia ARX Equity Partners CVI Enterprise Investors Eterus Capital Fond inovácií a technológií Genesis Capital Jet Investment Národný holdingový fond s.r.o. Neulogy Ventures Sandberg Capital Venture to Future Fund Vision Ventures"
+          }
+        ]
+      }
     },
     "investments": [
       {
@@ -6303,7 +7037,22 @@
       "stages": null,
       "ticket": null,
       "funds": null,
-      "aum": null
+      "aum": null,
+      "existence": {
+        "value": [
+          "portfolio_page"
+        ],
+        "sources": [
+          {
+            "url": "https://www.ysoft.com/ventures",
+            "tier": "B",
+            "publisher": "Y Soft",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Get to know Sewio NenoVision Watch NenoVision's story. \"Y Soft came to be our investor in 2019. At that time they supported us, not just financially, but also with their experience during our board meetings. They came to be a strong partner in our manufacturing and supply chain.\" Jan Neuman, CEO, NenoVision Get to know NenoVision Sentien Watch Sentien's story unfold. \"We started to collaborate with Y Soft when we wanted to scale our production, and go from development to mass manufacturing. We always felt like it was a partnership, we always felt understood. We felt that they know where we're coming from.\" Imrich Valach, CEO, Sentien Get to know Sentien"
+          }
+        ]
+      }
     },
     "investments": [
       {
@@ -6410,7 +7159,22 @@
       },
       "ticket": null,
       "funds": null,
-      "aum": null
+      "aum": null,
+      "existence": {
+        "value": [
+          "portfolio_page"
+        ],
+        "sources": [
+          {
+            "url": "https://zaka.vc/portfolio/",
+            "tier": "B",
+            "publisher": "ZAKA VC",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "WonderTx / Aerogen Systems / FinalDose / PerfectBit /"
+          }
+        ]
+      }
     },
     "investments": [
       {
@@ -6599,7 +7363,31 @@
           }
         ]
       },
-      "aum": null
+      "aum": null,
+      "existence": {
+        "value": [
+          "regulator_register",
+          "fund_of_funds_commitment"
+        ],
+        "sources": [
+          {
+            "url": "https://subjekty.nbs.sk/sk/entity/5486/",
+            "tier": "A",
+            "publisher": "Národná banka Slovenska",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Zero Gravity Capital s.r.o. 99.99.99 – 99.99.99 IČO: 52651894 99.99.99 – 99.99.99 Sídlo: Staromestská 7830/3, Bratislava - mestská časť Staré Mesto 811 03 99.99.99 – 99.99.99 Štát: Slovensko 99.99.99 – 99.99.99 Rozbaliť / Zbaliť Pôsobenie na finančnom trhu 99.99.99 – 99.99.99 registrovaný správca alternatívnych investičných fondov 13.02.20 – 99.99.99 Registračné číslo: 0022"
+          },
+          {
+            "url": "https://www.sih.sk/en/investicie/investicie-cez-financnych-sprostredkovatelov/zero-gravity-capital-kapitalova-investicia",
+            "tier": "A",
+            "publisher": "Slovak Investment Holding",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Slovak Investment Holding is an investor in the fund managed by Zero Gravity Capital"
+          }
+        ]
+      }
     },
     "investments": [
       {

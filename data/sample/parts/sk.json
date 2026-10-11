@@ -142,6 +142,38 @@
             "quote": "Objem prostriedkov v správe: 26 M EUR"
           }
         ]
+      },
+      "existence": {
+        "value": [
+          "fund_of_funds_commitment",
+          "association_full_member"
+        ],
+        "sources": [
+          {
+            "url": "https://www.eif.org/files/attachments/slovakia-equity-fundmanagers.pdf",
+            "tier": "A",
+            "publisher": "European Investment Fund",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Slovak Venture Fund S.C.A., SICAR Neulogy Ventures a.s. Slovakia CEFoF;EGF"
+          },
+          {
+            "url": "https://www.sih.sk/en/investicie/investicie-cez-financnych-sprostredkovatelov/neulogy-ventures-kapitalova-investicia",
+            "tier": "A",
+            "publisher": "Slovak Investment Holding",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Slovak Investment Holding is an investor in a Luxembourg-based fund managed by Neulogy Ventures"
+          },
+          {
+            "url": "https://www.slovca.sk/sk/clenstvo/riadni-clenovia.html",
+            "tier": "B",
+            "publisher": "SLOVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Riadni členovia ARX Equity Partners CVI Enterprise Investors Eterus Capital Fond inovácií a technológií Genesis Capital Jet Investment Národný holdingový fond s.r.o. Neulogy Ventures"
+          }
+        ]
       }
     },
     "investments": [
@@ -339,7 +371,40 @@
           }
         ]
       },
-      "aum": null
+      "aum": null,
+      "existence": {
+        "value": [
+          "regulator_register",
+          "fund_of_funds_commitment",
+          "association_full_member"
+        ],
+        "sources": [
+          {
+            "url": "https://subjekty.nbs.sk/sk/entity/5484/",
+            "tier": "A",
+            "publisher": "Národná banka Slovenska",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Vision Ventures, s.r.o. 99.99.99 – 99.99.99 IČO: 52568288 99.99.99 – 99.99.99 Sídlo: Bottova 2/A, 81109 Bratislava 09.11.21 – 99.99.99 Štát: Slovensko 99.99.99 – 99.99.99 Rozbaliť / Zbaliť Pôsobenie na finančnom trhu 99.99.99 – 99.99.99 registrovaný správca alternatívnych investičných fondov 11.11.19 – 99.99.99 Registračné číslo: 0020"
+          },
+          {
+            "url": "https://www.sih.sk/en/investicie/investicie-cez-financnych-sprostredkovatelov/vision-ventures-kapitalova-investicia",
+            "tier": "A",
+            "publisher": "Slovak Investment Holding",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Slovak Investment Holding is an investor in the fund managed by Vision Ventures"
+          },
+          {
+            "url": "https://www.slovca.sk/sk/clenstvo/riadni-clenovia.html",
+            "tier": "B",
+            "publisher": "SLOVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Riadni členovia ARX Equity Partners CVI Enterprise Investors Eterus Capital Fond inovácií a technológií Genesis Capital Jet Investment Národný holdingový fond s.r.o. Neulogy Ventures Sandberg Capital Venture to Future Fund Vision Ventures"
+          }
+        ]
+      }
     },
     "investments": [
       {
@@ -539,7 +604,31 @@
           }
         ]
       },
-      "aum": null
+      "aum": null,
+      "existence": {
+        "value": [
+          "regulator_register",
+          "association_full_member"
+        ],
+        "sources": [
+          {
+            "url": "https://subjekty.nbs.sk/sk/entity/5190/",
+            "tier": "A",
+            "publisher": "Národná banka Slovenska",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "registrovaný alternatívny investičný fond 20.01.25 – 99.99.99 Správca: Slovak Capital Management, a. s."
+          },
+          {
+            "url": "https://www.slovca.sk/sk/clenstvo/riadni-clenovia.html",
+            "tier": "B",
+            "publisher": "SLOVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Riadni členovia ARX Equity Partners CVI Enterprise Investors Eterus Capital Fond inovácií a technológií Genesis Capital Jet Investment Národný holdingový fond s.r.o. Neulogy Ventures Sandberg Capital Venture to Future Fund"
+          }
+        ]
+      }
     },
     "investments": [
       {
@@ -726,7 +815,31 @@
           }
         ]
       },
-      "aum": null
+      "aum": null,
+      "existence": {
+        "value": [
+          "regulator_register",
+          "fund_of_funds_commitment"
+        ],
+        "sources": [
+          {
+            "url": "https://subjekty.nbs.sk/sk/entity/5486/",
+            "tier": "A",
+            "publisher": "Národná banka Slovenska",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Zero Gravity Capital s.r.o. 99.99.99 – 99.99.99 IČO: 52651894 99.99.99 – 99.99.99 Sídlo: Staromestská 7830/3, Bratislava - mestská časť Staré Mesto 811 03 99.99.99 – 99.99.99 Štát: Slovensko 99.99.99 – 99.99.99 Rozbaliť / Zbaliť Pôsobenie na finančnom trhu 99.99.99 – 99.99.99 registrovaný správca alternatívnych investičných fondov 13.02.20 – 99.99.99 Registračné číslo: 0022"
+          },
+          {
+            "url": "https://www.sih.sk/en/investicie/investicie-cez-financnych-sprostredkovatelov/zero-gravity-capital-kapitalova-investicia",
+            "tier": "A",
+            "publisher": "Slovak Investment Holding",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Slovak Investment Holding is an investor in the fund managed by Zero Gravity Capital"
+          }
+        ]
+      }
     },
     "investments": [
       {
@@ -894,7 +1007,22 @@
           }
         ]
       },
-      "aum": null
+      "aum": null,
+      "existence": {
+        "value": [
+          "regulator_register"
+        ],
+        "sources": [
+          {
+            "url": "https://subjekty.nbs.sk/sk/entity/5492/",
+            "tier": "A",
+            "publisher": "Národná banka Slovenska",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "G-Force, s.r.o. 99.99.99 – 99.99.99 IČO: 53527798 99.99.99 – 99.99.99 LEI: 097900CAKA0000144796 99.99.99 – 99.99.99 Sídlo: Pekárska 14, 91701 Trnava 99.99.99 – 99.99.99 Štát: Slovensko 99.99.99 – 99.99.99 Rozbaliť / Zbaliť Pôsobenie na finančnom trhu 99.99.99 – 99.99.99 registrovaný správca alternatívnych investičných fondov 16.08.21 – 99.99.99 Registračné číslo: 0029 16.08.21 – 99.99.99 Orgán dohľadu: Národná banka Slovenska 16.08.21 – 99.99.99 fondy G-Force Fund, j.s.a. 16.08.21 – 99.99.99 správca Európskych fondov rizikového kapitálu (EuVECA)"
+          }
+        ]
+      }
     },
     "investments": [
       {
@@ -1027,7 +1155,31 @@
           }
         ]
       },
-      "aum": null
+      "aum": null,
+      "existence": {
+        "value": [
+          "regulator_register",
+          "fund_of_funds_commitment"
+        ],
+        "sources": [
+          {
+            "url": "https://subjekty.nbs.sk/sk/entity/5483/",
+            "tier": "A",
+            "publisher": "Národná banka Slovenska",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "CB Investment Management s. r. o. 99.99.99 – 99.99.99 IČO: 52524531 99.99.99 – 99.99.99 Sídlo: Staromestská 3, 81103 Bratislava 99.99.99 – 99.99.99 Štát: Slovensko 99.99.99 – 99.99.99 Rozbaliť / Zbaliť Pôsobenie na finančnom trhu 99.99.99 – 99.99.99 registrovaný správca alternatívnych investičných fondov 20.08.19 – 99.99.99 Registračné číslo: 0018"
+          },
+          {
+            "url": "https://www.sih.sk/en/investicie/investicie-cez-financnych-sprostredkovatelov/cb-investment-management-kapitalova-investicia",
+            "tier": "A",
+            "publisher": "Slovak Investment Holding",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Slovak Investment Holding is an investor in the fund managed by CB Investment Management"
+          }
+        ]
+      }
     },
     "investments": [
       {
@@ -1124,7 +1276,22 @@
           }
         ]
       },
-      "aum": null
+      "aum": null,
+      "existence": {
+        "value": [
+          "portfolio_page"
+        ],
+        "sources": [
+          {
+            "url": "https://cdn0.erstegroup.com/content/dam/sk/slsp/www_slsp_sk/en/aktuality/slsp-infographic-2025-english.pdf",
+            "tier": "B",
+            "publisher": "Slovenská sporiteľňa",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "€3.14 million has been invested by Slovenská spo- riteľňaʼs Seed Starter over three years into seven Slovak startups – Blockmate, Smart- Head, Vestberry, Eatster, Resitech, IntellCRE and Pointee."
+          }
+        ]
+      }
     },
     "investments": [
       {
@@ -1213,7 +1380,7 @@
       "rules": [
         "I2"
       ],
-      "note": "Kept uncertain because two facts are missing. (1) Where it is managed from: the fund is a Luxembourg SCSp and its site names a 'BARYON FUND MANAGEMENT' entity without a seat; the founders run Slovak SEC Technologies and the advisory side is GLOBSEC-linked (Bratislava), but directories say Prague. No Slovak entity named Baryon is in ORSR. (2) I2: the site lists only two portfolio companies and no licence or fund-of-funds commitment was found. It has a Tier A dated investment (Airvolute s.r.o., ORSR 09.01.2026), so it becomes 'included' once a third portfolio company or a CSSF/ESMA registration and a Slovak management seat are confirmed."
+      "note": "Kept uncertain because two facts are missing. (1) Where it is managed from: the fund is a Luxembourg SCSp and its site names a 'BARYON FUND MANAGEMENT' entity without a seat; the founders run Slovak SEC Technologies and the advisory side is GLOBSEC-linked (Bratislava), but directories say Prague. No Slovak entity named Baryon is in ORSR or the NBS register, and none in the ESMA register. (2) I2: the site still lists only two unnamed portfolio companies. It has a Tier A dated investment (Airvolute s.r.o., ORSR 09.01.2026), so it becomes 'included' once a third portfolio company or a CSSF/ESMA registration and a Slovak management seat are confirmed. No I2 evidence (regulator register, fund-of-funds commitment, full association membership or a portfolio page naming 3+ companies) was found, so existence is left empty."
     },
     "fields": {
       "sectors": {
@@ -1236,7 +1403,8 @@
       "ticket": null,
       "ticket_observed": null,
       "funds": null,
-      "aum": null
+      "aum": null,
+      "existence": null
     },
     "investments": [
       {
@@ -1272,9 +1440,11 @@
       "rules": [
         "E4"
       ],
-      "note": "Was uncertain. Latest dated investment found is Finax (15.03.2019) via its fund GROWWS SICAV, a.s.; nothing after that. lrjcapital.com is a parked domain for sale. No Slovak legal entity found (ORSR 'LRJ' matches an unrelated company); a directory places it in Cyprus, not verified. Evidence: https://lrjcapital.com/ — \"LrjCapital.com is for sale\""
+      "note": "Was uncertain. Latest dated investment found is Finax (15.03.2019) via its fund GROWWS SICAV, a.s.; nothing after that. lrjcapital.com is a parked domain for sale. No Slovak legal entity found (ORSR 'LRJ' matches an unrelated company); a directory places it in Cyprus, not verified. Evidence: https://lrjcapital.com/ — \"LrjCapital.com is for sale\" No I2 evidence (regulator register, fund-of-funds commitment, full association membership or a portfolio page naming 3+ companies) was found, so existence is left empty."
     },
-    "fields": {},
+    "fields": {
+      "existence": null
+    },
     "investments": [
       {
         "company": "Finax",
@@ -1321,9 +1491,11 @@
       "rules": [
         "E4"
       ],
-      "note": "Was uncertain. Investment group led by Marián Boček; the Slovak entity IPM Growth s.r.o. (Banská Bystrica) is owned by IPM Group Holdings Limited (UK), so it is UK-controlled with a Slovak presence. Last third-party startup deal found: led Photoneo's Series B (07.12.2021). Its Dec 2024 InoBat participation is listed but not counted for I3: InoBat is a project IPM itself started (TASR/OTS, 02.12.2019), so it is investing in its own group (E8 logic), not third-party VC. Borderline: a reviewer who counts InoBat would make this 'included'. ipmllp.com (InfraPartners Management LLP) could not be tied to IPM Group with certainty, so no website is stored. Evidence: https://www.orsr.sk/vypis.asp?ID=450600&SID=3&P=0 — \"IPM Group Holdings Limited Augentius, Two London Bridge Londýn SE1 9RA\"; https://www.teraz.sk/ekonomika/peter-gajdos-sa-pripojil-k-ipm-do-tim/432852-clanok.html — \"ktoré sa teraz prenášajú do Európy ako súčasť projektu InoBat\""
+      "note": "Was uncertain. Investment group led by Marián Boček; the Slovak entity IPM Growth s.r.o. (Banská Bystrica) is owned by IPM Group Holdings Limited (UK), so it is UK-controlled with a Slovak presence. Last third-party startup deal found: led Photoneo's Series B (07.12.2021). Its Dec 2024 InoBat participation is listed but not counted for I3: InoBat is a project IPM itself started (TASR/OTS, 02.12.2019), so it is investing in its own group (E8 logic), not third-party VC. Borderline: a reviewer who counts InoBat would make this 'included'. ipmllp.com (InfraPartners Management LLP) could not be tied to IPM Group with certainty, so no website is stored. Evidence: https://www.orsr.sk/vypis.asp?ID=450600&SID=3&P=0 — \"IPM Group Holdings Limited Augentius, Two London Bridge Londýn SE1 9RA\"; https://www.teraz.sk/ekonomika/peter-gajdos-sa-pripojil-k-ipm-do-tim/432852-clanok.html — \"ktoré sa teraz prenášajú do Európy ako súčasť projektu InoBat\" No I2 evidence (regulator register, fund-of-funds commitment, full association membership or a portfolio page naming 3+ companies) was found, so existence is left empty."
     },
-    "fields": {},
+    "fields": {
+      "existence": null
+    },
     "investments": [
       {
         "company": "InoBat (own group project)",
@@ -1440,6 +1612,30 @@
             "quote": "Výška investície: od 20 000 EUR do 1 500 000 EUR"
           }
         ]
+      },
+      "existence": {
+        "value": [
+          "regulator_register",
+          "association_full_member"
+        ],
+        "sources": [
+          {
+            "url": "https://subjekty.nbs.sk/sk/entity/276769/",
+            "tier": "A",
+            "publisher": "Národná banka Slovenska",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Fond inovácií a technológií, a.s. 21.08.23 – 99.99.99 IČO: 47051981 99.99.99 – 99.99.99 LEI: 097900BIBJ0000117865 99.99.99 – 99.99.99 Sídlo: Karadžičova 2, 81109 Bratislava - mestská časť Staré Mesto 21.08.23 – 99.99.99 Štát: Slovensko 99.99.99 – 99.99.99 Rozbaliť / Zbaliť Pôsobenie na finančnom trhu 99.99.99 – 99.99.99 registrovaný samosprávny alternatívny investičný fond 21.08.23 – 99.99.99 Registračné číslo: 0041"
+          },
+          {
+            "url": "https://www.slovca.sk/sk/clenstvo/riadni-clenovia.html",
+            "tier": "B",
+            "publisher": "SLOVCA",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Riadni členovia ARX Equity Partners CVI Enterprise Investors Eterus Capital Fond inovácií a technológií"
+          }
+        ]
       }
     },
     "investments": []
@@ -1473,7 +1669,32 @@
       ],
       "note": "Its SIH co-investment fund invested in 2014-2016, has divested and is in liquidation; no later dated investment found. Successor of Limerock Fund Manager, s. r. o. by merger (ORSR). Evidence: https://sih.sk/en/investicie/investicie-cez-financnych-sprostredkovatelov/limerock-fund-manager-kapitalova-investicia — \"The fund has completed its divestment process and is currently undergoing liquidation.\""
     },
-    "fields": {},
+    "fields": {
+      "existence": {
+        "value": [
+          "regulator_register",
+          "fund_of_funds_commitment"
+        ],
+        "sources": [
+          {
+            "url": "https://subjekty.nbs.sk/sk/entity/308293/",
+            "tier": "A",
+            "publisher": "Národná banka Slovenska",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Limerock Investment Holding, s.r.o. 99.99.99 – 99.99.99 Právny predchodca alebo prevzatý subjekt: Limerock Fund Manager, s. r. o. 25.07.25 – 99.99.99 IČO: 47777028 99.99.99 – 99.99.99 LEI: 097900CAKA0000272933 99.99.99 – 99.99.99 Sídlo: Planét 5, 82102 Bratislava - mestská časť Ružinov 99.99.99 – 99.99.99 Štát: Slovensko 99.99.99 – 99.99.99 Rozbaliť / Zbaliť Pôsobenie na finančnom trhu 99.99.99 – 99.99.99 registrovaný správca alternatívnych investičných fondov 25.07.25 – 99.99.99 Registračné číslo: 0004"
+          },
+          {
+            "url": "https://www.sih.sk/en/investicie/investicie-cez-financnych-sprostredkovatelov/limerock-fund-manager-kapitalova-investicia",
+            "tier": "A",
+            "publisher": "Slovak Investment Holding",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Slovak Investment Holding was an investor in a fund managed by Limerock Investment Holding (formerly Limerock Fund Manager)"
+          }
+        ]
+      }
+    },
     "investments": []
   },
   {
@@ -1521,6 +1742,21 @@
             "quote": "We are a fintech venture investor focusing on innovative b2b or b2b2c FinTech, InsurTech and Big Data startups."
           }
         ]
+      },
+      "existence": {
+        "value": [
+          "portfolio_page"
+        ],
+        "sources": [
+          {
+            "url": "https://365fintech.sk/",
+            "tier": "B",
+            "publisher": "365.fintech",
+            "published": null,
+            "accessed": "2026-10-11",
+            "quote": "Our Portfolio Ondato Ondato is a Vilnius based KYC platform, allowing for services from simple onboarding to \"live\" compliance and AML checks. Velaris Velaris is a London based platform for customer success management and operations. Tapline Tapline"
+          }
+        ]
       }
     },
     "investments": []
@@ -1551,9 +1787,11 @@
       "rules": [
         "E4"
       ],
-      "note": "Entity still registered (ORSR); latest evidenced investments are from 2011."
+      "note": "Entity still registered (ORSR); latest evidenced investments are from 2011. No I2 evidence (regulator register, fund-of-funds commitment, full association membership or a portfolio page naming 3+ companies) was found, so existence is left empty."
     },
-    "fields": {},
+    "fields": {
+      "existence": null
+    },
     "investments": [
       {
         "company": "Piano",
@@ -2127,7 +2365,7 @@
     "decision": {
       "status": "excluded",
       "rules": [
-        "E4"
+        "I3"
       ],
       "note": "Accelerator announced in 2014; no fund, legal entity or dated investment was ever found. Evidence: https://www.startitup.sk/launcher-postavi-vas-projekt-na-nohy/ — \"Pred pár týždňami bol v Bratislave spustení nový akcelerátor - Launcher.\""
     },
@@ -2158,7 +2396,7 @@
     "decision": {
       "status": "excluded",
       "rules": [
-        "E4"
+        "I3"
       ],
       "note": "Business & innovation centre owned by the chamber of commerce and individuals. Only an SEO directory claims seed co-investment; no fund or dated investment was found. Evidence: https://www.orsr.sk/vypis.asp?ID=4814&SID=2&P=0 — \"Spoločníci: Slovenská obchodná a priemyselná komora, zast. Bratislavskou regionálnou komorou\""
     },
@@ -2189,7 +2427,7 @@
     "decision": {
       "status": "excluded",
       "rules": [
-        "E4"
+        "I3"
       ],
       "note": "Private equity group (not VC); its parent Arca Investments, a.s. is in restructuring and no dated investment was found. Evidence: https://www.orsr.sk/vypis.asp?ID=39276&SID=2&P=0 — \"Akcionár: Arca Investments, a.s., v reštrukturalizácii\""
     },
@@ -2220,7 +2458,7 @@
     "decision": {
       "status": "excluded",
       "rules": [
-        "E4"
+        "I3"
       ],
       "note": "Investment group (private equity, real estate, finance); its VC status is only asserted by aggregators and no dated startup investment was found. Evidence: https://altss.com/profile/pro-partners-holding — \"Pro Partners is a significant investment group operating in the Central and Eastern Europe region, particularly in private equity, real-estate and finance.\""
     },
