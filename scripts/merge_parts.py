@@ -56,7 +56,8 @@ def main() -> int:
         return 1
     OUT.write_text(json.dumps(merged, ensure_ascii=False, indent=2) + "\n")
     print("\n".join(log))
-    print(f"{sum(len(v) for v in parts.values())} part records -> {len(merged)} investors in {OUT.relative_to(ROOT)}")
+    total = sum(len(v) for v in parts.values())
+    print(f"{total} part records -> {len(merged)} investors in {OUT.relative_to(ROOT)}")
     return 0
 
 
