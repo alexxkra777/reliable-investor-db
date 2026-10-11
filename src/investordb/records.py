@@ -5,7 +5,8 @@ from datetime import date
 from pathlib import Path
 from typing import Any
 
-FIELD_NAMES = ("sectors", "stages", "geography", "ticket", "ticket_observed", "funds", "aum")
+FIELD_NAMES = ("sectors", "stages", "geography", "ticket", "ticket_observed", "funds", "aum",
+               "existence")
 TIER_RANK = {"A": 0, "B": 1, "C": 2}
 
 
