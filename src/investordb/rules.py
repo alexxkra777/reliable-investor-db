@@ -144,6 +144,9 @@ def agreement(rec: dict, d: Decision) -> str:
     stored_rules = set(stored.get("rules") or [])
     if stored.get("status") == "excluded" and stored_rules & HUMAN_ONLY:
         return "human_only"
+    # pilot scope is a sampling decision, the engine has nothing to say about it
+    if stored.get("status") == "out_of_scope":
+        return "human_only"
     return "DISAGREE"
 
 

@@ -417,14 +417,15 @@
                 "included",
                 "excluded",
                 "dormant",
-                "uncertain"
+                "uncertain",
+                "out_of_scope"
               ]
             },
             "rules": {
               "type": "array",
               "items": {
                 "type": "string",
-                "pattern": "^(I[1-4]|E([1-9]|10))$"
+                "pattern": "^(I[1-4]|E([1-9]|10)|S1)$"
               },
               "uniqueItems": true
             },

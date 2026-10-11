@@ -142,8 +142,11 @@ def consistency(records: list[dict], today: date | None = None) -> Report:
         if status == "included" and INCLUSION_RULES - rules:
             missing = ", ".join(sorted(INCLUSION_RULES - rules))
             rep.warnings.append(f"{rid}: included but rules miss {missing}")
-        if status == "excluded" and not any(r.startswith("E") for r in rules):
-            rep.warnings.append(f"{rid}: excluded without an E rule")
+        # an I rule on an excluded record means "failed this inclusion rule"
+        if status == "excluded" and not any(r[0] in "EI" for r in rules):
+            rep.warnings.append(f"{rid}: excluded without an E rule or a failed I rule")
+        if status == "out_of_scope" and "S1" not in rules:
+            rep.warnings.append(f"{rid}: out_of_scope without S1")
         if status == "dormant" and "E4" not in rules:
             rep.warnings.append(f"{rid}: dormant without E4")
     return rep

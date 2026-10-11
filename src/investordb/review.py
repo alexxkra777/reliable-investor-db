@@ -67,7 +67,7 @@ def build_claims(records: list[dict]) -> list[dict]:
     claims = []
     for rec in records:
         status = (rec.get("decision") or {}).get("status")
-        if status == "excluded":
+        if status in ("excluded", "out_of_scope"):
             continue
         rid, name = rec.get("id"), rec.get("name")
         targets = list(iter_targets(rec))
