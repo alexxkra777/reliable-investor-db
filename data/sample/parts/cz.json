@@ -2512,7 +2512,7 @@
         "I3",
         "I4"
       ],
-      "note": "Corporate VC of the ČEZ group; CVCA full member. Sub-funds A-D registered in ARES."
+      "note": "Corporate VC of the ČEZ group; CVCA full member. Sub-funds A-D registered in ARES. Correction 2026-10-11: manager AUM is unknown. https://www.invencapital.cz/ (accessed 2026-10-11) states \"As a venture capital fund we invest EUR 500m from institutional investors and global corporates\" and describes total committed capital; this is not manager AUM and is retained here only as contextual evidence."
     },
     "fields": {
       "sectors": {
@@ -2579,23 +2579,7 @@
         ]
       },
       "funds": null,
-      "aum": {
-        "value": {
-          "amount": 500000000,
-          "currency": "EUR",
-          "as_of": null
-        },
-        "sources": [
-          {
-            "url": "https://www.invencapital.cz/",
-            "tier": "B",
-            "publisher": "Inven Capital",
-            "published": null,
-            "accessed": "2026-10-11",
-            "quote": "As a venture capital fund we invest EUR 500m from institutional investors and global corporates"
-          }
-        ]
-      },
+      "aum": null,
       "existence": {
         "value": [
           "regulator_register",

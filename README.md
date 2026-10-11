@@ -5,7 +5,7 @@ investors) where every record is a real investor, and every value says where it 
 
 The approach in one line: **every value carries a verbatim quote and a URL, and a script re-opens
 the page and checks the quote is there and contains the number.** Language models do the reading;
-code checks them; a second model re-checks blind; a person measures what's left.
+code checks them; a second model re-checks blind; the author reviews an AI-assisted assessment.
 
 | Deliverable | Where |
 |---|---|
@@ -13,7 +13,7 @@ code checks them; a second model re-checks blind; a person measures what's left.
 | Evidence behind the plan (sources, counts from SEC/ESMA/GLEIF bulk files, failure modes) | [research/sources-and-universe.md](research/sources-and-universe.md) |
 | Pilot data: VC investors managed from Czechia and Slovakia, a source and quote for every value | [data/sample/investors.json](data/sample/investors.json), flat: [investors.csv](data/sample/investors.csv) |
 | Every decision with the rule that made it | [data/sample/parts/sk-decisions.md](data/sample/parts/sk-decisions.md), [cz-decisions.md](data/sample/parts/cz-decisions.md) |
-| Accuracy: human review, recall, automated checks | [eval/ACCURACY.md](eval/ACCURACY.md) |
+| Accuracy: author-reviewed assessment, recall, automated checks | [eval/ACCURACY.md](eval/ACCURACY.md); [all 60 findings](eval/REVIEW.md) |
 | Blind second review and how disagreements were settled | [eval/second-opinion/](eval/second-opinion/) |
 | Cost of scaling to the world, from measured pilot usage | [docs/COST.md](docs/COST.md) |
 | Verification pipeline (Python) | [src/investordb/](src/investordb/), tests in [tests/](tests/) |
@@ -29,13 +29,13 @@ original slice; it gave only 7 included investors, too few to measure anything, 
 | Candidates screened | ~110 |
 | Records (one per manager, after merging duplicates) | **91** |
 | Included / uncertain / dormant / excluded / real investors outside the VC slice | 28 / 10 / 6 / 21 / 26 |
-| Quotes checked automatically against the live page | **300 of 300 found** (Tier A 62, B 210, C 28) |
-| Claims whose numbers and dates are all inside their quotes | 87 % (the rest: the value is partly there, e.g. a month without the day) |
+| Quotes checked against cached page text | **299 of 299 found** (Tier A 62, B 209, C 28) |
+| Claims with complete checked value support | **48 / 124 (38.7%)**; investment company names are also required, asserted publication dates do not count |
 | Recall against the CVCA full-member list | **27 / 27** |
 | Blind second review (other model family) agreed "is a real investor" | 44 / 45 after adjudication (43 / 45 before) |
 | Status errors the second review caught in the first pass | 4 of 45 (all "dormant" firms that had recent deals) |
-| Claim accuracy on a 60-claim random sample, model review | **60 / 60** (95 % CI 94–100 %) — human review [below](#human-checked-accuracy) |
-| Cost of the pilot's data collection, list price | $61 ≈ $0.55 per screened candidate |
+| Claim accuracy on the historical 60-claim sample, author-reviewed AI-assisted assessment | **58 / 60 (96.7%)**, 95% CI 88.6–99.1%; [method below](#author-reviewed-ai-assisted-assessment) |
+| Imputed API token cost of four pilot collection agents (not subscription payments) | **$43.70 ≈ $0.40** per screened candidate; [exact counters and scope](docs/COST.md) |
 
 ## How a record is made and checked
 
@@ -45,7 +45,7 @@ discover ──> research agent ──> record with quotes ──> fetch every s
  registers,   verbatim quotes                            Wayback fallback)      rules engine
  press)       from raw HTML)                                                    confidence grade
                                                                         │
-                       blind second review (other model) ──> adjudicate ──> human sample ──> ACCURACY
+                       blind second review (other model) ──> adjudicate ──> assisted sample ──> ACCURACY
 ```
 
 ```sh
@@ -55,9 +55,9 @@ python3 -m venv .venv && .venv/bin/pip install -e '.[dev]'
 .venv/bin/python -m investordb verify            # is each quote on its page, are the values in it
 .venv/bin/python -m investordb decide            # recompute decisions from the rules, compare
 .venv/bin/python -m investordb grade             # confidence A/B/C, flat CSV
-.venv/bin/python -m investordb review-pack       # sample claims for a human -> eval/review.html
+.venv/bin/python -m investordb review-pack --html eval/review-current.html --claims eval/claims-current.csv  # optional NEW snapshot
 .venv/bin/python -m investordb eval --labels eval/labels.csv
-.venv/bin/pytest                                 # 105 tests
+.venv/bin/pytest                                 # 117 tests
 ```
 
 ## Decisions I made where the brief was open
@@ -74,24 +74,33 @@ python3 -m venv .venv && .venv/bin/pip install -e '.[dev]'
 - **Angels are left out of the pilot.** They are private individuals under GDPR; the plan keeps only
   people with a public investor persona and needs a legal basis before collection.
 
-## Human-checked accuracy
+## Author-reviewed AI-assisted assessment
 
-A stratified random sample of **60 claims** out of 264 (existence, every field, investments; fixed
-seed) is in [eval/review.html](eval/review.html) — a self-contained page where a reviewer opens each
-source and marks the claim Correct / Wrong / Can't verify. A claim whose source doesn't back it counts
-as Wrong even if it happens to be true.
+The fixed historical sample of **60 claims out of 264** remains in [eval/claims.csv](eval/claims.csv)
+and [eval/review.html](eval/review.html). AI reviewers read full source pages and records, recorded
+English notes, and identified two unsupported claims. The author reviewed the findings and confirmed
+[eval/labels.csv](eval/labels.csv). This is **author-reviewed AI-assisted assessment**, not a claim
+that the author or a colleague independently opened all 60 source pages.
 
-| Review | Correct | Wrong | Can't verify | Accuracy (strict, 95 % CI) |
+| Review of the historical snapshot | Correct | Wrong | Can't verify | Accuracy (strict, 95% CI) |
 |---|---:|---:|---:|---|
-| Model review (separate run, read every source page in full) | 60 | 0 | 0 | 100 % (94.0–100) |
-| Human review | _pending_ | | | |
+| Author-reviewed AI-assisted assessment | 58 | 2 | 0 | 96.7% (88.6–99.1) |
+| Historical original model review, preserved unchanged | 60 | 0 | 0 | 100% (94.0–100) |
 
-The model reviewer left a note on 31 claims and called 7 of them borderline but still supported — e.g. a fund size worded as
-"earmarked for 2020–2026", a follow-on presented as a deal, a page whose date was refreshed — with a
-note on each in [eval/labels-model.csv](eval/labels-model.csv). Because the model reviewer is the same
-family as the collectors, its errors can correlate with theirs; that's why the blind second review
-used a different model family and why the human review is the number that counts.
-Per-field tables: [eval/ACCURACY.md](eval/ACCURACY.md).
+The current dataset corrects Inven's unsupported AUM and IntellCRE's unsupported exact date.
+Those corrections do not relabel the historical sample as correct or establish accuracy of the
+corrected snapshot. [Corrections and reproduction limits](eval/CORRECTIONS.md) distinguish these
+snapshots and explain the CLI's legacy `human` terminology. Do not rerun `review-pack` over the
+historical files. Per-field results: [eval/ACCURACY.md](eval/ACCURACY.md).
+
+Automatic quote matching checks textual support, not semantic correctness of sectors, stages or
+fund definitions. The current grades are **A 3, B 0, C 88**; 28 stored included decisions are not
+28 automatically verified records. Grades do not by themselves prove manager identity or the meaning of a financial metric.
+`decide` uses declared tiers and stored metadata; its core-activity heuristic accepts any Tier A
+field and does not consume quote-verification results. It is not a semantic validator.
+The rule engine agrees with 41 of 55 decidable cases, disagrees
+with 14, and leaves 36 for review. Cached pages were fetched on 2026-10-11; this pass reused that
+cache rather than fetching every page again.
 
 ## What's missing
 
@@ -131,7 +140,7 @@ log in [ai-log/](ai-log/).
   must be inside the quote; a rule engine recomputes every decision and lists disagreements.
 - A blind second review by another model on everything that was kept, then adjudication of each
   disagreement with the evidence re-fetched.
-- A person labels a random stratified sample of claims; that's the accuracy number reported.
+- AI reviewers assess the historical stratified sample; the author reviews the findings and confirms labels. The reported number describes that assisted assessment.
 - Before every commit: grep for tool names and AI mentions in code and commit messages, and a look
   at screenshots for anything visual.
 
@@ -149,8 +158,8 @@ log in [ai-log/](ai-log/).
 **Where the AI got it wrong (and how it was caught).**
 - **Paraphrased "quotes".** The first candidate pass copied quotes from a web-fetch tool that returns
   a model-written summary, not the page. Spot-checking against raw HTML showed it. From then on
-  quotes come only from raw page text, and `verify` re-fetches every page and fails a quote that isn't
-  there — including a near-identical sentence with a different number.
+  quotes come only from raw page text; `fetch` downloads the pages and `verify` checks the cache, failing a quote that isn't
+  there — including a near-identical sentence with a different number, monetary scale or currency. Publication metadata alone does not verify an investment date.
 - **Wrong dates from the registry.** The first pass read two shareholder-register entries as new
   investments; the second pass found they were only the fund's change of address.
 - **"Dormant" was the most common wrong label.** The blind second review found recent deals for

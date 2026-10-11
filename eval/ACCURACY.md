@@ -2,11 +2,28 @@
 
 Built by `python -m investordb eval` on 2026-10-11.
 
-## Human review
+Review tables describe the original 60-claim sample before corrections. The author reviewed and confirmed findings prepared with AI assistance. Automated checks describe the corrected current records and reuse the 11 October page cache. See CORRECTIONS.md for qualifications.
 
-**No review labels found** (eval/labels.csv). Only the automated metrics below were computed; they say whether sources still contain the quoted text, not whether the claims are right. Run `review-pack`, review `eval/review.html`, export `eval/labels.csv` and run `eval` again.
+Reviewer: [redacted: name]; confirmed on 2026-10-11.
 
-## Model review
+## Author-reviewed AI-assisted assessment
+
+60 of 60 sampled claims labelled.
+
+| Metric | Labelled | Correct | Wrong | Can't verify | Strict (95 % CI) | Lenient (95 % CI) |
+|---|---:|---:|---:|---:|---|---|
+| Inclusion precision | 6 | 6 | 0 | 0 | 100.0 % (61.0-100.0) | 100.0 % (61.0-100.0) |
+| Field: aum | 4 | 3 | 1 | 0 | 75.0 % (30.1-95.4) | 75.0 % (30.1-95.4) |
+| Field: existence | 7 | 7 | 0 | 0 | 100.0 % (64.6-100.0) | 100.0 % (64.6-100.0) |
+| Field: funds | 5 | 5 | 0 | 0 | 100.0 % (56.5-100.0) | 100.0 % (56.5-100.0) |
+| Field: geography | 6 | 6 | 0 | 0 | 100.0 % (61.0-100.0) | 100.0 % (61.0-100.0) |
+| Field: sectors | 6 | 6 | 0 | 0 | 100.0 % (61.0-100.0) | 100.0 % (61.0-100.0) |
+| Field: stages | 6 | 6 | 0 | 0 | 100.0 % (61.0-100.0) | 100.0 % (61.0-100.0) |
+| Field: ticket | 6 | 6 | 0 | 0 | 100.0 % (61.0-100.0) | 100.0 % (61.0-100.0) |
+| Investment date | 14 | 13 | 1 | 0 | 92.9 % (68.5-98.7) | 92.9 % (68.5-98.7) |
+| **All claims** | 60 | 58 | 2 | 0 | 96.7 % (88.6-99.1) | 96.7 % (88.6-99.1) |
+
+## Historical original model review
 
 The same sample judged by a separate model run that read each source page in full (not only the quote) and the whole record. It is not a substitute for the human review: it comes from the same model family that collected the data, so its mistakes can line up with the collectors' mistakes.
 
@@ -25,6 +42,8 @@ The same sample judged by a separate model run that read each source page in ful
 | Investment date | 14 | 14 | 0 | 0 | 100.0 % (78.5-100.0) | 100.0 % (78.5-100.0) |
 | **All claims** | 60 | 60 | 0 | 0 | 100.0 % (94.0-100.0) | 100.0 % (94.0-100.0) |
 
+Author-confirmed and model labels agree on 58 of 60 claims (96.7 % (88.6-99.1)). Claims they disagree on: inven-capital/field/aum, seed-starter-slovenskej-sporitelne/investment/1.
+
 ## Recall against reference lists
 
 | List | Entities | Covered | Recall (95 % CI) | Decisions of covered |
@@ -41,16 +60,16 @@ The same sample judged by a separate model run that read each source page in ful
 | Quote found, Tier A | 100.0 % (94.2-100.0) |
 | Quote found, Tier B | 100.0 % (98.2-100.0) |
 | Quote found, Tier C | 100.0 % (87.9-100.0) |
-| Claims whose numbers/dates are all in their quotes | 87.0 % (79.9-91.8) |
-| Claims with at least part of the value in the quotes | 99.2 % (95.5-99.9) |
-| Number/date present, per single source | 73.2 % (65.5-79.6) |
+| Claims with complete checked value support (company/number/date) | 38.7 % (30.6-47.5) |
+| Claims not classified as wholly unsupported (includes partial) | 99.2 % (95.6-99.9) |
+| Number/date present, per single source | 52.0 % (44.0-60.0) |
 | Stored decision = rule engine (decidable cases) | 74.6 % (61.7-84.2) |
 
 Rule engine vs stored decisions: DISAGREE 14, agree 41, human_only 36. `human_only` = a decision the engine can't make (pilot scope, or a rule it has no data for).
 
-Quote statuses: exact 300.
+Quote statuses: exact 299.
 
-Confidence grades: A 26, B 2, C 63.
+Confidence grades: A 3, C 88.
 
 ## Method
 

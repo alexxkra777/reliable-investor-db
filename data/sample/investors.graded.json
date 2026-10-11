@@ -184,14 +184,14 @@
     ],
     "grade": {
       "confidence": "C",
-      "reason": "existence not proven (no Tier A, 1 A/B companies)",
-      "last_investment_date": "2025-12-22",
-      "last_investment_company": "JST 3D",
+      "reason": "no dated investment proven by Tier A/B; existence not proven (no Tier A, 0 A/B companies)",
+      "last_investment_date": null,
+      "last_investment_company": null,
       "existence_tier_a": false,
-      "dated_investment_tier": "B",
-      "portfolio_count": 1,
+      "dated_investment_tier": null,
+      "portfolio_count": 0,
       "evidence": {
-        "investments[0]": "verified"
+        "investments[0]": "unsupported"
       }
     }
   },
@@ -396,16 +396,16 @@
       }
     ],
     "grade": {
-      "confidence": "A",
-      "reason": "existence by Tier A, dated investment by Tier A",
-      "last_investment_date": "2026-01-09",
-      "last_investment_company": "Airvolute s.r.o.",
-      "existence_tier_a": true,
-      "dated_investment_tier": "A",
-      "portfolio_count": 1,
+      "confidence": "C",
+      "reason": "no dated investment proven by Tier A/B; existence not proven (no Tier A, 0 A/B companies)",
+      "last_investment_date": null,
+      "last_investment_company": null,
+      "existence_tier_a": false,
+      "dated_investment_tier": null,
+      "portfolio_count": 0,
       "evidence": {
         "fields.sectors": "verified",
-        "investments[0]": "verified"
+        "investments[0]": "unsupported"
       }
     }
   },
@@ -505,18 +505,18 @@
       }
     ],
     "grade": {
-      "confidence": "A",
-      "reason": "existence by Tier A, dated investment by Tier A",
-      "last_investment_date": "2019-02-21",
-      "last_investment_company": "Sharry",
-      "existence_tier_a": true,
-      "dated_investment_tier": "A",
-      "portfolio_count": 2,
+      "confidence": "C",
+      "reason": "no dated investment proven by Tier A/B; existence not proven (no Tier A, 0 A/B companies)",
+      "last_investment_date": null,
+      "last_investment_company": null,
+      "existence_tier_a": false,
+      "dated_investment_tier": null,
+      "portfolio_count": 0,
       "evidence": {
         "fields.existence": "verified",
-        "investments[0]": "unverified",
-        "investments[1]": "verified",
-        "investments[2]": "verified"
+        "investments[0]": "unsupported",
+        "investments[1]": "unsupported",
+        "investments[2]": "unsupported"
       }
     }
   },
@@ -778,20 +778,20 @@
       }
     ],
     "grade": {
-      "confidence": "A",
-      "reason": "existence by Tier A, dated investment by Tier A",
-      "last_investment_date": "2023-12-30",
-      "last_investment_company": "Forvio s. r. o. (follow-on)",
+      "confidence": "C",
+      "reason": "no dated investment proven by Tier A/B",
+      "last_investment_date": null,
+      "last_investment_company": null,
       "existence_tier_a": true,
-      "dated_investment_tier": "A",
-      "portfolio_count": 2,
+      "dated_investment_tier": null,
+      "portfolio_count": 1,
       "evidence": {
         "fields.stages": "verified",
         "fields.geography": "verified",
         "fields.ticket": "unverified",
         "fields.funds": "verified",
         "fields.existence": "verified",
-        "investments[0]": "verified",
+        "investments[0]": "unsupported",
         "investments[1]": "verified"
       }
     }
@@ -1018,24 +1018,24 @@
       }
     ],
     "grade": {
-      "confidence": "B",
-      "reason": "own portfolio of 3 companies, dated investment by Tier B",
+      "confidence": "C",
+      "reason": "existence not proven (no Tier A, 2 A/B companies)",
       "last_investment_date": "2025-09-30",
       "last_investment_company": "Supernova",
       "existence_tier_a": false,
       "dated_investment_tier": "B",
-      "portfolio_count": 3,
+      "portfolio_count": 2,
       "evidence": {
         "fields.sectors": "verified",
         "fields.stages": "verified",
         "fields.geography": "verified",
         "fields.ticket": "verified",
-        "fields.funds": "unverified",
+        "fields.funds": "unsupported",
         "fields.aum": "verified",
         "fields.existence": "verified",
         "investments[0]": "verified",
         "investments[1]": "verified",
-        "investments[2]": "verified"
+        "investments[2]": "unsupported"
       }
     }
   },
@@ -1197,19 +1197,19 @@
       }
     ],
     "grade": {
-      "confidence": "A",
-      "reason": "existence by Tier A, dated investment by Tier A",
-      "last_investment_date": "2023-11-24",
-      "last_investment_company": "Born Digital",
-      "existence_tier_a": true,
-      "dated_investment_tier": "A",
-      "portfolio_count": 1,
+      "confidence": "C",
+      "reason": "no dated investment proven by Tier A/B; existence not proven (no Tier A, 0 A/B companies)",
+      "last_investment_date": null,
+      "last_investment_company": null,
+      "existence_tier_a": false,
+      "dated_investment_tier": null,
+      "portfolio_count": 0,
       "evidence": {
         "fields.sectors": "verified",
         "fields.stages": "verified",
         "fields.geography": "verified",
         "fields.ticket": "verified",
-        "investments[0]": "verified"
+        "investments[0]": "unsupported"
       }
     }
   },
@@ -1376,20 +1376,20 @@
       }
     ],
     "grade": {
-      "confidence": "A",
-      "reason": "existence by Tier A, dated investment by Tier A",
-      "last_investment_date": "2026-03-25",
-      "last_investment_company": "Edmund",
-      "existence_tier_a": true,
-      "dated_investment_tier": "A",
-      "portfolio_count": 2,
+      "confidence": "C",
+      "reason": "no dated investment proven by Tier A/B; existence not proven (no Tier A, 0 A/B companies)",
+      "last_investment_date": null,
+      "last_investment_company": null,
+      "existence_tier_a": false,
+      "dated_investment_tier": null,
+      "portfolio_count": 0,
       "evidence": {
         "fields.stages": "verified",
         "fields.geography": "verified",
-        "fields.ticket": "verified",
+        "fields.ticket": "unsupported",
         "fields.existence": "verified",
-        "investments[0]": "verified",
-        "investments[1]": "verified"
+        "investments[0]": "unsupported",
+        "investments[1]": "unsupported"
       }
     }
   },
@@ -1586,13 +1586,13 @@
       }
     ],
     "grade": {
-      "confidence": "A",
-      "reason": "existence by Tier A, dated investment by Tier A",
-      "last_investment_date": "2024-08-26",
-      "last_investment_company": "readmio",
+      "confidence": "C",
+      "reason": "no dated investment proven by Tier A/B",
+      "last_investment_date": null,
+      "last_investment_company": null,
       "existence_tier_a": true,
-      "dated_investment_tier": "A",
-      "portfolio_count": 2,
+      "dated_investment_tier": null,
+      "portfolio_count": 0,
       "evidence": {
         "fields.sectors": "verified",
         "fields.stages": "verified",
@@ -1600,8 +1600,8 @@
         "fields.ticket": "verified",
         "fields.funds": "verified",
         "fields.existence": "verified",
-        "investments[0]": "verified",
-        "investments[1]": "verified"
+        "investments[0]": "unsupported",
+        "investments[1]": "unsupported"
       }
     }
   },
@@ -1771,7 +1771,7 @@
       "dated_investment_tier": null,
       "portfolio_count": 0,
       "evidence": {
-        "fields.ticket": "verified"
+        "fields.ticket": "unsupported"
       }
     }
   },
@@ -2168,15 +2168,15 @@
       }
     ],
     "grade": {
-      "confidence": "A",
-      "reason": "existence by Tier A, dated investment by Tier A",
-      "last_investment_date": "2025-03-18",
-      "last_investment_company": "Carebot",
-      "existence_tier_a": true,
-      "dated_investment_tier": "A",
-      "portfolio_count": 1,
+      "confidence": "C",
+      "reason": "no dated investment proven by Tier A/B; existence not proven (no Tier A, 0 A/B companies)",
+      "last_investment_date": null,
+      "last_investment_company": null,
+      "existence_tier_a": false,
+      "dated_investment_tier": null,
+      "portfolio_count": 0,
       "evidence": {
-        "investments[0]": "verified"
+        "investments[0]": "unsupported"
       }
     }
   },
@@ -2441,12 +2441,12 @@
     ],
     "grade": {
       "confidence": "C",
-      "reason": "existence not proven (no Tier A, 2 A/B companies)",
-      "last_investment_date": "2026-01-01",
-      "last_investment_company": "Theorema",
+      "reason": "existence not proven (no Tier A, 1 A/B companies)",
+      "last_investment_date": "2025-12-17",
+      "last_investment_company": "T-CURX",
       "existence_tier_a": false,
       "dated_investment_tier": "B",
-      "portfolio_count": 2,
+      "portfolio_count": 1,
       "evidence": {
         "fields.sectors": "verified",
         "fields.stages": "verified",
@@ -2454,7 +2454,7 @@
         "fields.ticket": "verified",
         "fields.funds": "verified",
         "fields.existence": "verified",
-        "investments[0]": "verified",
+        "investments[0]": "unsupported",
         "investments[1]": "verified"
       }
     }
@@ -2505,15 +2505,15 @@
       }
     ],
     "grade": {
-      "confidence": "A",
-      "reason": "existence by Tier A, dated investment by Tier A",
-      "last_investment_date": "2026-09-08",
-      "last_investment_company": "Seerlinq s.r.o.",
-      "existence_tier_a": true,
-      "dated_investment_tier": "A",
-      "portfolio_count": 1,
+      "confidence": "C",
+      "reason": "no dated investment proven by Tier A/B; existence not proven (no Tier A, 0 A/B companies)",
+      "last_investment_date": null,
+      "last_investment_company": null,
+      "existence_tier_a": false,
+      "dated_investment_tier": null,
+      "portfolio_count": 0,
       "evidence": {
-        "investments[0]": "verified"
+        "investments[0]": "unsupported"
       }
     }
   },
@@ -2566,14 +2566,14 @@
     ],
     "grade": {
       "confidence": "C",
-      "reason": "no dated investment proven by Tier A/B (Tier C only); existence not proven (no Tier A, 0 A/B companies)",
+      "reason": "no dated investment proven by Tier A/B; existence not proven (no Tier A, 0 A/B companies)",
       "last_investment_date": null,
       "last_investment_company": null,
       "existence_tier_a": false,
-      "dated_investment_tier": "C",
+      "dated_investment_tier": null,
       "portfolio_count": 0,
       "evidence": {
-        "investments[0]": "unverified"
+        "investments[0]": "unsupported"
       }
     }
   },
@@ -2700,7 +2700,7 @@
         "I3",
         "I4"
       ],
-      "note": "Corporate VC of the ČEZ group; CVCA full member. Sub-funds A-D registered in ARES."
+      "note": "Corporate VC of the ČEZ group; CVCA full member. Sub-funds A-D registered in ARES. Correction 2026-10-11: manager AUM is unknown. https://www.invencapital.cz/ (accessed 2026-10-11) states \"As a venture capital fund we invest EUR 500m from institutional investors and global corporates\" and describes total committed capital; this is not manager AUM and is retained here only as contextual evidence."
     },
     "fields": {
       "sectors": {
@@ -2767,23 +2767,7 @@
         ]
       },
       "funds": null,
-      "aum": {
-        "value": {
-          "amount": 500000000,
-          "currency": "EUR",
-          "as_of": null
-        },
-        "sources": [
-          {
-            "url": "https://www.invencapital.cz/",
-            "tier": "B",
-            "publisher": "Inven Capital",
-            "published": null,
-            "accessed": "2026-10-11",
-            "quote": "As a venture capital fund we invest EUR 500m from institutional investors and global corporates"
-          }
-        ]
-      },
+      "aum": null,
       "existence": {
         "value": [
           "regulator_register",
@@ -2847,22 +2831,21 @@
       }
     ],
     "grade": {
-      "confidence": "A",
-      "reason": "existence by Tier A, dated investment by Tier B",
-      "last_investment_date": "2026-07-02",
-      "last_investment_company": "Vytal",
+      "confidence": "C",
+      "reason": "no dated investment proven by Tier A/B",
+      "last_investment_date": null,
+      "last_investment_company": null,
       "existence_tier_a": true,
-      "dated_investment_tier": "B",
-      "portfolio_count": 2,
+      "dated_investment_tier": null,
+      "portfolio_count": 0,
       "evidence": {
         "fields.sectors": "verified",
         "fields.stages": "verified",
         "fields.geography": "verified",
-        "fields.ticket": "verified",
-        "fields.aum": "verified",
+        "fields.ticket": "unsupported",
         "fields.existence": "verified",
-        "investments[0]": "verified",
-        "investments[1]": "verified"
+        "investments[0]": "unsupported",
+        "investments[1]": "unsupported"
       }
     }
   },
@@ -2969,16 +2952,16 @@
     ],
     "grade": {
       "confidence": "C",
-      "reason": "existence not proven (no Tier A, 2 A/B companies)",
-      "last_investment_date": "2024-12-20",
-      "last_investment_company": "InoBat (own group project)",
+      "reason": "no dated investment proven by Tier A/B; existence not proven (no Tier A, 0 A/B companies)",
+      "last_investment_date": null,
+      "last_investment_company": null,
       "existence_tier_a": false,
-      "dated_investment_tier": "B",
-      "portfolio_count": 2,
+      "dated_investment_tier": null,
+      "portfolio_count": 0,
       "evidence": {
-        "investments[0]": "verified",
-        "investments[1]": "verified",
-        "investments[2]": "unverified"
+        "investments[0]": "unsupported",
+        "investments[1]": "unsupported",
+        "investments[2]": "unsupported"
       }
     }
   },
@@ -3285,13 +3268,13 @@
       }
     ],
     "grade": {
-      "confidence": "B",
-      "reason": "own portfolio of 3 companies, dated investment by Tier B",
-      "last_investment_date": "2025-09-30",
-      "last_investment_company": "Supernova",
+      "confidence": "C",
+      "reason": "existence not proven (no Tier A, 1 A/B companies)",
+      "last_investment_date": "2025-03-03",
+      "last_investment_company": "Finlay",
       "existence_tier_a": false,
       "dated_investment_tier": "B",
-      "portfolio_count": 3,
+      "portfolio_count": 1,
       "evidence": {
         "fields.sectors": "verified",
         "fields.stages": "verified",
@@ -3299,8 +3282,8 @@
         "fields.ticket": "verified",
         "fields.aum": "verified",
         "fields.existence": "verified",
-        "investments[0]": "verified",
-        "investments[1]": "verified",
+        "investments[0]": "unsupported",
+        "investments[1]": "unsupported",
         "investments[2]": "verified"
       }
     }
@@ -3515,20 +3498,20 @@
     "grade": {
       "confidence": "A",
       "reason": "existence by Tier A, dated investment by Tier B",
-      "last_investment_date": "2025-07-28",
-      "last_investment_company": "E2B",
+      "last_investment_date": "2025-01-25",
+      "last_investment_company": "Upheal",
       "existence_tier_a": true,
       "dated_investment_tier": "B",
-      "portfolio_count": 2,
+      "portfolio_count": 1,
       "evidence": {
         "fields.stages": "verified",
         "fields.geography": "verified",
-        "fields.ticket": "verified",
+        "fields.ticket": "unsupported",
         "fields.funds": "verified",
         "fields.aum": "verified",
         "fields.existence": "verified",
-        "investments[0]": "unverified",
-        "investments[1]": "verified",
+        "investments[0]": "unsupported",
+        "investments[1]": "unsupported",
         "investments[2]": "verified"
       }
     }
@@ -3579,14 +3562,14 @@
     ],
     "grade": {
       "confidence": "C",
-      "reason": "no dated investment proven by Tier A/B (Tier C only); existence not proven (no Tier A, 0 A/B companies)",
+      "reason": "no dated investment proven by Tier A/B; existence not proven (no Tier A, 0 A/B companies)",
       "last_investment_date": null,
       "last_investment_company": null,
       "existence_tier_a": false,
-      "dated_investment_tier": "C",
+      "dated_investment_tier": null,
       "portfolio_count": 0,
       "evidence": {
-        "investments[0]": "unverified"
+        "investments[0]": "unsupported"
       }
     }
   },
@@ -3989,14 +3972,14 @@
     ],
     "grade": {
       "confidence": "C",
-      "reason": "no dated investment proven by Tier A/B (Tier C only); existence not proven (no Tier A, 0 A/B companies)",
+      "reason": "no dated investment proven by Tier A/B; existence not proven (no Tier A, 0 A/B companies)",
       "last_investment_date": null,
       "last_investment_company": null,
       "existence_tier_a": false,
-      "dated_investment_tier": "C",
+      "dated_investment_tier": null,
       "portfolio_count": 0,
       "evidence": {
-        "investments[0]": "unverified"
+        "investments[0]": "unsupported"
       }
     }
   },
@@ -4195,16 +4178,16 @@
     ],
     "grade": {
       "confidence": "C",
-      "reason": "existence not proven (no Tier A, 1 A/B companies)",
-      "last_investment_date": "2026-10-01",
-      "last_investment_company": "ACE",
+      "reason": "no dated investment proven by Tier A/B; existence not proven (no Tier A, 0 A/B companies)",
+      "last_investment_date": null,
+      "last_investment_company": null,
       "existence_tier_a": false,
-      "dated_investment_tier": "B",
-      "portfolio_count": 1,
+      "dated_investment_tier": null,
+      "portfolio_count": 0,
       "evidence": {
         "fields.sectors": "verified",
         "fields.existence": "verified",
-        "investments[0]": "verified"
+        "investments[0]": "unsupported"
       }
     }
   },
@@ -4489,13 +4472,13 @@
       }
     ],
     "grade": {
-      "confidence": "A",
-      "reason": "existence by Tier A, dated investment by Tier A",
-      "last_investment_date": "2024-07-03",
-      "last_investment_company": "Ringil",
-      "existence_tier_a": true,
-      "dated_investment_tier": "A",
-      "portfolio_count": 1,
+      "confidence": "C",
+      "reason": "no dated investment proven by Tier A/B; existence not proven (no Tier A, 0 A/B companies)",
+      "last_investment_date": null,
+      "last_investment_company": null,
+      "existence_tier_a": false,
+      "dated_investment_tier": null,
+      "portfolio_count": 0,
       "evidence": {
         "fields.sectors": "verified",
         "fields.stages": "verified",
@@ -4503,7 +4486,7 @@
         "fields.ticket": "verified",
         "fields.aum": "verified",
         "fields.existence": "verified",
-        "investments[0]": "verified"
+        "investments[0]": "unsupported"
       }
     }
   },
@@ -4555,15 +4538,15 @@
       }
     ],
     "grade": {
-      "confidence": "A",
-      "reason": "existence by Tier A, dated investment by Tier A",
-      "last_investment_date": "2026-09-08",
-      "last_investment_company": "Seerlinq s.r.o.",
-      "existence_tier_a": true,
-      "dated_investment_tier": "A",
-      "portfolio_count": 1,
+      "confidence": "C",
+      "reason": "no dated investment proven by Tier A/B; existence not proven (no Tier A, 0 A/B companies)",
+      "last_investment_date": null,
+      "last_investment_company": null,
+      "existence_tier_a": false,
+      "dated_investment_tier": null,
+      "portfolio_count": 0,
       "evidence": {
-        "investments[0]": "verified"
+        "investments[0]": "unsupported"
       }
     }
   },
@@ -4815,13 +4798,13 @@
       }
     ],
     "grade": {
-      "confidence": "A",
-      "reason": "existence by Tier A, dated investment by Tier A",
-      "last_investment_date": "2026-01-17",
-      "last_investment_company": "MultiplexDX, s.r.o.",
+      "confidence": "C",
+      "reason": "no dated investment proven by Tier A/B",
+      "last_investment_date": null,
+      "last_investment_company": null,
       "existence_tier_a": true,
-      "dated_investment_tier": "A",
-      "portfolio_count": 2,
+      "dated_investment_tier": null,
+      "portfolio_count": 0,
       "evidence": {
         "fields.sectors": "verified",
         "fields.stages": "verified",
@@ -4830,9 +4813,9 @@
         "fields.funds": "verified",
         "fields.aum": "verified",
         "fields.existence": "verified",
-        "investments[0]": "verified",
-        "investments[1]": "unverified",
-        "investments[2]": "verified"
+        "investments[0]": "unsupported",
+        "investments[1]": "unsupported",
+        "investments[2]": "unsupported"
       }
     }
   },
@@ -5028,7 +5011,7 @@
         "fields.sectors": "verified",
         "fields.stages": "verified",
         "fields.geography": "verified",
-        "fields.ticket": "verified",
+        "fields.ticket": "unsupported",
         "fields.funds": "verified",
         "fields.existence": "verified"
       }
@@ -5275,13 +5258,13 @@
       }
     ],
     "grade": {
-      "confidence": "A",
-      "reason": "existence by Tier A, dated investment by Tier A",
-      "last_investment_date": "2026-06-09",
-      "last_investment_company": "Lakmoos AI",
-      "existence_tier_a": true,
-      "dated_investment_tier": "A",
-      "portfolio_count": 3,
+      "confidence": "C",
+      "reason": "no dated investment proven by Tier A/B; existence not proven (no Tier A, 0 A/B companies)",
+      "last_investment_date": null,
+      "last_investment_company": null,
+      "existence_tier_a": false,
+      "dated_investment_tier": null,
+      "portfolio_count": 0,
       "evidence": {
         "fields.sectors": "verified",
         "fields.stages": "verified",
@@ -5289,9 +5272,9 @@
         "fields.ticket": "verified",
         "fields.funds": "verified",
         "fields.existence": "verified",
-        "investments[0]": "verified",
-        "investments[1]": "verified",
-        "investments[2]": "verified"
+        "investments[0]": "unsupported",
+        "investments[1]": "unsupported",
+        "investments[2]": "unsupported"
       }
     }
   },
@@ -5534,22 +5517,22 @@
       }
     ],
     "grade": {
-      "confidence": "A",
-      "reason": "existence by Tier A, dated investment by Tier A",
-      "last_investment_date": "2025-01-10",
-      "last_investment_company": "Hedepy",
+      "confidence": "C",
+      "reason": "no dated investment proven by Tier A/B",
+      "last_investment_date": null,
+      "last_investment_company": null,
       "existence_tier_a": true,
-      "dated_investment_tier": "A",
-      "portfolio_count": 3,
+      "dated_investment_tier": null,
+      "portfolio_count": 0,
       "evidence": {
         "fields.sectors": "verified",
         "fields.stages": "verified",
         "fields.geography": "verified",
         "fields.funds": "verified",
         "fields.existence": "verified",
-        "investments[0]": "verified",
-        "investments[1]": "verified",
-        "investments[2]": "verified"
+        "investments[0]": "unsupported",
+        "investments[1]": "unsupported",
+        "investments[2]": "unsupported"
       }
     }
   },
@@ -5710,20 +5693,20 @@
       }
     ],
     "grade": {
-      "confidence": "A",
-      "reason": "existence by Tier A, dated investment by Tier A",
-      "last_investment_date": "2026-10-07",
-      "last_investment_company": "Ranketta",
-      "existence_tier_a": true,
-      "dated_investment_tier": "A",
-      "portfolio_count": 2,
+      "confidence": "C",
+      "reason": "no dated investment proven by Tier A/B; existence not proven (no Tier A, 0 A/B companies)",
+      "last_investment_date": null,
+      "last_investment_company": null,
+      "existence_tier_a": false,
+      "dated_investment_tier": null,
+      "portfolio_count": 0,
       "evidence": {
         "fields.sectors": "verified",
         "fields.funds": "verified",
         "fields.existence": "verified",
-        "investments[0]": "verified",
-        "investments[1]": "unverified",
-        "investments[2]": "verified"
+        "investments[0]": "unsupported",
+        "investments[1]": "unsupported",
+        "investments[2]": "unsupported"
       }
     }
   },
@@ -6069,7 +6052,7 @@
         "I3",
         "I4"
       ],
-      "note": "Changed from exclude: PLAN has no rule that excludes corporate VC (cvc is a kept type), and E3 does not apply because the programme takes equity (7% of SmartHead), not loans. Flag for review: the parent is a bank (Erste Group), and PLAN defines cvc as the arm of a non-financial corporation, so the type is the nearest fit, not an exact one. The investing entity is the bank itself; no separate vehicle was found. I2 by own statements: IntellCRE was its sixth portfolio company."
+      "note": "Changed from exclude: PLAN has no rule that excludes corporate VC (cvc is a kept type), and E3 does not apply because the programme takes equity (7% of SmartHead), not loans. Flag for review: the parent is a bank (Erste Group), and PLAN defines cvc as the arm of a non-financial corporation, so the type is the nearest fit, not an exact one. The investing entity is the bank itself; no separate vehicle was found. I2 by own statements: IntellCRE was its sixth portfolio company. Correction 2026-10-11: IntellCRE investment is confirmed by the retained announcement URL and quotes, but its exact announcement date is unknown. The previous 2025-09-17 was inferred only from the URL; neither full page text nor raw HTML independently states that date. Investment date and asserted source publication dates are null."
     },
     "fields": {
       "sectors": null,
@@ -6136,7 +6119,7 @@
       },
       {
         "company": "IntellCRE",
-        "date": "2025-09-17",
+        "date": null,
         "date_kind": "announced",
         "round_size": null,
         "sources": [
@@ -6144,7 +6127,7 @@
             "url": "https://www.slsp.sk/sk/aktuality/2025/9/17/zo-slovenska-rovno-na-najvacsi-realitny-trh-intellcre-ziskava-investiciu-od-seed-startera-slovenskej-sporitelne",
             "tier": "B",
             "publisher": "Slovenská sporiteľňa",
-            "published": "2025-09-17",
+            "published": null,
             "accessed": "2026-10-11",
             "quote": "teraz získava investíciu vo výške 400 000 eur od Seed Startera Slovenskej sporiteľne"
           },
@@ -6152,7 +6135,7 @@
             "url": "https://www.slsp.sk/sk/aktuality/2025/9/17/zo-slovenska-rovno-na-najvacsi-realitny-trh-intellcre-ziskava-investiciu-od-seed-startera-slovenskej-sporitelne",
             "tier": "B",
             "publisher": "Slovenská sporiteľňa",
-            "published": "2025-09-17",
+            "published": null,
             "accessed": "2026-10-11",
             "quote": "Celkovo ide už o šiesty zainvestovaný startup v portfóliu Seed Startera."
           }
@@ -6177,18 +6160,18 @@
     ],
     "grade": {
       "confidence": "C",
-      "reason": "existence not proven (no Tier A, 2 A/B companies)",
-      "last_investment_date": "2026-06-08",
-      "last_investment_company": "Webout",
+      "reason": "no dated investment proven by Tier A/B; existence not proven (no Tier A, 0 A/B companies)",
+      "last_investment_date": null,
+      "last_investment_company": null,
       "existence_tier_a": false,
-      "dated_investment_tier": "B",
-      "portfolio_count": 2,
+      "dated_investment_tier": null,
+      "portfolio_count": 0,
       "evidence": {
         "fields.funds": "unverified",
         "fields.existence": "verified",
-        "investments[0]": "verified",
-        "investments[1]": "verified",
-        "investments[2]": "unverified"
+        "investments[0]": "unsupported",
+        "investments[1]": "unsupported",
+        "investments[2]": "unsupported"
       }
     }
   },
@@ -6483,20 +6466,20 @@
     ],
     "grade": {
       "confidence": "C",
-      "reason": "existence not proven (no Tier A, 1 A/B companies)",
-      "last_investment_date": "2026-09-07",
-      "last_investment_company": "Rightcharge",
+      "reason": "no dated investment proven by Tier A/B; existence not proven (no Tier A, 0 A/B companies)",
+      "last_investment_date": null,
+      "last_investment_company": null,
       "existence_tier_a": false,
-      "dated_investment_tier": "B",
-      "portfolio_count": 1,
+      "dated_investment_tier": null,
+      "portfolio_count": 0,
       "evidence": {
         "fields.sectors": "verified",
         "fields.stages": "verified",
         "fields.ticket": "verified",
         "fields.aum": "verified",
         "fields.existence": "verified",
-        "investments[0]": "verified",
-        "investments[1]": "verified"
+        "investments[0]": "unsupported",
+        "investments[1]": "unsupported"
       }
     }
   },
@@ -6564,15 +6547,15 @@
     ],
     "grade": {
       "confidence": "C",
-      "reason": "existence not proven (no Tier A, 1 A/B companies)",
-      "last_investment_date": "2025-01-07",
-      "last_investment_company": "ThreatMark",
+      "reason": "no dated investment proven by Tier A/B; existence not proven (no Tier A, 0 A/B companies)",
+      "last_investment_date": null,
+      "last_investment_company": null,
       "existence_tier_a": false,
-      "dated_investment_tier": "B",
-      "portfolio_count": 1,
+      "dated_investment_tier": null,
+      "portfolio_count": 0,
       "evidence": {
-        "investments[0]": "verified",
-        "investments[1]": "unverified"
+        "investments[0]": "unsupported",
+        "investments[1]": "unsupported"
       }
     }
   },
@@ -6709,20 +6692,20 @@
       }
     ],
     "grade": {
-      "confidence": "A",
-      "reason": "existence by Tier A, dated investment by Tier A",
-      "last_investment_date": "2025-03-18",
-      "last_investment_company": "Carebot",
-      "existence_tier_a": true,
-      "dated_investment_tier": "A",
-      "portfolio_count": 2,
+      "confidence": "C",
+      "reason": "no dated investment proven by Tier A/B; existence not proven (no Tier A, 0 A/B companies)",
+      "last_investment_date": null,
+      "last_investment_company": null,
+      "existence_tier_a": false,
+      "dated_investment_tier": null,
+      "portfolio_count": 0,
       "evidence": {
         "fields.sectors": "verified",
         "fields.stages": "verified",
         "fields.geography": "verified",
         "fields.existence": "verified",
-        "investments[0]": "verified",
-        "investments[1]": "verified"
+        "investments[0]": "unsupported",
+        "investments[1]": "unsupported"
       }
     }
   },
@@ -6796,16 +6779,16 @@
       }
     ],
     "grade": {
-      "confidence": "A",
-      "reason": "existence by Tier A, dated investment by Tier A",
-      "last_investment_date": "2026-08-20",
-      "last_investment_company": "SmartGuide",
-      "existence_tier_a": true,
-      "dated_investment_tier": "A",
-      "portfolio_count": 1,
+      "confidence": "C",
+      "reason": "no dated investment proven by Tier A/B; existence not proven (no Tier A, 0 A/B companies)",
+      "last_investment_date": null,
+      "last_investment_company": null,
+      "existence_tier_a": false,
+      "dated_investment_tier": null,
+      "portfolio_count": 0,
       "evidence": {
         "fields.existence": "verified",
-        "investments[0]": "verified"
+        "investments[0]": "unsupported"
       }
     }
   },
@@ -7203,13 +7186,13 @@
       }
     ],
     "grade": {
-      "confidence": "A",
-      "reason": "existence by Tier A, dated investment by Tier A",
-      "last_investment_date": "2025-12-03",
-      "last_investment_company": "Wultra",
+      "confidence": "C",
+      "reason": "no dated investment proven by Tier A/B",
+      "last_investment_date": null,
+      "last_investment_company": null,
       "existence_tier_a": true,
-      "dated_investment_tier": "A",
-      "portfolio_count": 1,
+      "dated_investment_tier": null,
+      "portfolio_count": 0,
       "evidence": {
         "fields.sectors": "verified",
         "fields.stages": "verified",
@@ -7218,8 +7201,8 @@
         "fields.funds": "verified",
         "fields.aum": "verified",
         "fields.existence": "verified",
-        "investments[0]": "verified",
-        "investments[1]": "verified"
+        "investments[0]": "unsupported",
+        "investments[1]": "unsupported"
       }
     }
   },
@@ -7456,22 +7439,22 @@
       }
     ],
     "grade": {
-      "confidence": "A",
-      "reason": "existence by Tier A, dated investment by Tier A",
-      "last_investment_date": "2026-02-27",
-      "last_investment_company": "Flox Intelligence",
+      "confidence": "C",
+      "reason": "no dated investment proven by Tier A/B",
+      "last_investment_date": null,
+      "last_investment_company": null,
       "existence_tier_a": true,
-      "dated_investment_tier": "A",
-      "portfolio_count": 2,
+      "dated_investment_tier": null,
+      "portfolio_count": 0,
       "evidence": {
         "fields.sectors": "verified",
         "fields.stages": "verified",
         "fields.geography": "verified",
-        "fields.ticket": "verified",
+        "fields.ticket": "unsupported",
         "fields.funds": "verified",
         "fields.existence": "verified",
-        "investments[0]": "verified",
-        "investments[1]": "verified"
+        "investments[0]": "unsupported",
+        "investments[1]": "unsupported"
       }
     }
   },
@@ -7545,14 +7528,14 @@
     ],
     "grade": {
       "confidence": "C",
-      "reason": "no dated investment proven by Tier A/B (Tier C only); existence not proven (no Tier A, 0 A/B companies)",
+      "reason": "no dated investment proven by Tier A/B; existence not proven (no Tier A, 0 A/B companies)",
       "last_investment_date": null,
       "last_investment_company": null,
       "existence_tier_a": false,
-      "dated_investment_tier": "C",
+      "dated_investment_tier": null,
       "portfolio_count": 0,
       "evidence": {
-        "investments[0]": "unverified"
+        "investments[0]": "unsupported"
       }
     }
   },
@@ -7848,13 +7831,13 @@
       }
     ],
     "grade": {
-      "confidence": "A",
-      "reason": "existence by Tier A, dated investment by Tier A",
-      "last_investment_date": "2026-01-17",
-      "last_investment_company": "MultiplexDX, s.r.o.",
+      "confidence": "C",
+      "reason": "no dated investment proven by Tier A/B",
+      "last_investment_date": null,
+      "last_investment_company": null,
       "existence_tier_a": true,
-      "dated_investment_tier": "A",
-      "portfolio_count": 1,
+      "dated_investment_tier": null,
+      "portfolio_count": 0,
       "evidence": {
         "fields.sectors": "verified",
         "fields.stages": "verified",
@@ -7862,10 +7845,10 @@
         "fields.ticket": "verified",
         "fields.funds": "verified",
         "fields.existence": "verified",
-        "investments[0]": "unverified",
-        "investments[1]": "verified",
-        "investments[2]": "unverified",
-        "investments[3]": "unverified"
+        "investments[0]": "unsupported",
+        "investments[1]": "unsupported",
+        "investments[2]": "unsupported",
+        "investments[3]": "unsupported"
       }
     }
   },
@@ -8139,13 +8122,13 @@
       }
     ],
     "grade": {
-      "confidence": "A",
-      "reason": "existence by Tier A, dated investment by Tier A",
-      "last_investment_date": "2026-01-09",
-      "last_investment_company": "Airvolute s.r.o. (follow-on)",
+      "confidence": "C",
+      "reason": "no dated investment proven by Tier A/B",
+      "last_investment_date": null,
+      "last_investment_company": null,
       "existence_tier_a": true,
-      "dated_investment_tier": "A",
-      "portfolio_count": 3,
+      "dated_investment_tier": null,
+      "portfolio_count": 0,
       "evidence": {
         "fields.sectors": "verified",
         "fields.stages": "verified",
@@ -8153,9 +8136,9 @@
         "fields.ticket": "verified",
         "fields.funds": "verified",
         "fields.existence": "verified",
-        "investments[0]": "verified",
-        "investments[1]": "verified",
-        "investments[2]": "verified"
+        "investments[0]": "unsupported",
+        "investments[1]": "unsupported",
+        "investments[2]": "unsupported"
       }
     }
   },
@@ -8324,19 +8307,19 @@
       }
     ],
     "grade": {
-      "confidence": "A",
-      "reason": "existence by Tier A, dated investment by Tier A",
-      "last_investment_date": "2025-06-23",
-      "last_investment_company": "RoboTwin",
-      "existence_tier_a": true,
-      "dated_investment_tier": "A",
-      "portfolio_count": 2,
+      "confidence": "C",
+      "reason": "no dated investment proven by Tier A/B; existence not proven (no Tier A, 0 A/B companies)",
+      "last_investment_date": null,
+      "last_investment_company": null,
+      "existence_tier_a": false,
+      "dated_investment_tier": null,
+      "portfolio_count": 0,
       "evidence": {
         "fields.sectors": "verified",
         "fields.geography": "verified",
         "fields.existence": "verified",
-        "investments[0]": "verified",
-        "investments[1]": "verified"
+        "investments[0]": "unsupported",
+        "investments[1]": "unsupported"
       }
     }
   },
@@ -8730,19 +8713,19 @@
       }
     ],
     "grade": {
-      "confidence": "A",
-      "reason": "existence by Tier A, dated investment by Tier A",
-      "last_investment_date": "2024-11-01",
-      "last_investment_company": "BinarBase s. r. o. (follow-on)",
+      "confidence": "C",
+      "reason": "no dated investment proven by Tier A/B",
+      "last_investment_date": null,
+      "last_investment_company": null,
       "existence_tier_a": true,
-      "dated_investment_tier": "A",
-      "portfolio_count": 1,
+      "dated_investment_tier": null,
+      "portfolio_count": 0,
       "evidence": {
         "fields.geography": "verified",
         "fields.funds": "verified",
         "fields.existence": "verified",
-        "investments[0]": "unverified",
-        "investments[1]": "verified"
+        "investments[0]": "unsupported",
+        "investments[1]": "unsupported"
       }
     }
   }

@@ -2274,7 +2274,7 @@
         "I3",
         "I4"
       ],
-      "note": "Corporate VC of the ČEZ group; CVCA full member. Sub-funds A-D registered in ARES."
+      "note": "Corporate VC of the ČEZ group; CVCA full member. Sub-funds A-D registered in ARES. Correction 2026-10-11: manager AUM is unknown. https://www.invencapital.cz/ (accessed 2026-10-11) states \"As a venture capital fund we invest EUR 500m from institutional investors and global corporates\" and describes total committed capital; this is not manager AUM and is retained here only as contextual evidence."
     },
     "fields": {
       "sectors": {
@@ -2341,23 +2341,7 @@
         ]
       },
       "funds": null,
-      "aum": {
-        "value": {
-          "amount": 500000000,
-          "currency": "EUR",
-          "as_of": null
-        },
-        "sources": [
-          {
-            "url": "https://www.invencapital.cz/",
-            "tier": "B",
-            "publisher": "Inven Capital",
-            "published": null,
-            "accessed": "2026-10-11",
-            "quote": "As a venture capital fund we invest EUR 500m from institutional investors and global corporates"
-          }
-        ]
-      },
+      "aum": null,
       "existence": {
         "value": [
           "regulator_register",
@@ -5194,7 +5178,7 @@
         "I3",
         "I4"
       ],
-      "note": "Changed from exclude: PLAN has no rule that excludes corporate VC (cvc is a kept type), and E3 does not apply because the programme takes equity (7% of SmartHead), not loans. Flag for review: the parent is a bank (Erste Group), and PLAN defines cvc as the arm of a non-financial corporation, so the type is the nearest fit, not an exact one. The investing entity is the bank itself; no separate vehicle was found. I2 by own statements: IntellCRE was its sixth portfolio company."
+      "note": "Changed from exclude: PLAN has no rule that excludes corporate VC (cvc is a kept type), and E3 does not apply because the programme takes equity (7% of SmartHead), not loans. Flag for review: the parent is a bank (Erste Group), and PLAN defines cvc as the arm of a non-financial corporation, so the type is the nearest fit, not an exact one. The investing entity is the bank itself; no separate vehicle was found. I2 by own statements: IntellCRE was its sixth portfolio company. Correction 2026-10-11: IntellCRE investment is confirmed by the retained announcement URL and quotes, but its exact announcement date is unknown. The previous 2025-09-17 was inferred only from the URL; neither full page text nor raw HTML independently states that date. Investment date and asserted source publication dates are null."
     },
     "fields": {
       "sectors": null,
@@ -5261,7 +5245,7 @@
       },
       {
         "company": "IntellCRE",
-        "date": "2025-09-17",
+        "date": null,
         "date_kind": "announced",
         "round_size": null,
         "sources": [
@@ -5269,7 +5253,7 @@
             "url": "https://www.slsp.sk/sk/aktuality/2025/9/17/zo-slovenska-rovno-na-najvacsi-realitny-trh-intellcre-ziskava-investiciu-od-seed-startera-slovenskej-sporitelne",
             "tier": "B",
             "publisher": "Slovenská sporiteľňa",
-            "published": "2025-09-17",
+            "published": null,
             "accessed": "2026-10-11",
             "quote": "teraz získava investíciu vo výške 400 000 eur od Seed Startera Slovenskej sporiteľne"
           },
@@ -5277,7 +5261,7 @@
             "url": "https://www.slsp.sk/sk/aktuality/2025/9/17/zo-slovenska-rovno-na-najvacsi-realitny-trh-intellcre-ziskava-investiciu-od-seed-startera-slovenskej-sporitelne",
             "tier": "B",
             "publisher": "Slovenská sporiteľňa",
-            "published": "2025-09-17",
+            "published": null,
             "accessed": "2026-10-11",
             "quote": "Celkovo ide už o šiesty zainvestovaný startup v portfóliu Seed Startera."
           }

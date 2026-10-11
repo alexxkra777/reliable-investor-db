@@ -1,0 +1,10 @@
+{
+  "type": "author-reviewed AI-assisted assessment",
+  "reviewer": "[redacted: name]",
+  "reviewed_on": "2026-10-11",
+  "independent_human_source_by_source_review": false,
+  "claims_sha256": "d235571521892bc29c0006a13c5b6d0917f252d8de4cdfb2fca0182238a05d4e",
+  "snapshot_note": "Review tables describe the original 60-claim sample before corrections. The author reviewed and confirmed findings prepared with AI assistance. Automated checks describe the corrected current records and reuse the 11 October page cache. See CORRECTIONS.md for qualifications.",
+  "historical_model": true,
+  "legacy_human_key": "The human JSON key names the labels input; review provenance records how the labels were produced."
+}
