@@ -34,7 +34,7 @@ original slice; it gave only 7 included investors, too few to measure anything, 
 | Recall against the CVCA full-member list | **27 / 27** |
 | Blind second review (other model family) agreed "is a real investor" | 44 / 45 after adjudication (43 / 45 before) |
 | Status errors the second review caught in the first pass | 4 of 45 (all "dormant" firms that had recent deals) |
-| **Human-checked accuracy** | see [below](#human-checked-accuracy) |
+| Claim accuracy on a 60-claim random sample, model review | **60 / 60** (95 % CI 94–100 %) — human review [below](#human-checked-accuracy) |
 | Cost of the pilot's data collection, list price | $61 ≈ $0.55 per screened candidate |
 
 ## How a record is made and checked
@@ -76,7 +76,22 @@ python3 -m venv .venv && .venv/bin/pip install -e '.[dev]'
 
 ## Human-checked accuracy
 
-_Filled in from `eval/labels.csv` — see [eval/ACCURACY.md](eval/ACCURACY.md)._
+A stratified random sample of **60 claims** out of 264 (existence, every field, investments; fixed
+seed) is in [eval/review.html](eval/review.html) — a self-contained page where a reviewer opens each
+source and marks the claim Correct / Wrong / Can't verify. A claim whose source doesn't back it counts
+as Wrong even if it happens to be true.
+
+| Review | Correct | Wrong | Can't verify | Accuracy (strict, 95 % CI) |
+|---|---:|---:|---:|---|
+| Model review (separate run, read every source page in full) | 60 | 0 | 0 | 100 % (94.0–100) |
+| Human review | _pending_ | | | |
+
+The model reviewer left a note on 31 claims and called 7 of them borderline but still supported — e.g. a fund size worded as
+"earmarked for 2020–2026", a follow-on presented as a deal, a page whose date was refreshed — with a
+note on each in [eval/labels-model.csv](eval/labels-model.csv). Because the model reviewer is the same
+family as the collectors, its errors can correlate with theirs; that's why the blind second review
+used a different model family and why the human review is the number that counts.
+Per-field tables: [eval/ACCURACY.md](eval/ACCURACY.md).
 
 ## What's missing
 
