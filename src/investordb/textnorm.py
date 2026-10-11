@@ -126,8 +126,19 @@ def _mult(word: str | None) -> float:
     return 1.0
 
 
+# Czech/Slovak press likes "pět milionů eur"; only small numbers right before a scale word
+_WORD_NUMS = {
+    "jeden": 1, "jedna": 1, "dva": 2, "dve": 2, "tri": 3, "ctyri": 4, "styri": 4,
+    "pet": 5, "pat": 5, "sest": 6, "sedm": 7, "sedem": 7, "osm": 8, "osem": 8,
+    "devet": 9, "devat": 9, "deset": 10, "desat": 10,
+}
+_WORD_NUM = re.compile(
+    r"\b(" + "|".join(_WORD_NUMS) + r")(?=\s+(?:milion|miliard|tisic|mil\b|mld))")
+
+
 def numbers_in(text: str) -> list[float]:
     """Numbers in already-normalised text, with scale words applied (1.5 mil. -> 1500000)."""
+    text = _WORD_NUM.sub(lambda m: str(_WORD_NUMS[m.group(1)]), text)
     out = []
     for m in _NUM.finditer(text):
         base = float(m.group(1))

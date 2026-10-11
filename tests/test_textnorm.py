@@ -123,3 +123,9 @@ def test_czech_june_july_not_confused():
 ])
 def test_name_key(a, b):
     assert name_key(a) == name_key(b)
+
+
+def test_small_number_words_before_scale():
+    assert number_in(5_000_000, normalize("Pět milionů eur si připravila Slovenská spořitelna"))
+    assert number_in(3_000_000, normalize("investovali tri milióny eur"))
+    assert not number_in(5, normalize("pět let"))
