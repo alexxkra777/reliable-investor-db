@@ -2,6 +2,252 @@
   "date": "2026-10-11",
   "labels_path": "eval/labels.csv",
   "human": null,
+  "model": {
+    "sampled_claims": 60,
+    "labelled_claims": 60,
+    "inclusion_precision": {
+      "labelled": 6,
+      "correct": 6,
+      "wrong": 0,
+      "cant_verify": 0,
+      "strict": {
+        "k": 6,
+        "n": 6,
+        "value": 1.0,
+        "ci95": [
+          0.6097,
+          1.0
+        ]
+      },
+      "lenient": {
+        "k": 6,
+        "n": 6,
+        "value": 1.0,
+        "ci95": [
+          0.6097,
+          1.0
+        ]
+      }
+    },
+    "investment_date_accuracy": {
+      "labelled": 14,
+      "correct": 14,
+      "wrong": 0,
+      "cant_verify": 0,
+      "strict": {
+        "k": 14,
+        "n": 14,
+        "value": 1.0,
+        "ci95": [
+          0.7847,
+          1.0
+        ]
+      },
+      "lenient": {
+        "k": 14,
+        "n": 14,
+        "value": 1.0,
+        "ci95": [
+          0.7847,
+          1.0
+        ]
+      }
+    },
+    "overall_claim_accuracy": {
+      "labelled": 60,
+      "correct": 60,
+      "wrong": 0,
+      "cant_verify": 0,
+      "strict": {
+        "k": 60,
+        "n": 60,
+        "value": 1.0,
+        "ci95": [
+          0.9398,
+          1.0
+        ]
+      },
+      "lenient": {
+        "k": 60,
+        "n": 60,
+        "value": 1.0,
+        "ci95": [
+          0.9398,
+          1.0
+        ]
+      }
+    },
+    "field_accuracy": {
+      "aum": {
+        "labelled": 4,
+        "correct": 4,
+        "wrong": 0,
+        "cant_verify": 0,
+        "strict": {
+          "k": 4,
+          "n": 4,
+          "value": 1.0,
+          "ci95": [
+            0.5101,
+            1.0
+          ]
+        },
+        "lenient": {
+          "k": 4,
+          "n": 4,
+          "value": 1.0,
+          "ci95": [
+            0.5101,
+            1.0
+          ]
+        }
+      },
+      "existence": {
+        "labelled": 7,
+        "correct": 7,
+        "wrong": 0,
+        "cant_verify": 0,
+        "strict": {
+          "k": 7,
+          "n": 7,
+          "value": 1.0,
+          "ci95": [
+            0.6457,
+            1.0
+          ]
+        },
+        "lenient": {
+          "k": 7,
+          "n": 7,
+          "value": 1.0,
+          "ci95": [
+            0.6457,
+            1.0
+          ]
+        }
+      },
+      "funds": {
+        "labelled": 5,
+        "correct": 5,
+        "wrong": 0,
+        "cant_verify": 0,
+        "strict": {
+          "k": 5,
+          "n": 5,
+          "value": 1.0,
+          "ci95": [
+            0.5655,
+            1.0
+          ]
+        },
+        "lenient": {
+          "k": 5,
+          "n": 5,
+          "value": 1.0,
+          "ci95": [
+            0.5655,
+            1.0
+          ]
+        }
+      },
+      "geography": {
+        "labelled": 6,
+        "correct": 6,
+        "wrong": 0,
+        "cant_verify": 0,
+        "strict": {
+          "k": 6,
+          "n": 6,
+          "value": 1.0,
+          "ci95": [
+            0.6097,
+            1.0
+          ]
+        },
+        "lenient": {
+          "k": 6,
+          "n": 6,
+          "value": 1.0,
+          "ci95": [
+            0.6097,
+            1.0
+          ]
+        }
+      },
+      "sectors": {
+        "labelled": 6,
+        "correct": 6,
+        "wrong": 0,
+        "cant_verify": 0,
+        "strict": {
+          "k": 6,
+          "n": 6,
+          "value": 1.0,
+          "ci95": [
+            0.6097,
+            1.0
+          ]
+        },
+        "lenient": {
+          "k": 6,
+          "n": 6,
+          "value": 1.0,
+          "ci95": [
+            0.6097,
+            1.0
+          ]
+        }
+      },
+      "stages": {
+        "labelled": 6,
+        "correct": 6,
+        "wrong": 0,
+        "cant_verify": 0,
+        "strict": {
+          "k": 6,
+          "n": 6,
+          "value": 1.0,
+          "ci95": [
+            0.6097,
+            1.0
+          ]
+        },
+        "lenient": {
+          "k": 6,
+          "n": 6,
+          "value": 1.0,
+          "ci95": [
+            0.6097,
+            1.0
+          ]
+        }
+      },
+      "ticket": {
+        "labelled": 6,
+        "correct": 6,
+        "wrong": 0,
+        "cant_verify": 0,
+        "strict": {
+          "k": 6,
+          "n": 6,
+          "value": 1.0,
+          "ci95": [
+            0.6097,
+            1.0
+          ]
+        },
+        "lenient": {
+          "k": 6,
+          "n": 6,
+          "value": 1.0,
+          "ci95": [
+            0.6097,
+            1.0
+          ]
+        }
+      }
+    }
+  },
   "recall": {
     "cvca-full-members": {
       "k": 27,

@@ -1,0 +1,61 @@
+claim_id,label,note,reviewed_at
+nation-1/field/aum,Correct,,2026-10-11T12:35:00Z
+bhm-ventures/field/existence,Correct,"Borderline: page is the BHM group (diversified holding) portfolio filtered to tech startups (Carebot, CloudTalk, GoRamp, Intiaro...), so >=3 companies shown; it is group-level, not a separate 'BHM Ventures' entity.",2026-10-11T12:35:00Z
+vision-ventures/field/ticket,Correct,"Page: usually EUR 100k-800k, maximum EUR 1.6M; range 100k-1.6M is supported.",2026-10-11T12:35:00Z
+inven-capital/field/aum,Correct,Borderline: page says 'we invest EUR 500m from institutional investors and global corporates' - read as capital under management; not an explicit 'AUM' label or as-of date.,2026-10-11T12:35:00Z
+startupyard/existence,Correct,"Justice.cz: StartupYard Batch 15 s.r.o. (ICO 22266852, Perlova 371/5, Praha 1) entered SmartGuide s.r.o. on 20 Aug 2026; ARES confirms the ICO. Note the ICO is a per-batch vehicle, not the StartupYard manager entity.",2026-10-11T12:35:00Z
+jt-ventures/investment/0,Correct,"Borderline on date: the cited J&T blog list dates the Supernova post 20/4/2025 and only says a Series A is being announced (no amount, no explicit J&T role). The other source tech.eu (30 Sep 2025) names J&T Ventures as a participant in the $9.2M Series A; other press dates the round to late Sep/early Oct 2025, so 2025-09-30 stands.",2026-10-11T12:35:00Z
+cb-investment-management/field/funds,Correct,Minor: SIH says the fund started operations in 2020; the manager's site says founded 2019.,2026-10-11T12:35:00Z
+cb-investment-management/field/existence,Correct,NBS: registered AIFM since 20.08.19 managing CB Growth ONE; SIH page confirms SIH invests in the fund.,2026-10-11T12:35:00Z
+seed-starter-slovenskej-sporitelne/investment/1,Correct,,2026-10-11T12:35:00Z
+miton/existence,Correct,"Cited quote (sector list) alone does not show recency; ACE investment post dated 1.10.2026 on miton.cz and ARES (MITON CZ, s.r.o., Praha) support the rest. 'vc' is a loose fit for an investment group/venture builder.",2026-10-11T12:35:00Z
+neulogy-ventures/field/sectors,Correct,,2026-10-11T12:35:00Z
+tensor-ventures/investment/0,Correct,Register page is Wultra s.r.o.; Tensor Co-Investment Fund (Luxembourg SCSp) entered as shareholder 3 Dec 2025. Link fund->Tensor Ventures is by name (EIF lists the fund under Tensor Advisory).,2026-10-11T12:35:00Z
+venture-to-future-fund/investment/0,Correct,"Startitup article dated 19 May 2026: $5M Series A led by Fil Rouge, Venture to Future Fund joined (named alongside new investors, not as an existing one).",2026-10-11T12:35:00Z
+czech-founders-vc/field/ticket,Correct,,2026-10-11T12:35:00Z
+zaka-vc/field/stages,Correct,,2026-10-11T12:35:00Z
+vision-ventures/field/existence,Correct,NBS registered AIFM since 11.11.19; SIH investor in its fund; listed among SLOVCA full members.,2026-10-11T12:35:00Z
+jt-ventures/field/ticket,Correct,,2026-10-11T12:35:00Z
+zaka-vc/field/existence,Correct,,2026-10-11T12:35:00Z
+vision-ventures/field/geography,Correct,,2026-10-11T12:35:00Z
+vision-ventures/investment/0,Correct,"ORSR history: Vision Ventures Growth I contribution rose from EUR 2,500 (11.11.2025-08.01.2026) to EUR 3,290 from 09.01.2026, alongside Baryon Fund joining - a follow-on in a capital increase (could be a conversion, but it is new paid-in capital).",2026-10-11T12:35:00Z
+vision-ventures/investment/2,Correct,,2026-10-11T12:35:00Z
+credo-ventures/investment/1,Correct,"Borderline on date: Upheal's blog post now shows 'October 9, 2026' (refreshed date); the Jan 25, 2025 date comes from the Credo newsroom entry. Credo is named as participating in the $10M Series A.",2026-10-11T12:35:00Z
+tilia-impact-ventures/field/geography,Correct,,2026-10-11T12:35:00Z
+credo-ventures/field/geography,Correct,,2026-10-11T12:35:00Z
+depo-ventures/field/stages,Correct,,2026-10-11T12:35:00Z
+tilia-impact-ventures/field/ticket,Correct,Initial ticket 0.3-1.2m EUR.,2026-10-11T12:35:00Z
+neulogy-ventures/field/funds,Correct,,2026-10-11T12:35:00Z
+jt-ventures/field/geography,Correct,,2026-10-11T12:35:00Z
+neulogy-ventures/existence,Correct,"EIF lists Neulogy Ventures a.s. as manager of Slovak Venture Fund SICAR (investment period to 14/03/2027); ORSR confirms ICO 47367610 (Bratislava) and B185175 for the fund. Recency is thin: fund re-entered MultiplexDX 17.01.2026 (EUR 750, old portfolio company) and GA Drilling round (Apr 2024); SIH says its own compartments are divesting.",2026-10-11T12:35:00Z
+rockawayx/field/stages,Correct,,2026-10-11T12:35:00Z
+g-force/existence,Correct,"NBS shows an old Trnava seat, but ORSR (live) shows both G-Force, s. r. o. (53527798) and G-Force Fund, j. s. a. (53588398) seated in Bratislava. Recent deal: Enzidia announced 11 Mar 2025 as 'our latest G-Force climate investment' (Founders Factory, archived).",2026-10-11T12:35:00Z
+vision-ventures/investment/1,Correct,,2026-10-11T12:35:00Z
+venture-to-future-fund/investment/2,Correct,,2026-10-11T12:35:00Z
+credo-ventures/field/aum,Correct,Borderline: CVCA directory figure (no date); may be stale given Credo now reports 5 funds.,2026-10-11T12:35:00Z
+tensor-ventures/field/ticket,Correct,,2026-10-11T12:35:00Z
+zero-one-hundred/field/existence,Correct,"The NBS/SIH pages name Zero Gravity Capital s.r.o., not 0100; ORSR (live) shows Zero Gravity Capital is 100% owned by 0100 Ventures s. r. o., so attribution holds. SIH says that fund closed its investment window in Dec 2023.",2026-10-11T12:35:00Z
+zero-one-hundred/field/geography,Correct,,2026-10-11T12:35:00Z
+inven-capital/field/sectors,Correct,,2026-10-11T12:35:00Z
+jt-ventures/field/aum,Correct,'Vyse aktiv' = assets; reads as AUM.,2026-10-11T12:35:00Z
+credo-ventures/existence,Correct,"Cited CVCA page and credoventures.com show an active VC (CVCA member profile, 100+ companies) but no dated deal; recency comes from the record's own investments (Supernova Sep 2025 via Credo newsroom/tech.eu). ARES confirms Credo Ventures a.s., ICO 28538137, Praha 2.",2026-10-11T12:35:00Z
+vision-ventures/field/stages,Correct,,2026-10-11T12:35:00Z
+depo-ventures/field/funds,Correct,"NRI news (26.08.2026): DEPO Ventures One SCSp, managed by DEPO Ventures Sarl, selected for Fond Ukrajina; size/vintage unknown as claimed.",2026-10-11T12:35:00Z
+soulmates-ventures/field/sectors,Correct,,2026-10-11T12:35:00Z
+venture-to-future-fund/field/funds,Correct,"Borderline: page says EUR 55m is earmarked for investing in 2020-2026, which is investable capital rather than an explicit 'fund size' statement; consistent with the 2024 EUR 15.3m top-up.",2026-10-11T12:35:00Z
+baryon-fund/field/sectors,Correct,,2026-10-11T12:35:00Z
+venture-to-future-fund/field/sectors,Correct,Values are taken literally from the SLOVCA 'preferred sector' line (they are company types more than sectors).,2026-10-11T12:35:00Z
+jt-ventures/investment/2,Correct,"J&T blog post (3/3/2025) interviews Finlay: EUR 300k pre-seed, partners J&T Ventures and DEPO Ventures. Date is the J&T publication date, round closing date not given.",2026-10-11T12:35:00Z
+kaya-vc/field/stages,Correct,,2026-10-11T12:35:00Z
+czech-founders-vc/existence,Correct,"Justice.cz: Edmund s.r.o., Czech Founders Ventures s.r.o., osoba rizikoveho kapitalu (ICO 17051835, Praha 1) entered with a preferred share on 25 Mar 2026 - a new investment.",2026-10-11T12:35:00Z
+credo-ventures/investment/0,Correct,"Borderline: Credo was an existing Supernova backer (other press calls it an existing investor); tech.eu still lists it as participating in the $9.2M Series A, so a follow-on rather than a new deal.",2026-10-11T12:35:00Z
+reflex-capital/investment/0,Correct,"Register page is Ranketta s.r.o.; Reflex 3, osoba rizikoveho kapitalu SE entered with preferred share 7 Oct 2026; Reflex 3 -> Reflex Capital link is by name.",2026-10-11T12:35:00Z
+fond-inovacii-a-technologii/field/ticket,Correct,,2026-10-11T12:35:00Z
+limerock/field/existence,Correct,"Both evidence types exist but are historical: NBS lists a registered AIFM whose only fund (JEREMIE Co-Investment Fund) is in liquidation, and SIH says it 'was' an investor. Fine for an existence field on a dormant record.",2026-10-11T12:35:00Z
+czech-founders-vc/investment/1,Correct,,2026-10-11T12:35:00Z
+venture-to-future-fund/field/existence,Correct,"NBS lists VFF as a registered AIF (the fund itself, managed by Slovak Capital Management), not as a manager; SLOVCA full member list includes it.",2026-10-11T12:35:00Z
+tensor-ventures/field/funds,Correct,Fund I SCSp named on tensor.ventures footer; Co-Investment Fund SCSp listed by EIF under Tensor Advisory s.r.o.,2026-10-11T12:35:00Z
+czech-founders-vc/field/geography,Correct,,2026-10-11T12:35:00Z
+neulogy-ventures/investment/2,Correct,"NeulogyVC tweet Oct 24, 2023: 'Investment Alert! ... @trustmaticHQ as the latest addition'.",2026-10-11T12:35:00Z
+orbit-capital/field/stages,Correct,,2026-10-11T12:35:00Z
+zaka-vc/field/sectors,Correct,,2026-10-11T12:35:00Z

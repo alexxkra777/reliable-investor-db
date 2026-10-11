@@ -6,6 +6,25 @@ Built by `python -m investordb eval` on 2026-10-11.
 
 **No review labels found** (eval/labels.csv). Only the automated metrics below were computed; they say whether sources still contain the quoted text, not whether the claims are right. Run `review-pack`, review `eval/review.html`, export `eval/labels.csv` and run `eval` again.
 
+## Model review
+
+The same sample judged by a separate model run that read each source page in full (not only the quote) and the whole record. It is not a substitute for the human review: it comes from the same model family that collected the data, so its mistakes can line up with the collectors' mistakes.
+
+60 of 60 sampled claims labelled.
+
+| Metric | Labelled | Correct | Wrong | Can't verify | Strict (95 % CI) | Lenient (95 % CI) |
+|---|---:|---:|---:|---:|---|---|
+| Inclusion precision | 6 | 6 | 0 | 0 | 100.0 % (61.0-100.0) | 100.0 % (61.0-100.0) |
+| Field: aum | 4 | 4 | 0 | 0 | 100.0 % (51.0-100.0) | 100.0 % (51.0-100.0) |
+| Field: existence | 7 | 7 | 0 | 0 | 100.0 % (64.6-100.0) | 100.0 % (64.6-100.0) |
+| Field: funds | 5 | 5 | 0 | 0 | 100.0 % (56.5-100.0) | 100.0 % (56.5-100.0) |
+| Field: geography | 6 | 6 | 0 | 0 | 100.0 % (61.0-100.0) | 100.0 % (61.0-100.0) |
+| Field: sectors | 6 | 6 | 0 | 0 | 100.0 % (61.0-100.0) | 100.0 % (61.0-100.0) |
+| Field: stages | 6 | 6 | 0 | 0 | 100.0 % (61.0-100.0) | 100.0 % (61.0-100.0) |
+| Field: ticket | 6 | 6 | 0 | 0 | 100.0 % (61.0-100.0) | 100.0 % (61.0-100.0) |
+| Investment date | 14 | 14 | 0 | 0 | 100.0 % (78.5-100.0) | 100.0 % (78.5-100.0) |
+| **All claims** | 60 | 60 | 0 | 0 | 100.0 % (94.0-100.0) | 100.0 % (94.0-100.0) |
+
 ## Recall against reference lists
 
 | List | Entities | Covered | Recall (95 % CI) | Decisions of covered |
