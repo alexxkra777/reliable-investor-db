@@ -168,6 +168,11 @@ angels if they are in scope. For CZ+SK about 150–300 PE/VC/FO entities.
 - shareholder data in ORSR gives Tier A proof of investments for Slovak s.r.o. targets;
 - it is the reviewer's home market, so errors are easy to spot.
 
+**Change during the pilot:** Slovakia alone produced only 7 included VCs after full enumeration —
+far too few to measure field accuracy with any confidence — so the pilot was extended to VCs managed
+from Czechia (CVCA full members, EIF Czech managers, NRI, press). One record per manager across both
+countries; duplicates were merged by the country the manager sits in (`scripts/merge_parts.py`).
+
 Pilot outputs: [`data/sample/`](data/sample/) (records with per-field sources), [`eval/ACCURACY.md`](eval/ACCURACY.md), and the scale-up cost estimate in [`docs/COST.md`](docs/COST.md).
 
 ## 6. Risks and how they are handled
