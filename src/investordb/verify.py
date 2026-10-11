@@ -9,7 +9,7 @@ from investordb.textnorm import date_match, match_quote, normalize, number_in
 COLUMNS = [
     "record_id", "record_name", "target", "kind", "label", "source_index", "url", "tier",
     "publisher", "quote_status", "similarity", "value_status", "value_detail",
-    "fetch_used", "http_status", "final_url",
+    "claim_value_status", "fetch_used", "http_status", "final_url",
 ]
 PASS = ("exact", "fuzzy")
 
@@ -78,6 +78,7 @@ def check_records(records: list[dict], index: dict, cache_dir) -> list[dict]:
     rows = []
     for rec in records:
         for t in iter_targets(rec):
+            target_rows, passing_quotes = [], []
             for i, s in enumerate(t.sources):
                 url = s.get("url", "")
                 entry = index.get(url)
@@ -91,11 +92,13 @@ def check_records(records: list[dict], index: dict, cache_dir) -> list[dict]:
                 else:
                     status, sim = match_quote(quote, None, npage)
                 nquote = normalize(quote)
+                if status in PASS:
+                    passing_quotes.append(nquote)
                 facts = value_facts(t, s, nquote)
                 detail = "; ".join(f"{f}:{st}" for f, st in facts)
                 if t.kind == "investment" and t.label and normalize(t.label) not in nquote:
                     detail = (detail + "; " if detail else "") + "company_not_in_quote"
-                rows.append({
+                target_rows.append({
                     "record_id": rec.get("id"), "record_name": rec.get("name"),
                     "target": t.key, "kind": t.kind, "label": t.label, "source_index": i,
                     "url": url, "tier": s.get("tier"), "publisher": s.get("publisher"),
@@ -105,6 +108,15 @@ def check_records(records: list[dict], index: dict, cache_dir) -> list[dict]:
                     "http_status": (entry or {}).get("status") or "",
                     "final_url": (entry or {}).get("final_url") or "",
                 })
+            # sources often split a claim: one names the investor, another has the date and amount.
+            # the claim holds if the verified quotes together carry every number and date
+            published = {s.get("published") for s in t.sources}
+            date = t.value.get("date") if isinstance(t.value, dict) else None
+            merged = {"published": date if date in published else None}
+            claim = value_status(value_facts(t, merged, " | ".join(passing_quotes)))
+            for row in target_rows:
+                row["claim_value_status"] = claim
+            rows.extend(target_rows)
     return rows
 
 
@@ -139,7 +151,11 @@ def summary(rows: list[dict]) -> str:
         if tr:
             ok = sum(r["quote_status"] in PASS for r in tr)
             lines.append(f"tier {tier}: {ok}/{len(tr)} quotes pass")
-    bad = [r for r in rows if r["quote_status"] not in PASS or r["value_status"] ==
+    claims = {(r["record_id"], r["target"]): r["claim_value_status"] for r in rows}
+    cs = Counter(claims.values())
+    lines.append("claims (all verified quotes together): "
+                 + ", ".join(f"{k} {v}" for k, v in sorted(cs.items())))
+    bad = [r for r in rows if r["quote_status"] not in PASS or r["claim_value_status"] ==
            "value_not_in_quote"]
     if bad:
         lines.append("problems (first 20):")

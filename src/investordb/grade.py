@@ -33,7 +33,8 @@ class Checks:
         r = self.by_key.get((rid, t.key, i))
         if r is None or r["url"] != source.get("url"):
             return False  # not verified, or verification is stale
-        return r["quote_status"] in PASS and r["value_status"] != "value_not_in_quote"
+        value = r.get("claim_value_status") or r["value_status"]
+        return r["quote_status"] in PASS and value != "value_not_in_quote"
 
 
 def _best(tiers) -> str | None:

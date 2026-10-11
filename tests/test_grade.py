@@ -33,7 +33,7 @@ def test_value_not_in_quote_does_not_count(records, fixtures_dir):
     rows = rows_for(records, fixtures_dir)
     for r in rows:
         if r["target"] == "fields.funds":
-            r["value_status"] = "value_not_in_quote"
+            r["value_status"] = r["claim_value_status"] = "value_not_in_quote"
     g = grade_record(records[0], Checks(rows))
     # registry entry (Tier A investment) still proves existence
     assert g["confidence"] == "A"
@@ -79,3 +79,13 @@ def test_flat_row(records, fixtures_dir):
     assert row["last_investment_source"] == "https://example.com/news/alpha"
     assert row["legal_entities"] == "ICO:12345678"
     assert row["confidence"] == "A"
+
+
+def test_split_claim_counts_when_quotes_together_carry_the_values(records, fixtures_dir):
+    rows = rows_for(records, fixtures_dir)
+    for r in rows:
+        if r["target"] == "fields.funds":
+            # this one source alone lacks the number, but the claim as a whole is backed
+            r["value_status"], r["claim_value_status"] = "value_not_in_quote", "ok"
+    g = grade_record(records[0], Checks(rows))
+    assert g["evidence"]["fields.funds"] != "unsupported"

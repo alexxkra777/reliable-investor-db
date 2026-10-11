@@ -36,3 +36,14 @@ def test_investment_date_from_published_date(example):
 def test_text_fields_have_no_value_check(example):
     t = next(t for t in iter_targets(example) if t.kind == "sectors")
     assert value_status(value_facts(t, t.sources[0], "anything")) == "n/a"
+
+
+def test_claim_value_uses_all_verified_quotes(records):
+    inv = [t for t in iter_targets(records[0]) if t.kind == "investment"][0]
+    names_investor = "the round was led by headline with participation from example ventures"
+    has_numbers = "alpha robotics raised 1.5 mil. eur on 12 march 2025"
+    src = {"published": None}
+    alone = value_status(value_facts(inv, src, names_investor))
+    together = value_status(value_facts(inv, src, names_investor + " | " + has_numbers))
+    assert alone == "value_not_in_quote"
+    assert together == "ok"
