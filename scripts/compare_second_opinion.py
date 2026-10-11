@@ -58,7 +58,8 @@ def main() -> None:
         f"- Active within 36 months agrees: **{agree_active}/{n_active}** "
         f"(records where the reviewer could decide)",
         "",
-        "| Investor | Our status | Our last dated deal | Reviewer: active | Reviewer: latest deal | "
+        "| Investor | Our status | Our last dated deal | Reviewer: active "
+        "| Reviewer: latest deal | "
         "Reviewer type | Our type | |",
         "|---|---|---|---|---|---|---|---|",
     ]

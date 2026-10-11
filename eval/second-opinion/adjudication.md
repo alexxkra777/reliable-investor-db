@@ -18,6 +18,10 @@ quote matcher before deciding (all found on the page: 6 exact, 1 fuzzy 0.98).
 | Orbit Capital | uncertain (equity vs venture debt unclear) | Named in Sloneek's 2026 round | **unchanged** | the quote doesn't say equity |
 | IPM Group | dormant | Hilo EV, Jun 2022; typed it `pe` | **unchanged** | agree on status; type is a judgment call |
 
+**Agreement before and after.** Before adjudication the reviewer agreed with the first pass on
+"is a real investor" for 43/45 records and on "active in the last 36 months" for 38/44; after the
+fixes below it is 44/45 and 42/44 (the remaining differences are the rule and type calls in the table).
+
 **What this measures.** On the 45 records the first pass had kept, the reviewer changed the
 status of 4 (8.9 %), all in the same direction: the first pass under-searched for *recent* deals of
 firms it had already labelled dormant or dead. Both reviewers agreed every one of the 45 is a real
