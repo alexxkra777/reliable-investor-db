@@ -2,21 +2,22 @@
 
 Claude Code sub-agent log, exported from `agent-ae9344859411d2483.jsonl`.
 Tool outputs longer than 1,500 characters are shortened.
+Russian narrative has been translated into English; executed tool code and source quotations are retained.
 
 ## Brief
 
-You are a data analyst on an investor-database project in /Users/[redacted]/homeW/ai-dev-test/investor-db. Read PLAN.md (rules I1–I4, E1–E10, evidence tiers A/B/C), schema/investor.schema.json and tests/fixtures/investors.json (format example) first.
+You are a data analyst on an investor-database project in [redacted: local path] Read PLAN.md (rules I1–I4, E1–E10, evidence tiers A/B/C), schema/investor.schema.json and tests/fixtures/investors.json (format example) first.
 
 Task: turn the Slovak VC research in research/sk-vc-candidates.json (49 candidates, written by a colleague) into records that follow the schema EXACTLY, and write them to data/sample/parts/sk.json (JSON array, pretty-printed, UTF-8). Also write data/sample/parts/sk-decisions.md: one line per candidate "name — status — rule IDs — one-sentence reason".
 
 Hard requirements:
-1. **Every `quote` must be VERBATIM text that appears on the page at `url`.** The colleague's quotes are sometimes paraphrased by the fetch tool — do not trust them. WebFetch returns a model-written summary, NOT the page text, so never copy quotes from WebFetch output. Instead fetch raw pages with `curl -sL -A "Mozilla/5.0 ..." <url>` (or python urllib), extract visible text (python: strip script/style, html.unescape), and copy the sentence from that text. For PDFs use `pdftotext` if available or python pypdf from /Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python. After writing each quote, confirm it with a grep on the extracted text. If a page can't be fetched raw (403, JS-only), find another source or set that field to null — never keep an unverifiable quote. Keep the quote short (one sentence or table row) but containing the value (number/date/sector words).
+1. **Every `quote` must be VERBATIM text that appears on the page at `url`.** The colleague's quotes are sometimes paraphrased by the fetch tool — do not trust them. WebFetch returns a model-written summary, NOT the page text, so never copy quotes from WebFetch output. Instead fetch raw pages with `curl -sL -A "Mozilla/5.0 ..." <url>` (or python urllib), extract visible text (python: strip script/style, html.unescape), and copy the sentence from that text. For PDFs use `pdftotext` if available or python pypdf from [redacted: local path] After writing each quote, confirm it with a grep on the extracted text. If a page can't be fetched raw (403, JS-only), find another source or set that field to null — never keep an unverifiable quote. Keep the quote short (one sentence or table row) but containing the value (number/date/sector words).
 2. For the Slovak business register use the helper `[tmp]` (`python3 orsr.py search "<name>"`, `python3 orsr.py vypis "<url>"`). ORSR shareholder entries ("Spoločníci" … "(od: dd.mm.yyyy)") are Tier A evidence of an investment and its date; the ORSR extract URL + the exact line is the quote. finstat.sk returns 403 — don't use it.
 3. Resolve the 7 "uncertain" candidates (0100 VC Fund II, ZAKA VC, G-Force, CB Investment Management, Baryon Fund, LRJ Capital, IPM Group) into included / excluded / dormant with rule IDs, with extra searching where needed. "uncertain" is allowed only if you truly can't decide — explain why.
 4. Re-check the 3 includes (Neulogy Ventures, Vision Ventures, Venture to Future Fund): try hard to find a dated investment within 36 months before 2026-10-11 (I3) — ORSR shareholder entries of portfolio companies are the best route. Neulogy: check if any portfolio company added Neulogy's fund vehicle as shareholder since Oct 2023.
 5. For excluded records you don't need full fields: id, name, type, hq, website, decision (status + rules + note), and at least one source proving the reason in the most relevant field or investment (e.g., a platform: a quote saying it is a crowdfunding platform). Put that proof in `fields.sectors` only if it fits; otherwise add it as decision evidence in `decision.note` with the URL. Keep it schema-valid.
 6. `type` uses the schema enum. Money as numbers + currency. Dates ISO. `accessed` = 2026-10-11. Use null for unknown, never guess.
-7. Validate: `cd /Users/[redacted]/homeW/ai-dev-test/investor-db && .venv/bin/python -m investordb validate --file data/sample/parts/sk.json` if that option exists; otherwise validate with python jsonschema against schema/investor.schema.json yourself (each record against the `record` definition). Fix every error.
+7. Validate: `cd [redacted: local path] && .venv/bin/python -m investordb validate --file data/sample/parts/sk.json` if that option exists; otherwise validate with python jsonschema against schema/investor.schema.json yourself (each record against the `record` definition). Fix every error.
 
 Rules: all file content in English (Slovak/Czech quotes stay verbatim). Don't mention AI/tools in files. Don't run git. Don't touch files other than data/sample/parts/sk.json and sk-decisions.md. Don't use the Playwright MCP browser. No signups, no forms.
 
@@ -24,7 +25,7 @@ Final message (English): counts by status, list of included with their latest da
 
 **Agent:**
 
-Начинаю с чтения PLAN.md, схемы и примера.
+I will start by reading PLAN.md, the schema and the example.
 
 → `Bash` — Read plan and list project files
 ```sh
@@ -36,20 +37,20 @@ ls -la && cat PLAN.md && ls data data/sample data/sample/parts research tests/fi
 ```
 Exit code 1
 total 48
-drwxr-xr-x  14 [user]  staff    448 11 окт.  01:29 .
-drwxr-xr-x   4 [user]  staff    128 11 окт.  01:07 ..
-drwxr-xr-x  12 [user]  staff    384 11 окт.  01:36 .git
--rw-r--r--   1 [user]  staff     72 11 окт.  01:27 .gitignore
-drwxr-xr-x   5 [user]  staff    160 11 окт.  01:29 .ruff_cache
-drwxr-xr-x   7 [user]  staff    224 11 окт.  01:27 .venv
-drwxr-xr-x   4 [user]  staff    128 11 окт.  01:29 data
-drwxr-xr-x   2 [user]  staff     64 11 окт.  01:27 eval
--rw-r--r--   1 [user]  staff  12330 11 окт.  01:23 PLAN.md
--rw-r--r--   1 [user]  staff    788 11 окт.  01:27 pyproject.toml
-drwxr-xr-x   5 [user]  staff    160 11 окт.  01:34 research
-drwxr-xr-x   3 [user]  staff     96 11 окт.  01:28 schema
-drwxr-xr-x   4 [user]  staff    128 11 окт.  01:29 src
-drwxr-xr-x   3 [user]  staff     96 11 окт.  01:27 tests
+drwxr-xr-x  14 [user]  staff    448 11 Oct  01:29 .
+drwxr-xr-x   4 [user]  staff    128 11 Oct  01:07 ..
+drwxr-xr-x  12 [user]  staff    384 11 Oct  01:36 .git
+-rw-r--r--   1 [user]  staff     72 11 Oct  01:27 .gitignore
+drwxr-xr-x   5 [user]  staff    160 11 Oct  01:29 .ruff_cache
+drwxr-xr-x   7 [user]  staff    224 11 Oct  01:27 .venv
+drwxr-xr-x   4 [user]  staff    128 11 Oct  01:29 data
+drwxr-xr-x   2 [user]  staff     64 11 Oct  01:27 eval
+-rw-r--r--   1 [user]  staff  12330 11 Oct  01:23 PLAN.md
+-rw-r--r--   1 [user]  staff    788 11 Oct  01:27 pyproject.toml
+drwxr-xr-x   5 [user]  staff    160 11 Oct  01:34 research
+drwxr-xr-x   3 [user]  staff     96 11 Oct  01:28 schema
+drwxr-xr-x   4 [user]  staff    128 11 Oct  01:29 src
+drwxr-xr-x   3 [user]  staff     96 11 Oct  01:27 tests
 # Plan: a reliable database of investors
 
 The point of this database is trust. A record is only worth something if a reader can click
@@ -107,7 +108,7 @@ Schema: [`schema/investor.schema.json`](schema/investor.schema.json).
 
 | Tier | Sources | Proves |
 |---|---|---|
-| **A — legal filings** | Regulators (SEC ADV/Form D, ESMA, ČNB, NBS), business registers with shareholder entries (ORSR, justice.cz, Companies House), fund-of-funds commitments from EIF/SIH/NRB | That the entity exists as a 
+| **A — legal filings** | Regulators (SEC ADV/Form D, ESMA, ČNB, NBS), business registers with shareholder entries (ORSR, justice.cz, Companies House), fund-of-funds commitments from EIF/SIH/NRB | That the entity exists as a
 … [3604 more characters]
 ```
 </details>
@@ -401,7 +402,7 @@ def _headers(url: str) -> dict:
 
 → `Bash` — Dump compact view of first 10 candidates
 ```sh
-mkdir -p [tmp] [tmp] && cd /Users/[redacted]/homeW/ai-dev-test/investor-db && python3 -c "
+mkdir -p [tmp] [tmp] && cd [redacted: local path] && python3 -c "
 import json
 d=json.load(open('research/sk-vc-candidates.json'))
 print(sorted(set(k for c in d for k in c)))
@@ -529,7 +530,7 @@ File created successfully at: [tmp] (file state is current in your context — n
 ```sh
 S=[tmp] cat > $S/pg <<'EOF'
 #!/bin/sh
-exec /Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python [tmp] "$@"
+exec [redacted: local path] [tmp] "$@"
 EOF
 chmod +x $S/pg; $S/pg get "https://www.orsr.sk/vypis.asp?ID=276162&SID=2&P=0" 3000
 ```
@@ -600,7 +601,7 @@ predstavenstvo
 
 → `Bash` — Fetch Neulogy homepage text
 ```sh
-S=[tmp] $S/pg get "https://www.neulogy.vc/" 6000; 
+S=[tmp] $S/pg get "https://www.neulogy.vc/" 6000;
 ```
 
 <details><summary>result</summary>
@@ -771,14 +772,14 @@ cd [tmp] for n in "BeIT" "Anvesana" "Staffino" "MultiplexDX"; do echo "######## 
 ######## BeIT
 == BE ITALIAN, s.r.o. | https://www.orsr.sk/vypis.asp?ID=17253&SID=4&P=0
 IČO: 36 577 251 | Sídlo: Kamenárska 5, Spišská Nová Ves 052 01 | zápis: 09.03.2004
-Spoločníci: Alberto Russo / (od: 09.03.2004) / Ľudovít Vrana / (od: 09.03.2004) / Jozef Szentkereszty / (od: 09.03.2004) / 
-Vklady: Alberto Russo / Vklad: 3 319,391888 EUR Splatené: 3 319,391888 EUR / (od: 16.02.2010) / Ľudovít Vrana / Vklad: 1 659,695944 EUR Splatené: 1 659,695944 EUR / (od: 16.02.2010) / Jozef Szentkereszty / Vklad: 1 659,695944 EUR Splatené: 1 659,695944 EUR / (od: 16.02.2010) / 
+Spoločníci: Alberto Russo / (od: 09.03.2004) / Ľudovít Vrana / (od: 09.03.2004) / Jozef Szentkereszty / (od: 09.03.2004) /
+Vklady: Alberto Russo / Vklad: 3 319,391888 EUR Splatené: 3 319,391888 EUR / (od: 16.02.2010) / Ľudovít Vrana / Vklad: 1 659,695944 EUR Splatené: 1 659,695944 EUR / (od: 16.02.2010) / Jozef Szentkereszty / Vklad: 1 659,695944 EUR Splatené: 1 659,695944 EUR / (od: 16.02.2010) /
 == BeiT SK s.r.o.,organizačná zložka | https://www.orsr.sk/vypis.asp?ID=705960&SID=2&P=0
 IČO: 56 571 925 | Sídlo: Ve Střešovičkách 45/40, Střešovice, Praha 6 169 00 | zápis: 09.11.2024
 == BEIT, s.r.o. | https://www.orsr.sk/vypis.asp?ID=334659&SID=5&P=0
 IČO: 48 305 367 | Sídlo: Univerzitná 8413/6, Žilina 010 08 | zápis: 23.09.2015
-Spoločníci: Dr.h.c. prof. Ing. Jozef Živčák , PhD. / Dátum narodenia: 03.05.1958 / (od: 21.05.2022) / doc. Ing. Radovan Hudák , PhD. / Dátum narodenia: 22.09.1976 / (od: 08.11.2022) / 
-Vklady: doc. Ing. Radovan Hudák , PhD. / Vklad: 2 376 EUR Splatené: 2 376 EUR / (od: 08.11.2022) / Dr.h.c. prof. Ing. Jozef Živčák , PhD. / Vklad: 7 524 EUR Splatené: 7 524 EUR / (od: 21.05.2022) / 
+Spoločníci: Dr.h.c. prof. Ing. Jozef Živčák , PhD. / Dátum narodenia: 03.05.1958 / (od: 21.05.2022) / doc. Ing. Radovan Hudák , PhD. / Dátum narodenia: 22.09.1976 / (od: 08.11.2022) /
+Vklady: doc. Ing. Radovan Hudák , PhD. / Vklad: 2 376 EUR Splatené: 2 376 EUR / (od: 08.11.2022) / Dr.h.c. prof. Ing. Jozef Živčák , PhD. / Vklad: 7 524 EUR Splatené: 7 524 EUR / (od: 21.05.2022) /
 ######## Anvesana
 == Anvesana s. r. o. | https://www.orsr.sk/vypis.asp?ID=653887&SID=2&P=0
 IČO: 55 252 176 | Sídlo: Ilkovičova 8, Bratislava - mestská časť Karlova Ves 841 04 | zápis: 23.02.2023
@@ -821,7 +822,7 @@ Tel: +421 2 2077 4437
 Web:
 www.neulogy.vc/sk
 E-mail:
-info@neulogy.vc
+[redacted: email address]
 Typ investícií: Seed, Venture capital
 Preferovaná výška jednej investície: 200,000 - 2.5 M EUR
 Objem prostriedkov v správe: 26 M EUR
@@ -1137,7 +1138,7 @@ S=[tmp] for u in "https://www.startitup.sk/z-brna-do-dubaja-novy-fond-nalial-mil
    2 "datePublished":"2026-05-19T14:59:22+00:00"
    1 article:published_time" content="2026-05-19T14:59:22+00:00
 4 hits (status 200, 10734 chars)
---- ojekt. Teraz mieri aj na Slovensko Jasmína Púčková 19. mája 2026 o 16:59 Študentský projekt z Brna dnes funguje vo viac ako 70 krajinách sveta. Nový fond 
+--- ojekt. Teraz mieri aj na Slovensko Jasmína Púčková 19. mája 2026 o 16:59 Študentský projekt z Brna dnes funguje vo viac ako 70 krajinách sveta. Nový fond
 --- id Špunar Archív/Fond JIC Ventures Jasmína Púčková 19. mája 2026 o 16:59 Uložiť Uložené Zdieľať Ešte pred pár rokmi išlo o študentský projekt , ktorý vzni
 --- o Kiwi.com, Y Soft alebo Flowmon. Financial Times ju v roku 2026 zaradil medzi päťdesiat najlepších startupových hubov v Európe. Do nového fondu nevstúpil
    1 "datePublished":"2025-09-29T13:50:40.347Z"
@@ -1165,7 +1166,7 @@ S=[tmp] u="https://www.startitup.sk/?p=358673"; $S/pg get "$u" 10|head -1; $S/pg
 3 hits (status 200, 5977 chars)
 --- ru Patrik Zengevald/SITA 11. februára 2020 o 14:07 Európska investičná banka, Ministerstvo financií a Slovak Investment Holding do neho zainvestovali 40 mil. eur. Fond bude pomáhať malým a stredným podnikom so silným rastovým potenciálom. TASR Patrik Zengevald/SITA 11. februára 2020 o 14:07 Uložiť Uložené Zdieľať Na Slovensku vznikol nový fond na podporu inovatívnych a technologických malých a stredných podnikov. Európska investičná banka (EIB), Ministerstvo financií SR a Slovak Investment Holding (SI
 --- ických malých a stredných podnikov. Európska investičná banka (EIB), Ministerstvo financií SR a Slovak Investment Holding (SIH) do neho zainvestovali 40 mil. eur. Venture to Future Fund bude od marca tohto roku poskytovať slovenským spoločnostiam kapitálové a kvázi-kapitálové financovanie. Prihlás sa na odber notifikácií a najnovšie info dostaneš medzi prvými. ODOBERAŤ notifikácie zo Startitup vo svojom prehliadači Dostaň Startitup do svojich Google odporúčaní Pridať ako preferovaný zdroj Startitup, o
---- roj Startitup, odkaz sa otvorí v novom okne Ako ďalej informoval SIH, poskytovateľom bude nový fond pod licencovanou správcovskou spoločnosťou Slovak Asset Management, ktorá patrí do investičnej 
+--- roj Startitup, odkaz sa otvorí v novom okne Ako ďalej informoval SIH, poskytovateľom bude nový fond pod licencovanou správcovskou spoločnosťou Slovak Asset Management, ktorá patrí do investičnej
 … [321 more characters]
 ```
 </details>
@@ -1261,9 +1262,9 @@ S=[tmp] $S/pg grep "https://0100.vc/" "This website and all its content.{0,300}"
 6 hits (status 200, 6455 chars)
 --- Obchodné meno: 0100 Ventures s. r. o. (od: 16.03.2016) Sídlo: Staré grunty 18 Bratislava - mest
 --- IČO: 50 209 728 (od: 16.03.2016) De
---- Spoločníci: Mgr. Michal Paško Dátum narodenia: 21.08.1989 (od: 09.12.2022) Dušan Duffek Dátum narodenia: 25.06.1990 (od: 09.12.2022) Martin Joakim Flood Hauge Dátum narodenia: 26.08.1989 (od: 09.12.2022) Peter Klíma Dátum narodenia: 15.07.1962 (od: 09.12.2022) CHB PARTNERS GmbH Am Bahnhof, Ebni 3 Teufen AR 9053 Švajčiarska konfederácia Iné identifikačné číslo: CHE-108.469.826 (od: 09.12.2022) Pannonia Property Group a.s. IČO: 52 718 280 Tolstého 850/7 Bratislava - mestská časť Staré Mesto 811 02 (od: 09.12.2022) Lepaka s.r.o. IČO: 54 243 581 Nové Záhrady I/9 Bratislava - mestská časť Ružinov 821 05 (od: 
+--- Spoločníci: Mgr. Michal Paško Dátum narodenia: 21.08.1989 (od: 09.12.2022) Dušan Duffek Dátum narodenia: 25.06.1990 (od: 09.12.2022) Martin Joakim Flood Hauge Dátum narodenia: 26.08.1989 (od: 09.12.2022) Peter Klíma Dátum narodenia: 15.07.1962 (od: 09.12.2022) CHB PARTNERS GmbH Am Bahnhof, Ebni 3 Teufen AR 9053 Švajčiarska konfederácia Iné identifikačné číslo: CHE-108.469.826 (od: 09.12.2022) Pannonia Property Group a.s. IČO: 52 718 280 Tolstého 850/7 Bratislava - mestská časť Staré Mesto 811 02 (od: 09.12.2022) Lepaka s.r.o. IČO: 54 243 581 Nové Záhrady I/9 Bratislava - mestská časť Ružinov 821 05 (od:
 --- IČO: 48 324 779 Panenská 18 Bratisl
---- IČO: 51 687 682 Tramínová 12869/11 
+--- IČO: 51 687 682 Tramínová 12869/11
 --- IČO: 35 704 098 Alžbetina 41 Košice
 3 hits (status 200, 2174 chars)
 --- Obchodné meno: Zero Gravity Capital s.r.o. (od: 01.10.2019) Sídlo: Staré Grunty 18 Bratislava -
@@ -1439,7 +1440,7 @@ Exit code 2
 6 hits (status 200, 8781 chars)
 --- e je na Googlu častěji. Sledovat Upřednostnit Startupová Zaka VC vznikla jako rodinný fond, v němž své síly spojily rodiny úspěšných podnikatelů Jána Kaspera a Petera Zálešáka, kteří se svým týmem během čtyř let podpořili přes padesát nadějných startupů. Teď fond začíná novou kapitolu, v níž se poprvé otevřel také externím investorům, a cílí na celkovou částku 15 milionů eur (přibližně 380 milionů korun), z čehož již 10,5 milionu eur (265 milionů korun) nasbíral. V začátcích se Zaka soustředila hlavně
 --- odpořili přes padesát nadějných startupů. Teď fond začíná novou kapitolu, v níž se poprvé otevřel také externím investorům, a cílí na celkovou částku 15 milionů eur (přibližně 380 milionů korun), z čehož již 10,5 milionu eur (265 milionů korun) nasbíral. V začátcích se Zaka soustředila hlavně na region střední a východní Evropy, postupně ale svůj záběr rozšířila také do dalších zemí včetně Velké Británie a Spojených států, kde podporuje hlavně startupy zdejších zakladatelů. Fond se řadí mezi vůbec nejakt
---- bec nejaktivnější svého druhu, jen loni podpořil přes dvacítku nadějných firem . Celkem jde o 55 startupů a proinvestovaných téměř 280 milionů 
+--- bec nejaktivnější svého druhu, jen loni podpořil přes dvacítku nadějných firem . Celkem jde o 55 startupů a proinvestovaných téměř 280 milionů
 … [2177 more characters]
 ```
 </details>
@@ -1517,10 +1518,10 @@ S=[tmp] for u in "https://zaka.vc/contact/" "https://zaka.vc/about/"; do $S/pg g
 ```
 {"url": "https://zaka.vc/contact/", "status": 404, "final_url": "https://zaka.vc/contact/", "ctype": "text/html; charset=UTF-8", "chars": 460}
 1 hits (status 404, 460 chars)
---- You can return to our homepage by clicking here . Back to top hey@zaka.vc Silicon Valley / London / Prague / Bratislava Home About Team Portfolio Co-Investors News Jobs Privacy Policy hey@zaka.vc Back to top
+--- You can return to our homepage by clicking here . Back to top [redacted: email address] Silicon Valley / London / Prague / Bratislava Home About Team Portfolio Co-Investors News Jobs Privacy Policy [redacted: email address] Back to top
 {"url": "https://zaka.vc/about/", "status": 404, "final_url": "https://zaka.vc/about/", "ctype": "text/html; charset=UTF-8", "chars": 460}
 1 hits (status 404, 460 chars)
---- You can return to our homepage by clicking here . Back to top hey@zaka.vc Silicon Valley / London / Prague / Bratislava Home About Team Portfolio Co-Investors News Jobs Privacy Policy hey@zaka.vc Back to top
+--- You can return to our homepage by clicking here . Back to top [redacted: email address] Silicon Valley / London / Prague / Bratislava Home About Team Portfolio Co-Investors News Jobs Privacy Policy [redacted: email address] Back to top
 ```
 </details>
 
@@ -1571,7 +1572,7 @@ S=[tmp] for u in "https://zaka.vc/privacy-policy/" "https://zaka.vc/team/" "http
 {"url": "https://zaka.vc/privacy-policy/", "status": 200, "final_url": "https://zaka.vc/privacy-policy/", "ctype": "text/html; charset=UTF-8", "chars": 11347}
 4 hits (status 200, 11346 chars)
 --- cy Policy Who we are The operator of the website and personal data is the company ZAKA VC I, osoba rizikového kapitálu, a.s., with its registered office at Italská 2581/67, 120 00 Prague 2, ID number: 215 14 992, registered in the Commercial Register of the Municipal Court Prague I, File no. B 28844 (“Operator”). The operator hereby provides you with information in accordance with Act no. 452/2021 Coll. on electronic com
---- ons regarding the protection of personal data, or cookies, contact us at hey@zaka.vc. Basic information about ZAKA VC I a.s.: ZAKA VC I, osoba rizikového kapitálu, a.s., ID: 215 14 992, with registered office at Panská 854/2, Nové Město, 110 00 Prague 1, registered in the commercial register maintained by the Municipal Court in Prague under file no. trade mark B 28844 (“ZAKA”), is an alternative fund by a so-called risk 
+--- ons regarding the protection of personal data, or cookies, contact us at [redacted: email address]. Basic information about ZAKA VC I a.s.: ZAKA VC I, osoba rizikového kapitálu, a.s., ID: 215 14 992, with registered office at Panská 854/2, Nové Město, 110 00 Prague 1, registered in the commercial register maintained by the Municipal Court in Prague under file no. trade mark B 28844 (“ZAKA”), is an alternative fund by a so-called risk
 --- t Panská 854/2, Nové Město, 110 00 Prague 1, registered in the commercial register maintained by the Municipal Court in Prague under file no. trade mark B 28844 (“ZAKA”), is an alternative fund by a so-called risk capital entity registered with the Czech National Bank (“ČNB”), as a person entered in the list of persons carrying out property management comparable to management in the sense of § 15 paragraph 1 of Act no. 240
 ---  does not super
 … [4407 more characters]
@@ -1593,7 +1594,7 @@ S=[tmp] for u in "https://www.orsr.sk/vypis.asp?ID=608015&SID=2&P=0" "https://ww
 --- Spoločníci: Péter Küllöi Dátum narodenia: 10.03.1960 (od: 11.02.2022) Founders Factory Limited Northcliffe House, Young Street London W8 5EH Spojené kráľovstvo Veľkej Británie a Severného Írska Iné identifikačné číslo: 09564631 (od: 11.02.2022) GRANPOOL Hungary Kft. Aradi vértanúk tere 1. Esztergom 2500 Maďarsko Iné identifikačné číslo: 1109025457 (od: 11.02.2022) Global Connect Corporation SK s. r. o. IČO: 46 830 243 Landererova 12 Bratislava - mestská časť Staré Mesto 811 09 (od: 22.05.2025) BRAUN HOLDING, s. r. o. IČO: 44 443 200 Pribinova 4 Bratislava - mestská časť Staré Mesto 811 09 (od: 22.05.2025) Výška vkladu každého spoločníka: Péter Küllöi Vklad: 7 875 EUR ( peňažný vklad ) Splatené: 7 875 E
 
 3 hits (status 200, 2845 chars)
---- Obchodné meno: G-Force Fund, j. s. a. (od: 16.02.2021) Sídlo: Mlynské nivy 
+--- Obchodné meno: G-Force Fund, j. s. a. (od: 16.02.2021) Sídlo: Mlynské nivy
 --- IČO: 53 588 398 (od: 16.02.2021) De
 --- Predmet podnikania (činnosti): Činnosť podnikateľských, organizačných a ekonomických poradcov (od: 16.02.2021) Poskytovanie úverov alebo pôžičiek z peňa
 … [166 more characters]
@@ -1611,7 +1612,7 @@ Links: [{"title":"investing in the climate revolution","url":"https://foundersfa
 
 The search didn't turn up any 2025-specific investment news for Marian Gazdik or G-Force. Most results date from 2021 to 2023, so treat them as background rather than current activity.
 
-- 
+-
 … [1352 more characters]
 ```
 </details>
@@ -1679,7 +1680,7 @@ Learn more
 program overview
 Backing stellar founders who are helping to accelerate to a net zero future
 We're bringing together the best minds to support entrepreneurs taking on this global climate challenge.
-Our Climate Seed 
+Our Climate Seed
 … [1448 more characters]
 ```
 </details>
@@ -1881,7 +1882,7 @@ O=[tmp] for q in "3IPK" "Forvio" "altFINS" "DNA ERA"; do echo "## $q"; python3 $
 ## 3IPK
 == 3IPK Global s. r. o. | https://www.orsr.sk/vypis.asp?ID=624999&SID=7&P=0
 IČO: 54 713 820 | Sídlo: Nitrianska 1835/1, Piešťany 921 01 | zápis: 01.07.2022
-Spoločníci: 3IPK, a.s. IČO: 52 001 296 / Nitrianska 1835/1 / Piešťany 921 01 / (od: 01.07.2022) / 
+Spoločníci: 3IPK, a.s. IČO: 52 001 296 / Nitrianska 1835/1 / Piešťany 921 01 / (od: 01.07.2022) /
 == 3IPK, a.s. | https://www.orsr.sk/vypis.asp?ID=613307&SID=7&P=0
 IČO: 52 001 296 | Sídlo: Nitrianska 1835/1, Piešťany 921 01 | zápis: 23.01.2019
 ## Forvio
@@ -1892,7 +1893,7 @@ IČO: 54 337 739 | Sídlo: Štefániková 16, Košice - mestská časť Staré M
 IČO: 48 176 044 | Sídlo: Námestie SNP 7184/22, Bratislava - mestská časť Staré Mesto 811 01 | zápis: 29.05.2015
 == altFINS Incentive Systems, s. r. o. | https://www.orsr.sk/vypis.asp?ID=603306&SID=4&P=0
 IČO: 54 143 021 | Sídlo: Južná Trieda 48, Košice - mestská časť Juh 040 01 | zápis: 14.10.2021
-Spoločníci: altFINS, j. s. a. IČO: 51 781 646 / Námestie slobody 13 / Bratislava - mestská časť Staré Mesto 811 06 / (od: 14.10.2021) / 
+Spoločníci: altFINS, j. s. a. IČO: 51 781 646 / Námestie slobody 13 / Bratislava - mestská časť Staré Mesto 811 06 / (od: 14.10.2021) /
 == altFINS, j. s. a. | https://www.orsr.sk/vypis.asp?ID=434882&SID=2&P=0
 ## DNA ERA
 == DNA ERA s. r. o. | https://www.orsr.sk/vypis.asp?ID=440332&SID=2&P=0
@@ -1920,9 +1921,9 @@ S=[tmp] for u in "https://www.orsr.sk/vypis.asp?ID=610947&SID=4&P=1" "https://ww
 7 hits (status 200, 10479 chars)
 --- CB Growth ONE s. r. o. IČO: 52 656 136 Staromestská 3 Bratislava - mestská časť Staré Mesto 811 03 (od: 28.01.2021 do: 27.11.2024) Michaela Šišková (od: 07.07.2021 do: 24.06.2022)
 --- CB Growth ONE s. r. o. Vklad: 1 250 EUR Splatené: 1 250 EUR (od: 28.01.2021 do: 20.06.2024) Jakub Šiška Vklad: 2 500 EUR Splatené: 2 500 EUR (od: 07.07.2021 do: 20.06.2024) Michae
---- CB Growth ONE s. r. o. Vklad: 1 250 EUR ( peňažný vklad ) Splatené: 1 250 EUR Záložné právo na obchodný podiel spoločníka Číslo záložnej zmluvy: 20240604 Dátum uzavretia záložnej 
---- CB Growth ONE s. r. o. Vklad: 1 250 EUR ( peňažný vklad ) Splatené: 1 250 EUR Záložné právo na obchodný podiel spoločníka Číslo záložnej zmluvy: 20240604 Dátum uzavretia záložnej 
---- CB Growth ONE s. r. o. Vklad: 1 250 EUR ( peňažný vklad ) Splatené: 1 250 EUR Záložné právo na obchodný podiel spoločníka Číslo záložnej zmluvy: 20241023 Dátum uzavretia záložnej 
+--- CB Growth ONE s. r. o. Vklad: 1 250 EUR ( peňažný vklad ) Splatené: 1 250 EUR Záložné právo na obchodný podiel spoločníka Číslo záložnej zmluvy: 20240604 Dátum uzavretia záložnej
+--- CB Growth ONE s. r. o. Vklad: 1 250 EUR ( peňažný vklad ) Splatené: 1 250 EUR Záložné právo na obchodný podiel spoločníka Číslo záložnej zmluvy: 20240604 Dátum uzavretia záložnej
+--- CB Growth ONE s. r. o. Vklad: 1 250 EUR ( peňažný vklad ) Splatené: 1 250 EUR Záložné právo na obchodný podiel spoločníka Číslo záložnej zmluvy: 20241023 Dátum uzavretia záložnej
 --- CB Growth ONE s. r. o. Vklad: 1 333 E
 … [411 more characters]
 ```
@@ -2048,12 +2049,12 @@ O=[tmp] python3 $O brief "Baryon" | head -20; S=[tmp] for p in privacy-policy te
 ```
 == Baryon Consult, s. r. o. | https://www.orsr.sk/vypis.asp?ID=266832&SID=2&P=0
 IČO: 47 146 818 | Sídlo: Veterná 982/22, Malinovo 900 45 | zápis: 14.05.2013
-Spoločníci: Ing. Marek Špirko / Dátum narodenia: 25.11.1975 / (od: 25.05.2022) / 
-Vklady: Ing. Marek Špirko / Vklad: 5 000 EUR Splatené: 5 000 EUR / (od: 25.05.2022) / 
+Spoločníci: Ing. Marek Špirko / Dátum narodenia: 25.11.1975 / (od: 25.05.2022) /
+Vklady: Ing. Marek Špirko / Vklad: 5 000 EUR Splatené: 5 000 EUR / (od: 25.05.2022) /
 == BARYON s. r. o. | https://www.orsr.sk/vypis.asp?ID=33645&SID=2&P=0
 IČO: 35 824 514 | Sídlo: Ružinovská 44, Bratislava 821 03 | zápis: 14.11.2001
-Spoločníci: Mgr. Milan Klúčar / Dátum narodenia: 04.07.1970 / (od: 28.10.2022) / Ing. Peter Zámečník / Dátum narodenia: 10.07.1976 / (od: 28.10.2022) / 
-Vklady: Mgr. Milan Klúčar / Vklad: 3 320 EUR Splatené: 3 320 EUR / (od: 28.10.2022) / Ing. Peter Zámečník / Vklad: 3 320 EUR Splatené: 3 320 EUR / (od: 28.10.2022) / 
+Spoločníci: Mgr. Milan Klúčar / Dátum narodenia: 04.07.1970 / (od: 28.10.2022) / Ing. Peter Zámečník / Dátum narodenia: 10.07.1976 / (od: 28.10.2022) /
+Vklady: Mgr. Milan Klúčar / Vklad: 3 320 EUR Splatené: 3 320 EUR / (od: 28.10.2022) / Ing. Peter Zámečník / Vklad: 3 320 EUR Splatené: 3 320 EUR / (od: 28.10.2022) /
 {"url": "https://www.baryon.fund/privacy-policy", "status": 404, "final_url": "https://www.baryon.fund/privacy-policy", "ctype": "text/html; charset=utf-8", "chars": 88}
 0 hits (status 404, 88 chars)
 {"url": "https://www.baryon.fund/terms-and-conditions", "status": 404, "final_url": "https://www.baryon.fund/terms-and-conditions", "ctype": "text/html; charset=utf-8", "chars": 88}
@@ -2095,8 +2096,8 @@ href="https://www.linkedin.com/in/jasonball/"
 href="https://www.linkedin.com/in/linerind/"
 href="https://www.linkedin.com/in/marekmacko/"
 href="https://www.linkedin.com/in/r%C3%B3bert-vass-169ab01a5/"
-href="mailto:michal.simko@baryon.fund"
-href="mailto:pitch@baryon.fund"
+href="mailto:[redacted: email address]"
+href="mailto:[redacted: email address]"
 ```
 </details>
 
@@ -2128,7 +2129,7 @@ Links: [{"title":"memorialc.public.lu","url":"https://memorialc.public.lu/memori
 
 I found no results for "GROWWS" as a SICAV or in connection with LRJ Capital, so I can't confirm any link between them.
 
-The only LRJ Capital result describes it as a Slovak-focused venture investor. Its profile calls it a private 
+The only LRJ Capital result describes it as a Slovak-focused venture investor. Its profile calls it a private
 … [661 more characters]
 ```
 </details>
@@ -2162,8 +2163,8 @@ S=[tmp] for u in "https://lrjcapital.com/" "https://www.lrj.capital/" "https://w
 3 hits (status 200, 5463 chars)
 --- LrjCapital.com is for sale | HugeDomains Skip to main content Search +1-303-893-0552 LrjCapital.com Buy now: $1,995 ▸ Buy now Processing or ▸ Start payment plan Processing Only $83.13/mo. for 24 months See details 30-day money back guarantee Take immediate ownership Safe and secure shopping LrjCapital.
 --- 24 months See details 30-day money back guarantee Take immediate ownership Safe and secure shopping LrjCapital.com This domain is for sale: $1,995 Buy now for $1,995 or pay $83.13 per month for 24 months ▸ Buy now Processing or ▸ Start payment plan Processing Make 24 monthly payments Pay 0% interest Start using the domain today. See details Make 24 monthly payments Pay 0% interest Start using the dom
---- ee domain $3,495 CapitalXs.com ▸ See domain $2,495 Quick stats Domain length 10 characters Keywords Lrj , Capital Base domain LrjCapital TLD extension .com LrjCapital.com ▸ Buy now ▸ Start Payment Plan Shop Home Categories Payment plans My account Safe and secure Money back guarantee Escrow.com NameBright.com Testimonials Helpful Tips Buying guide Case studies FAQs About us Overview Contact us Terms 
-{"url": "https://www.lrj.capital/", "error": "ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\\'www.lrj.capital\\', port=443): Max retries exceeded with 
+--- ee domain $3,495 CapitalXs.com ▸ See domain $2,495 Quick stats Domain length 10 characters Keywords Lrj , Capital Base domain LrjCapital TLD extension .com LrjCapital.com ▸ Buy now ▸ Start Payment Plan Shop Home Categories Payment plans My account Safe and secure Money back guarantee Escrow.com NameBright.com Testimonials Helpful Tips Buying guide Case studies FAQs About us Overview Contact us Terms
+{"url": "https://www.lrj.capital/", "error": "ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\\'www.lrj.capital\\', port=443): Max retries exceeded with
 … [1528 more characters]
 ```
 </details>
@@ -2234,7 +2235,7 @@ S=[tmp] for u in "https://www.symsite.sk/single-post/ipm-raised-200m-from-invest
 {"url": "https://www.symsite.sk/single-post/ipm-raised-200m-from-investors-across-various-projects", "status": 200, "final_url": "https://www.symsite.sk/single-post/ipm-raised-200m-from-investors-across-various-projects"
 3 hits (status 200, 1298 chars)
 --- IPM raised €200m from investors across various projects top of page KONTAKT O NÁS IPM raised €200m from investors across various projects Feb 25 1 min read IPM investment group, led by Marián Boček, has raised €200m from investors across various projects. Its flagship investment is a €1.2bn battery factory under construction in Šurany by Chi
----  projects. Its flagship investment is a €1.2bn battery factory under construction in Šurany by China's Gotion, in which IPM holds a 25% stake. The group has also backed successful companies including Brightpick, Photoneo, Matsuko, Energy Storage Systems, SEC Technologies, and French LNG terminal Dunkerque. Less successful to date have been efforts in proprietary battery production, as InoBat is instead installing Gotion battery storage facilities, as well as 
+---  projects. Its flagship investment is a €1.2bn battery factory under construction in Šurany by China's Gotion, in which IPM holds a 25% stake. The group has also backed successful companies including Brightpick, Photoneo, Matsuko, Energy Storage Systems, SEC Technologies, and French LNG terminal Dunkerque. Less successful to date have been efforts in proprietary battery production, as InoBat is instead installing Gotion battery storage facilities, as well as
 --- ttery production, as InoBat is instead installing Gotion battery storage facilities, as well as chip development, where IPM is an investor in Tachyum. ( dennikN.sk ) Táto správa je z Ekonomiky DNES , denného prehľadu najdôležitejších ekonomických správ zo Slovenska. UKÁŽKA SKÚŠOBNÉ ZASIELANIE This news is from the Slovak Business News TODAY , one-page summary of all the important Slovak business news. FREE TRIAL RECENT ISSU
 … [2267 more characters]
 ```
@@ -2353,22 +2354,22 @@ ls -la [tmp] [tmp] | head -30
 ```
 [tmp]
 total 1384
-drwxr-xr-x  26 [user]  wheel     832 11 окт.  01:48 .
-drwx------   4 [user]  wheel     128 11 окт.  01:48 ..
--rw-r--r--   1 [user]  wheel     420 11 окт.  01:48 0ce0f4af7e639183328251e61642d3a4d9706611.hdr
--rw-r--r--   1 [user]  wheel  115119 11 окт.  01:48 0ce0f4af7e639183328251e61642d3a4d9706611.raw
--rw-r--r--   1 [user]  wheel   13994 11 окт.  01:48 0ce0f4af7e639183328251e61642d3a4d9706611.txt
--rw-r--r--   1 [user]  wheel     420 11 окт.  01:48 10ff919b4d1ca89fa63813da7c2ea52322d7672b.hdr
--rw-r--r--   1 [user]  wheel   35849 11 окт.  01:48 10ff919b4d1ca89fa63813da7c2ea52322d7672b.raw
--rw-r--r--   1 [user]  wheel    4050 11 окт.  01:48 10ff919b4d1ca89fa63813da7c2ea52322d7672b.txt
--rw-r--r--   1 [user]  wheel     420 11 окт.  01:48 159ab3678e10fbbb8ce6d3e7a3a7a9db697717b7.hdr
--rw-r--r--   1 [user]  wheel   40581 11 окт.  01:48 159ab3678e10fbbb8ce6d3e7a3a7a9db697717b7.raw
--rw-r--r--   1 [user]  wheel    5211 11 окт.  01:48 159ab3678e10fbbb8ce6d3e7a3a7a9db697717b7.txt
--rw-r--r--   1 [user]  wheel     420 11 окт.  01:48 34bcf5d96cd7fcf0f130f821f7b3b2f19e3db6f3.hdr
--rw-r--r--   1 [user]  wheel   36490 11 окт.  01:48 34bcf5d96cd7fcf0f130f821f7b3b2f19e3db6f3.raw
--rw-r--r--   1 [user]  wheel    4292 11 окт.  01:48 34bcf5d96cd7fcf0f130f821f7b3b2f19e3db6f3.txt
--rw-r--r--   1 [user]  wheel     420 11 окт.  01:48 4faf30be25f8de9a54131f588b314ff67c7579de.hdr
--rw-r--r--   1 [user]  wheel  127393 11 окт
+drwxr-xr-x  26 [user]  wheel     832 11 Oct  01:48 .
+drwx------   4 [user]  wheel     128 11 Oct  01:48 ..
+-rw-r--r--   1 [user]  wheel     420 11 Oct  01:48 0ce0f4af7e639183328251e61642d3a4d9706611.hdr
+-rw-r--r--   1 [user]  wheel  115119 11 Oct  01:48 0ce0f4af7e639183328251e61642d3a4d9706611.raw
+-rw-r--r--   1 [user]  wheel   13994 11 Oct  01:48 0ce0f4af7e639183328251e61642d3a4d9706611.txt
+-rw-r--r--   1 [user]  wheel     420 11 Oct  01:48 10ff919b4d1ca89fa63813da7c2ea52322d7672b.hdr
+-rw-r--r--   1 [user]  wheel   35849 11 Oct  01:48 10ff919b4d1ca89fa63813da7c2ea52322d7672b.raw
+-rw-r--r--   1 [user]  wheel    4050 11 Oct  01:48 10ff919b4d1ca89fa63813da7c2ea52322d7672b.txt
+-rw-r--r--   1 [user]  wheel     420 11 Oct  01:48 159ab3678e10fbbb8ce6d3e7a3a7a9db697717b7.hdr
+-rw-r--r--   1 [user]  wheel   40581 11 Oct  01:48 159ab3678e10fbbb8ce6d3e7a3a7a9db697717b7.raw
+-rw-r--r--   1 [user]  wheel    5211 11 Oct  01:48 159ab3678e10fbbb8ce6d3e7a3a7a9db697717b7.txt
+-rw-r--r--   1 [user]  wheel     420 11 Oct  01:48 34bcf5d96cd7fcf0f130f821f7b3b2f19e3db6f3.hdr
+-rw-r--r--   1 [user]  wheel   36490 11 Oct  01:48 34bcf5d96cd7fcf0f130f821f7b3b2f19e3db6f3.raw
+-rw-r--r--   1 [user]  wheel    4292 11 Oct  01:48 34bcf5d96cd7fcf0f130f821f7b3b2f19e3db6f3.txt
+-rw-r--r--   1 [user]  wheel     420 11 Oct  01:48 4faf30be25f8de9a54131f588b314ff67c7579de.hdr
+-rw-r--r--   1 [user]  wheel  127393 11 Oct
 … [1106 more characters]
 ```
 </details>
@@ -2454,7 +2455,7 @@ D=[tmp] $D/pg grep "https://www.crowdberry.eu/en" "(platform|crowd|club).{0,150}
 
 ```
 17 hits (status 200, 12925 chars)
---- Investments in SMEs and real estate | Crowdberry - Crowdberry NOW AVAILABLE Investment opportunity Boataround. Learn more. Investment opportunity Boataround. Learn more. EN Investment opportunities Local. Vetted. Investments. Play a part in the success 
+--- Investments in SMEs and real estate | Crowdberry - Crowdberry NOW AVAILABLE Investment opportunity Boataround. Learn more. Investment opportunity Boataround. Learn more. EN Investment opportunities Local. Vetted. Investments. Play a part in the success
 ---  Play a part in the success of domestic brands. Invest with Crowdberry. Investment opportunities About Crowdberry Register in 5 minutes No opening fees Only verified opportunities ECSPR licensed ECSPR licensed 16,705 registered 16,705 registered from EUR 1,000 from EUR 1,000
 --- total demand reaching almost double. Sensoneo More than 100 Crowdberry investors have invested a total of more than €2 million in Seonsone smart waste management. Previous slide Next slide All closed opportunities References The perspective of investors and founders on how p
 --- owth Michal Meško CEO, Martinus I’ve been investing through Crowdberry practically since the beginning and it makes a lot of sense to me. I can see the direct impact of my investments and their power to influence the business environment in Slovakia. I can choose companies w
@@ -2502,9 +2503,9 @@ D=[tmp] for u in "https://www.slovca.sk/sk/riadni-clenovia/sandberg-capital.html
 
 ```
 #### https://www.slovca.sk/sk/riadni-clenovia/sandberg-capital.html
-Sandberg Capital / Slovak Venture Capital & Private Equity Association SLOVCA|Sandberg Capital|Adresa: Dvořákovo Nábrežie 8, 81102 Bratislava, Slovakia|Email: dealflow@sandbergcapital.com|Web:|www.sandbergcapital.com|Preferovaná výška investície: €4M - €15M|Preferované odvetvia: IT, vzdelávanie, potraviny a poľnohospodárstvo. Firmy s opakovanými tržbami a esenciálnymi produktami a službami. Preferované zameranie na B2B.|Geografické zameranie: Slovensko, Česko, okolité krajiny CEE, Balkán.|Prílohy na stiahnutie|Sandberg logo new.png|(veľkosť 48 KB, formát png)|Riadni členovia|ARX Equity Partners|CVI|Enterprise Investors|Eterus Capital|Fond inovácií a technológií|Genesis Capital|Jet Investment|
+Sandberg Capital / Slovak Venture Capital & Private Equity Association SLOVCA|Sandberg Capital|Adresa: Dvořákovo Nábrežie 8, 81102 Bratislava, Slovakia|Email: [redacted: email address]|Web:|www.sandbergcapital.com|Preferovaná výška investície: €4M - €15M|Preferované odvetvia: IT, vzdelávanie, potraviny a poľnohospodárstvo. Firmy s opakovanými tržbami a esenciálnymi produktami a službami. Preferované zameranie na B2B.|Geografické zameranie: Slovensko, Česko, okolité krajiny CEE, Balkán.|Prílohy na stiahnutie|Sandberg logo new.png|(veľkosť 48 KB, formát png)|Riadni členovia|ARX Equity Partners|CVI|Enterprise Investors|Eterus Capital|Fond inovácií a technológií|Genesis Capital|Jet Investment|
 #### https://www.slovca.sk/sk/riadni-clenovia/eterus-capital.html
-Eterus Capital / Slovak Venture Capital & Private Equity Association SLOVCA|Eterus Capital|Adresa: Laurinská 18, 811 01 Bratislava, Slovensko|Mobil: +421 914 32 00 65|E-mail: Boris.Kostik@wood.com|Web:|www.eterus.sk|Typ investícií: Private equity|Preferovaná výška investície: 500 tis. Eur až 5 mil. Eur.|Preferované odvetvie: Odvetvia s vyššou pridanou hodnotou, investície do príležitostí v rozvojovom štádiu životného cyklu v odvetviach so silným rastovým potenciálom.|Geografické zameranie: Slovenská republika|Prílohy na stiahnutie|Eterus_Trademark_Tagline_Color_RGB.png|(veľkosť 11 KB, formát png)|Eterus_Presentation_2022.pdf|(veľkosť 607 KB, formát png)|Ri
+Eterus Capital / Slovak Venture Capital & Private Equity Association SLOVCA|Eterus Capital|Adresa: Laurinská 18, 811 01 Bratislava, Slovensko|Mobil: +421 914 32 00 65|E-mail: [redacted: email address]|Web:|www.eterus.sk|Typ investícií: Private equity|Preferovaná výška investície: 500 tis. Eur až 5 mil. Eur.|Preferované odvetvie: Odvetvia s vyššou pridanou hodnotou, investície do príležitostí v rozvojovom štádiu životného cyklu v odvetviach so silným rastovým potenciálom.|Geografické zameranie: Slovenská republika|Prílohy na stiahnutie|Eterus_Trademark_Tagline_Color_RGB.png|(veľkosť 11 KB, formát png)|Eterus_Presentation_2022.pdf|(veľkosť 607 KB, formát png)|Ri
 … [1601 more characters]
 ```
 </details>
@@ -2517,7 +2518,7 @@ D=[tmp] $D/pg text "https://www.fondfit.sk/" 0 1800 | tr '\n' '|'; echo; echo; $
 <details><summary>result</summary>
 
 ```
-Fond Fit – Pomáhame inovatívnym nápadom|Hľadať:|Adresa|Trnavská cesta 100, 821 01 Bratislava|Email|info@fondfit.sk|Pomáhame inovatívnym nápadom|Informácia pre potenciálnych záujemcov o investície: Fond inovácií a technológií vstúpil v roku 2025 do post-investičnej fázy.|O NÁS|Rozvíjame podniky s úspešnými technológiami|Viac ako 10 rokov pomáhame slovenským podnikateľom premieňať ich podnikateľské zámery na realitu|Viac informácií|SLUŽBY|Poskytujeme tieto služby a podporu|Financovanie kapitálu|Poskytnutie kapitálu v prípade záujmu investora|Mentoring|Podporu pri tvorbe startupu pod vedením skúsených odborníkov|Analýza zámeru|Uskutočniteľnosť a rentabilita Vášho projektu|Pracovný proces|Náš pracovný postup – ako posudzujeme vaše projekty|Kontakt|1.|Kontaktujte nás|cez email a zašlite nám vyplnený formulár, ktorý si môžete stiahnuť tu|Formulár na stiahnutie|2.|Investičný zámer|Financovaný projekt musí spĺňať podmienky nášho investičného zamerania a podľa štádia jeho vývoja stanovíme našu investičnú stratégiu|3.|Projekt|Identifikácia základných východísk projektu a potrieb|4.|Investičný proces|Rokovania s partnermi o podmienkach vstupu investora a spolupráce|5.|Transkačná dokumentácia|Príprava a podpísanie transakčnej dokumentácie|6.|Vstup investora|Po skompletizovaní všetkých legislatívnych procesov dochádza k vstupu investora do spoločnosti|Projekty|Portfólio podporených podnikateľov|Elearn.Aero|IT technológie|Futureplastix|Výroba|Trigen|Technológie|,|Výroba|COGNEXA|IT technoló
+Fond Fit – Pomáhame inovatívnym nápadom|Hľadať:|Adresa|Trnavská cesta 100, 821 01 Bratislava|Email|[redacted: email address]|Pomáhame inovatívnym nápadom|Informácia pre potenciálnych záujemcov o investície: Fond inovácií a technológií vstúpil v roku 2025 do post-investičnej fázy.|O NÁS|Rozvíjame podniky s úspešnými technológiami|Viac ako 10 rokov pomáhame slovenským podnikateľom premieňať ich podnikateľské zámery na realitu|Viac informácií|SLUŽBY|Poskytujeme tieto služby a podporu|Financovanie kapitálu|Poskytnutie kapitálu v prípade záujmu investora|Mentoring|Podporu pri tvorbe startupu pod vedením skúsených odborníkov|Analýza zámeru|Uskutočniteľnosť a rentabilita Vášho projektu|Pracovný proces|Náš pracovný postup – ako posudzujeme vaše projekty|Kontakt|1.|Kontaktujte nás|cez email a zašlite nám vyplnený formulár, ktorý si môžete stiahnuť tu|Formulár na stiahnutie|2.|Investičný zámer|Financovaný projekt musí spĺňať podmienky nášho investičného zamerania a podľa štádia jeho vývoja stanovíme našu investičnú stratégiu|3.|Projekt|Identifikácia základných východísk projektu a potrieb|4.|Investičný proces|Rokovania s partnermi o podmienkach vstupu investora a spolupráce|5.|Transkačná dokumentácia|Príprava a podpísanie transakčnej dokumentácie|6.|Vstup investora|Po skompletizovaní všetkých legislatívnych procesov dochádza k vstupu investora do spoločnosti|Projekty|Portfólio podporených podnikateľov|Elearn.Aero|IT technológie|Futureplastix|Výroba|Trigen|Technológie|,|Výroba|COGNEXA|IT technoló
 … [3123 more characters]
 ```
 </details>
@@ -2535,7 +2536,7 @@ D=[tmp] O="python3 $D/bin/orsr.py"; $O brief "National Development Fund II" | he
 #### https://www.slsp.sk/sk/aktuality/2025/9/17/zo-slovenska-rovno-na-najvacsi-realitny-trh-intellcre-ziskava-investiciu-od-seed-startera-slovenskej-sporitelne
 {"url": "https://www.slsp.sk/sk/aktuality/2025/9/17/zo-slovenska-rovno-na-najvacsi-realitny-trh-intellcre-ziskava-invest
 9 hits (status 200, 5900 chars)
---- o na najväčší realitný trh. IntellCRE získava investíciu od Seed Startera Slovenskej sporiteľne | Slovenská sporiteľňa Preskočiť navigáciu Späť na Aktuality Zo Slovenska rovno na najväčší realitný trh. IntellCRE získava investíciu od Seed Startera Slovenskej sporiteľne Kým väčšina startupov sa najskôr snaží uspieť doma, IntellCRE 
+--- o na najväčší realitný trh. IntellCRE získava investíciu od Seed Startera Slovenskej sporiteľne | Slovenská sporiteľňa Preskočiť navigáciu Späť na Aktuality Zo Slovenska rovno na najväčší realitný trh. IntellCRE získava investíciu od Seed Startera Slovenskej sporiteľne Kým väčšina startupov sa najskôr snaží uspieť doma, IntellCRE
 --- ráve preto teraz získava investíciu vo výške 400 000 eur od Seed Startera Slovenskej sporiteľne, ktorá mu má pomôcť zrýchliť rast a otvoriť dvere k ďalšej expanzii. Celkovo ide už o šiesty zainvestovaný startup v portfóliu Seed Startera. Miesto dní iba sekundy. Iba toľko dnes trvá analýza, ktorá odporučí, či sa oplatí kúpiť nehnut
 #### https://www.omediach.com/internet/30236-seed-starter-slovenskej-sporitelne-investuje-400-tisic-eur-do-startupu-webout-ten-ziskava-spolu-1-65-miliona-eur-a-mieri-do-silicon-valley
 {"url": "https://www.om
@@ -2553,11 +2554,11 @@ D=[tmp] python3 $D/bin/orsr.py brief "National Development Fund II" | head -4; p
 ```
 == National Development Fund I., s. r. o. | https://www.orsr.sk/vypis.asp?ID=150565&SID=2&P=0
 IČO: 44 690 487 | Sídlo: Grösslingová 2495/44, Bratislava - mestská časť Staré Mesto 811 09 | zápis: 21.03.2009
-Spoločníci: Slovak Investment Holding, a. s. IČO: 47 759 097 / Grösslingová 44 / Bratislava - mestská časť Staré Mesto 811 09 / (od: 01.12.2021) / 
+Spoločníci: Slovak Investment Holding, a. s. IČO: 47 759 097 / Grösslingová 44 / Bratislava - mestská časť Staré Mesto 811 09 / (od: 01.12.2021) /
 == National Development Fund II., a.s. | https://www.orsr.sk/vypis.asp?ID=306999&SID=2&P=0
 == Národný holdingový fond s. r. o. | https://www.orsr.sk/vypis.asp?ID=10228&SID=2&P=0
 IČO: 31 384 943 | Sídlo: Trnavská cesta 17065/100, Bratislava - mestská časť Ružinov 821 01 | zápis: 13.12.1994
-Spoločníci: Slovak Business Agency IČO: 30 845 301 / Karadžičova 7773/2 / Bratislava - mestská časť Staré Mesto 811 09 / (od: 27.08.2025) / 
+Spoločníci: Slovak Business Agency IČO: 30 845 301 / Karadžičova 7773/2 / Bratislava - mestská časť Staré Mesto 811 09 / (od: 27.08.2025) /
 Slovenská sporiteľňa, a.s. | https://www.orsr.sk/vypis.asp?ID=19812&SID=2&P=0
 365.fintech, a.s. | https://www.orsr.sk/vypis.asp?ID=410247&SID=2&P=0
 Tatra banka, a.s. | https://www.orsr.sk/vypis.asp?ID=21634&SID=2&P=0
@@ -2577,20 +2578,20 @@ D=[tmp] for u in "https://www.orsr.sk/vypis.asp?ID=306999&SID=2&P=0" "https://ww
 4 hits (status 200, 4839 chars)
 --- Obchodné meno: National Development Fund II., a.s. (od: 24.07.2018) Sídlo: Grösslingo
 --- IČO: 47 759 224 (od
---- Predmet podnikania (činnosti): činnosť podnikateľských, organizačných a ekonomických poradcov (od: 26.04.2014) poskytovanie úverov a/alebo pôžičiek z peňažných zdrojov získaných výlučne bez verejnej výzvy a bez verejnej ponuky majetkových hodnôt (od: 
+--- Predmet podnikania (činnosti): činnosť podnikateľských, organizačných a ekonomických poradcov (od: 26.04.2014) poskytovanie úverov a/alebo pôžičiek z peňažných zdrojov získaných výlučne bez verejnej výzvy a bez verejnej ponuky majetkových hodnôt (od:
 --- Akcionár: Slovak Investment Holding, a. s. IČO: 47 759 097 Grösslingová 44 Bratislava - mestská časť Staré Mesto 811 09 (od: 28.12.2021) Ďalšie právne skutočnosti: Spoločnosť bola založená zakladateľskou listi
 #### https://www.orsr.sk/vypis.asp?ID=19812&SID=2&P=0
 8 hits (status 200, 25831 chars)
 --- Obchodné meno: Slovenská sporiteľňa, a.s. (od: 05.11.2014) Sídlo: Tomášikova 48 Brati
 --- IČO: 00 151 653 (od
 --- Predmet podnikania (činnosti): Predmetom podnikania spoločnosti sú bankové činnosti: (od: 30.05.2002) prijímanie vkladov (od: 30.05.2002) poskytovanie úverov (od: 30.05.2002) obchodovanie na vlastný účet, 1. s finančnými nástrojmi peňažného trhu v slo
---- Akcionár: Erste Group Bank AG Am Belvedere 1 Viedeň A-1100 Rakúska republika (od: 17.08.2022) Ďalšie právne skutočnosti: Spoločnosť bola založená zakladateľskou listinou Fondu národného majetku SR so sídlom v 
+--- Akcionár: Erste Group Bank AG Am Belvedere 1 Viedeň A-1100 Rakúska republika (od: 17.08.2022) Ďalšie právne skutočnosti: Spoločnosť bola založená zakladateľskou listinou Fondu národného majetku SR so sídlom v
 --- IČO: 36 700 991 Tom
 --- IČO: 35 849 665 Tom
 --- IČO: 35 865 491 Tom
 --- IČO: 35 812 419 Tom
 #### https://www.orsr.sk/vypis.asp?ID=410247&SID=2&P=0
-4 hits 
+4 hits
 … [3199 more characters]
 ```
 </details>
@@ -2628,7 +2629,7 @@ D=[tmp] $D/pg grep "https://365fintech.sk/" "(20(19|2[0-6])|invest|Velaris).{0,1
 --- opean Focus <#Fintech> 365.fintech We are a fintech venture investor focusing on innovative b2b or b2b2c FinTech, InsurTech and Big Data startups. We invest in European startups with global ambitions around seed stage. FIRST THING YOU SHOULD KNOW
 --- Focus in on European Fintech We are based in CEE but we are investing anywhere in Europe where we see outstanding nascent fintech startups - from London to Riga. Our ultimate goal is to support our companies in scaling across the continent and gl
 --- ross the continent and globally. Who Are We Looking For? We invest in and around seed stage in Europe. Our primary focus is on b2b and b2b2c fintech startups disrupting legacy infrastructure and distribution models and creating value for end cons
---- from simple onboarding to "live" compliance and AML checks. Velaris Velaris is a London based platform for customer success management and operations. Tapline Tapline is a trading platform that enables companies with recurring revenues to receive 
+--- from simple onboarding to "live" compliance and AML checks. Velaris Velaris is a London based platform for customer success management and operations. Tapline Tapline is a trading platform that enables companies with recurring revenues to receive
 --- startup building the next generation credit card experience InvestSuite International B2B WealthTech startup, focused at helping institutions serve their clients better with a suite of modern digital investment solutions. Startup Wise Guys Startu
 --- s serve their clients better with a suite of modern digital investment solutions. Startup Wise Guys Startup Wise Guys is the leading B2B startup accelerator in Europe. Dateio Dateio is building a scaleable c
 … [3000 more characters]
@@ -2713,10 +2714,10 @@ D=[tmp] $D/pg grep "https://oaklins.com/ar/en/deals/110583" "(Ethernum|Eterus).{
 ```
 6 hits (status 200, 6434 chars)
 --- Eterus Capital has partnered with Dr. Martin to expand its dental clinic network | Deals | Oaklins Argentina: Mid-market M&A and financial advice globally Argentina What we do Team Deals Industries Insights News Careers Contact About Oaklins Our locations en / es Go to deals Private Equity | Healthcare Et
---- ts News Careers Contact About Oaklins Our locations en / es Go to deals Private Equity | Healthcare Eterus Capital has partnered with Dr. Martin to expand its dental clinic network May 2024 — Dr. Martin Dental Clinic, a leading network of dental clinics in Slovakia, has received a significant investment from Eterus Capital and Ethernum Capital to support its expansion across the country. The group aims 
+--- ts News Careers Contact About Oaklins Our locations en / es Go to deals Private Equity | Healthcare Eterus Capital has partnered with Dr. Martin to expand its dental clinic network May 2024 — Dr. Martin Dental Clinic, a leading network of dental clinics in Slovakia, has received a significant investment from Eterus Capital and Ethernum Capital to support its expansion across the country. The group aims
 4 hits (status 200, 8747 chars)
 --- Eterus Capital – Private equity: Investujeme do vášho rastu Skip to content Hľadám investora Private equity Portfólio V médiách Kontakt Slovenčina English × Hľadám investora Private equity Portfólio V médiách Kontakt Slovenčina English Investujeme do vášho rast
---- ch Kontakt Slovenčina English Investujeme do vášho rastu Do inovácií sme formou private equity investovali už viac než 40 mil. EUR. Hľadám investora Tomáš Červenka, CEO „Eterus Capital sme oslovili koncom roku 2021 a oceňujeme korektnú a promptnú komunikáciu v celom procese transakcie, fér ... ový prístup (najmä s ohľadom 
+--- ch Kontakt Slovenčina English Investujeme do vášho rastu Do inovácií sme formou private equity investovali už viac než 40 mil. EUR. Hľadám investora Tomáš Červenka, CEO „Eterus Capital sme oslovili koncom roku 2021 a oceňujeme korektnú a promptnú komunikáciu v celom procese transakcie, fér ... ový prístup (najmä s ohľadom
 --- om na Slovensku. Neponúkame dlhové financovanie. Investičné možnosti a horizont Zameriavame sa na investície v rozm
 … [2662 more characters]
 ```
@@ -2757,8 +2758,8 @@ D=[tmp] $D/pg grep "https://www.credoventures.com/" "(Prague|Kraków|Krakow|Wars
 
 ```
 4 hits (status 200, 3684 chars)
---- – we want to hear from you. No deck required. No warm intro. ↓ Logo 16:39 , CET Prague Karlovo Náměstí 10 120 00, Prague Czech Republic 16:39 , CET Kraków Lubomirskiego 20 31-509 Kraków Poland ©2026 Credo Ventures. Contact (CV.) info@credoventures.com +420211153211 Follow LinkedIn, X I
---- – we want to hear from you. No deck required. No warm intro. ↓ Logo 16:39 , CET Prague Karlovo Náměstí 10 120 00, Prague Czech Republic 16:39 , CET Kraków Lubomirskiego 20 31-509 Kraków Poland ©2026 Credo Ventures. Contact (CV.) info@credoventures.com +420211153211 Follow LinkedIn, X P
+--- – we want to hear from you. No deck required. No warm intro. ↓ Logo 16:39 , CET Prague Karlovo Náměstí 10 120 00, Prague Czech Republic 16:39 , CET Kraków Lubomirskiego 20 31-509 Kraków Poland ©2026 Credo Ventures. Contact (CV.) [redacted: email address] +420211153211 Follow LinkedIn, X I
+--- – we want to hear from you. No deck required. No warm intro. ↓ Logo 16:39 , CET Prague Karlovo Náměstí 10 120 00, Prague Czech Republic 16:39 , CET Kraków Lubomirskiego 20 31-509 Kraków Poland ©2026 Credo Ventures. Contact (CV.) [redacted: email address] +420211153211 Follow LinkedIn, X P
 1 hits (status 200, 6224 chars)
 --- o just that. Dan Taylor 23 June 2022 1 Share Facebook Twitter Linkedin Share 1 Send email Copy link Prague-based Presto Ventures has announced the close of its second fund at a magnificent €30 million. Making no bones about it, the princes of Praha are looking to make seed and pre-seed round investments in no less than 40 B2B startups hailing from the CE
 14 hits (status 200, 11009 chars)
@@ -2776,8 +2777,8 @@ D=[tmp] $D/pg text "https://www.slovca.sk/sk/clenstvo/riadni-clenovia.html" 0 15
 <details><summary>result</summary>
 
 ```
-Riadni členovia / Slovak Venture Capital & Private Equity Association SLOVCA|Riadni členovia|ARX Equity Partners|CVI|Enterprise Investors|Eterus Capital|Fond inovácií a technológií|Genesis Capital|Jet Investment|Národný holdingový fond s.r.o.|Neulogy Ventures|Sandberg Capital|Venture to Future Fund|Vision Ventures|Členstvo|Riadni členovia|Pridružení členovia|Partnerskí členovia|Partneri|Etický kódex|Prihláška|Čerstvé správy!|Prihláste sa na odber noviniek SLOVCA a získajte informácie o private equity trhu v EU a na Slovensku ako aj najnovšie štatistiky o investovanom rozvojovom kapitáli.|Registrovať|Slovak Venture Capital & Private Equity Association SLOVCA|+421-2-21 201 010|slovca@slovca.sk|Štúrova 12/4, 811 02 Bratislava-Staré Mesto|Slovakia|O nás|SLOVCA dnes|Správna rada|Legal & Tax Committee|Stanovy|Členstvo|Riadni členovia|Pridružení členovia|Partnerskí členovia|Partneri|Etický kódex|Prihláška|Na stiahnutie|Štatistiky|Tlačové správy|Vzorové dokumenty|Novinky|Novinky ohľadom PE-VC|Podujatia|Web vytvoril|Fresh idea|. Dizajn Michaela Lipková.|
-ARX Equity Partners / Slovak Venture Capital & Private Equity Association SLOVCA|ARX Equity Partners|Preferovaná výška investície : EUR 10-50 mil.|Objem prostriedkov v správe: EUR 300 mil. (total commitments since inception)|Preferované odvetvie: bez preference|Geografické zameranie: Central Europe|Kontakná osoba : Michal Aron|Email: aron@arxequity.com|Web:|https://arxequity.com/|Prílohy na stiahnutie|5-logo-File-arx_new--336x336.jpg|
+Riadni členovia / Slovak Venture Capital & Private Equity Association SLOVCA|Riadni členovia|ARX Equity Partners|CVI|Enterprise Investors|Eterus Capital|Fond inovácií a technológií|Genesis Capital|Jet Investment|Národný holdingový fond s.r.o.|Neulogy Ventures|Sandberg Capital|Venture to Future Fund|Vision Ventures|Členstvo|Riadni členovia|Pridružení členovia|Partnerskí členovia|Partneri|Etický kódex|Prihláška|Čerstvé správy!|Prihláste sa na odber noviniek SLOVCA a získajte informácie o private equity trhu v EU a na Slovensku ako aj najnovšie štatistiky o investovanom rozvojovom kapitáli.|Registrovať|Slovak Venture Capital & Private Equity Association SLOVCA|+421-2-21 201 010|[redacted: email address]|Štúrova 12/4, 811 02 Bratislava-Staré Mesto|Slovakia|O nás|SLOVCA dnes|Správna rada|Legal & Tax Committee|Stanovy|Členstvo|Riadni členovia|Pridružení členovia|Partnerskí členovia|Partneri|Etický kódex|Prihláška|Na stiahnutie|Štatistiky|Tlačové správy|Vzorové dokumenty|Novinky|Novinky ohľadom PE-VC|Podujatia|Web vytvoril|Fresh idea|. Dizajn Michaela Lipková.|
+ARX Equity Partners / Slovak Venture Capital & Private Equity Association SLOVCA|ARX Equity Partners|Preferovaná výška investície : EUR 10-50 mil.|Objem prostriedkov v správe: EUR 300 mil. (total commitments since inception)|Preferované odvetvie: bez preference|Geografické zameranie: Central Europe|Kontakná osoba : Michal Aron|Email: [redacted: email address]|Web:|https://arxequity.com/|Prílohy na stiahnutie|5-logo-File-arx_new--336x336.jpg|
 … [2721 more characters]
 ```
 </details>
@@ -2792,7 +2793,7 @@ D=[tmp] $D/pg grep "https://www.startitup.sk/od-cambridge-az-po-bratislavu-vznik
 ```
 2 hits (status 200, 8604 chars)
 --- né na starnutie populácie, kyberbezpečnosť, energetiku, vesmírne inovácie a agentovú umelú inteligenciu,“ hovorí Horký. Cambridge, Mníchov, Bratislava Fond má fyzické zastúpenie v hlavných technologických centrách Európy – od Cambridge, Paríža, Zürichu a Berlína, až po Bratislavu, kde je jedným z managing partnerov aj Václav Pavlečka, známy z Czech Founders VC. Ambíciou fondu je prepojiť roztrieštený európsky trh, vytvoriť funkčnú sieť medzi unive
---- jich partnerov a investorov sa fond dostane do priameho kontaktu s elitnými akademickými inštitúciami ako University of Cambridge, Oxford, Technická univerzita v Mníchove, ETH Zürich, ale aj Akadémia vied Českej republiky. To znamená, že výskum v laboratóriu nebude končiť v zásuvke, ale bude mať priamo prístup k mentorom, financovaniu a k trhu s viac ako 233 miliónmi obyvateľov. Tím s globálnymi skúsenosťami Za fondom nestojí len kapitál a vízia, 
+--- jich partnerov a investorov sa fond dostane do priameho kontaktu s elitnými akademickými inštitúciami ako University of Cambridge, Oxford, Technická univerzita v Mníchove, ETH Zürich, ale aj Akadémia vied Českej republiky. To znamená, že výskum v laboratóriu nebude končiť v zásuvke, ale bude mať priamo prístup k mentorom, financovaniu a k trhu s viac ako 233 miliónmi obyvateľov. Tím s globálnymi skúsenosťami Za fondom nestojí len kapitál a vízia,
 #### https://www.genesiscapital.cz/
 {"url": "https://www.genesiscapital.cz/", "error": "ConnectionError(ProtocolError('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer')))"
 #### https://www.ei.com.pl/en/
@@ -2856,19 +2857,19 @@ D=[tmp] u="https://www.eif.org/files/attachments/czechia-equity-fundmanagers.pdf
 {"url": "https://www.eif.org/files/attachments/czechia-equity-fundmanagers.pdf", "status": 200, "final_url": "https://www.eif.org/files/attachments/czechia-equity-fundmanagers.pdf", "ctype": "applicat
  Public #
 Fund name Fund manager Team location Mandate(s) short name Target area Geographical focus Strategy Main sector Stage focus Investment strategy set up End of investment period Fund Manager website
-Tilia Impact Ventures Fund II Tilia Impact Partners Czech Republic IEU - Equity - LP Agriculture, Food, natural capital preservation and 
-use of land resources;Energy and built-environment 
-solutions;Industrial decarbonisation & environmental 
-sustainability;Mobility and transport solutions;Skills & 
+Tilia Impact Ventures Fund II Tilia Impact Partners Czech Republic IEU - Equity - LP Agriculture, Food, natural capital preservation and
+use of land resources;Energy and built-environment
+solutions;Industrial decarbonisation & environmental
+sustainability;Mobility and transport solutions;Skills &
 Education;Social impact Investing & Social Innovation
 Multi-Country Venture Capital ICT Early Stage Fund Fund 01/08/2028 https://tiliaimpactventures.cz/en/
-ARX CE V Cooperatief U.A ARX Equity Partners B.V. Czech Republic 3SIIF;EIF;IEU - Equity - PP;RCR Growth and expansion;Industrial decarbonisation & 
+ARX CE V Cooperatief U.A ARX Equity Partners B.V. Czech Republic 3SIIF;EIF;IEU - Equity - PP;RCR Growth and expansion;Industrial decarbonisation &
 environmental sustainability
 Multi-Country Private Equity Generalist Growth-Oriented Buyout Fund 16/09/2029 http://www.arxequity.com/
-Tensor Co-Investment Fund SCSp Tensor Advisory s.r.o Czech Republic RRF Czech Republic Artificial Intelligence (AI);Blockchain and Distributed 
-Ledger Technologies (BT/DLT);Clean Energy 
-Transition-Climate;Digital Connectivity & Data 
-Infrastructure;Other Digital;Quantum 
+Tensor Co-Investment Fund SCSp Tensor Advisory s.r.o Czech Republic RRF Czech Republic Artificial Intelligence (AI);Blockchain and Distributed
+Ledger Technologies (BT/DLT);Clean Energy
+Transition-Climate;Digital Connectivity & Data
+Infrastructure;Other Digital;Quantum
 Computing;Space Infrastructure
 Multi-Country Venture Capital ICT Early Stage Fun
 … [1067 more characters]
@@ -2937,7 +2938,7 @@ D=[tmp] for u in "https://www.profesia.sk/praca/swiss-re/O3377785" "https://www.
 {"url": "https://www.profesia.sk/praca/swiss-re/O3377785", "status": 200, "final_url": "https://www.profesia.sk/praca/swiss-re/O3377785", "ctype": "te
 8 hits (status 200, 6632 chars)
 --- Service Center Process... - Swiss Re | PROFESIA.SK Úvodná stránka Hľadanie práce Service Center Process Manager × Ľutujeme, spoločnosť ponúkajúca danú pracovnú pozíciu ukončila zverejnenie ponuky na stránke. Ďakujeme za porozumenie.
---- a stránke. Ďakujeme za porozumenie. Zobraziť podobné ponuky Service Center Process Manager Place of work Mlynské nivy 12, Bratislava Contract type full-time Wage (gross) From 2 500 EUR/month Minimum base salary for this job from 2500 EUR gross/month/full time. Our offer to you may be higher 
+--- a stránke. Ďakujeme za porozumenie. Zobraziť podobné ponuky Service Center Process Manager Place of work Mlynské nivy 12, Bratislava Contract type full-time Wage (gross) From 2 500 EUR/month Minimum base salary for this job from 2500 EUR gross/month/full time. Our offer to you may be higher
 {"url": "https://www.profesia.sk/praca/swiss-re/O3760981", "status": 200, "final_url": "https://www.profesia.sk/praca/swiss-re/O3760981", "ctype": "te
 3 hits (status 200, 7870 chars)
 --- iť podobné ponuky Reinsurance Account Analyst Place of work Bratislava Contract type full-time Wage (gross) Minimum base salary for this job from 1100 EUR gross/month/full time. Our offer to you may be higher based on your skills and experience and will include additional rewards and benef
@@ -2975,7 +2976,7 @@ D=[tmp] $D/pg grep "https://sita.sk/seed-starter-slovenskej-sporitelne-hlasi-prv
 --- Přejít k vyhledávání Startupy – 08. 9. 2022 – 2 min čtení Slovenská spořitelna bude investova
 {"url": "https://www.startitup.sk/kosicky-startup-matsuko-ziskal-takmer-milionovu-investiciu-obsadzuje-svetovy-trh/", "s
 1 hits (status 200, 5780 chars)
---- orúčaní Pridať ako preferovaný zdroj Startitup, odkaz sa otvorí v novom okne V prvom A kole investície sú hlavnými investormi anglicko-slovenský fond IPM spolu so súčasnými investormi z Neulogy Ventures, Granpool Hungary a sli.do. Do financovania technologického startupu sa zapojili aj tzv. „anjelskí investori“ Šimon Šicko (Pixel Federation) alebo Miklos Kobor. Matsuko sa stala prvou firmou, do ktorej investovala slovenská úspešná firma sli.do. Firma ponúka aj technológiu, ktorá prepája stretnutia 
+--- orúčaní Pridať ako preferovaný zdroj Startitup, odkaz sa otvorí v novom okne V prvom A kole investície sú hlavnými investormi anglicko-slovenský fond IPM spolu so súčasnými investormi z Neulogy Ventures, Granpool Hungary a sli.do. Do financovania technologického startupu sa zapojili aj tzv. „anjelskí investori“ Šimon Šicko (Pixel Federation) alebo Miklos Kobor. Matsuko sa stala prvou firmou, do ktorej investovala slovenská úspešná firma sli.do. Firma ponúka aj technológiu, ktorá prepája stretnutia
 {"url": "https://www.vestbee.com/insights/articles/top-vc-funds-in-slovakia-to-finance-your-startup", "status": 200, "fi
 6 hits (status 200, 12192 chars)
 --- rful Medical , and Medannot . CB Investment Management Geography: Slovakia Preferred industries: Various industries Investment ticket: up to €1.6M Company stage: Seed The Bratislava-based CB Investment Management has under its management a fund focused on early stage Slovakian startups with international potential. Apart from capital, young and innovative companies are s
@@ -2995,7 +2996,7 @@ D=[tmp] $D/pg grep "https://www.startitup.sk/kosicky-startup-matsuko-ziskal-takm
 0 hits (status 200, 5780 chars)
 2 hits (status 200, 12192 chars)
 --- Join here Join here October 8, 2020 · 8 min read Konrad
---- e capital #Slovakia October 8, 2020 Latest news Oct 09 
+--- e capital #Slovakia October 8, 2020 Latest news Oct 09
 1 hits (status 200, 12925 chars)
 --- er in 5 minutes No opening fees Only verified opportunities ECSPR licensed ECSPR licensed 16,705 registered 16,705 registered from EUR 1,000 from EUR 1,000 Investments involve risk. Risk comes with return. Be sensible. Active investment opportun
 ```
@@ -3028,7 +3029,7 @@ File created successfully at: [tmp] (file state is current in your context — n
 
 → `Bash` — Build records and verify all quotes
 ```sh
-D=[tmp] cd $D && sed -i '' 's|"type": "accelerator", "hq": {"country": "SK", "city": "Bratislava"}, "website": FF_G,|"type": "accelerator", "hq": {"country": "SK", "city": "Bratislava"}, "website": None,|' build.py && /Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python build.py && $D/pg verifyall /Users/[redacted]/homeW/ai-dev-test/investor-db/data/sample/parts/sk.json $D/note_evidence.json
+D=[tmp] cd $D && sed -i '' 's|"type": "accelerator", "hq": {"country": "SK", "city": "Bratislava"}, "website": FF_G,|"type": "accelerator", "hq": {"country": "SK", "city": "Bratislava"}, "website": None,|' build.py && [redacted: local path] build.py && $D/pg verifyall [redacted: local path] $D/note_evidence.json
 ```
 
 <details><summary>result</summary>
@@ -3133,7 +3134,7 @@ Great business. Easy purchase and transfer process.
 
 → `Bash` — Re-verify quotes and run project validator
 ```sh
-D=[tmp] $D/pg verifyall /Users/[redacted]/homeW/ai-dev-test/investor-db/data/sample/parts/sk.json $D/note_evidence.json; cd /Users/[redacted]/homeW/ai-dev-test/investor-db && .venv/bin/python -m investordb validate --records data/sample/parts/sk.json --today 2026-10-11
+D=[tmp] $D/pg verifyall [redacted: local path] $D/note_evidence.json; cd [redacted: local path] && .venv/bin/python -m investordb validate --records data/sample/parts/sk.json --today 2026-10-11
 ```
 
 <details><summary>result</summary>
@@ -3173,7 +3174,7 @@ old='''              "Founders Factory March 11th 2025 / 3 min read We’re exci
 new='''              "Founders Factory March 11th 2025 / 3 min read We’re excited to announce our latest G-Force climate investment— Enzidia")]),'''
 assert old in s; s=s.replace(old,new); open(p,'w').write(s)
 EOF
-/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python build.py && cat /Users/[redacted]/homeW/ai-dev-test/investor-db/data/sample/parts/sk-decisions.md
+[redacted: local path] build.py && cat [redacted: local path]
 ```
 
 <details><summary>result</summary>
@@ -3199,7 +3200,7 @@ Format: name — status — rule IDs — reason. For excluded records the rule i
 
 → `Bash` — Final quote verification and schema validation
 ```sh
-D=[tmp] $D/pg verifyall /Users/[redacted]/homeW/ai-dev-test/investor-db/data/sample/parts/sk.json $D/note_evidence.json | tail -2; cd /Users/[redacted]/homeW/ai-dev-test/investor-db && .venv/bin/python -m investordb validate --records data/sample/parts/sk.json --today 2026-10-11 | tail -1; .venv/bin/python -c "
+D=[tmp] $D/pg verifyall [redacted: local path] $D/note_evidence.json | tail -2; cd [redacted: local path] && .venv/bin/python -m investordb validate --records data/sample/parts/sk.json --today 2026-10-11 | tail -1; .venv/bin/python -c "
 import json,jsonschema
 s=json.load(open('schema/investor.schema.json')); d=json.load(open('data/sample/parts/sk.json'))
 v=jsonschema.Draft202012Validator(s, format_checker=jsonschema.Draft202012Validator.FORMAT_CHECKER); print('schema errors:', len(list(v.iter_errors(d))))
@@ -3214,11 +3215,11 @@ verified 116, failed 0
 schema errors: 0
 stored quotes 69
 total 328
-drwxr-xr-x  5 [user]  staff    160 11 окт.  01:57 .
-drwxr-xr-x  3 [user]  staff     96 11 окт.  01:38 ..
--rw-r--r--  1 [user]  staff  72170 11 окт.  01:55 cz.json
--rw-r--r--  1 [user]  staff   6596 11 окт.  01:58 sk-decisions.md
--rw-r--r--  1 [user]  staff  85515 11 окт.  01:58 sk.json
+drwxr-xr-x  5 [user]  staff    160 11 Oct  01:57 .
+drwxr-xr-x  3 [user]  staff     96 11 Oct  01:38 ..
+-rw-r--r--  1 [user]  staff  72170 11 Oct  01:55 cz.json
+-rw-r--r--  1 [user]  staff   6596 11 Oct  01:58 sk-decisions.md
+-rw-r--r--  1 [user]  staff  85515 11 Oct  01:58 sk.json
 ```
 </details>
 
@@ -3229,7 +3230,7 @@ You've hit your session limit · resets 6am (Europe/Prague)
 ## Message from the orchestrator
 
 The coordinator sent a message while you were working:
-The usage limit reset — resume where you stopped (context intact). data/sample/parts/sk.json and sk-decisions.md already exist on disk — check what's done and continue. The orsr.py helper path in your brief was deleted by someone else's cleanup; if you need it, write your own small fetcher (ORSR pages are windows-1250 encoded; search URL: https://www.orsr.sk/hladaj_subjekt.asp?OBMENO=<urlencoded cp1250 name>&PF=0&R=on, extract links vypis.asp?ID=..&SID=..&P=0). Keep your working files under /Users/[redacted]/homeW/ai-dev-test/.work/sk/ and don't delete anything outside it. Final message in English.
+The usage limit reset — resume where you stopped (context intact). data/sample/parts/sk.json and sk-decisions.md already exist on disk — check what's done and continue. The orsr.py helper path in your brief was deleted by someone else's cleanup; if you need it, write your own small fetcher (ORSR pages are windows-1250 encoded; search URL: https://www.orsr.sk/hladaj_subjekt.asp?OBMENO=<urlencoded cp1250 name>&PF=0&R=on, extract links vypis.asp?ID=..&SID=..&P=0). Keep your working files under [redacted: local path] and don't delete anything outside it. Final message in English.
 
 Address this before completing your current task.
 
@@ -3239,7 +3240,7 @@ The output files already on disk are the ones from my final build, made right be
 
 → `Bash` — Copy working files to .work/sk and re-verify from there
 ```sh
-D=[tmp] W=/Users/[redacted]/homeW/ai-dev-test/.work/sk; mkdir -p $W && cp -R $D/bin $D/build.py $D/note_evidence.json $D/cache $W/ && sed -i '' "s|$D|$W|g" $W/build.py && sed -i '' 's|EVID = Path(__file__).resolve().parent / "note_evidence.json"|EVID = Path(__file__).resolve().parent / "note_evidence.json"|' $W/build.py && printf '#!/bin/sh\nexec /Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python %s/bin/pg.py "$@"\n' $W > $W/pg && chmod +x $W/pg && $W/pg verifyall /Users/[redacted]/homeW/ai-dev-test/investor-db/data/sample/parts/sk.json $W/note_evidence.json | tail -1; ls $W
+D=[tmp] W=[redacted: local path] mkdir -p $W && cp -R $D/bin $D/build.py $D/note_evidence.json $D/cache $W/ && sed -i '' "s|$D|$W|g" $W/build.py && sed -i '' 's|EVID = Path(__file__).resolve().parent / "note_evidence.json"|EVID = Path(__file__).resolve().parent / "note_evidence.json"|' $W/build.py && printf '#!/bin/sh\nexec [redacted: local path] %s/bin/pg.py "$@"\n' $W > $W/pg && chmod +x $W/pg && $W/pg verifyall [redacted: local path] $W/note_evidence.json | tail -1; ls $W
 ```
 
 <details><summary>result</summary>
@@ -3309,9 +3310,9 @@ All 49 candidates are in `data/sample/parts/sk.json` and `sk-decisions.md`. The 
 4. **Seed Starter:** a bank programme typed as corporate VC.
 5. **Zero One Hundred:** the newest deal rests on a press match of "Zero 100 VC", and Fund II sits in Cyprus.
 
-My working files (build script, fetcher, page cache) are in `/Users/[redacted]/homeW/ai-dev-test/.work/sk/`; I re-ran the quote check from there and all 116 still pass. Another session's cleanup wiped my first scratch folder mid-task, so I rewrote the tools. The second copy in the scratchpad (`skvc-agent/`) is still there because you said not to delete anything outside `.work/sk`. I touched nothing else, including `cz.json`, and ran no git.
+My working files (build script, fetcher, page cache) are in `[redacted: local path]`; I re-ran the quote check from there and all 116 still pass. Another session's cleanup wiped my first scratch folder mid-task, so I rewrote the tools. The second copy in the scratchpad (`skvc-agent/`) is still there because you said not to delete anything outside `.work/sk`. I touched nothing else, including `cz.json`, and ran no git.
 
 Files:
-- `/Users/[redacted]/homeW/ai-dev-test/investor-db/data/sample/parts/sk.json`
-- `/Users/[redacted]/homeW/ai-dev-test/investor-db/data/sample/parts/sk-decisions.md`
+- `[redacted: local path]`
+- `[redacted: local path]`
 

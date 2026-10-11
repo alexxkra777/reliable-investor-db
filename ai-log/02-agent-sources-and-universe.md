@@ -2,6 +2,7 @@
 
 Claude Code sub-agent log, exported from `agent-a3ac17bd55c8ff68c.jsonl`.
 Tool outputs longer than 1,500 characters are shortened.
+Russian narrative has been translated into English; executed tool code and source quotations are retained.
 
 ## Brief
 
@@ -17,7 +18,7 @@ Rules:
 - Do not sign up anywhere, do not submit forms, do not use paid APIs.
 - Do not run git, do not touch any files other than your output files.
 
-Output: write /Users/[redacted]/homeW/ai-dev-test/investor-db/research/sources-and-universe.md (English, structured with tables: source | what it gives | coverage | access | cost | ToS notes | URL | accessed). Create the folder if missing. Final message to me: a 15-line summary with the headline numbers and the 5 most useful free sources, plus the path.
+Output: write [redacted: local path] (English, structured with tables: source | what it gives | coverage | access | cost | ToS notes | URL | accessed). Create the folder if missing. Final message to me: a 15-line summary with the headline numbers and the 5 most useful free sources, plus the path.
 
 → `ToolSearch`
 
@@ -51,7 +52,7 @@ Links: [{"title":"Exempt reporting adviser","url":"https://databento.com/complia
 ```
 Web search results for query: "Invest Europe number of private equity firms Europe investing activity report 2025"
 
-Links: [{"title":"Investing in Europe: Private Equity Activity 2025 Report highlights strong fundraising and investment performance","url":"https://tech.eu/2026/05/07/investing-in-europe-private-equity-activity-2025-report-highlights-strong-fundraising-and-investment-performance/"},{"title":"defence investments shrunk between 2024 and 2025 finds invest europe","url":"https://realdeals.eu.com/article/defence-investments-shrunk-between-2024-and-2025-finds-invest-europe"},{"title":"invest europe venture capital reaches second highest level on record","url":"https://tech.eu/2026/07/10/invest-europe-venture-capital-reaches-second-highest-level-on-record/"},{"title":"Sale del 16% la raccolta del private capital europeo nel 2025. Lo rileva Invest Europe","url":"https://financecommunity.it/sale-del-16-la-raccolta-del-private-capital-europeo-nel-2025-lo-rileva-invest-europe/"},{"title":"Optimism returns to Europe’s private equity market despite global headwinds","url":"https://manda.be/articles/optimism-returns-to-europes-private-equity-market-despite-global-headwinds/"},{"title":"Arthur D. Little presents Invest Europe 2025 - Download the full report","url":"https://capital-riesgo.es/en/articles/state-of-the-european-private-equity-industry-by-arthur-d-little-/"},{"title":"european private equity funds close to hit the 2025 peak with fundraising at 147 billion euros 16 
+Links: [{"title":"Investing in Europe: Private Equity Activity 2025 Report highlights strong fundraising and investment performance","url":"https://tech.eu/2026/05/07/investing-in-europe-private-equity-activity-2025-report-highlights-strong-fundraising-and-investment-performance/"},{"title":"defence investments shrunk between 2024 and 2025 finds invest europe","url":"https://realdeals.eu.com/article/defence-investments-shrunk-between-2024-and-2025-finds-invest-europe"},{"title":"invest europe venture capital reaches second highest level on record","url":"https://tech.eu/2026/07/10/invest-europe-venture-capital-reaches-second-highest-level-on-record/"},{"title":"Sale del 16% la raccolta del private capital europeo nel 2025. Lo rileva Invest Europe","url":"https://financecommunity.it/sale-del-16-la-raccolta-del-private-capital-europeo-nel-2025-lo-rileva-invest-europe/"},{"title":"Optimism returns to Europe’s private equity market despite global headwinds","url":"https://manda.be/articles/optimism-returns-to-europes-private-equity-market-despite-global-headwinds/"},{"title":"Arthur D. Little presents Invest Europe 2025 - Download the full report","url":"https://capital-riesgo.es/en/articles/state-of-the-european-private-equity-industry-by-arthur-d-little-/"},{"title":"european private equity funds close to hit the 2025 peak with fundraising at 147 billion euros 16
 … [1998 more characters]
 ```
 </details>
@@ -115,7 +116,7 @@ Web search results for query: "Preqin number of private equity firms globally "f
 
 Links: [{"title":"Listing Thumbnail","url":"https://aws.amazon.com/marketplace/pp/prodview-5sdnmcxcyi4kk"},{"title":"pe fundraising at a glance  q4 2024","url":"https://paulweiss.com/media/3985897/pe_fundraising_at_a_glance_-q4_2024.pdf"},{"title":"London Insights","url":"https://maples.com/wp-content/uploads/2024/05/London-Insights.pdf"},{"title":"Data Coverage June 2023","url":"https://wrds-www.wharton.upenn.edu/documents/1892/Data-Coverage-June-2023.pdf"},{"title":"www.aap.com.au","url":"https://www.aap.com.au/aapreleases/globenewswire1001027933/"},{"title":"Preqin, a Data and Insights Firm Focused on Alternatives, Releases Fundraising for First-Time Managers Report","url":"https://www.crowdfundinsider.com/tag/cameron-joyce/"},{"title":"state of private capital fundraising in 2025","url":"https://preqin.com/insights/research/reports/state-of-private-capital-fundraising-in-2025"},{"title":"6 Jan, 2025","url":"https://www.spglobal.com/market-intelligence/en/news-insights/articles/2025/1/top-20-private-credit-managers-hold-more-than-one-third-of-dry-powder-86886642"},{"title":"libguides.cbs.dk","url":"https://libguides.cbs.dk/Preqin"},{"title":"The Best of Preqin: 2025","url":"https://www.preqin.com/c/the-best-of-preqin-2025"}]
 
-I didn't find a single published figure for the number of active private equity firms worldwide in 2024. The results give related numbers that 
+I didn't find a single published figure for the number of active private equity firms worldwide in 2024. The results give related numbers that
 … [1291 more characters]
 ```
 </details>
@@ -152,25 +153,25 @@ mkdir -p [tmp] && cd [tmp] && curl -s -A "[redacted: name] research [redacted: e
 
 ```
 total 13616
-drwxr-xr-x  4 [user]  wheel      128 11 окт.  01:08 .
-drwx------  3 [user]  wheel       96 11 окт.  01:08 ..
--rw-r--r--  1 [user]  wheel   949871 11 окт.  01:08 era.zip
--rw-r--r--  1 [user]  wheel  6019002 11 окт.  01:08 ria.zip
+drwxr-xr-x  4 [user]  wheel      128 11 Oct  01:08 .
+drwx------  3 [user]  wheel       96 11 Oct  01:08 ..
+-rw-r--r--  1 [user]  wheel   949871 11 Oct  01:08 era.zip
+-rw-r--r--  1 [user]  wheel  6019002 11 Oct  01:08 ria.zip
 Archive:  era.zip
-  inflating: era/ia100226-exempt.csv  
+  inflating: era/ia100226-exempt.csv
 Archive:  ria.zip
-  inflating: ria/ia09012026.csv      
+  inflating: ria/ia09012026.csv
 era:
 total 13136
-drwxr-xr-x  3 [user]  wheel       96 11 окт.  01:08 .
-drwxr-xr-x  6 [user]  wheel      192 11 окт.  01:08 ..
--rw-rw-rw-  1 [user]  wheel  6725415  2 окт.  16:31 ia100226-exempt.csv
+drwxr-xr-x  3 [user]  wheel       96 11 Oct  01:08 .
+drwxr-xr-x  6 [user]  wheel      192 11 Oct  01:08 ..
+-rw-rw-rw-  1 [user]  wheel  6725415  2 Oct  16:31 ia100226-exempt.csv
 
 ria:
 total 83432
-drwxr-xr-x  3 [user]  wheel        96 11 окт.  01:08 .
-drwxr-xr-x  6 [user]  wheel       192 11 окт.  01:08 ..
--rw-rw-rw-  1 [user]  wheel  42713988  2 окт.  16:26 ia09012026.csv
+drwxr-xr-x  3 [user]  wheel        96 11 Oct  01:08 .
+drwxr-xr-x  6 [user]  wheel       192 11 Oct  01:08 ..
+-rw-rw-rw-  1 [user]  wheel  42713988  2 Oct  16:26 ia09012026.csv
 ```
 </details>
 
@@ -1064,7 +1065,7 @@ Links: [{"title":"eif ar2003 en","url":"https://www.eif.org/attachments/publicat
 
 The search didn't turn up a current, complete EIF fund list. The most useful hit is EIF's own equity page, but the list it links to is dated 2022.
 
-- **EIF's equity page:** It links to two PDFs, one of active all-time funds that still invest and one of all active EIF investments. It says the lists cover private 
+- **EIF's equity page:** It links to two PDFs, one of active all-time funds that still invest and one of all active EIF investments. It says the lists cover private
 … [921 more characters]
 ```
 </details>
@@ -1128,7 +1129,7 @@ Links: [{"title":"www.cbinsights.com","url":"https://www.cbinsights.com/company/
 
 The search didn't turn up a member list. The results are mostly third-party profile pages and a few contract documents, and none names SLOVCA's members.
 
-- **Organization basics:** A CB Insights profile describes SLOVCA as a Bratislava-based association focused on venture capital and private equity, founded in 1995. Its headquarters is listed at Rajská 
+- **Organization basics:** A CB Insights profile describes SLOVCA as a Bratislava-based association focused on venture capital and private equity, founded in 1995. Its headquarters is listed at Rajská
 … [864 more characters]
 ```
 </details>
@@ -1290,11 +1291,11 @@ cd [tmp] && mkdir -p eif && curl -sL -A "Mozilla/5.0" -o eif/active.pdf https://
 ```
 Exit code 1
 total 560
-drwxr-xr-x   5 [user]  wheel     160 11 окт.  01:12 .
-drwx------  16 [user]  wheel     512 11 окт.  01:11 ..
--rw-r--r--   1 [user]  wheel  160434 11 окт.  01:12 active.pdf
--rw-r--r--   1 [user]  wheel  117979 11 окт.  01:09 eif.pdf
--rw-r--r--   1 [user]  wheel    1070 11 окт.  01:09 eif.txt
+drwxr-xr-x   5 [user]  wheel     160 11 Oct  01:12 .
+drwx------  16 [user]  wheel     512 11 Oct  01:11 ..
+-rw-r--r--   1 [user]  wheel  160434 11 Oct  01:12 active.pdf
+-rw-r--r--   1 [user]  wheel  117979 11 Oct  01:09 eif.pdf
+-rw-r--r--   1 [user]  wheel    1070 11 Oct  01:09 eif.txt
 eif/active.pdf: PDF document, version 1.6 (zip deflate encoded)
 /opt/homebrew/bin/pdftotext
 Traceback (most recent call last):
@@ -1321,7 +1322,7 @@ Geographical Focus   Fund Name                                                Fu
 Belgium              MicroStart                                               MicroStart SC‐ES                                                            Generalist                                      Signed                                 Fund
 Belgium              E‐Capital                                                E‐Capital Management SCRL                                                   Generalist                                      Signed                      31/12/2005 Fund
 Belgium              VIVES                                                    Sopartec SA                                                                 ICT                                             Signed                      18/12/2007 Fund
-Belgium              CD3 (Centre for Drug design and Discovery)               KU Leuven Research & Development                                            Life Science                                    Signed       
+Belgium              CD3 (Centre for Drug design and Discovery)               KU Leuven Research & Development                                            Life Science                                    Signed
 … [10389 more characters]
 ```
 </details>
@@ -1615,7 +1616,7 @@ I didn't find a clause in the results that prohibits automated scraping, so I ca
 
 **Format:** XML. You send an XML request and receive an XML response, and both must conform to the published XSD specification. Each service has a maximum response size.
 
-**Free or registration required:** Registration is required. You must email a signed access request to jerrsws@cnb.cz with your identification details, a contact person, and the serial number and issuer name of the certificate you'll use. Authentication uses a commercial (non-qualified) certificate from eIdentity, I.CA, Postsignum, or a listed foreign authority. The page doesn't mention fees, so it doesn't say whether access is free.
+**Free or registration required:** Registration is required. You must email a signed access request to [redacted: email address] with your identification details, a contact person, and the serial number and issuer name of the certificate you'll use. Authentication uses a commercial (non-qualified) certificate from eIdentity, I.CA, Postsignum, or a listed foreign authority. The page doesn't mention fees, so it doesn't say whether access is free.
 
 **Entity types (investment companies, management companies, §15 managers, investment funds):** The page doesn't name these types or say whether they're covered. It refers to a role codelist (WSJERRS_role.xlsx) and a lists codelist (WSJERRS_seznamy.xlsx), which would show the available roles and lists, but their contents aren't included here.
 ```
@@ -1685,7 +1686,8 @@ cd [tmp] && mkdir -p nvca_mine && cd nvca_mine && curl -sL -A "Mozilla/5.0" -o y
 ```
 y2026.pdf: PDF document, version 1.7 (zip deflate encoded)
 236:percent from the 457 launched in 2021. The total number of VC firms in existence declined for the first time as well, falling from 3,054 to
-244:Total assets under management reached $1.38 trillion, including $1.08 trillion in net asset value and $299.3 billion in dry powder. But
+244:
+Total assets under management reached $1.38 trillion, including $1.08 trillion in net asset value and $299.3 billion in dry powder. But
 251:AUM and decades of successful investing on the other.
 532:                                                                                     Raised Funds                       Avg Fund Size                       Median Fund       Median AUM
 533:                     Cumulative   Cumulative   Cumulative          Existing Funds                      AUM ($B)                           Avg AUM ($M)
@@ -1722,14 +1724,15 @@ percent from the 457 launched in 2021. The total number of VC firms in existence
 
                                                                        6
                                                             N VC A 2026 Y E A RBOOK
-Total assets under management reached $1.38 trillion, including $1.08 trillion in net asset value and $299.3 billion in dry powder. But
+
+Total assets under management reached $1.38 trillion, including $1.08 trillion in net asset value and $299.3 billion in dry powder. But
 the dry powder is concentrated in the same platform firms that dominate fundraising, leaving the median sub-$100 million fund with far
 less runway than the industry aggregate suggests.
 
 
 VC isn’t retreating; it’s recalibrating. The capital is there, and the firms remain. The question, especially for emerging managers, is how
 to thrive in an ecosystem defined by a 3.75 percent federal funds rate on one side, and platform funds with tens of billions of dollars in
-differentiated managers who are operating                                    2015     
+differentiated managers who are operating                                    2015
 … [10382 more characters]
 ```
 </details>
@@ -1879,7 +1882,7 @@ Web search results for query: "EBAN estimate total angel market Europe "invisibl
 
 Links: [{"title":"EBAN Statistics Compendium 2017","url":"https://www.eban.org/wp-content/uploads/2018/07/EBAN-Statistics-Compendium-2017"},{"title":"business angel investments in europe by visible and non visible market","url":"https://fr.statista.com/statistics/889583/business-angel-investments-in-europe-by-visible-and-non-visible-market/"},{"title":"Stats Compendium 2024","url":"https://www.eban.org/wp-content/uploads/2025/12/Stats-Compendium-2024.pdf"},{"title":"No results found for","url":"https://2019.stateofeuropeantech.com/chapter/investors/article/angels"},{"title":"EBAN Statistics Compendium 2023","url":"https://www.eban.org/wp-content/uploads/2024/10/EBAN-Statistics-Compendium-2023.pdf"},{"title":"www.eban.org","url":"https://www.eban.org/?p=35526"},{"title":"Statistics Compendium 2021 European Early Stage Market Statistics","url":"https://www.eban.org/2022/10/10/"},{"title":"Statistics 2018 Compendium   FINAL","url":"https://www.eltia.eu/images/Statistics_2018_Compendium_-_FINAL.pdf"},{"title":"business angel investments by country in europe","url":"https://www-statista-com.ezproxy.canberra.edu.au/statistics/439669/business-angel-investments-by-country-in-europe"},{"title":"business angels co investment europe","url":"https://www-statista-com.ezproxy.canberra.edu.au/statistics/439687/business-angels-co-investment-europe"}]
 
-I couldn't 
+I couldn't
 … [2059 more characters]
 ```
 </details>
@@ -1946,7 +1949,7 @@ Figure 8. Angel Investments by Country, Visible Market Statistics
 Data on the investments made across the 39 different countries measured in the report
 indicates that the visible angel investment market on the European continent has grown
 substantially from the 764 Million Euros invested before the covid pandemic in 2019 to
-1,220 Million Euros invested in 2024. This latest figure however represents a 
+1,220 Million Euros invested in 2024. This latest figure however represents a
 … [728 more characters]
 ```
 </details>
@@ -2017,9 +2020,9 @@ for k in ['Creative Commons','Crunchbase Basic','scrape','Last Updated']:
 <details><summary>result</summary>
 
 ```
-... m terms. Additionally, Crunchbase provides access to the Crunchbase 2013 Snapshot (the “Snapshot”) and Crunchbase Basic (“Crunchbase Basic”) pursuant to the following license terms: Subject to your compliance with these Terms, you may access and use the Snapshot and Crunchbase Basic pursuant to the Creative Commons Attribution License . The Snapshot must be attributed to our designated pseudonym “CrunchBase 2013 Snapshot” and bear the copyright notice “© 2013” in accordance with the Creative Commons requirements. The pseudonym and copyright notice are meant to avoid confusion with the current Crunchbase dataset and to promote transparency to users of the data. If you have questions, please c 
+... m terms. Additionally, Crunchbase provides access to the Crunchbase 2013 Snapshot (the “Snapshot”) and Crunchbase Basic (“Crunchbase Basic”) pursuant to the following license terms: Subject to your compliance with these Terms, you may access and use the Snapshot and Crunchbase Basic pursuant to the Creative Commons Attribution License . The Snapshot must be attributed to our designated pseudonym “CrunchBase 2013 Snapshot” and bear the copyright notice “© 2013” in accordance with the Creative Commons requirements. The pseudonym and copyright notice are meant to avoid confusion with the current Crunchbase dataset and to promote transparency to users of the data. If you have questions, please c
 
-... t to your compliance with these Terms, you may access and use the Snapshot and Crunchbase Basic pursuant to the Creative Commons Attribution License . The Snapshot must be attributed to our designated pseudonym “CrunchBase 2013 Snapshot” and bear the copyright notice “© 2013” in accordance with the Creative Commons requirements. The pseudonym and copyright notice are meant to avoid confusion with the current Crunchbase dataset and to promote transparency to users of the data. If you have questions, please contact us at policy@crunchbase.com . Crunchbase may also provide access to information or data points that are powered by generative artificial intelligence technologies (“AI Content”), an 
+... t to your compliance with these Terms, you may access and use the Snapshot and Crunchbase Basic pursuant to the Creative Commons Attribution License . The Snapshot must be attributed to our designated pseudonym “CrunchBase 2013 Snapshot” and bear the copyright notice “© 2013” in accordance with the Creative Commons requirements. The pseudonym and copyright notice are meant to avoid confusion with the current Crunchbase dataset and to promote transparency to users of the data. If you have questions, please contact us at [redacted: email address] . Crunchbase may also provide access to information or data points that are powered by generative artificial intelligence technologies (“AI Content”), an
 
 ... s and conditions and, if applicable, pay all required fees which apply to your spe
 … [3445 more characters]
@@ -2214,7 +2217,7 @@ Web search results for query: "AMAC registered private equity and venture capita
 
 Links: [{"title":"Investment Funds 2026","url":"https://practiceguides.chambers.com/practice-guides/investment-funds-2026/china/trends-and-developments/O24011"},{"title":"Investment Funds 2026","url":"https://practiceguides.chambers.com/practice-guides/investment-funds-2026/china/trends-and-developments"},{"title":"Investment Funds 2026","url":"https://practiceguides.chambers.com/practice-guides/investment-funds-2026/china"},{"title":"Guantao contributes to the China Chapter of Chambers \"Investment Funds 2026\" Global Practice Guide","url":"https://www.guantao.com/en/page4967"},{"title":"Investment Funds 2026 Comparisons","url":"https://practiceguides.chambers.com/practice-guides/comparison/1112/18202/28479-28480-28481-28482"},{"title":"Alternative Funds 2025","url":"https://practiceguides.chambers.com/practice-guides/alternative-funds-2025/china"},{"title":"Alternative Funds 2025 Comparisons","url":"https://practiceguides.chambers.com/practice-guides/comparison/1019/17339/27235-27238-27249-27261"},{"title":"Investment Funds 2025","url":"https://practiceguides.chambers.com/practice-guides/investment-funds-2025/china"},{"title":"Alternative Funds 2025","url":"https://gpg-pdf.chambers.com/Alternative-Funds-2025/91/"}]
 
-The search didn't turn up a 2025 total for PE/VC fund managers alone. It did find totals for all private fund managers and some 
+The search didn't turn up a 2025 total for PE/VC fund managers alone. It did find totals for all private fund managers and some
 … [1375 more characters]
 ```
 </details>
@@ -2248,9 +2251,9 @@ curl -s -m 20 -o /dev/null -w "%{http_code}\n" "https://rpvs.gov.sk/opendata/Par
 <style type="text/css">
 <!--
 body{margin:0;font-size:.7em;font-family:Verdana, Arial, Helvetica, sans-serif;background:#EEEEEE;}
-fieldset{padding:0 15px 10px 15px;} 
+fieldset{padding:0 15px 10px 15px;}
 h1{font-size:2.4em;margin:0;color:#FFF;}
-h2{font-size:1.7em;margin:0;color:#CC0000;} 
+h2{font-size:1.7em;margin:0;color:#CC0000;}
 h3{font-size:1.2em;margin:10px 0 0 0;color:#000000;}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -2263,38 +2266,38 @@ h3{font-size:1.2em;margin:10px 0 0 0;color:#000000;}
 
 → `Bash` — Create output research folder
 ```sh
-mkdir -p /Users/[redacted]/homeW/ai-dev-test/investor-db/research && ls -la /Users/[redacted]/homeW/ai-dev-test/investor-db/research /Users/[redacted]/homeW/ai-dev-test/investor-db
+mkdir -p [redacted: local path] && ls -la [redacted: local path] [redacted: local path]
 ```
 
 <details><summary>result</summary>
 
 ```
-/Users/[redacted]/homeW/ai-dev-test/investor-db:
+[redacted: local path]
 total 0
-drwxr-xr-x  4 [user]  staff  128 11 окт.  01:18 .
-drwxr-xr-x  4 [user]  staff  128 11 окт.  01:07 ..
-drwxr-xr-x  9 [user]  staff  288 11 окт.  01:07 .git
-drwxr-xr-x  2 [user]  staff   64 11 окт.  01:18 research
+drwxr-xr-x  4 [user]  staff  128 11 Oct  01:18 .
+drwxr-xr-x  4 [user]  staff  128 11 Oct  01:07 ..
+drwxr-xr-x  9 [user]  staff  288 11 Oct  01:07 .git
+drwxr-xr-x  2 [user]  staff   64 11 Oct  01:18 research
 
-/Users/[redacted]/homeW/ai-dev-test/investor-db/research:
+[redacted: local path]
 total 0
-drwxr-xr-x  2 [user]  staff   64 11 окт.  01:18 .
-drwxr-xr-x  4 [user]  staff  128 11 окт.  01:18 ..
+drwxr-xr-x  2 [user]  staff   64 11 Oct  01:18 .
+drwxr-xr-x  4 [user]  staff  128 11 Oct  01:18 ..
 ```
 </details>
 
-→ `Write` /Users/[redacted]/homeW/ai-dev-test/investor-db/research/sources-and-universe.md
+→ `Write` [redacted: local path]
 
 <details><summary>result</summary>
 
 ```
-File created successfully at: /Users/[redacted]/homeW/ai-dev-test/investor-db/research/sources-and-universe.md (file state is current in your context — no need to Read it back)
+File created successfully at: [redacted: local path] (file state is current in your context — no need to Read it back)
 ```
 </details>
 
 → `Bash` — Fix truncated URLs and clean my temp files
 ```sh
-f=/Users/[redacted]/homeW/ai-dev-test/investor-db/research/sources-and-universe.md; python3 -I - "$f" <<'EOF'
+f=[redacted: local path] python3 -I - "$f" <<'EOF'
 import sys
 p=sys.argv[1]; s=open(p).read()
 s=s.replace("(https://amp.scmp.com/tech/article/3223176/...)","(https://amp.scmp.com/tech/article/3223176/sequoia-capital-splits-three-firms-separating-china-operations-us-amid-rising-geopolitical-tensions)")
@@ -2346,25 +2349,25 @@ vlogin.log
 
 [redacted: name]
 
-Файл с исследованием готов: `/Users/[redacted]/homeW/ai-dev-test/investor-db/research/sources-and-universe.md` (по-английски). В нём таблицы источников, оценка размеров по типам инвесторов и 17 типовых ошибок с реальными примерами. Цифры трёх видов: посчитанные мной из официальных бесплатных выгрузок 2026-10-11, взятые из отчётов со ссылкой и датой, и мои оценки, помеченные как оценки.
+Research file ready: `[redacted: local path]` (in English). It contains source tables, investor-universe estimates by type and 17 common errors with real examples. Figures fall into three categories: my calculations from official free downloads on 2026-10-11, report figures with links and dates, and my estimates explicitly labelled as estimates.
 
-**Главные цифры:**
-- **SEC Form ADV (выгрузка от 2 окт. 2026):** 2 312 консультантов, освобождённых от регистрации как управляющие венчурными фондами. Всего у SEC видно около 7 470 управляющих с VC- или PE-фондами (4 609 освобождённых + 2 861 зарегистрированный). NVCA для сравнения: 2 984 VC-фирмы в США; в 2025 году 13 634 инвестора сделали хотя бы одну сделку в американских компаниях, против 25 969 в 2021-м.
-- **Европа:** в базе Invest Europe (EDC) около 4 000 PE/VC-фирм. В реестре ESMA 448 активных управляющих фондами EuVECA, из них в Словакии 2, в Чехии 0. Активных AIFM 3 135, но это все классы активов вместе.
-- **Семейные офисы:** около 8 030 в мире, из них 2 020 в Европе (Deloitte, 2024). Открытого реестра нет нигде: в США они вообще не регистрируются.
-- **Ангелы:** в США 445 535 (данные за 2024 год). В Европе 47 610 состоят в сетях (EBAN, 2024). В Чехии 340 ангелов в 3 сетях, в Словакии 120 в одной.
-- **Крупные частные инвесторы:** 3 428 миллиардеров (Forbes 2026).
-- **Моя оценка того, что реально собрать и подтвердить из бесплатных источников:** около 12–20 тыс. инвесторов в мире без ангелов, около 3,5–6 тыс. в Европе, около 150–300 PE/VC и семейных офисов в Чехии и Словакии вместе.
-- **Самая важная ловушка:** 64% венчурных «фондов» в Form D за последние 4 квартала оказались разовыми сделочными оболочками и сериями (SPV). Нужна иерархия «управляющий → фонд → оболочка», иначе база раздуется мусором.
+**Key figures:**
+- **SEC Form ADV (download dated 2 October 2026):** 2,312 advisers exempt from registration as venture-capital fund managers. SEC data shows about 7,470 managers with VC or PE funds overall (4,609 exempt + 2,861 registered). For comparison, NVCA reports 2,984 US VC firms; in 2025, 13,634 investors made at least one investment in US companies, versus 25,969 in 2021.
+- **Europe:** Invest Europe’s EDC database covers about 4,000 PE/VC firms. ESMA lists 448 active EuVECA fund managers, including 2 in Slovakia and 0 in Czechia. There are 3,135 active AIFMs, covering all asset classes.
+- **Family offices:** about 8,030 worldwide, including 2,020 in Europe (Deloitte, 2024). No public register exists; in the US they do not register at all.
+- **Angels:** 445,535 in the US (2024 data). In Europe, 47,610 belong to networks (EBAN, 2024). Czechia has 340 angels in 3 networks; Slovakia has 120 in one.
+- **Large private investors:** 3,428 billionaires (Forbes 2026).
+- **My estimate of what can realistically be collected and verified from free sources:** about 12,000–20,000 investors worldwide excluding angels, 3,500–6,000 in Europe, and 150–300 PE/VC firms and family offices in Czechia and Slovakia combined.
+- **Main pitfall:** 64% of venture “funds” in Form D over the last 4 quarters were one-off deal vehicles and series (SPVs). A manager → fund → vehicle hierarchy is needed to prevent inflated database counts.
 
-**Пять самых полезных бесплатных источников:**
-1. **SEC Form ADV** — ежемесячная выгрузка с признаком «венчурный управляющий».
-2. **SEC Form D** — размер фонда, год первой продажи (по сути год запуска фонда) и связь фонда с управляющим.
-3. **Реестры ESMA** (EuVECA и AIFM) — по ним можно подтвердить существование управляющего по всему ЕС.
-4. **Реестры компаний с владельцами** — UK Companies House, чешские justice.cz и ARES, словацкий ORSR. По ним видно, что инвестор вложился в конкретную компанию и с какой даты.
-5. **Курируемые списки управляющих** — список фондов EIF, основные члены CVCA и SLOVCA, государственные SIH и NRI. Ассоциированных членов (юристы, банки, консультанты) надо отсекать.
+**Five most useful free sources:**
+1. **SEC Form ADV** — monthly downloads with a venture-capital adviser flag.
+2. **SEC Form D** — fund size, year of first sale (effectively the launch year) and the link between fund and manager.
+3. **ESMA registers** (EuVECA and AIFM) — evidence of a manager’s existence across the EU.
+4. **Company registers with ownership records** — UK Companies House, Czech justice.cz and ARES, and Slovak ORSR. These show an investor’s ownership in a company and its start date.
+5. **Curated manager lists** — EIF fund list, full CVCA and SLOVCA members, and state-backed SIH and NRI. Associate members (lawyers, banks and consultants) must be excluded.
 
-Crunchbase, Dealroom, Preqin, PitchBook, API Finstat и OpenCorporates для коммерческого использования свободно применять нельзя: только для ручного поиска кандидатов. Исключение — Crunchbase Basic и снимок 2013 года, они под лицензией CC-BY.
+Crunchbase, Dealroom, Preqin, PitchBook, the Finstat API and OpenCorporates cannot be used freely for commercial purposes: use them only for manual candidate discovery. Exceptions are Crunchbase Basic and the 2013 snapshot, licensed under CC-BY.
 
-Пробелы: текущее число чешских управляющих, работающих без лицензии ЧНБ (их называют «§15-управляющими»), не нашёл, есть только 190 за 2020 год. Количество зарегистрированных управляющих в Словакии тоже не нашёл. Список EIF датирован 30.09.2022. Цифру по ограничению доступа к реестрам бенефициаров в ЕС и лицензию данных Companies House писал по памяти, в файле это помечено. Нигде не регистрировался, формы не отправлял, git не трогал. Свои временные выгрузки из рабочей папки удалил.
+Gaps: I did not find the current number of Czech managers operating without a ČNB licence (“§15 managers”); only 190 for 2020 was available. I also did not find the number of registered Slovak managers. The EIF list is dated 30.09.2022. The EU beneficial-ownership access restriction and Companies House data licence were written from memory and are marked accordingly. I registered nowhere, submitted no forms and did not use Git. I removed my temporary downloads from the working directory.
 

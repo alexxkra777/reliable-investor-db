@@ -2,10 +2,11 @@
 
 Claude Code sub-agent log, exported from `agent-a7cea1c8756749d5d.jsonl`.
 Tool outputs longer than 1,500 characters are shortened.
+Russian narrative has been translated into English; executed tool code and source quotations are retained.
 
 ## Brief
 
-You are a data analyst on an investor-database project in /Users/[redacted]/homeW/ai-dev-test/investor-db. Read PLAN.md (rules I1–I4, E1–E10, evidence tiers A/B/C), schema/investor.schema.json, tests/fixtures/investors.json (format example) and research/sources-and-universe.md (sections 1.3, 1.4) first.
+You are a data analyst on an investor-database project in [redacted: local path] Read PLAN.md (rules I1–I4, E1–E10, evidence tiers A/B/C), schema/investor.schema.json, tests/fixtures/investors.json (format example) and research/sources-and-universe.md (sections 1.3, 1.4) first.
 
 Task: build the CZECH part of the pilot sample — venture capital investors managed from the Czech Republic — as schema-valid records in data/sample/parts/cz.json (JSON array, pretty-printed, UTF-8), plus data/sample/parts/cz-decisions.md (one line per candidate: "name — status — rule IDs — one-sentence reason"). Also write data/reference/cvca-full-members.csv (columns: name,source_url) listing ALL full (PE/VC) members of CVCA from https://www.cvca.cz/en/members/ — this is a reference list for recall measurement.
 
@@ -14,10 +15,10 @@ Candidate discovery (aim for completeness of VC; PE firms from CVCA should be li
 For each record collect (null if unknown, never guess): legal entity (Czech IČO + ARES/justice.cz link — ARES REST: https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/<ico>), type, hq, website, sectors, stages, geography, ticket (as stated by investor), funds (name, size, currency, vintage), aum, and up to 3 most recent DATED investments (company, date, date_kind, round_size) — required for inclusion: at least one within 36 months before 2026-10-11 (rule I3). Best evidence: the investor's or the startup's press release, CzechCrunch/Forbes.cz articles (Tier C — use only as corroboration), justice.cz shareholder entries of portfolio s.r.o. companies (Tier A: "Společník: … zapsáno dd. mm. yyyy").
 
 Hard requirements:
-1. **Every `quote` must be VERBATIM text that appears on the page at `url`.** WebFetch returns a model-written summary, not the page text — never copy quotes from WebFetch output. Fetch raw pages with `curl -sL -A "Mozilla/5.0 ..." <url>` (or python urllib), extract visible text (strip script/style, html.unescape) and copy the sentence from there; confirm each quote with grep on the extracted text. PDFs: pdftotext or /Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python with pypdf. If a page can't be fetched raw, use another source or null the field.
+1. **Every `quote` must be VERBATIM text that appears on the page at `url`.** WebFetch returns a model-written summary, not the page text — never copy quotes from WebFetch output. Fetch raw pages with `curl -sL -A "Mozilla/5.0 ..." <url>` (or python urllib), extract visible text (strip script/style, html.unescape) and copy the sentence from there; confirm each quote with grep on the extracted text. PDFs: pdftotext or [redacted: local path] with pypdf. If a page can't be fetched raw, use another source or null the field.
 2. justice.cz: the public extract URL is like https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=<id>&typ=PLATNY — fetch raw; if blocked, use ARES (which links to the register) or skip.
 3. `type` uses the schema enum; money as numbers + currency; dates ISO; accessed = 2026-10-11.
-4. Validate each record with python jsonschema against schema/investor.schema.json (`record` definition) using /Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; fix all errors.
+4. Validate each record with python jsonschema against schema/investor.schema.json (`record` definition) using [redacted: local path] fix all errors.
 
 Rules: all file content in English (Czech quotes verbatim). No AI/tool mentions in files. Don't run git. Only write the three files named above. Don't use the Playwright MCP browser. No signups, no forms. Be efficient: don't spend more than ~3 searches on a single minor candidate.
 
@@ -146,7 +147,7 @@ investors.json
         {"url": "https://example.com/about", "tier": "B", "publisher": "Example Ventures",
          "published": null, "accessed": "2026-10-01",
          "quote": "Our first tickets range from €200 000 to €2 mil."}
-  
+
 … [3569 more characters]
 ```
 </details>
@@ -204,7 +205,7 @@ class HostThrottle:
         if prev is not None:
             gap = self.clock() - prev
             if gap < self.interval:
-          
+
 … [8048 more characters]
 ```
 </details>
@@ -263,7 +264,7 @@ def normalize(text: str) -> str:
     return s
 
 
-def best_fuzzy(quote: str, text: str, max_anchors: int = 4, max_hits: int = 
+def best_fuzzy(quote: str, text: str, max_anchors: int = 4, max_hits: int =
 … [19061 more characters]
 ```
 </details>
@@ -335,7 +336,7 @@ print(json.dumps(x[0] if isinstance(x,list) else list(x.keys()),ensure_ascii=Fal
 mkdir -p [tmp] && cat > [tmp] <<'EOF'
 """usage: f.py URL [grep-pattern...]  -> fetch (cached), print path + text len, grep lines (case-insens, normalized)"""
 import sys, hashlib, os, re, subprocess
-sys.path.insert(0, "/Users/[redacted]/homeW/ai-dev-test/investor-db/src")
+sys.path.insert(0, "[redacted: local path]")
 from investordb.fetch import extract_text
 from investordb.textnorm import normalize
 C = "[tmp]"
@@ -361,7 +362,7 @@ ok
 
 → `Bash` — Fetch CVCA members page
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; N=15000 $PY f.py https://www.cvca.cz/en/members/
+cd [tmp] && PY=[redacted: local path] N=15000 $PY f.py https://www.cvca.cz/en/members/
 ```
 
 <details><summary>result</summary>
@@ -384,7 +385,7 @@ dk
 14. 1. 2020
 Full members
 (0)
-Address ul. Grzybowska 5a Grzybowska Park 00-132 Warsaw Poland www.abris-capital.com Contact Renáta Ďurčová r.durcova@abris-capital.com Information about the company Volume of Funds Managed EUR 502 mil (Abris Fund III), EUR 450 mil (Abris Fund II) Type of Investment Growth and buyout acquisitions – management buyouts (MBO & MBI), expansion financing, industry consolidation Preferred Ammount of Investment …
+Address ul. Grzybowska 5a Grzybowska Park 00-132 Warsaw Poland www.abris-capital.com Contact Renáta Ďurčová [redacted: email address] Information about the company Volume of Funds Managed EUR 502 mil (Abris Fund III), EUR 450 mil (Abris Fund II) Type of Investment Growth and buyout acquisitions – management buyouts (MBO & MBI), expansion financing, industry consolidation Preferred Ammount of Investment …
 Více…
 …
 Read More
@@ -393,14 +394,14 @@ dk
 14. 1. 2020
 Full members
 (0)
-Address 28. října 12110 00 Prague 1+420 224 235 399www.arxequity.com Contact Michal AronPartneraron@arxequity.com Information about the company Volume of Funds Managed EUR 300 million Type of Investment acquisitions, management buyout (MBO & MBI), expansion capital, sector consolidation Preferred Ammount of Investment EUR 5 – 50 m
+Address 28. října 12110 00 Prague 1+420 224 235 399www.arxequity.com Contact Michal [redacted: email address] Information about the company Volume of Funds Managed EUR 300 million Type of Investment acquisitions, management buyout (MBO & MBI), expansion capital, sector consolidation Preferred Ammount of Investment EUR 5 – 50 m
 … [13651 more characters]
 ```
 </details>
 
 → `Bash` — Extract member names and detail links
 ```sh
-cd [tmp] && /Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python -c "
+cd [tmp] && [redacted: local path] -c "
 from bs4 import BeautifulSoup
 h=open('cache/adbdfc25bd2e28607c8e228a832ef477d72fbeca.raw','rb').read()
 s=BeautifulSoup(h,'html.parser')
@@ -445,7 +446,7 @@ for a in s.find_all(['h2','h3','h4']):
 
 → `Bash` — Fetch EIF Czech equity fund managers PDF
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; N=20000 $PY f.py https://www.eif.org/files/attachments/czech-republic-equity-fundmanagers.pdf
+cd [tmp] && PY=[redacted: local path] N=20000 $PY f.py https://www.eif.org/files/attachments/czech-republic-equity-fundmanagers.pdf
 ```
 
 <details><summary>result</summary>
@@ -457,13 +458,13 @@ cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python;
 
 → `Bash` — Inspect EIF fetch response
 ```sh
-cd [tmp] && cat 8c7ac21bfeaca4cebaf04ebf4cd9d604f3d39b48.hdr | head -20; head -c 300 8c7ac21bfeaca4cebaf04ebf4cd9d604f3d39b48.raw; grep -o 'https://[^"]*slovakia-equity[^"]*' /Users/[redacted]/homeW/ai-dev-test/investor-db/research/*.md | head
+cd [tmp] && cat 8c7ac21bfeaca4cebaf04ebf4cd9d604f3d39b48.hdr | head -20; head -c 300 8c7ac21bfeaca4cebaf04ebf4cd9d604f3d39b48.raw; grep -o 'https://[^"]*slovakia-equity[^"]*' [redacted: local path] | head
 ```
 
 <details><summary>result</summary>
 
 ```
-HTTP/2 404 
+HTTP/2 404
 date: Sat, 10 Oct 2026 23:37:42 GMT
 content-type: image/jpeg
 content-length: 0
@@ -484,7 +485,7 @@ cf-ray: a48974564988b348-PRG
 
 → `Bash` — Try alternative EIF PDF URLs
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; for u in https://www.eif.org/files/attachments/czechia-equity-fundmanagers.pdf https://www.eif.org/files/attachments/czech-equity-fundmanagers.pdf https://www.eif.org/files/attachments/slovakia-equity-fundmanagers.pdf; do $PY f.py $u | head -3; done; curl -sL -A "Mozilla/5.0" https://www.eif.org/what_we_do/where/cz/index.htm | grep -oi 'href="[^"]*\(fundmanager\|\.pdf\)[^"]*"' | head -20
+cd [tmp] && PY=[redacted: local path] for u in https://www.eif.org/files/attachments/czechia-equity-fundmanagers.pdf https://www.eif.org/files/attachments/czech-equity-fundmanagers.pdf https://www.eif.org/files/attachments/slovakia-equity-fundmanagers.pdf; do $PY f.py $u | head -3; done; curl -sL -A "Mozilla/5.0" https://www.eif.org/what_we_do/where/cz/index.htm | grep -oi 'href="[^"]*\(fundmanager\|\.pdf\)[^"]*"' | head -20
 ```
 
 <details><summary>result</summary>
@@ -511,19 +512,19 @@ cd [tmp] && cat 390aac3b6c8762538aec22f5699a9c11c113bb35.txt; which pdftotext &&
 ```
  Public #
 Fund name Fund manager Team location Mandate(s) short name Target area Geographical focus Strategy Main sector Stage focus Investment strategy set up End of investment period Fund Manager website
-Tilia Impact Ventures Fund II Tilia Impact Partners Czech Republic IEU - Equity - LP Agriculture, Food, natural capital preservation and 
-use of land resources;Energy and built-environment 
-solutions;Industrial decarbonisation & environmental 
-sustainability;Mobility and transport solutions;Skills & 
+Tilia Impact Ventures Fund II Tilia Impact Partners Czech Republic IEU - Equity - LP Agriculture, Food, natural capital preservation and
+use of land resources;Energy and built-environment
+solutions;Industrial decarbonisation & environmental
+sustainability;Mobility and transport solutions;Skills &
 Education;Social impact Investing & Social Innovation
 Multi-Country Venture Capital ICT Early Stage Fund Fund 01/08/2028 https://tiliaimpactventures.cz/en/
-ARX CE V Cooperatief U.A ARX Equity Partners B.V. Czech Republic 3SIIF;EIF;IEU - Equity - PP;RCR Growth and expansion;Industrial decarbonisation & 
+ARX CE V Cooperatief U.A ARX Equity Partners B.V. Czech Republic 3SIIF;EIF;IEU - Equity - PP;RCR Growth and expansion;Industrial decarbonisation &
 environmental sustainability
 Multi-Country Private Equity Generalist Growth-Oriented Buyout Fund 16/09/2029 http://www.arxequity.com/
-Tensor Co-Investment Fund SCSp Tensor Advisory s.r.o Czech Republic RRF Czech Republic Artificial Intelligence (AI);Blockchain and Distributed 
-Ledger Technologies (BT/DLT);Clean Energy 
-Transition-Climate;Digital Connectivity & Data 
-Infrastructure;Other Digital;Quantum 
+Tensor Co-Investment Fund SCSp Tensor Advisory s.r.o Czech Republic RRF Czech Republic Artificial Intelligence (AI);Blockchain and Distributed
+Ledger Technologies (BT/DLT);Clean Energy
+Transition-Climate;Digital Connectivity & Data
+Infrastructure;Other Digital;Quantum
 Computing;Space Infrastructure
 Multi-Country Venture Capital ICT Early Stage Fund Fund 30/06/2030
 EVERITA Fund I Coöperatief U.A. EVERITA Capital sro Czech Republic 3SIIF;EIF;IEU - Equity - PP;RCR Growth and expansion Multi-Country Private Equity Generalist Lower-Mid Market Fund 2
@@ -542,7 +543,7 @@ EVERITA Fund I Coöperatief U.A. EVERITA Capital sro Czech Republic 3SIIF;EIF;IE
 
 → `Bash` — Write CVCA full members CSV
 ```sh
-mkdir -p /Users/[redacted]/homeW/ai-dev-test/investor-db/data/reference /Users/[redacted]/homeW/ai-dev-test/investor-db/data/sample/parts && cd [tmp] && /Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python -c "
+mkdir -p [redacted: local path] [redacted: local path] && cd [tmp] && [redacted: local path] -c "
 import csv,re
 from bs4 import BeautifulSoup
 h=open('cache/adbdfc25bd2e28607c8e228a832ef477d72fbeca.raw','rb').read()
@@ -555,10 +556,10 @@ for a in s.find_all(['h2','h3','h4']):
     rows.append((n,l.get('href')))
     if n.startswith('Versute'): break
 print(len(rows))
-w=csv.writer(open('/Users/[redacted]/homeW/ai-dev-test/investor-db/data/reference/cvca-full-members.csv','w',newline='',encoding='utf-8'),lineterminator='\n')
+w=csv.writer(open('[redacted: local path]','w',newline='',encoding='utf-8'),lineterminator='\n')
 w.writerow(['name','source_url'])
 for r in rows: w.writerow(r)
-"; cat /Users/[redacted]/homeW/ai-dev-test/investor-db/data/reference/cvca-full-members.csv
+"; cat [redacted: local path]
 ```
 
 <details><summary>result</summary>
@@ -643,7 +644,7 @@ Links: [{"title":"Venture capital in the Czech Republic","url":"https://en.wikip
 
 → `Bash` — Fetch discovery list pages
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; for u in https://www.papermark.com/blog/venture-capital-firms-prague https://www.vestbee.com/insights/articles/top-vc-funds-in-czech-republic-to-finance-your-startup https://cc.cz/purple-presto-kaya-a-dalsi-investori-maji-apetit-startupove-fondy-nabiraji-dalsi-miliardy-korun/ https://en.wikipedia.org/wiki/Venture_capital_in_the_Czech_Republic; do $PY f.py $u | head -1; done; cd ../cache; for f in $(ls -t *.txt | head -4); do echo "=== $f"; grep -E '^(#|[0-9]+\.|[A-Z][A-Za-z0-9&. ]{2,40}$)' $f | head -80 | tr '\n' ';'; echo; done
+cd [tmp] && PY=[redacted: local path] for u in https://www.papermark.com/blog/venture-capital-firms-prague https://www.vestbee.com/insights/articles/top-vc-funds-in-czech-republic-to-finance-your-startup https://cc.cz/purple-presto-kaya-a-dalsi-investori-maji-apetit-startupove-fondy-nabiraji-dalsi-miliardy-korun/ https://en.wikipedia.org/wiki/Venture_capital_in_the_Czech_Republic; do $PY f.py $u | head -1; done; cd ../cache; for f in $(ls -t *.txt | head -4); do echo "=== $f"; grep -E '^(#|[0-9]+\.|[A-Z][A-Za-z0-9&. ]{2,40}$)' $f | head -80 | tr '\n' ';'; echo; done
 ```
 
 <details><summary>result</summary>
@@ -681,7 +682,7 @@ o 76 procent. To ale neznamená, že investoři samotní nemají chuť inovativn
 Svůj druhý fond například spustili brněnští Purple Ventures. A
 cílí v něm na 40 milionů eur
 (jednu miliardu korun), z čehož asi 350 milionů korun poskytne skupina Purple zakladatelů Davida Kašpera, Jakuba Nytry a Filipa Řehoře.
-Fond se zaměří na startupy z regionu střední a východní Evropy, celkem chce částkami mezi šesti až 
+Fond se zaměří na startupy z regionu střední a východní Evropy, celkem chce částkami mezi šesti až
 … [3511 more characters]
 ```
 </details>
@@ -720,7 +721,7 @@ cd [tmp] && python3 aress.py "Credo Ventures" "Presto Ventures" "Reflex Capital"
 ### Tilia Impact: 2
    17621615 | Tilia Impact Partners s.r.o. | Drtinova 557/10, Smíchov, 15000 Praha 5 | 2022-10-10 | zanik None | 70200
    17848911 | Tilia Impact Ventures, osoba rizikového kapitálu, s.r.o. | Drtinova 557/10, Smíchov, 15000 Praha 5 | 2022-12-19 | zanik None | 68200,00,70200,731,82100
-### 
+###
 … [3163 more characters]
 ```
 </details>
@@ -787,7 +788,7 @@ for pat in sys.argv[2:]:
         if re.search(pat, line, re.I): print("  |", line[:300])
 if len(sys.argv) == 2: print(t[:4000])
 EOF
-cd [tmp] && /Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python jus.py 28538137 | head -80
+cd [tmp] && [redacted: local path] jus.py 28538137 | head -80
 ```
 
 <details><summary>result</summary>
@@ -855,7 +856,7 @@ U Petřin 1858/3, Břevnov, 162 00  Praha 6
 
 → `Bash` — Fetch homepages of candidate investors
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; for u in https://www.credoventures.com/ https://www.prestoventures.com/ https://www.reflexcapital.com/ https://www.jtventures.cz/ https://www.tilia.vc/ https://www.lighthouse-ventures.com/ https://www.nation1.vc/ https://www.purple.vc/ https://www.rockawayventures.com/ https://www.kaya.vc/ https://www.miton.cz/ https://www.depoventures.com/ https://www.invencapital.cz/ https://www.airventures.co/ https://tensor.ventures/ https://www.inibio.eu/ https://orbitcapital.com/ https://www.zaka.vc/ https://czechfounders.vc/ https://www.tachles.vc/ https://www.ysoftventures.com/ https://palefirecapital.com/; do $PY f.py $u | head -1 | sed "s|.*chars=|$u |"; done
+cd [tmp] && PY=[redacted: local path] for u in https://www.credoventures.com/ https://www.prestoventures.com/ https://www.reflexcapital.com/ https://www.jtventures.cz/ https://www.tilia.vc/ https://www.lighthouse-ventures.com/ https://www.nation1.vc/ https://www.purple.vc/ https://www.rockawayventures.com/ https://www.kaya.vc/ https://www.miton.cz/ https://www.depoventures.com/ https://www.invencapital.cz/ https://www.airventures.co/ https://tensor.ventures/ https://www.inibio.eu/ https://orbitcapital.com/ https://www.zaka.vc/ https://czechfounders.vc/ https://www.tachles.vc/ https://www.ysoftventures.com/ https://palefirecapital.com/; do $PY f.py $u | head -1 | sed "s|.*chars=|$u |"; done
 ```
 
 <details><summary>result</summary>
@@ -888,7 +889,7 @@ https://palefirecapital.com/ 9448
 
 → `Bash` — Read Credo Ventures homepage
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; N=4000 $PY f.py https://www.credoventures.com/; grep -o 'href="[^"]*"' ../cache/$(python3 -c "import hashlib;print(hashlib.sha1(b'https://www.credoventures.com/').hexdigest())").raw | sort -u | head -40
+cd [tmp] && PY=[redacted: local path] N=4000 $PY f.py https://www.credoventures.com/; grep -o 'href="[^"]*"' ../cache/$(python3 -c "import hashlib;print(hashlib.sha1(b'https://www.credoventures.com/').hexdigest())").raw | sort -u | head -40
 ```
 
 <details><summary>result</summary>
@@ -1002,14 +1003,14 @@ How we operate and invest:
 ●  Backing exceptional people, not thesis-driven.
 ●  Leading Pre-Seed rounds.
 ●  $1M - $5M checks.
-●  From CEE, for CEE and its 
+●  From CEE, for CEE and its
 … [4448 more characters]
 ```
 </details>
 
 → `Bash` — Read Credo newsroom
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; N=6000 $PY f.py https://www.credoventures.com/newsroom | grep -v '^.\{0,3\}$' | head -120
+cd [tmp] && PY=[redacted: local path] N=6000 $PY f.py https://www.credoventures.com/newsroom | grep -v '^.\{0,3\}$' | head -120
 ```
 
 <details><summary>result</summary>
@@ -1078,7 +1079,7 @@ Trending up
 CEE region
 Led by Credo
 Latest
-Resistant AI Raises $25M in Series B Funding to Empower 
+Resistant AI Raises $25M in Series B Funding to Empower
 … [1465 more characters]
 ```
 </details>
@@ -1112,7 +1113,7 @@ href="https://www.ve
 
 → `Bash` — Check Credo investment source pages
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; $PY f.py https://axoflow.com/7m-to-improve-security-data-quality/ credo 'Jan.*2025|2025' ; $PY f.py https://techcrunch.com/2025/11/05/replika-founder-raises-20m-pre-seed-for-wabi-the-youtube-of-apps/ credo ; $PY f.py https://www.upheal.io/blog/upheal-secures-10m-to-help-reduce-clinician-burnout-and-improve-client-outcomes-with-their-ai-powered-platform credo 2025; $PY f.py https://tech.eu/2025/09/30/supernova-raises-92-million-series-a-to-bring-ai-powered-vibe-coding-to-enterprise-product-teams/ credo
+cd [tmp] && PY=[redacted: local path] $PY f.py https://axoflow.com/7m-to-improve-security-data-quality/ credo 'Jan.*2025|2025' ; $PY f.py https://techcrunch.com/2025/11/05/replika-founder-raises-20m-pre-seed-for-wabi-the-youtube-of-apps/ credo ; $PY f.py https://www.upheal.io/blog/upheal-secures-10m-to-help-reduce-clinician-burnout-and-improve-client-outcomes-with-their-ai-powered-platform credo 2025; $PY f.py https://tech.eu/2025/09/30/supernova-raises-92-million-series-a-to-bring-ai-powered-vibe-coding-to-enterprise-product-teams/ credo
 ```
 
 <details><summary>result</summary>
@@ -1169,7 +1170,7 @@ for m in re.finditer(sys.argv[2], j, re.I):
     if n >= int(os.environ.get("MAX", "4")): break
 print(f"[{n} hits, chars={len(t)}]")
 EOF
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; MAX=2 $PY q.py https://www.upheal.io/blog/upheal-secures-10m-to-help-reduce-clinician-burnout-and-improve-client-outcomes-with-their-ai-powered-platform 'led by' 400
+cd [tmp] && PY=[redacted: local path] MAX=2 $PY q.py https://www.upheal.io/blog/upheal-secures-10m-to-help-reduce-clinician-burnout-and-improve-client-outcomes-with-their-ai-powered-platform 'led by' 400
 ```
 
 <details><summary>result</summary>
@@ -1183,7 +1184,7 @@ cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python;
 
 → `Bash` — Look for Upheal publish date
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; MAX=3 $PY q.py https://www.upheal.io/blog/upheal-secures-10m-to-help-reduce-clinician-burnout-and-improve-client-outcomes-with-their-ai-powered-platform '20(24|25)' 80; grep -o '"datePublished":"[^"]*"' ../cache/345870eabcc27c7dd733a55db97c3ac64509af66.raw | head -2
+cd [tmp] && PY=[redacted: local path] MAX=3 $PY q.py https://www.upheal.io/blog/upheal-secures-10m-to-help-reduce-clinician-burnout-and-improve-client-outcomes-with-their-ai-powered-platform '20(24|25)' 80; grep -o '"datePublished":"[^"]*"' ../cache/345870eabcc27c7dd733a55db97c3ac64509af66.raw | head -2
 ```
 
 <details><summary>result</summary>
@@ -1197,18 +1198,18 @@ cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python;
 
 → `Bash` — Fetch CVCA detail pages for VC members
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; for s in credo-ventures-2 depo-ventures-2 biotech-investments inven-capital-2 kaya-vc-2 nation1-2 orbit-capital-2 tensor-ventures tilia-impact-ventures-honorary-member; do echo "=== $s"; $PY f.py https://cvca.cz/en/$s/ > /dev/null; f=$(python3 -c "import hashlib;print(hashlib.sha1(b'https://cvca.cz/en/$s/').hexdigest())"); tr '\n' ' ' < ../cache/$f.txt | sed 's/.*Address/Address/; s/Share.*//' | cut -c1-1500; echo; done
+cd [tmp] && PY=[redacted: local path] for s in credo-ventures-2 depo-ventures-2 biotech-investments inven-capital-2 kaya-vc-2 nation1-2 orbit-capital-2 tensor-ventures tilia-impact-ventures-honorary-member; do echo "=== $s"; $PY f.py https://cvca.cz/en/$s/ > /dev/null; f=$(python3 -c "import hashlib;print(hashlib.sha1(b'https://cvca.cz/en/$s/').hexdigest())"); tr '\n' ' ' < ../cache/$f.txt | sed 's/.*Address/Address/; s/Share.*//' | cut -c1-1500; echo; done
 ```
 
 <details><summary>result</summary>
 
 ```
 === credo-ventures-2
-Address Karlovo Náměstí 10 120 00 Prague 2 +420 211 153 211 www.credoventures.com Contact Vladislav Jež Partner jez@credoventures.com Information about the company Volume of Funds Managed EUR 170 million Type of Investment start-up, growth capital, expansion capital Preferred Ammount of Investment 50k EUR – 10M EUR Sector Preferences IT & internet, mobile communication, Geographical Focus CEE Number of Deals in CZ 15 Current Portfolio in CZ Angee, Cera, Codasip, Comprimato, Deepnote, Gamee, GoodVision, IP Fabric, LIV, Manta, Price f(x), productboard, Runecast, Spaceflow, Supernova, TeskaLabs, VersionPress Current Portfolio out of CZ XXX ©2026 CVCA
+Address Karlovo Náměstí 10 120 00 Prague 2 +420 211 153 211 www.credoventures.com Contact Vladislav Jež Partner [redacted: email address] Information about the company Volume of Funds Managed EUR 170 million Type of Investment start-up, growth capital, expansion capital Preferred Ammount of Investment 50k EUR – 10M EUR Sector Preferences IT & internet, mobile communication, Geographical Focus CEE Number of Deals in CZ 15 Current Portfolio in CZ Angee, Cera, Codasip, Comprimato, Deepnote, Gamee, GoodVision, IP Fabric, LIV, Manta, Price f(x), productboard, Runecast, Spaceflow, Supernova, TeskaLabs, VersionPress Current Portfolio out of CZ XXX ©2026 CVCA
 === depo-ventures-2
-Address DEPO VENTURES, s.r.o. Plynární 10 170 00 Praha 7 Contact Petr Šíma Managing Partner petr.sima@depoventures.cz Information about the company Volume of Funds Managed 5,5 mil. EUR Type of Investment VC Preferred Ammount of Investment 50 000 – 300 000 EUR Sectore Preferences Sector Agnostic Geographical Focus CEE Number of Deals in CZ 14 Current Portfolio in CZ Tatum, Spendee, Gitgut, Ringil, Supertalent, KardiAI, Mileus, Smartguide, DTS, Flowpay, Tatum, Readmio, Factoree Current Portfolio out of CZ Bikefair, Blockmate, Beem, Neuronix, Otis, DriveX, Upgrade Academy, Bolt, Augmented Robotics, Oxus.AI, Pulse, Parcelsea, Forloop, Bunch, Yummy, Tapline ©2026 CVCA
+Address DEPO VENTURES, s.r.o. Plynární 10 170 00 Praha 7 Contact Petr Šíma Managing Partner [redacted: email address] Information about the company Volume of Funds Managed 5,5 mil. EUR Type of Investment VC Preferred Ammount of Investment 50 000 – 300 000 EUR Sectore Preferences Sector Agnostic Geographical Focus CEE Number of Deals in CZ 14 Current Portfolio in CZ Tatum, Spendee, Gitgut, Ringil, Supertalent, KardiAI, Mileus, Smartguide, DTS, Flowpay, Tatum, Readmio, Factoree Current Portfolio out of CZ Bikefair, Blockmate, Beem, Neuronix, Otis, DriveX, Upgrade Academy, Bolt, Augmented Robotics, Oxus.AI, Pulse, Parcelsea, Forloop, Bunch, Yummy, Tapline ©2026 CVCA
 === biotech-investments
-Address Pobřežní 394/12 186 00 Prague 8 +420 725 731 199 www.inibio.eu info@inibio.eu Contact Tomáš Maršále
+Address Pobřežní 394/12 186 00 Prague 8 +420 725 731 199 www.inibio.eu [redacted: email address] Contact Tomáš Maršále
 … [4527 more characters]
 ```
 </details>
@@ -1229,7 +1230,7 @@ Credo Ventures announced Credo Stage 5 in March 2026, a fund of about $88 millio
 
 → `Bash` — Check tech.eu Credo fund article
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; MAX=3 $PY q.py https://tech.eu/2026/03/23/credo-ventures-raises-88m-fund-5-to-double-down-on-pre-seed-in-cee-and-its-global-diaspora/ '88' 200
+cd [tmp] && PY=[redacted: local path] MAX=3 $PY q.py https://tech.eu/2026/03/23/credo-ventures-raises-88m-fund-5-to-double-down-on-pre-seed-in-cee-and-its-global-diaspora/ '88' 200
 ```
 
 <details><summary>result</summary>
@@ -1247,7 +1248,7 @@ cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python;
 
 → `Bash` — Read Presto Ventures homepage
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; N=8100 $PY f.py https://www.prestoventures.com/ | tr '\n' ' ' | cut -c1-6000; echo; grep -o 'href="[^"]*"' ../cache/$(python3 -c "import hashlib;print(hashlib.sha1(b'https://www.prestoventures.com/').hexdigest())").raw | sort -u | grep -v 'css\|js\|png\|svg' | head -40
+cd [tmp] && PY=[redacted: local path] N=8100 $PY f.py https://www.prestoventures.com/ | tr '\n' ' ' | cut -c1-6000; echo; grep -o 'href="[^"]*"' ../cache/$(python3 -c "import hashlib;print(hashlib.sha1(b'https://www.prestoventures.com/').hexdigest())").raw | sort -u | grep -v 'css\|js\|png\|svg' | head -40
 ```
 
 <details><summary>result</summary>
@@ -1260,20 +1261,20 @@ cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python;
 
 → `Bash` — Read Presto news page
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; N=5000 $PY f.py https://www.prestoventures.com/news | tr '\n' ' ' | cut -c1-5000; echo; grep -o 'href="http[^"]*"' ../cache/$(python3 -c "import hashlib;print(hashlib.sha1(b'https://www.prestoventures.com/news').hexdigest())").raw | sort -u | grep -v 'website-files\|linkedin\|google' | head -30
+cd [tmp] && PY=[redacted: local path] N=5000 $PY f.py https://www.prestoventures.com/news | tr '\n' ' ' | cut -c1-5000; echo; grep -o 'href="http[^"]*"' ../cache/$(python3 -c "import hashlib;print(hashlib.sha1(b'https://www.prestoventures.com/news').hexdigest())").raw | sort -u | grep -v 'website-files\|linkedin\|google' | head -30
 ```
 
 <details><summary>result</summary>
 
 ```
-## [tmp] chars=3161 Presto Ventures | News Portfolio Team Founders Horizons News Contact Portfolio Team Founders Horizons News Contact IN THE SPOTLIGHT. From time to time, our founders and portfolio companies make waves in the news – here’s a sneak peek. For more updates, check out our LinkedIn page or follow @PrestoVC on X. 25/5/26 Presto Ventures Představenstvo společnosti Presto Ventures II a.s., osoba rizikového kapitálu, se sídlem Na příkopě 859/22, Nové Město, 110 00 Praha 1, IČO: 116 78 704, zapsané v obchodním rejstříku vedeném Městským soudem v Praze, sp. zn. B 26527 (dále jen „Společnost“), svolalo řádnou valnou hromadu na 25.6.2026. Na odkazu níźe jsou umístěny pozvánka a další dokumenty pro akcionáře. View Article 7/2/25 Tech Horizons Why the future belongs to resilience tech and AI-powered hardware View Article 20/1/25 Outfindo Czech Outfindo Raises €1.2M to Transform Online Shopping, Led by Eleven Ventures View Article 16/1/25 Portfolio 10 innovative Czech startups leading the charge in 2025: Cruxo, Lakmoos View Article 10/1/25 Jeff App Latvia’s “MoneySuperMarket” targets $20m funding round and mulls European launch View Article 29/12/24 Presto Ventures Labs of Latvia Investor Showcase: Presto Ventures – investing in defense of Western values View Article 19/12/24 Presto Ventures More money from US investors and rise of defence tech: 
+## [tmp] chars=3161 Presto Ventures | News Portfolio Team Founders Horizons News Contact Portfolio Team Founders Horizons News Contact IN THE SPOTLIGHT. From time to time, our founders and portfolio companies make waves in the news – here’s a sneak peek. For more updates, check out our LinkedIn page or follow @PrestoVC on X. 25/5/26 Presto Ventures Představenstvo společnosti Presto Ventures II a.s., osoba rizikového kapitálu, se sídlem Na příkopě 859/22, Nové Město, 110 00 Praha 1, IČO: 116 78 704, zapsané v obchodním rejstříku vedeném Městským soudem v Praze, sp. zn. B 26527 (dále jen „Společnost“), svolalo řádnou valnou hromadu na 25.6.2026. Na odkazu níźe jsou umístěny pozvánka a další dokumenty pro akcionáře. View Article 7/2/25 Tech Horizons Why the future belongs to resilience tech and AI-powered hardware View Article 20/1/25 Outfindo Czech Outfindo Raises €1.2M to Transform Online Shopping, Led by Eleven Ventures View Article 16/1/25 Portfolio 10 innovative Czech startups leading the charge in 2025: Cruxo, Lakmoos View Article 10/1/25 Jeff App Latvia’s “MoneySuperMarket” targets $20m funding round and mulls European launch View Article 29/12/24 Presto Ventures Labs of Latvia Investor Showcase: Presto Ventures – investing in defense of Western values View Article 19/12/24 Presto Ventures More money from US investors and rise of defence tech:
 … [4167 more characters]
 ```
 </details>
 
 → `Bash` — Check Presto mentions in deal articles
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; for u in https://tech.eu/2024/12/09/czech-mental-health-startup-elinai-secures-eur1m-pre-seed/ https://therecursive.com/czech-outfindo-raises-e1-2m-to-transform-online-shopping-led-by-eleven-ventures/ https://techcrunch.com/2024/12/19/bluequbit-raises-10m-to-take-quantum-software-into-real-world-applications/ https://itkey.media/bavovnas-ai-powered-gprs-independent-drone-navigation-lands-usd-1-7m-of-late-seed-investment/; do MAX=2 $PY q.py $u 'presto' 200; done
+cd [tmp] && PY=[redacted: local path] for u in https://tech.eu/2024/12/09/czech-mental-health-startup-elinai-secures-eur1m-pre-seed/ https://therecursive.com/czech-outfindo-raises-e1-2m-to-transform-online-shopping-led-by-eleven-ventures/ https://techcrunch.com/2024/12/19/bluequbit-raises-10m-to-take-quantum-software-into-real-world-applications/ https://itkey.media/bavovnas-ai-powered-gprs-independent-drone-navigation-lands-usd-1-7m-of-late-seed-investment/; do MAX=2 $PY q.py $u 'presto' 200; done
 ```
 
 <details><summary>result</summary>
@@ -1295,7 +1296,7 @@ cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python;
 
 → `Bash` — Read Presto Tech site and Bavovna article
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; N=4000 $PY f.py https://www.prestotech.com/ | tr '\n' ' ' | cut -c1-3500; echo; MAX=3 $PY q.py https://itkey.media/bavovnas-ai-powered-gprs-independent-drone-navigation-lands-usd-1-7m-of-late-seed-investment/ '1\.7' 250
+cd [tmp] && PY=[redacted: local path] N=4000 $PY f.py https://www.prestotech.com/ | tr '\n' ' ' | cut -c1-3500; echo; MAX=3 $PY q.py https://itkey.media/bavovnas-ai-powered-gprs-independent-drone-navigation-lands-usd-1-7m-of-late-seed-investment/ '1\.7' 250
 ```
 
 <details><summary>result</summary>
@@ -1308,7 +1309,7 @@ cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python;
 
 → `Bash` — Read Reflex Capital homepage
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; N=4400 $PY f.py https://www.reflexcapital.com/ | tr '\n' ' '; echo; grep -o 'href="[^"]*"' ../cache/$(python3 -c "import hashlib;print(hashlib.sha1(b'https://www.reflexcapital.com/').hexdigest())").raw | sort -u | grep -v 'css\|\.js\|png\|svg\|webp' | head -30
+cd [tmp] && PY=[redacted: local path] N=4400 $PY f.py https://www.reflexcapital.com/ | tr '\n' ' '; echo; grep -o 'href="[^"]*"' ../cache/$(python3 -c "import hashlib;print(hashlib.sha1(b'https://www.reflexcapital.com/').hexdigest())").raw | sort -u | grep -v 'css\|\.js\|png\|svg\|webp' | head -30
 ```
 
 <details><summary>result</summary>
@@ -1321,7 +1322,7 @@ cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python;
 
 → `Bash` — Check Reflex Product Fruits and blog
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; MAX=2 $PY q.py https://www.eu-startups.com/2024/05/prague-based-product-fruits-secures-e1-47-million-to-grow-its-ai-driven-digital-adoption-platform/ 'reflex' 300; N=3000 $PY f.py https://www.reflexcapital.com/blog/ | tr '\n' ' ' | cut -c1-2500
+cd [tmp] && PY=[redacted: local path] MAX=2 $PY q.py https://www.eu-startups.com/2024/05/prague-based-product-fruits-secures-e1-47-million-to-grow-its-ai-driven-digital-adoption-platform/ 'reflex' 300; N=3000 $PY f.py https://www.reflexcapital.com/blog/ | tr '\n' ' ' | cut -c1-2500
 ```
 
 <details><summary>result</summary>
@@ -1339,7 +1340,7 @@ cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python;
 
 → `Bash` — ARES lookup Product Fruits
 ```sh
-cd [tmp] && python3 aress.py "Product Fruits" "Supernova Studio" ; 
+cd [tmp] && python3 aress.py "Product Fruits" "Supernova Studio" ;
 ```
 
 <details><summary>result</summary>
@@ -1353,7 +1354,7 @@ cd [tmp] && python3 aress.py "Product Fruits" "Supernova Studio" ;
 
 → `Bash` — Fetch Product Fruits full register extract
 ```sh
-cd [tmp] && MODE=UPLNY /Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python jus.py 09552618 | head -3; f=$(ls -t ../cache/*.txt | head -1); tr '\n' ' ' < $f | grep -o 'Společník:.\{0,400\}' | head -20
+cd [tmp] && MODE=UPLNY [redacted: local path] jus.py 09552618 | head -3; f=$(ls -t ../cache/*.txt | head -1); tr '\n' ' ' < $f | grep -o 'Společník:.\{0,400\}' | head -20
 ```
 
 <details><summary>result</summary>
@@ -1364,7 +1365,7 @@ Veřejný rejstřík a Sbírka listin - Ministerstvo spravedlnosti České repub
 Nový portál pro obchodní rejstřík a evidenci sveřenských fondů, který běží v ověřovacím provozu, se aktuálně upravuje.
 Společník: KAREL PAPÍK , dat. nar. 13. září 1971 Návazná 1040/5, Suchdol, 165 00  Praha 6 zapsáno 30. září 2020 Podíl: Vklad: 300 ,- Kč Splaceno: 100 % Obchodní podíl: 3/10 zapsáno 30. září 2020 vymazáno 11. března 2023 Podíl: Vklad: 300 ,- Kč Splaceno: 100 % Obchodní podíl: 25,5 % Druh podílu: Zakladatelský podíl s nímž jsou spojena zvláštní hlasovací práva na valné hromadě podle odst. 5.4 společenské smlo
 Společník: LADISLAV ŠALOM , dat. nar. 17. července 1987 č.p. 129, 334 54  Lužany zapsáno 30. září 2020 Podíl: Vklad: 700 ,- Kč Splaceno: 100 % Obchodní podíl: 7/10 zapsáno 30. září 2020 vymazáno 11. března 2023 Podíl: Vklad: 500 ,- Kč Splaceno: 100 % Obchodní podíl: 42,5 % Druh podílu: Zakladatelský podíl s nímž jsou spojena zvláštní hlasovací práva na valné hromadě podle odst. 5.4 společenské smlouvy zapsá
-Společník: Lighthouse Seed Fund SCPs L-2557  Luxembourg, 7, rue Robert Stumper, Lucemburské velkovévodství EUID: LURCSL.B230436 Registrační číslo: B230436 Právní forma: zvláštní komanditní společnost podle práva Lucemburského velkovévodství zapsáno 
+Společník: Lighthouse Seed Fund SCPs L-2557  Luxembourg, 7, rue Robert Stumper, Lucemburské velkovévodství EUID: LURCSL.B230436 Registrační číslo: B230436 Právní forma: zvláštní komanditní společnost podle práva Lucemburského velkovévodství zapsáno
 … [2216 more characters]
 ```
 </details>
@@ -1388,7 +1389,7 @@ print("URL", url, "|", name.group(1) if name else "?", "| chars", len(t))
 for mm in re.finditer(r"Společník: ([^,]*?(" + sys.argv[2] + r").{0,200}?zapsáno \d+\. \w+ \d{4})", j, re.I):
     print("  >", mm.group(0)[:400])
 EOF
-cd [tmp] && /Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python jq2.py 09552618 'Reflex|Lighthouse'
+cd [tmp] && [redacted: local path] jq2.py 09552618 'Reflex|Lighthouse'
 ```
 
 <details><summary>result</summary>
@@ -1427,7 +1428,7 @@ cd [tmp] && sed -i '' 's/Společník: (\[^,\]\*?(/Společník: (.{0,80}?(/' jq2.
 
 → `Bash` — Read J&T Ventures homepage
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; N=2000 $PY f.py https://www.jtventures.cz/ | tr '\n' ' '; echo; grep -o 'href="[^"]*"' ../cache/$(python3 -c "import hashlib;print(hashlib.sha1(b'https://www.jtventures.cz/').hexdigest())").raw | sort -u | grep -v 'css\|\.js\|png\|svg\|webp' | head -30
+cd [tmp] && PY=[redacted: local path] N=2000 $PY f.py https://www.jtventures.cz/ | tr '\n' ' '; echo; grep -o 'href="[^"]*"' ../cache/$(python3 -c "import hashlib;print(hashlib.sha1(b'https://www.jtventures.cz/').hexdigest())").raw | sort -u | grep -v 'css\|\.js\|png\|svg\|webp' | head -30
 ```
 
 <details><summary>result</summary>
@@ -1440,7 +1441,7 @@ cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python;
 
 → `Bash` — Read J&T Ventures blog listing
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; N=3000 $PY f.py https://www.jtventures.cz/blog | tr '\n' ' ' | cut -c1-3000; echo; grep -o 'href="/blog/[^"]*"' ../cache/$(python3 -c "import hashlib;print(hashlib.sha1(b'https://www.jtventures.cz/blog').hexdigest())").raw | sort -u | head -20
+cd [tmp] && PY=[redacted: local path] N=3000 $PY f.py https://www.jtventures.cz/blog | tr '\n' ' ' | cut -c1-3000; echo; grep -o 'href="/blog/[^"]*"' ../cache/$(python3 -c "import hashlib;print(hashlib.sha1(b'https://www.jtventures.cz/blog').hexdigest())").raw | sort -u | head -20
 ```
 
 <details><summary>result</summary>
@@ -1453,7 +1454,7 @@ cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python;
 
 → `Bash` — Get J&T blog post quotes
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; MAX=3 $PY q.py https://www.jtventures.cz/blog/investice-do-naboroveho-startupu-finlay 'J&T Ventures|investi' 200 | head -30; MAX=2 $PY q.py https://www.jtventures.cz/blog/grid-online-prinasi-lepe-zaplacene-kuryry-levnejsi-dopravu-i-mene-aut-ve-mestech-rika-ondrej-kratky '1,5 milionu' 200; MAX=2 $PY q.py https://www.jtventures.cz/blog/design-to-code-se-po-letech-sneni-stava-skutecnosti-rika-zakladatel-supernovy 'Series A|J&T' 200
+cd [tmp] && PY=[redacted: local path] MAX=3 $PY q.py https://www.jtventures.cz/blog/investice-do-naboroveho-startupu-finlay 'J&T Ventures|investi' 200 | head -30; MAX=2 $PY q.py https://www.jtventures.cz/blog/grid-online-prinasi-lepe-zaplacene-kuryry-levnejsi-dopravu-i-mene-aut-ve-mestech-rika-ondrej-kratky '1,5 milionu' 200; MAX=2 $PY q.py https://www.jtventures.cz/blog/design-to-code-se-po-letech-sneni-stava-skutecnosti-rika-zakladatel-supernovy 'Series A|J&T' 200
 ```
 
 <details><summary>result</summary>
@@ -1469,14 +1470,14 @@ cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python;
 … rátký založil spin-off startup grid.online, který v reálném čase propojuje kapacity dopravců s poptávkou logistických a e-commerce společností. Vydělávají na tom obě strany a tým již získal investici 1,5 milionu eur od fondů Reflex Capital, J&T Ventures a Grid Invest. Ondřej Krátký v rozhovoru vysvětluje, jak se rozhodl změnit 100 let starý byznys a jak z logistiky dělá spotový trh. Kdy začala v Liftagu prom …
 
 [1 hits, chars=12944]
-… Design to code se po letech snění stává skutečností, říká zakladatel Supernovy - J&T Ventures English Náš přístup Portfolio Tým Blog Kontakt J&T Ventures, budova J&T Banka Sokolovská 700/113a ( 5. patro ) Praha 8 – Karlín, 186 00 Pošlete pitch 
+… Design to code se po letech snění stává skutečností, říká zakladatel Supernovy - J&T Ventures English Náš přístup Portfolio Tým Blog Kontakt J&T Ventures, budova J&T Banka Sokolovská 700/113a ( 5. patro ) Praha 8 – Karlín, 186 00 Pošlete pitch
 … [415 more characters]
 ```
 </details>
 
 → `Bash` — Look for investment wording and dates in J&T posts
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; MAX=4 $PY q.py https://www.jtventures.cz/blog/investice-do-naboroveho-startupu-finlay 'investovali|investice|kolo|eur|2025' 150 | sed -n 4,40p; MAX=3 $PY q.py https://www.jtventures.cz/blog/grid-online-prinasi-lepe-zaplacene-kuryry-levnejsi-dopravu-i-mene-aut-ve-mestech-rika-ondrej-kratky '20(24|25)' 100
+cd [tmp] && PY=[redacted: local path] MAX=4 $PY q.py https://www.jtventures.cz/blog/investice-do-naboroveho-startupu-finlay 'investovali|investice|kolo|eur|2025' 150 | sed -n 4,40p; MAX=3 $PY q.py https://www.jtventures.cz/blog/grid-online-prinasi-lepe-zaplacene-kuryry-levnejsi-dopravu-i-mene-aut-ve-mestech-rika-ondrej-kratky '20(24|25)' 100
 ```
 
 <details><summary>result</summary>
@@ -1495,13 +1496,13 @@ cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python;
 
 → `Bash` — Read Tilia homepage
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; N=7500 $PY f.py https://www.tilia.vc/ | tr '\n' ' '; echo; grep -o 'href="[^"]*"' ../cache/$(python3 -c "import hashlib;print(hashlib.sha1(b'https://www.tilia.vc/').hexdigest())").raw | sort -u | grep -v 'css\|\.js\|png\|svg\|webp\|jpg' | head -30
+cd [tmp] && PY=[redacted: local path] N=7500 $PY f.py https://www.tilia.vc/ | tr '\n' ' '; echo; grep -o 'href="[^"]*"' ../cache/$(python3 -c "import hashlib;print(hashlib.sha1(b'https://www.tilia.vc/').hexdigest())").raw | sort -u | grep -v 'css\|\.js\|png\|svg\|webp\|jpg' | head -30
 ```
 
 <details><summary>result</summary>
 
 ```
-## [tmp] chars=7471 Tilia Impact Ventures Contact us Contact us "Partnering with an investor who not only supports our vision, but who promotes impactful solutions more broadly is important to us. And this investor is Tilia - not just a financial backer, but an ally in helping to create a better world." Shannon Falconer, CEO of BioCraft "Tilia's expertise in connecting us with the right partners has been fundamental to NOLD’s ability to bring its vision to life in the most impactful way. NOLD would not be what it is without Tilia’s input and care." Boryana Uzunova, CEO of NOLD "Tilia has been an incredibly supportive investor from day one, providing invaluable assistance in a very hands-on way, whether it's searching for candidates in their network or giving advice on how to scale our business." Bence Zwecker, CEO of Munch "Tilia since day one understood our need to root our business around its mission. I would greatly recommend the fund to any passionate and mission-driven founder with global ambitions. " Aleksandra Kozera, CEO of The Village "MIWA has impact in its DNA, so partnering with Tilia came very naturally. We are glad not only for their financial support but also the access to Tilia’s network and opportunity to consult company growth on a regular basis." Petr Báča, CEO of MIWA "Tilia is more than an investor for us. It's a great advisor 
+## [tmp] chars=7471 Tilia Impact Ventures Contact us Contact us "Partnering with an investor who not only supports our vision, but who promotes impactful solutions more broadly is important to us. And this investor is Tilia - not just a financial backer, but an ally in helping to create a better world." Shannon Falconer, CEO of BioCraft "Tilia's expertise in connecting us with the right partners has been fundamental to NOLD’s ability to bring its vision to life in the most impactful way. NOLD would not be what it is without Tilia’s input and care." Boryana Uzunova, CEO of NOLD "Tilia has been an incredibly supportive investor from day one, providing invaluable assistance in a very hands-on way, whether it's searching for candidates in their network or giving advice on how to scale our business." Bence Zwecker, CEO of Munch "Tilia since day one understood our need to root our business around its mission. I would greatly recommend the fund to any passionate and mission-driven founder with global ambitions. " Aleksandra Kozera, CEO of The Village "MIWA has impact in its DNA, so partnering with Tilia came very naturally. We are glad not only for their financial support but also the access to Tilia’s network and opportunity to consult company growth on a regular basis." Petr Báča, CEO of MIWA "Tilia is more than an investor for us. It's a great advisor
 … [7031 more characters]
 ```
 </details>
@@ -1519,14 +1520,14 @@ Only one of the four companies shows a 2026 pre-seed round with Tilia.
 
 - **Minimist:** The best match. A funding tracker lists a Pre-Seed round of €1.0M dated 2026-03 for Minimist, an Austria-based company, with Tilia as an investor.
 - **Flox Intelligence:** Tilia is listed on a Seed round of €2.5M dated 2026-02, so it is a seed round, not pre-seed.
-- **Lifeyear:** Tilia is linked to a €2.8M round dated 2025-07, categorized as 
+- **Lifeyear:** Tilia is linked to a €2.8M round dated 2025-07, categorized as
 … [597 more characters]
 ```
 </details>
 
 → `Bash` — Read Tilia portfolio pages and tech.eu tracker
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; for s in flox minimist lifeyear theorema-ai letsdata; do N=1500 $PY f.py https://tilia.vc/$s/ | tr '\n' ' ' | cut -c1-900; echo; done; N=3000 $PY f.py https://funding.tech.eu/investors/Tilia%20Impact%20Ventures | tr '\n' ' ' | cut -c1-2500
+cd [tmp] && PY=[redacted: local path] for s in flox minimist lifeyear theorema-ai letsdata; do N=1500 $PY f.py https://tilia.vc/$s/ | tr '\n' ' ' | cut -c1-900; echo; done; N=3000 $PY f.py https://funding.tech.eu/investors/Tilia%20Impact%20Ventures | tr '\n' ' ' | cut -c1-2500
 ```
 
 <details><summary>result</summary>
@@ -1534,7 +1535,7 @@ cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python;
 ```
 ## [tmp] chars=989 Flox – Tilia Impact Ventures Contact us Contact us Flox deploys AI that detects wildlife near critical infrastructure and guides animals safely away using species-specific signals – replacing fences, pyrotechnics, and lethal control with adaptive, non-lethal deterrence. The company is now scaling dynamic deployments on trains, vehicles, and drones – while building the world’s largest multimodal dataset on wildlife behaviour. 95 % wildlife deterrence success rate 58000 animals across 27 species safely guided away from critical infrastructure Website Linkedin Are you founder and would you like to know more about potential cooperation with Tilia? Do you want to join our partner network? Find us on Linkedin . Contact us Drtinova 557/10, 150 00 P
 
-## [tmp] chars=951 Minimist – Tilia Impact Ventures Contact us Contact us Minimist is a Vienna-based technology startup on a mission to make secondhand shopping as fast and reliable as buying new. Founded in 2024 by a team of retail, ML and product experts, Minimist provides an AI-powered “co-pilot for selling” that allows retailers to digitize unique items in under 30 seconds. 93 % of secondhand inventory never makes it online — that's the gap Minimist exists to 
+## [tmp] chars=951 Minimist – Tilia Impact Ventures Contact us Contact us Minimist is a Vienna-based technology startup on a mission to make secondhand shopping as fast and reliable as buying new. Founded in 2024 by a team of retail, ML and product experts, Minimist provides an AI-powered “co-pilot for selling” that allows retailers to digitize unique items in under 30 seconds. 93 % of secondhand inventory never makes it online — that's the gap Minimist exists to
 … [2765 more characters]
 ```
 </details>
@@ -1555,7 +1556,7 @@ Flox Intelligence, a wildlife-tech company that uses AI to keep animals away fro
 
 → `Bash` — Check Flox funding articles for Tilia quotes
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; MAX=2 $PY q.py https://vestbee.com/insights/articles/flox-intelligence-raises-3-m 'Tilia' 250; MAX=2 $PY q.py https://pulse2.com/flox-intelligence-3-million-raised-to-scale-ai-wildlife-intelligence-platform/ 'Tilia|2026' 200
+cd [tmp] && PY=[redacted: local path] MAX=2 $PY q.py https://vestbee.com/insights/articles/flox-intelligence-raises-3-m 'Tilia' 250; MAX=2 $PY q.py https://pulse2.com/flox-intelligence-3-million-raised-to-scale-ai-wildlife-intelligence-platform/ 'Tilia|2026' 200
 ```
 
 <details><summary>result</summary>
@@ -1594,7 +1595,7 @@ cd [tmp] && python3 aress.py "Delta Green" "FaceUp" "Repairsys" | head -20
 
 → `Bash` — Grep shareholders of Tilia portfolio companies
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; for i in 02406233 06142630 03546926; do $PY jq2.py $i 'Tilia|Credo|Kaya|Lighthouse|Nation|Depo|Reflex|Presto|Rockaway|Purple|Tensor|J&T|Miton|ventures|capital|fund|fond|SICAV|SCSp|kapitálu'; done
+cd [tmp] && PY=[redacted: local path] for i in 02406233 06142630 03546926; do $PY jq2.py $i 'Tilia|Credo|Kaya|Lighthouse|Nation|Depo|Reflex|Presto|Rockaway|Purple|Tensor|J&T|Miton|ventures|capital|fund|fond|SICAV|SCSp|kapitálu'; done
 ```
 
 <details><summary>result</summary>
@@ -1661,7 +1662,7 @@ def run(ico, label):
 
 → `Bash` — Sweep register shareholders batch 2
 ```sh
-cd [tmp] && /Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python sweep.py "Veracity Protocol" "Superface" "Aireen" "Pointee" "Passengera" "Contember" "VRgineers" "Snuggs" "Buildiro" "Yieldigo" "Born Digital" "Robotiq" "GitGut" "Precisimo" "Trifft" "KeyGuru" "NenoVision" "TeskaLabs" "Spaceflow" 2>&1 | grep -v '^$'
+cd [tmp] && [redacted: local path] sweep.py "Veracity Protocol" "Superface" "Aireen" "Pointee" "Passengera" "Contember" "VRgineers" "Snuggs" "Buildiro" "Yieldigo" "Born Digital" "Robotiq" "GitGut" "Precisimo" "Trifft" "KeyGuru" "NenoVision" "TeskaLabs" "Spaceflow" 2>&1 | grep -v '^$'
 ```
 
 <details><summary>result</summary>
@@ -1687,7 +1688,7 @@ cd [tmp] && /Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python swe
 
 → `Bash` — Read Kaya, Lighthouse, Miton homepages
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; for u in https://www.kaya.vc/ https://www.lighthouse-ventures.com/ https://www.miton.cz/; do N=3500 $PY f.py $u | tr '\n' ' ' | cut -c1-3500; echo; echo; done
+cd [tmp] && PY=[redacted: local path] for u in https://www.kaya.vc/ https://www.lighthouse-ventures.com/ https://www.miton.cz/; do N=3500 $PY f.py $u | tr '\n' ' ' | cut -c1-3500; echo; echo; done
 ```
 
 <details><summary>result</summary>
@@ -1732,14 +1733,14 @@ href="https://www.medevio.cz/"
 href="https://www.miton.cz/podcast"
 href="https://www.mitonai.nl/p/nejlepsi-ai-agent-bude-vedet-kdy"
 href="https://youtu.be/1p02GgfbjRA"
-href="mailto:info@miton.cz"
-href="mailto:michala.gregorova@miton.cz"
+href="mailto:[redacted: email address]"
+href="mailto:[redacted: email address]"
 ```
 </details>
 
 → `Bash` — Read Miton ACE press release and blog list
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; N=2500 $PY f.py https://www.miton.cz/blog/miton-investuje-do-ace-stravu-pro-padel-uz-pouziva-vice-nez-polovina-ceskych-hracu/ | tr '\n' ' ' | cut -c1-2500; echo; N=3000 $PY f.py https://www.miton.cz/blog/ | tr '\n' ' ' | cut -c1-3000
+cd [tmp] && PY=[redacted: local path] N=2500 $PY f.py https://www.miton.cz/blog/miton-investuje-do-ace-stravu-pro-padel-uz-pouziva-vice-nez-polovina-ceskych-hracu/ | tr '\n' ' ' | cut -c1-2500; echo; N=3000 $PY f.py https://www.miton.cz/blog/ | tr '\n' ' ' | cut -c1-3000
 ```
 
 <details><summary>result</summary>
@@ -1828,7 +1829,7 @@ Search results describe Air Ventures as a small, Prague-based, early-stage inves
 
 → `Bash` — Read Lighthouse site; ARES N1 lookups
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; N=6000 $PY f.py https://lhv.vc/ | tr '\n' ' ' | cut -c1-5000; echo; python3 aress.py "N1 Ventures" "Nation1" "Smart Management" "N1 VC" | head -20
+cd [tmp] && PY=[redacted: local path] N=6000 $PY f.py https://lhv.vc/ | tr '\n' ' ' | cut -c1-5000; echo; python3 aress.py "N1 Ventures" "Nation1" "Smart Management" "N1 VC" | head -20
 ```
 
 <details><summary>result</summary>
@@ -1882,7 +1883,7 @@ href="https://lhv.vc/partner/olomoucky-klastr-inovaci/"
 
 → `Bash` — Read Lighthouse news page
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; N=4000 $PY f.py https://lhv.vc/news-and-events/ | tr '\n' ' ' | cut -c1-3500; echo; grep -o 'href="https://lhv.vc/[^"]*"' ../cache/$(python3 -c "import hashlib;print(hashlib.sha1(b'https://lhv.vc/news-and-events/').hexdigest())").raw | sort -u | grep -v partner | head -30
+cd [tmp] && PY=[redacted: local path] N=4000 $PY f.py https://lhv.vc/news-and-events/ | tr '\n' ' ' | cut -c1-3500; echo; grep -o 'href="https://lhv.vc/[^"]*"' ../cache/$(python3 -c "import hashlib;print(hashlib.sha1(b'https://lhv.vc/news-and-events/').hexdigest())").raw | sort -u | grep -v partner | head -30
 ```
 
 <details><summary>result</summary>
@@ -1895,7 +1896,7 @@ cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python;
 
 → `Bash` — Read Lighthouse Hermetiq post and news page 2
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; MAX=3 $PY q.py https://lhv.vc/news/lighthouse-ventures-participates-in-hermetiqs-2-2m-pre-seed-round/ 'Hermetiq|2026' 250 | head -20; N=3000 $PY f.py https://lhv.vc/news-and-events/page/2/ | tr '\n' ' ' | cut -c1-2600
+cd [tmp] && PY=[redacted: local path] MAX=3 $PY q.py https://lhv.vc/news/lighthouse-ventures-participates-in-hermetiqs-2-2m-pre-seed-round/ 'Hermetiq|2026' 250 | head -20; N=3000 $PY f.py https://lhv.vc/news-and-events/page/2/ | tr '\n' ' ' | cut -c1-2600
 ```
 
 <details><summary>result</summary>
@@ -1915,7 +1916,7 @@ cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python;
 
 → `Bash` — Read Kaya portfolio and Purple redirect
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; N=3000 $PY f.py https://www.kaya.vc/portfolio | tr '\n' ' ' | cut -c1-3000; echo; cat ../cache/$(python3 -c "import hashlib;print(hashlib.sha1(b'https://www.purple.vc/').hexdigest())").raw
+cd [tmp] && PY=[redacted: local path] N=3000 $PY f.py https://www.kaya.vc/portfolio | tr '\n' ' ' | cut -c1-3000; echo; cat ../cache/$(python3 -c "import hashlib;print(hashlib.sha1(b'https://www.purple.vc/').hexdigest())").raw
 ```
 
 <details><summary>result</summary>
@@ -1928,7 +1929,7 @@ cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python;
 
 → `Bash` — Check E2B blog for Kaya mention
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; for u in https://e2b.dev/blog/series-a https://e2b.dev/blog; do MAX=2 $PY q.py $u 'kaya' 250; done
+cd [tmp] && PY=[redacted: local path] for u in https://e2b.dev/blog/series-a https://e2b.dev/blog; do MAX=2 $PY q.py $u 'kaya' 250; done
 ```
 
 <details><summary>result</summary>
@@ -1943,7 +1944,7 @@ cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python;
 
 → `Bash` — Find E2B Series A post date
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; MAX=3 $PY q.py https://e2b.dev/blog/series-a '20(25|26)|July|Jul' 120; grep -o '"datePublished":"[^"]*"\|datetime="[^"]*"' ../cache/$(python3 -c "import hashlib;print(hashlib.sha1(b'https://e2b.dev/blog/series-a').hexdigest())").raw | head
+cd [tmp] && PY=[redacted: local path] MAX=3 $PY q.py https://e2b.dev/blog/series-a '20(25|26)|July|Jul' 120; grep -o '"datePublished":"[^"]*"\|datetime="[^"]*"' ../cache/$(python3 -c "import hashlib;print(hashlib.sha1(b'https://e2b.dev/blog/series-a').hexdigest())").raw | head
 ```
 
 <details><summary>result</summary>
@@ -2012,7 +2013,7 @@ Links: [{"title":"Do světa kryptoměn vstupuje další český miliardář. Ond
 
 → `Bash` — Sweep register shareholders batch 3
 ```sh
-cd [tmp] && /Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python sweep.py "Spendee" "Mileus" "Smartguide" "Hedepy" "Disivio" "Edmund" "DecisionRules" "FleetFox" "QurieGen" "DeepMark" "Ranketta" "Patron GO" "Malcom Finance" "Digitoo" "Trackbar" "Behavera" "Ziggu" "Shipvio" "Sens Foods" "Tatum" "Comprimato" "Deepnote" "Dateio" "Sharry" "Wultra" "Talkbase" "Daytrip" 2>&1 | grep -v '^$'
+cd [tmp] && [redacted: local path] sweep.py "Spendee" "Mileus" "Smartguide" "Hedepy" "Disivio" "Edmund" "DecisionRules" "FleetFox" "QurieGen" "DeepMark" "Ranketta" "Patron GO" "Malcom Finance" "Digitoo" "Trackbar" "Behavera" "Ziggu" "Shipvio" "Sens Foods" "Tatum" "Comprimato" "Deepnote" "Dateio" "Sharry" "Wultra" "Talkbase" "Daytrip" 2>&1 | grep -v '^$'
 ```
 
 <details><summary>result</summary>
@@ -2048,8 +2049,8 @@ ls -la [tmp] | head; ls [tmp] | wc -l
 
 ```
 total 0
-drwx------  2 [user]  wheel   64 11 окт.  01:47 .
-drwx------  4 [user]  wheel  128 11 окт.  01:05 ..
+drwx------  2 [user]  wheel   64 11 Oct  01:47 .
+drwx------  4 [user]  wheel  128 11 Oct  01:05 ..
 ls: [tmp] No such file or directory
        0
 ```
@@ -2059,7 +2060,7 @@ ls: [tmp] No such file or directory
 ```sh
 S=[tmp] mkdir -p $S/cache $S/tools && cd $S/tools && cat > f.py <<'EOF'
 import sys, hashlib, os, re, subprocess
-sys.path.insert(0, "/Users/[redacted]/homeW/ai-dev-test/investor-db/src")
+sys.path.insert(0, "[redacted: local path]")
 from investordb.fetch import extract_text
 from investordb.textnorm import normalize
 C = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "cache")
@@ -2091,7 +2092,7 @@ sweep.py
 
 → `Bash` — Sweep register shareholders batch 3
 ```sh
-cd [tmp] && /Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python sweep.py "Spendee" "Mileus" "Smartguide" "Hedepy" "Disivio" "Edmund" "DecisionRules" "FleetFox" "QurieGen" "DeepMark" "Ranketta" "Patron GO" "Malcom Finance" "Digitoo" "Trackbar" "Behavera" "Shipvio" "Tatum" "Comprimato" "Dateio" "Sharry" "Wultra" "Talkbase" 2>&1 | grep -v '^$'
+cd [tmp] && [redacted: local path] sweep.py "Spendee" "Mileus" "Smartguide" "Hedepy" "Disivio" "Edmund" "DecisionRules" "FleetFox" "QurieGen" "DeepMark" "Ranketta" "Patron GO" "Malcom Finance" "Digitoo" "Trackbar" "Behavera" "Shipvio" "Tatum" "Comprimato" "Dateio" "Sharry" "Wultra" "Talkbase" 2>&1 | grep -v '^$'
 ```
 
 <details><summary>result</summary>
@@ -2114,7 +2115,7 @@ cd [tmp] && /Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python swe
 
 → `Bash` — Sweep register shareholders batch 3 continued
 ```sh
-cd [tmp] && sed -i '' 's/subs = \[s for s in ares(arg) if not s.get("datumZaniku")\]/subs = [s for s in ares(arg) if not s.get("datumZaniku") and s.get("ico")]/' sweep.py && /Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python sweep.py "Edmund" "DecisionRules" "FleetFox" "QurieGen" "DeepMark" "Ranketta" "Patron GO" "Malcom" "Digitoo" "Trackbar" "Behavera" "Shipvio" "Tatum Technology" "Comprimato" "Dateio" "Sharry" "Wultra" "Talkbase" 2>&1 | grep -v '^$'
+cd [tmp] && sed -i '' 's/subs = \[s for s in ares(arg) if not s.get("datumZaniku")\]/subs = [s for s in ares(arg) if not s.get("datumZaniku") and s.get("ico")]/' sweep.py && [redacted: local path] sweep.py "Edmund" "DecisionRules" "FleetFox" "QurieGen" "DeepMark" "Ranketta" "Patron GO" "Malcom" "Digitoo" "Trackbar" "Behavera" "Shipvio" "Tatum Technology" "Comprimato" "Dateio" "Sharry" "Wultra" "Talkbase" 2>&1 | grep -v '^$'
 ```
 
 <details><summary>result</summary>
@@ -2144,7 +2145,7 @@ cd [tmp] && sed -i '' 's/subs = \[s for s in ares(arg) if not s.get("datumZaniku
 ```sh
 cd [tmp] && cat > lib.py <<'EOF'
 import json, os, sys
-OUT = "/Users/[redacted]/homeW/ai-dev-test/investor-db/data/sample/parts/cz.json"
+OUT = "[redacted: local path]"
 ACC = "2026-10-11"
 def S(url, tier, pub, published, quote):
     return {"url": url, "tier": tier, "publisher": pub, "published": published, "accessed": ACC, "quote": quote}
@@ -2186,7 +2187,7 @@ recs.append(REC("credo-ventures", "Credo Ventures", "vc", PRG(), credo_home,
   "CVCA full member; own portfolio of 100+ companies; Credo Stage IV L.P. entered as shareholder of Delta Green s.r.o. on 29 May 2024 (justice.cz).",
   {"sectors": F(["IT & internet", "mobile communication"], S("https://cvca.cz/en/credo-ventures-2/", "B", CVCA, None, "Sector Preferences IT & internet, mobile communication")),
    "stages": F(["pre-seed"], S(credo_home, "B", "Credo Ventures", None, "Leading Pre-Seed rounds.")),
-   "geography": F(["CEE", "CEE 
+   "geography": F(["CEE", "CEE
 … [4131 more characters]
 ```
 
@@ -2202,12 +2203,12 @@ records: 2 ['credo-ventures', 'presto-ventures']
 cd [tmp] && cat > verify.py <<'EOF'
 import json, sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, "/Users/[redacted]/homeW/ai-dev-test/investor-db/src")
+sys.path.insert(0, "[redacted: local path]")
 from f import fetch
 from investordb.textnorm import normalize
 from jsonschema import Draft202012Validator
-schema = json.load(open("/Users/[redacted]/homeW/ai-dev-test/investor-db/schema/investor.schema.json"))
-data = json.load(open("/Users/[redacted]/homeW/ai-dev-test/investor-db/data/sample/parts/cz.json"))
+schema = json.load(open("[redacted: local path]"))
+data = json.load(open("[redacted: local path]"))
 v = Draft202012Validator(schema, format_checker=Draft202012Validator.FORMAT_CHECKER)
 errs = list(v.iter_errors(data))
 for e in errs: print("SCHEMA", list(e.absolute_path)[:4], e.message[:200])
@@ -2215,7 +2216,7 @@ ok = bad = 0
 only = set(sys.argv[1:])
 def srcs(r):
     for k, fv in (r.get("fields") or {}).items():
-        if fv: 
+        if fv:
             for s in fv["sources"]: yield k, s
     for inv in r.get("investments") or []:
         for s in inv["sources"]: yield "inv:" + inv["company"], s
@@ -2263,7 +2264,7 @@ schema errors=0 quotes ok=61 missing=0
 
 → `Bash` — Read Tensor, Depo, ZAKA homepages
 ```sh
-cd [tmp] && sed -i '' 's/"announced", \[\n      S("https:\/\/or.justice.cz\/ias\/ui\/rejstrik-firma.vysledky?subjektId=1288906/X/' b2.py; PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; for u in https://tensor.ventures/ https://www.depoventures.com/ https://www.zaka.vc/; do N=2500 $PY f.py $u; echo; done
+cd [tmp] && sed -i '' 's/"announced", \[\n      S("https:\/\/or.justice.cz\/ias\/ui\/rejstrik-firma.vysledky?subjektId=1288906/X/' b2.py; PY=[redacted: local path] for u in https://tensor.ventures/ https://www.depoventures.com/ https://www.zaka.vc/; do N=2500 $PY f.py $u; echo; done
 ```
 
 <details><summary>result</summary>
@@ -2277,7 +2278,7 @@ Tensor Ventures Tensor Ventures explores deep tech innovation's frontiers & inve
 
 → `Bash` — Read ZAKA news page
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; grep -o 'href="https://www.zaka.vc/[^"]*"' ../cache/2e54b18b5bc4f1e2a7f4f3a8224103ff704cf361.raw | sort -u | head; N=3000 $PY f.py https://www.zaka.vc/news/
+cd [tmp] && PY=[redacted: local path] grep -o 'href="https://www.zaka.vc/[^"]*"' ../cache/2e54b18b5bc4f1e2a7f4f3a8224103ff704cf361.raw | sort -u | head; N=3000 $PY f.py https://www.zaka.vc/news/
 ```
 
 <details><summary>result</summary>
@@ -2291,7 +2292,7 @@ News - ZAKA VC Skip to content Home About Team Portfolio Co-Investors News Jobs 
 
 → `Bash` — Find ZAKA press release links
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; grep -o 'href="[^"]*"' ../cache/6288e2ca207e7d728e7e49c5db1b564629200eff.raw | grep -i 'perfectbit\|sensible\|finaldose\|human-archive' | sort -u; 
+cd [tmp] && PY=[redacted: local path] grep -o 'href="[^"]*"' ../cache/6288e2ca207e7d728e7e49c5db1b564629200eff.raw | grep -i 'perfectbit\|sensible\|finaldose\|human-archive' | sort -u;
 ```
 
 <details><summary>result</summary>
@@ -2306,7 +2307,7 @@ href="https://zaka.vc/sensible-biotechnologies-raises-47m-why-we-backed-them-ear
 
 → `Bash` — Read ZAKA PerfectBit and Sensible posts
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; MAX=3 $PY q.py https://zaka.vc/perfectbit-building-the-verified-data-layer-for-physical-ai/ 'invest|round|backed' 200; MAX=3 $PY q.py https://zaka.vc/sensible-biotechnologies-raises-47m-why-we-backed-them-early-and-why-its-personal-for-us/ 'invest|round|47' 200 | head -20
+cd [tmp] && PY=[redacted: local path] MAX=3 $PY q.py https://zaka.vc/perfectbit-building-the-verified-data-layer-for-physical-ai/ 'invest|round|backed' 200; MAX=3 $PY q.py https://zaka.vc/sensible-biotechnologies-raises-47m-why-we-backed-them-early-and-why-its-personal-for-us/ 'invest|round|47' 200 | head -20
 ```
 
 <details><summary>result</summary>
@@ -2328,7 +2329,7 @@ cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python;
 
 → `Bash` — Search ZAKA posts for investment statements
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; MAX=4 $PY q.py https://zaka.vc/sensible-biotechnologies-raises-47m-why-we-backed-them-early-and-why-its-personal-for-us/ 'we invested|ZAKA (led|participated|invested)|our investment|we (led|joined|participated)' 250; MAX=4 $PY q.py https://zaka.vc/perfectbit-building-the-verified-data-layer-for-physical-ai/ 'ZAKA|we ' 150 | tail -12
+cd [tmp] && PY=[redacted: local path] MAX=4 $PY q.py https://zaka.vc/sensible-biotechnologies-raises-47m-why-we-backed-them-early-and-why-its-personal-for-us/ 'we invested|ZAKA (led|participated|invested)|our investment|we (led|joined|participated)' 250; MAX=4 $PY q.py https://zaka.vc/perfectbit-building-the-verified-data-layer-for-physical-ai/ 'ZAKA|we ' 150 | tail -12
 ```
 
 <details><summary>result</summary>
@@ -2343,28 +2344,28 @@ cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python;
 
 …  We believe that combination gives the company a strong foundation to build an important piece of AI infrastructure.” Jan Kasper, Managing Partner at ZAKA VC Why we invested PerfectBit combines several characteristics we rarely see together at such an early stage: a technically ambitious problem, a diff …
 
-… that combination gives the company a strong foundation to build an important piece of AI infrastructure.” Jan Kasper, 
+… that combination gives the company a strong foundation to build an important piece of AI infrastructure.” Jan Kasper,
 … [209 more characters]
 ```
 </details>
 
 → `Bash` — Read Czech Founders, Y Soft Ventures, Tachles homepages
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; for u in https://czechfounders.vc/ https://www.ysoftventures.com/ https://tachlesvc.com/; do N=2500 $PY f.py $u; echo; done
+cd [tmp] && PY=[redacted: local path] for u in https://czechfounders.vc/ https://www.ysoftventures.com/ https://tachlesvc.com/; do N=2500 $PY f.py $u; echo; done
 ```
 
 <details><summary>result</summary>
 
 ```
 ## [tmp] chars=5585
-Czech Founders VC 🥷 Czech Founders VC 📩 hello@czechfounders.vc 🎉 The Founders community just grew international and got united. 🎊 We’ve launched United Founders! We help build the next generation of Central European unicorns by: 😍 Attracting Attracting world-class investors and mentors 💸 Investing Investing in exceptional founders with global ambitions 🧑🏼‍🎓 Learning Enabling early-stage founders to learn from the best peers 💡 Apply for investment ⛰️ Apply for Sherpa acceleration Our focus This is what we typically invest in. Pre-seed Pre-seed tickets. Typically €50-350k. Strong founders Winning teams willing to put everything into the game. Go to market Clear go-to-market strategy with a strong executive team . CEE Region Based in Central or Eastern Europe (CEE) & aiming for a global scale. How it works First Contact Typeform, email, personal. We are flexible. Quick decisions 2-3 meetings. Detailed and honest feedback guaranteed. Fair Terms No more than 15% equity, no multiple liquidation preferences, etc. Founder support Access to our LPs and mentors to support your startup on the way. Our team Vit Horky Vit Horky Vaclav Pavlecka Vaclav Pavlecka Ivan Kristel Ivan Kristel Jirina Dunkova Jirina Dunkova Milana Idrisova Milana Idrisova Sintija Meissner Sintija Meissner Our portfolio young startups with global ambitions and strong f
+Czech Founders VC 🥷 Czech Founders VC 📩 [redacted: email address] 🎉 The Founders community just grew international and got united. 🎊 We’ve launched United Founders! We help build the next generation of Central European unicorns by: 😍 Attracting Attracting world-class investors and mentors 💸 Investing Investing in exceptional founders with global ambitions 🧑🏼‍🎓 Learning Enabling early-stage founders to learn from the best peers 💡 Apply for investment ⛰️ Apply for Sherpa acceleration Our focus This is what we typically invest in. Pre-seed Pre-seed tickets. Typically €50-350k. Strong founders Winning teams willing to put everything into the game. Go to market Clear go-to-market strategy with a strong executive team . CEE Region Based in Central or Eastern Europe (CEE) & aiming for a global scale. How it works First Contact Typeform, email, personal. We are flexible. Quick decisions 2-3 meetings. Detailed and honest feedback guaranteed. Fair Terms No more than 15% equity, no multiple liquidation preferences, etc. Founder support Access to our LPs and mentors to support your startup on the way. Our team Vit Horky Vit Horky Vaclav Pavlecka Vaclav Pavlecka Ivan Kristel Ivan Kristel Jirina Dunkova Jirina Dunkova Milana Idrisova Milana Idrisova Sintija Meissner Sintija Meissner Our portfolio young startups with global ambitions and strong f
 … [6394 more characters]
 ```
 </details>
 
 → `Bash` — Sweep Czech Founders portfolio companies
 ```sh
-cd [tmp] && PAT="Czech Founders|Y Soft|DEPO|Purple|Nation|ZAKA|Kaya|KAYA|Miton|MITON|Rockaway|Seed Starter|START GUIDE|GAIN|BHM|StartupYard|Pale Fire|Air Ventures|AIR VENTURES|Impulse|Soulmates|i&i|Tensor" /Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python sweep.py 23453362 09103422 "Merchantee" "Filuta" "Fungies" "Mamio" "Zaitra" "StreamBee" "Sharpgrid" "Lignufy" "Circuparts" "Upgrape" "qubu" 2>&1 | grep -v '^$'
+cd [tmp] && PAT="Czech Founders|Y Soft|DEPO|Purple|Nation|ZAKA|Kaya|KAYA|Miton|MITON|Rockaway|Seed Starter|START GUIDE|GAIN|BHM|StartupYard|Pale Fire|Air Ventures|AIR VENTURES|Impulse|Soulmates|i&i|Tensor" [redacted: local path] sweep.py 23453362 09103422 "Merchantee" "Filuta" "Fungies" "Mamio" "Zaitra" "StreamBee" "Sharpgrid" "Lignufy" "Circuparts" "Upgrape" "qubu" 2>&1 | grep -v '^$'
 ```
 
 <details><summary>result</summary>
@@ -2391,7 +2392,7 @@ cd [tmp] && PAT="Czech Founders|Y Soft|DEPO|Purple|Nation|ZAKA|Kaya|KAYA|Miton|M
 
 → `Bash` — List all shareholders of Merchantee and DecisionRules
 ```sh
-cd [tmp] && PAT="." /Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python sweep.py 19232527 23453362 | cut -c1-200
+cd [tmp] && PAT="." [redacted: local path] sweep.py 19232527 23453362 | cut -c1-200
 ```
 
 <details><summary>result</summary>
@@ -2436,7 +2437,7 @@ Links: [{"title":"Predict your next investment","url":"https://www.cbinsights.co
 
 The search turned up one 2026 round for Inven Capital, a Series B in Andercore, but no other 2026 cleantech deals.
 
-- **Andercore Series B (February 2026):** CB Insights lists their latest 
+- **Andercore Series B (February 2026):** CB Insights lists their latest
 … [1177 more characters]
 ```
 </details>
@@ -2499,21 +2500,21 @@ for u in https://www.purple-ventures.com/ https://purpleventures.eu/ https://www
 
 → `Bash` — Read Purple and Rockaway Ventures homepages
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; for u in https://www.purple-ventures.com/ https://rockawayventures.com/; do N=3500 $PY f.py $u; echo; done
+cd [tmp] && PY=[redacted: local path] for u in https://www.purple-ventures.com/ https://rockawayventures.com/; do N=3500 $PY f.py $u; echo; done
 ```
 
 <details><summary>result</summary>
 
 ```
 ## [tmp] chars=47251
-Úvod Purple Ventures | Leading VC in CEE region. How we invest Our startups Meet us Media Startup Jobs Pitch us hello@purple-ventures.com How we invest Our startups Meet us Media Startup Jobs Pitch us With their generous investment, Purple Ventures not only supported our start-up but also raised awareness about the importance of mental health. Lukáš Krčil, CEO & Co-Founder of Hedepy Every contact with Purple was transparent and straightforward . For me this is crucial. It lets me focus on business and be on the same page with investors . I'm really glad to have them on our investors' board. Alex Ilyash, Founder of Choice QR I value our honest, no-BS relationship with Purple and their support from the very beginning. Radim Vysoký, CEO & Co-Founder of Artmaster Purple Ventures, became an important part of our growth journey. Sandor Kiss, CEO & Co-founder If you, as a founder, have the opportunity to bring Purple on board, don't hesitate. A true partner for good and bad weather. André Dravecký, CEO & Founder of Ringil Having the right investor in your corner can one day make all the difference. We are grateful to have the Purple Ventures in our corner. Jakub Krcmar, CEO & Co-founder of Veracity Protocol Purple Ventures isn't just investor, but strategic partner. They empathize with the initial struggle of a start-up , and we're gr
+Úvod Purple Ventures | Leading VC in CEE region. How we invest Our startups Meet us Media Startup Jobs Pitch us [redacted: email address] How we invest Our startups Meet us Media Startup Jobs Pitch us With their generous investment, Purple Ventures not only supported our start-up but also raised awareness about the importance of mental health. Lukáš Krčil, CEO & Co-Founder of Hedepy Every contact with Purple was transparent and straightforward . For me this is crucial. It lets me focus on business and be on the same page with investors . I'm really glad to have them on our investors' board. Alex Ilyash, Founder of Choice QR I value our honest, no-BS relationship with Purple and their support from the very beginning. Radim Vysoký, CEO & Co-Founder of Artmaster Purple Ventures, became an important part of our growth journey. Sandor Kiss, CEO & Co-founder If you, as a founder, have the opportunity to bring Purple on board, don't hesitate. A true partner for good and bad weather. André Dravecký, CEO & Founder of Ringil Having the right investor in your corner can one day make all the difference. We are grateful to have the Purple Ventures in our corner. Jakub Krcmar, CEO & Co-founder of Veracity Protocol Purple Ventures isn't just investor, but strategic partner. They empathize with the initial struggle of a start-up , and we're gr
 … [5803 more characters]
 ```
 </details>
 
 → `Bash` — Extract dated news items from Rockaway site
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; MAX=8 $PY q.py https://rockawayventures.com/ '(January|February|March|April|May|June|July|August|September|October|November|December) \d+, 20\d\d' 160 | cut -c1-420; MAX=3 $PY q.py https://rockawayventures.com/ 'fund|€|EUR' 120 | cut -c1-300
+cd [tmp] && PY=[redacted: local path] MAX=8 $PY q.py https://rockawayventures.com/ '(January|February|March|April|May|June|July|August|September|October|November|December) \d+, 20\d\d' 160 | cut -c1-420; MAX=3 $PY q.py https://rockawayventures.com/ 'fund|€|EUR' 120 | cut -c1-300
 ```
 
 <details><summary>result</summary>
@@ -2536,7 +2537,7 @@ cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python;
 
 → `Bash` — Extract Purple investment criteria quotes
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; MAX=6 $PY q.py https://www.purple-ventures.com/ 'Our introduction|ticket|pre-seed|EUR|€|CZK|fund' 200 | cut -c1-500 | head -30
+cd [tmp] && PY=[redacted: local path] MAX=6 $PY q.py https://www.purple-ventures.com/ 'Our introduction|ticket|pre-seed|EUR|€|CZK|fund' 200 | cut -c1-500 | head -30
 ```
 
 <details><summary>result</summary>
@@ -2555,7 +2556,7 @@ cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python;
 
 → `Bash` — Find Miton legal entity
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; for u in https://www.miton.cz/ https://www.miton.cz/o-nas/ https://www.miton.cz/lide/; do $PY f.py $u 'IČ|a\.s\.|s\.r\.o\.' | head -5; done; python3 aress.py "MITON" | grep -iv 'costumes\|circus\|wizards\|orchestra\|dinos\|jugglers\|drivers\|sharks\|tenants\|metacon\|stunts' | head -30
+cd [tmp] && PY=[redacted: local path] for u in https://www.miton.cz/ https://www.miton.cz/o-nas/ https://www.miton.cz/lide/; do $PY f.py $u 'IČ|a\.s\.|s\.r\.o\.' | head -5; done; python3 aress.py "MITON" | grep -iv 'costumes\|circus\|wizards\|orchestra\|dinos\|jugglers\|drivers\|sharks\|tenants\|metacon\|stunts' | head -30
 ```
 
 <details><summary>result</summary>
@@ -2600,7 +2601,7 @@ cd [tmp] && python3 aress.py "MITON CZ" "ACE padel" "Shaka" "DuoCards" "Kilde" 2
 
 → `Bash` — Sweep DuoCards shareholders
 ```sh
-cd [tmp] && /Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python sweep.py 08212571 | cut -c1-260
+cd [tmp] && [redacted: local path] sweep.py 08212571 | cut -c1-260
 ```
 
 <details><summary>result</summary>
@@ -2629,7 +2630,7 @@ I found several 2026 pre-seed deals led or backed by DEPO Ventures, though the s
 
 → `Bash` — Read NRI Fond Ukrajina article and NRI homepage
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; MAX=3 $PY q.py https://www.businessinfo.cz/clanky/nri-dokoncila-vyber-venture-kapitaloveho-fondu-pro-program-fond-ukrajina/ 'DEPO|94' 250; N=2500 $PY f.py https://www.nrinvesticni.cz/
+cd [tmp] && PY=[redacted: local path] MAX=3 $PY q.py https://www.businessinfo.cz/clanky/nri-dokoncila-vyber-venture-kapitaloveho-fondu-pro-program-fond-ukrajina/ 'DEPO|94' 250; N=2500 $PY f.py https://www.nrinvesticni.cz/
 ```
 
 <details><summary>result</summary>
@@ -2644,7 +2645,7 @@ NR investiční, a.s., osoba rizikového kapitálu | Národní rozvojová invest
 
 → `Bash` — Read Inven Capital homepage
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; N=6000 $PY f.py https://www.invencapital.cz/ | cut -c1-6000
+cd [tmp] && PY=[redacted: local path] N=6000 $PY f.py https://www.invencapital.cz/ | cut -c1-6000
 ```
 
 <details><summary>result</summary>
@@ -2679,7 +2680,7 @@ href="https://www.andercore.com/press/andercore-secures-40m-series-b-for-ai-driv
 
 → `Bash` — Check Andercore and Vytal press releases
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; MAX=2 $PY q.py https://www.andercore.com/press/andercore-secures-40m-series-b-for-ai-driven-industrial-trade-platform 'Inven' 250; MAX=2 $PY q.py https://www.andercore.com/press/andercore-secures-40m-series-b-for-ai-driven-industrial-trade-platform '20(25|26)' 100; MAX=2 $PY q.py https://www.invencapital.cz/file/edee/ivcp2/news/press-release-vytal.pdf 'Inven|20(24|25|26)' 200
+cd [tmp] && PY=[redacted: local path] MAX=2 $PY q.py https://www.andercore.com/press/andercore-secures-40m-series-b-for-ai-driven-industrial-trade-platform 'Inven' 250; MAX=2 $PY q.py https://www.andercore.com/press/andercore-secures-40m-series-b-for-ai-driven-industrial-trade-platform '20(25|26)' 100; MAX=2 $PY q.py https://www.invencapital.cz/file/edee/ivcp2/news/press-release-vytal.pdf 'Inven|20(24|25|26)' 200
 ```
 
 <details><summary>result</summary>
@@ -2695,14 +2696,14 @@ cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python;
 …  Commerzbank and KfW. The company has now raised $75m to date. Contact Iskender Dirik Release 11.02.2026 Andercore operates in the world’s largest commercial system Andercore operates in the world’s large …
 
 [2 hits, chars=5232]
-…  Vytal Secures 
+…  Vytal Secures
 … [766 more characters]
 ```
 </details>
 
 → `Bash` — Look for Inven role in Vytal press release
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; MAX=3 $PY q.py https://www.invencapital.cz/file/edee/ivcp2/news/press-release-vytal.pdf 'INVEN|led by|existing investor' 200
+cd [tmp] && PY=[redacted: local path] MAX=3 $PY q.py https://www.invencapital.cz/file/edee/ivcp2/news/press-release-vytal.pdf 'INVEN|led by|existing investor' 200
 ```
 
 <details><summary>result</summary>
@@ -2720,7 +2721,7 @@ cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python;
 
 → `Bash` — Find funding wording in Vytal release
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; MAX=5 $PY q.py https://www.invencapital.cz/file/edee/ivcp2/news/press-release-vytal.pdf 'capital (injection|increase)|growth capital|financing|investor' 180 | cut -c1-400
+cd [tmp] && PY=[redacted: local path] MAX=5 $PY q.py https://www.invencapital.cz/file/edee/ivcp2/news/press-release-vytal.pdf 'capital (injection|increase)|growth capital|financing|investor' 180 | cut -c1-400
 ```
 
 <details><summary>result</summary>
@@ -2736,7 +2737,7 @@ cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python;
 
 → `Bash` — Check register business scope of manager entities
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; $PY -c "
+cd [tmp] && PY=[redacted: local path] $PY -c "
 import sys; sys.path.insert(0,'.')
 from sweep import regurl; from f import fetch; import re
 for ico in ['07723172','25417967','04753101','05775574']:
@@ -2755,7 +2756,7 @@ for ico in ['07723172','25417967','04753101','05775574']:
 04753101 https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=922607&typ=PLATNY
     ['DEPO VENTURES, s.r.o.'] ['pronájem nemovitostí, bytů a nebytových prostor Výroba, obchod a služby neuvedené v přílohách 1 až 3 živnostenského zákona Statutární orgán: jednatel: Ing. PETR ŠÍMA , dat. nar. 26. března 1969 Trojská 40/154, Troja, 171 00 Praha 7 Počet členů: 1 Způsob jednání: Jednatel zastupuje společnost samosta']
 05775574 https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=961830&typ=PLATNY
-    ['Purple Ventures s.r.o.'] ['Výroba, obchod a služby neuvedené v přílohách 1 až 3 živnostenského zákona Pronájem nemovitostí, bytů 
+    ['Purple Ventures s.r.o.'] ['Výroba, obchod a služby neuvedené v přílohách 1 až 3 živnostenského zákona Pronájem nemovitostí, bytů
 … [200 more characters]
 ```
 </details>
@@ -2790,7 +2791,7 @@ schema errors=0 quotes ok=110 missing=1
 
 → `Bash` — Check CVCA Nation1 sector text
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; MAX=1 $PY q.py https://cvca.cz/en/nation1-2/ 'Sector' 60
+cd [tmp] && PY=[redacted: local path] MAX=1 $PY q.py https://cvca.cz/en/nation1-2/ 'Sector' 60
 ```
 
 <details><summary>result</summary>
@@ -2813,7 +2814,7 @@ s=s.replace('"We’re excited to announce our investment in Ranketta")','"We’r
 # reorder: Ranketta last for lighthouse
 open(p,'w').write(s)
 EOF
-grep -n 'Ranketta' b2.py | head; /Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python b2.py && /Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python b3.py && /Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python verify.py
+grep -n 'Ranketta' b2.py | head; [redacted: local path] b2.py && [redacted: local path] b3.py && [redacted: local path] verify.py
 ```
 
 <details><summary>result</summary>
@@ -2842,8 +2843,8 @@ rest_start=b; end=s.index(']))\nupsert', rest_start)
 s=s[:a]+'['+s[rest_start:end].lstrip('\n ')+',\n   '+block+s[end:]
 open(p,'w').write(s)
 EOF
-/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python b2.py && /Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python verify.py lighthouse-ventures && python3 -c "
-import json;d=json.load(open('/Users/[redacted]/homeW/ai-dev-test/investor-db/data/sample/parts/cz.json'))
+[redacted: local path] b2.py && [redacted: local path] verify.py lighthouse-ventures && python3 -c "
+import json;d=json.load(open('[redacted: local path]'))
 r=[x for x in d if x['id']=='lighthouse-ventures'][0];print([(i['company'],i['date']) for i in r['investments']])"
 ```
 
@@ -2858,7 +2859,7 @@ schema errors=0 quotes ok=10 missing=0
 
 → `Bash` — Read Seed Starter, Startguide, Gain homepages
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; for u in https://www.seedstarter.cz/en/home https://startguide.cz/en/ https://gain.ventures/; do N=2200 $PY f.py $u; echo; done
+cd [tmp] && PY=[redacted: local path] for u in https://www.seedstarter.cz/en/home https://startguide.cz/en/ https://gain.ventures/; do N=2200 $PY f.py $u; echo; done
 ```
 
 <details><summary>result</summary>
@@ -2872,7 +2873,7 @@ Grow something that will last | Seed Starter České spořitelny Skip Navigation
 
 → `Bash` — Read Pale Fire, StartupYard, Orbit, i&i Bio, Impulse homepages
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; for u in https://palefirecapital.com/ https://startupyard.com/ https://orbitcapital.com/ https://www.inibio.eu/ https://impulseventures.com/; do N=1800 $PY f.py $u; echo; done
+cd [tmp] && PY=[redacted: local path] for u in https://palefirecapital.com/ https://startupyard.com/ https://orbitcapital.com/ https://www.inibio.eu/ https://impulseventures.com/; do N=1800 $PY f.py $u; echo; done
 ```
 
 <details><summary>result</summary>
@@ -2886,7 +2887,7 @@ cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python;
 
 → `Bash` — Get i&i Bio portfolio years and legal entity
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; MAX=1 $PY q.py https://www.inibio.eu/ 'KyDo' 600; python3 aress.py "i&i Biotech" "i & i Biotech" "i&i Prague" "IOCB" | head
+cd [tmp] && PY=[redacted: local path] MAX=1 $PY q.py https://www.inibio.eu/ 'KyDo' 600; python3 aress.py "i&i Biotech" "i & i Biotech" "i&i Prague" "IOCB" | head
 ```
 
 <details><summary>result</summary>
@@ -2940,7 +2941,7 @@ cd [tmp] && python3 aress.py "Biotech Fund" "i&i Bio" "Orbit Capital" "OGD Advis
 
 → `Bash` — Check Startguide portfolio, BHM site, other domains
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; MAX=2 $PY q.py https://startguide.cz/en/ 'portfolio|Carebot|Ringil' 300 | cut -c1-700; N=2200 $PY f.py https://www.bhm.cz/; for u in https://soulmates.vc/ https://www.soulmates.ventures/ https://rockawayx.com/ https://www.koopeo.com/; do curl -sL -o /dev/null -A "Mozilla/5.0 (Macintosh)" --max-time 12 -w "%{http_code} %{size_download} $u\n" $u; done
+cd [tmp] && PY=[redacted: local path] MAX=2 $PY q.py https://startguide.cz/en/ 'portfolio|Carebot|Ringil' 300 | cut -c1-700; N=2200 $PY f.py https://www.bhm.cz/; for u in https://soulmates.vc/ https://www.soulmates.ventures/ https://rockawayx.com/ https://www.koopeo.com/; do curl -sL -o /dev/null -A "Mozilla/5.0 (Macintosh)" --max-time 12 -w "%{http_code} %{size_download} $u\n" $u; done
 ```
 
 <details><summary>result</summary>
@@ -2959,7 +2960,7 @@ Autoškola BHM spol. s r.o. Hlavní strana Skupiny Přihláška Školení řidi�
 
 → `Bash` — Read Soulmates and RockawayX homepages
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; N=2500 $PY f.py https://www.soulmates.ventures/; echo; N=2000 $PY f.py https://rockawayx.com/
+cd [tmp] && PY=[redacted: local path] N=2500 $PY f.py https://www.soulmates.ventures/; echo; N=2000 $PY f.py https://rockawayx.com/
 ```
 
 <details><summary>result</summary>
@@ -2973,7 +2974,7 @@ Soulmates Ventures We back bold, innovative entrepreneurs building a more sustai
 
 → `Bash` — Find Soulmates Rightcharge link
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; grep -o 'href="[^"]*"' ../cache/885ed97da893735a75e4a84b057e78dd53d78a1c.raw | grep -i 'rightcharge\|journal\|press' | sort -u | head
+cd [tmp] && PY=[redacted: local path] grep -o 'href="[^"]*"' ../cache/885ed97da893735a75e4a84b057e78dd53d78a1c.raw | grep -i 'rightcharge\|journal\|press' | sort -u | head
 ```
 
 <details><summary>result</summary>
@@ -2989,7 +2990,7 @@ href="https://www.soulmatesventures.com/soulmates-ventures-leads-1-6m-seed-round
 
 → `Bash` — Read Soulmates follow-on post and journal
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; MAX=2 $PY q.py https://www.soulmatesventures.com/rightcharge-follow-on-round/ '500K|20(25|26)' 200; grep -o '"datePublished":"[^"]*"\|article:published_time" content="[^"]*"' ../cache/$(python3 -c "import hashlib;print(hashlib.sha1(b'https://www.soulmatesventures.com/rightcharge-follow-on-round/').hexdigest())").raw | head -3; N=2500 $PY f.py https://www.soulmatesventures.com/journal/ | cut -c1-2500
+cd [tmp] && PY=[redacted: local path] MAX=2 $PY q.py https://www.soulmatesventures.com/rightcharge-follow-on-round/ '500K|20(25|26)' 200; grep -o '"datePublished":"[^"]*"\|article:published_time" content="[^"]*"' ../cache/$(python3 -c "import hashlib;print(hashlib.sha1(b'https://www.soulmatesventures.com/rightcharge-follow-on-round/').hexdigest())").raw | head -3; N=2500 $PY f.py https://www.soulmatesventures.com/journal/ | cut -c1-2500
 ```
 
 <details><summary>result</summary>
@@ -3011,7 +3012,7 @@ Soulmates Ventures – Journal Journal All Portfolio Blog Press Blog Founders Fi
 
 → `Bash` — Get Soulmates seed round post and quotes
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; u=https://www.soulmatesventures.com/soulmates-ventures-leads-1-6m-seed-round-in-rightcharge-to-accelerate-europes-fleet-electrification/; MAX=1 $PY q.py $u 'led|leads' 200; grep -o '"datePublished":"[^"]*"' ../cache/$(python3 -c "import hashlib,sys;print(hashlib.sha1(sys.argv[1].encode()).hexdigest())" $u).raw | head -1; MAX=2 $PY q.py https://www.soulmates.ventures/ 'Assets Under Management|focusing on key areas' 120
+cd [tmp] && PY=[redacted: local path] u=https://www.soulmatesventures.com/soulmates-ventures-leads-1-6m-seed-round-in-rightcharge-to-accelerate-europes-fleet-electrification/; MAX=1 $PY q.py $u 'led|leads' 200; grep -o '"datePublished":"[^"]*"' ../cache/$(python3 -c "import hashlib,sys;print(hashlib.sha1(sys.argv[1].encode()).hexdigest())" $u).raw | head -1; MAX=2 $PY q.py https://www.soulmates.ventures/ 'Assets Under Management|focusing on key areas' 120
 ```
 
 <details><summary>result</summary>
@@ -3031,7 +3032,7 @@ cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python;
 
 → `Bash` — Sweep register for several remaining investors
 ```sh
-cd [tmp] && PAT="ORBIT|Orbit|OGD|Y Soft|Seed Starter|START GUIDE|GAIN|Soulmates|Czech Founders|KAYA|Kaya|Impulse|KOOPEO|i&i" /Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python sweep.py "Manifesto Market" "Nova et Vetera" "Twisto payments" "Carebot" "Born Digital" "FLOWPAY" "Sensoneo" "Ultimate Suite" "Pointee" "NenoVision" "Comprimato" "Theorema" 2>&1 | grep -v '^$' | cut -c1-300
+cd [tmp] && PAT="ORBIT|Orbit|OGD|Y Soft|Seed Starter|START GUIDE|GAIN|Soulmates|Czech Founders|KAYA|Kaya|Impulse|KOOPEO|i&i" [redacted: local path] sweep.py "Manifesto Market" "Nova et Vetera" "Twisto payments" "Carebot" "Born Digital" "FLOWPAY" "Sensoneo" "Ultimate Suite" "Pointee" "NenoVision" "Comprimato" "Theorema" 2>&1 | grep -v '^$' | cut -c1-300
 ```
 
 <details><summary>result</summary>
@@ -3051,24 +3052,24 @@ cd [tmp] && PAT="ORBIT|Orbit|OGD|Y Soft|Seed Starter|START GUIDE|GAIN|Soulmates|
 ## NO MATCH Ultimate Suite []
 ## Pointee Interactive s.r.o. 09146067 https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=1084694&typ=UPLNY
 ## NenoVision s.r.o. 04525671 https://or.justice.cz/ias/ui/rejstrik-firma.vysledky?subjektId=913443&typ=UPLNY
-   > Společník: Y Soft Ventures II, a.s. , IČ: 078 90 150 Technická 2948/13, Královo Pole, 616 00 Brno zapsáno 
+   > Společník: Y Soft Ventures II, a.s. , IČ: 078 90 150 Technická 2948/13, Královo Pole, 616 00 Brno zapsáno
 … [873 more characters]
 ```
 </details>
 
 → `Bash` — Look for i&i Bio legal entity on site
 ```sh
-cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; MAX=3 $PY q.py https://www.inibio.eu/ 'SCSp|S\.à r\.l|s\.r\.o|a\.s\.|IČ|Luxemb|registered' 150
+cd [tmp] && PY=[redacted: local path] MAX=3 $PY q.py https://www.inibio.eu/ 'SCSp|S\.à r\.l|s\.r\.o|a\.s\.|IČ|Luxemb|registered' 150
 ```
 
 <details><summary>result</summary>
 
 ```
-… isorders 23. 9. 2025 Read more All news Contact +420 725 731 199 info@inibio.eu © i&i Biotech Fund, 2026 | SFDR | EIF Headquarters i&i Biotech Fund I SCSp 42, rue de la Vallée, L-2661 Luxembourg BP 908 L-2019, Luxembourg Investment Adviser Biotech Investments, s. r. o. Pobřežní 394/12, 186 00 Praha 8 Cz …
+… isorders 23. 9. 2025 Read more All news Contact +420 725 731 199 [redacted: email address] © i&i Biotech Fund, 2026 | SFDR | EIF Headquarters i&i Biotech Fund I SCSp 42, rue de la Vallée, L-2661 Luxembourg BP 908 L-2019, Luxembourg Investment Adviser Biotech Investments, s. r. o. Pobřežní 394/12, 186 00 Praha 8 Cz …
 
-…  news Contact +420 725 731 199 info@inibio.eu © i&i Biotech Fund, 2026 | SFDR | EIF Headquarters i&i Biotech Fund I SCSp 42, rue de la Vallée, L-2661 Luxembourg BP 908 L-2019, Luxembourg Investment Adviser Biotech Investments, s. r. o. Pobřežní 394/12, 186 00 Praha 8 Czech Republic bottom of page …
+…  news Contact +420 725 731 199 [redacted: email address] © i&i Biotech Fund, 2026 | SFDR | EIF Headquarters i&i Biotech Fund I SCSp 42, rue de la Vallée, L-2661 Luxembourg BP 908 L-2019, Luxembourg Investment Adviser Biotech Investments, s. r. o. Pobřežní 394/12, 186 00 Praha 8 Czech Republic bottom of page …
 
-…  199 info@inibio.eu © i&i Biotech Fund, 2026 | SFDR | EIF Headquarters i&i Biotech Fund I SCSp 42, rue de la Vallée, L-2661 Luxembourg BP 908 L-2019, Luxembourg Investment Adviser Biotech Investments, s. r. o. Pobřežní 394/12, 186 00 Praha 8 Czech Republic bottom of page …
+…  199 [redacted: email address] © i&i Biotech Fund, 2026 | SFDR | EIF Headquarters i&i Biotech Fund I SCSp 42, rue de la Vallée, L-2661 Luxembourg BP 908 L-2019, Luxembourg Investment Adviser Biotech Investments, s. r. o. Pobřežní 394/12, 186 00 Praha 8 Czech Republic bottom of page …
 
 [3 hits, chars=4958]
 ```
@@ -3076,7 +3077,7 @@ cd [tmp] && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python;
 
 → `Bash` — ARES lookup for Biotech Investments; i&i news dates
 ```sh
-cd [tmp] && python3 aress.py "Biotech Investments" | head -5; PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; MAX=4 $PY q.py https://www.inibio.eu/ '\d+\. \d+\. 202[56]' 200 | cut -c1-450
+cd [tmp] && python3 aress.py "Biotech Investments" | head -5; PY=[redacted: local path] MAX=4 $PY q.py https://www.inibio.eu/ '\d+\. \d+\. 202[56]' 200 | cut -c1-450
 ```
 
 <details><summary>result</summary>
@@ -3089,7 +3090,7 @@ cd [tmp] && python3 aress.py "Biotech Investments" | head -5; PY=/Users/[redacte
    75165244 | Sirius Investments Biotech, podfond | Na Perštýně 362/2, Staré Město, 11000 Praha 1 | 2024-11-22 | zanik None
 … anagement. Partners Latest News T-CURX announces $20M Series A first closing led by BiomedVC to fund pipeline of clinical-stage CAR-T programs and advance proprietary non-viral in vivo CAR-T platform 17. 12. 2025 Read more Captain T Cell closes financing round to advance its proprietary, next-generation TCR-T pipeline into the clinic 17. 11. 2025 Read more HeartBeat.bio joins forces with Boehringer Ingelheim  …
 
-… ograms and advance proprietary non-viral in vivo CAR-T platform 17. 12. 2025 Read more Captain T Cell closes financing round to advance its proprietary, next-generation TCR-T pipeline into the clinic 17. 11. 2025 Read more HeartBeat.bio joins forces with Boehringer Ingelheim to advance gene therapies for inherited heart muscle disorders 23. 9. 2025 Read more All news Contact +420 725 731 199 info@inibio.eu ©  …
+… ograms and advance proprietary non-viral in vivo CAR-T platform 17. 12. 2025 Read more Captain T Cell closes financing round to advance its proprietary, next-generation TCR-T pipeline into the clinic 17. 11. 2025 Read more HeartBeat.bio joins forces with Boehringer Ingelheim to advance gene therapies for inherited heart muscle disorders 23. 9. 2025 Read more All news Contact +420 725 731 199 [redacted: email address] ©  …
 
 …  proprietary, next-generation TCR-T pipeline into the clinic 17. 11. 2025 Read more HeartBeat.bio joins forces with Boehringer Ingelheim to advance gene therapies for inherited heart mu
 … [250 more characters]
@@ -3129,14 +3130,14 @@ You've hit your session limit · resets 6am (Europe/Prague)
 ## Message from the orchestrator
 
 The coordinator sent a message while you were working:
-The usage limit reset — resume where you stopped (context intact). data/sample/parts/cz.json already exists on disk — check what's done and continue (cz-decisions.md and data/reference/cvca-full-members.csv still expected). Keep your working files under /Users/[redacted]/homeW/ai-dev-test/.work/cz/ and don't delete anything outside it. Final message in English.
+The usage limit reset — resume where you stopped (context intact). data/sample/parts/cz.json already exists on disk — check what's done and continue (cz-decisions.md and data/reference/cvca-full-members.csv still expected). Keep your working files under [redacted: local path] and don't delete anything outside it. Final message in English.
 
 Address this before completing your current task.
 
 → `Bash` — Move working files to .work/cz and check state
 ```sh
-W=/Users/[redacted]/homeW/ai-dev-test/.work/cz; mkdir -p $W; S=[tmp] ls $S 2>&1; cp -R $S/tools $S/cache $W/ 2>&1 | tail -2; ls $W $W/tools; wc -l /Users/[redacted]/homeW/ai-dev-test/investor-db/data/reference/cvca-full-members.csv; python3 -c "
-import json;d=json.load(open('/Users/[redacted]/homeW/ai-dev-test/investor-db/data/sample/parts/cz.json'));print(len(d),[(r['id'],r['decision']['status']) for r in d])"
+W=[redacted: local path] mkdir -p $W; S=[tmp] ls $S 2>&1; cp -R $S/tools $S/cache $W/ 2>&1 | tail -2; ls $W $W/tools; wc -l [redacted: local path] python3 -c "
+import json;d=json.load(open('[redacted: local path]'));print(len(d),[(r['id'],r['decision']['status']) for r in d])"
 ```
 
 <details><summary>result</summary>
@@ -3148,11 +3149,11 @@ segs.mjs
 shots
 skvc-agent
 tools
-/Users/[redacted]/homeW/ai-dev-test/.work/cz:
+[redacted: local path]
 cache
 tools
 
-/Users/[redacted]/homeW/ai-dev-test/.work/cz/tools:
+[redacted: local path]
 __pycache__
 aress.py
 b1.py
@@ -3164,27 +3165,27 @@ lib.py
 q.py
 sweep.py
 verify.py
-      28 /Users/[redacted]/homeW/ai-dev-test/investor-db/data/reference/cvca-full-members.csv
+      28 [redacted: local path]
 24 [('credo-ventures', 'included'), ('presto-ventures', 'included'), ('reflex-capital', 'included'), ('jt-ventures', 'included'), ('tilia-impact-ventures', 'included'), ('kaya-vc', 'included'), ('lighthouse-ventures', 'included'), ('zaka-vc', 'included'), ('purple-ventures', 'included'), ('rockaway-ventures', 'included'), ('tensor-ventures', 'included'), ('nation-1', 'included'), ('depo-ventures', 'included'), ('miton', 'included'), ('inven-capital', 'included'), ('ii-biotech-fund', 'included'), ('soulmates-ventures', 'included'), ('cs-seed-starter', 'included'), ('startupyard', 'included'), ('y-soft-ventures', 'dormant'), ('startguide', 'uncertain'), ('gain-ventures', 'uncertain'), ('bhm-ventures', 'uncertain'), ('czech-founders-vc', 'uncertain')]
 ```
 </details>
 
 → `Bash` — Check Seed Starter portfolio page
 ```sh
-cd /Users/[redacted]/homeW/ai-dev-test/.work/cz/tools && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python; grep -o 'href="[^"]*portfolio[^"]*"' ../cache/a2fbe7073bd0b6aed00e41b6989b8f0e91afbeb9.raw | sort -u | head -3; N=1500 $PY f.py https://www.seedstarter.cz/en/portfolio
+cd [redacted: local path] && PY=[redacted: local path] grep -o 'href="[^"]*portfolio[^"]*"' ../cache/a2fbe7073bd0b6aed00e41b6989b8f0e91afbeb9.raw | sort -u | head -3; N=1500 $PY f.py https://www.seedstarter.cz/en/portfolio
 ```
 
 <details><summary>result</summary>
 
 ```
-## /Users/[redacted]/homeW/ai-dev-test/.work/cz/cache/30993829c9bb838d6f7b45da5a80dc3a4a3bd9ed.txt chars=154
+## [redacted: local path] chars=154
 Page not found | Seed Starter České spořitelny Skip Navigation 404: Your investment in this page will not be returned. Please try again. Back to home page
 ```
 </details>
 
 → `Bash` — Prepare batch 5 records; look up NRI IČO
 ```sh
-cd /Users/[redacted]/homeW/ai-dev-test/.work/cz/tools && python3 - <<'EOF'
+cd [redacted: local path] && python3 - <<'EOF'
 p='b4.py'; s=open(p).read()
 s=s.replace('"included", ["I1", "I3", "I4"],\n  "Czech (not Slovak)','"uncertain", ["I2"],\n  "Czech (not Slovak)')
 s=s.replace("I2 relies on its self-published portfolio page, not opened in this pass.","I2 not demonstrated: the portfolio page returned 404 on 2026-10-11 and no licence or association membership was found.")
@@ -3212,7 +3213,7 @@ recs.append(REC("orbit-capital", "Orbit Capital", "vc", PRG(), "https://orbitcap
 
 → `Bash` — Write batch 5 records and verify all
 ```sh
-cd /Users/[redacted]/homeW/ai-dev-test/.work/cz/tools && sed -i '' 's/"07490686", "manager", None)/"08465797", "manager", ARES("08465797"))/' b5.py && PY=/Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python && $PY b4.py && $PY b5.py && $PY verify.py
+cd [redacted: local path] && sed -i '' 's/"07490686", "manager", None)/"08465797", "manager", ARES("08465797"))/' b5.py && PY=[redacted: local path] && $PY b4.py && $PY b5.py && $PY verify.py
 ```
 
 <details><summary>result</summary>
@@ -3226,7 +3227,7 @@ schema errors=0 quotes ok=153 missing=0
 
 → `Bash` — Run project validator on cz.json
 ```sh
-cd /Users/[redacted]/homeW/ai-dev-test/investor-db && .venv/bin/python -m investordb validate --help 2>&1 | head -15; .venv/bin/python -m investordb validate data/sample/parts/cz.json --today 2026-10-11 2>&1 | tail -25 || .venv/bin/python -m investordb validate --records data/sample/parts/cz.json 2>&1 | tail -25
+cd [redacted: local path] && .venv/bin/python -m investordb validate --help 2>&1 | head -15; .venv/bin/python -m investordb validate data/sample/parts/cz.json --today 2026-10-11 2>&1 | tail -25 || .venv/bin/python -m investordb validate --records data/sample/parts/cz.json 2>&1 | tail -25
 ```
 
 <details><summary>result</summary>
@@ -3248,7 +3249,7 @@ investordb: error: unrecognized arguments: data/sample/parts/cz.json
 
 → `Bash` — Run project validator with records flag
 ```sh
-cd /Users/[redacted]/homeW/ai-dev-test/investor-db && .venv/bin/python -m investordb validate --records data/sample/parts/cz.json --today 2026-10-11 2>&1 | tail -30
+cd [redacted: local path] && .venv/bin/python -m investordb validate --records data/sample/parts/cz.json --today 2026-10-11 2>&1 | tail -30
 ```
 
 <details><summary>result</summary>
@@ -3261,9 +3262,9 @@ WARNING nri: excluded without an E rule
 
 → `Bash` — Write cz-decisions.md
 ```sh
-cd /Users/[redacted]/homeW/ai-dev-test/.work/cz/tools && cat > dec.py <<'EOF'
+cd [redacted: local path] && cat > dec.py <<'EOF'
 import json
-d = json.load(open("/Users/[redacted]/homeW/ai-dev-test/investor-db/data/sample/parts/cz.json"))
+d = json.load(open("[redacted: local path]"))
 reason = {
  "credo-ventures": "Prague pre-seed VC, CVCA full member; latest dated deal Supernova (30 Sep 2025), Tier A holding in Delta Green (May 2024).",
  "presto-ventures": "Prague seed/Series A and defence VC; Presto Ventures II entered Lakmoos AI on 9 Jun 2026 (justice.cz).",
@@ -3287,7 +3288,7 @@ reason = {
 → `Bash` — Summarize statuses and latest investments
 ```sh
 python3 -c "
-import json,collections;d=json.load(open('/Users/[redacted]/homeW/ai-dev-test/investor-db/data/sample/parts/cz.json'))
+import json,collections;d=json.load(open('[redacted: local path]'))
 print(collections.Counter(r['decision']['status'] for r in d))
 for r in d:
   if r['decision']['status']=='included':
@@ -3322,7 +3323,7 @@ StartupYard | SmartGuide 2026-08-20 registry_entry | ['A']
 
 → `Bash` — Check schema and PLAN updates
 ```sh
-cd /Users/[redacted]/homeW/ai-dev-test/investor-db && grep -n 'out_of_scope\|S1\|E(\[1-9\]' schema/investor.schema.json; grep -n 'S1\|out_of_scope\|bank' PLAN.md | head
+cd [redacted: local path] && grep -n 'out_of_scope\|S1\|E(\[1-9\]' schema/investor.schema.json; grep -n 'S1\|out_of_scope\|bank' PLAN.md | head
 ```
 
 <details><summary>result</summary>
@@ -3340,7 +3341,7 @@ cd /Users/[redacted]/homeW/ai-dev-test/investor-db && grep -n 'out_of_scope\|S1\
 
 → `Bash` — Read S1 pilot scope rule
 ```sh
-cd /Users/[redacted]/homeW/ai-dev-test/investor-db && sed -n 55,70p PLAN.md
+cd [redacted: local path] && sed -n 55,70p PLAN.md
 ```
 
 <details><summary>result</summary>
@@ -3365,11 +3366,11 @@ decided each one, so the rules are testable rather than vibes.
 
 → `Bash` — Extract CVCA investment type and address per member
 ```sh
-cd /Users/[redacted]/homeW/ai-dev-test/.work/cz/tools && /Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python - <<'EOF'
+cd [redacted: local path] && [redacted: local path] - <<'EOF'
 import csv, re, sys
 sys.path.insert(0,'.')
 from f import fetch
-rows=list(csv.DictReader(open('/Users/[redacted]/homeW/ai-dev-test/investor-db/data/reference/cvca-full-members.csv')))
+rows=list(csv.DictReader(open('[redacted: local path]')))
 for r in rows:
     t,_=fetch(r['source_url']); j=re.sub(r'\s+',' ',t)
     m=re.search(r'Type of Investment (.*?) Preferred', j)
@@ -3396,7 +3397,7 @@ Genesis Capital Equity s.r.o. || corporate acquisitions, management buyouts, sec
 
 → `Bash` — Add PE out-of-scope records, update NRI/Tachles, verify
 ```sh
-cd /Users/[redacted]/homeW/ai-dev-test/.work/cz/tools && cat > b6.py <<'EOF'
+cd [redacted: local path] && cat > b6.py <<'EOF'
 from lib import *
 import re, sys
 from f import fetch
@@ -3425,7 +3426,7 @@ schema errors=0 quotes ok=172 missing=0
 
 → `Bash` — Regenerate decisions file with S1 statuses
 ```sh
-cd /Users/[redacted]/homeW/ai-dev-test/.work/cz/tools && python3 - <<'EOF'
+cd [redacted: local path] && python3 - <<'EOF'
 p='dec.py'; s=open(p).read()
 a=s.index('lines += ["", "## Out of scope (not in cz.json)", ""]'); b=s.index('open("/Users')
 new='''lines += ["", "## Candidates without a record in cz.json", ""]
@@ -3448,7 +3449,7 @@ s=s.replace('lines = ["# Czech pilot candidates: decisions", "", "Accessed 2026-
 <details><summary>result</summary>
 
 ```
-  File "/Users/[redacted]/homeW/ai-dev-test/.work/cz/tools/dec.py", line 37
+  File "[redacted: local path]", line 37
     "nri": "State development investor and fund-of-funds programme owner; kept for verification, not a target VC.",\n "pale-fire-capital": "CVCA associate member investing own capital in tickets of hundreds of millions of CZK into growth companies.",
                                                                                                                     ^
 SyntaxError: unexpected character after line continuation character
@@ -3468,19 +3469,19 @@ SyntaxError: unexpected character after line continuation character
 
 → `Bash` — Fix and rerun decisions generator
 ```sh
-cd /Users/[redacted]/homeW/ai-dev-test/.work/cz/tools && python3 - <<'EOF'
+cd [redacted: local path] && python3 - <<'EOF'
 p='dec.py'; s=open(p).read()
 s=s.replace('not a target VC.",\\n "pale-fire-capital"','not a target VC.",\n "pale-fire-capital"')
 open(p,'w').write(s)
 EOF
-python3 dec.py && F=/Users/[redacted]/homeW/ai-dev-test/investor-db/data/sample/parts/cz-decisions.md; grep -c '^- ' $F; sed -n 1,6p $F; grep -n 'Tachles\|Národní\|Abris\|Pale Fire' $F; tail -9 $F
+python3 dec.py && F=[redacted: local path] grep -c '^- ' $F; sed -n 1,6p $F; grep -n 'Tachles\|Národní\|Abris\|Pale Fire' $F; tail -9 $F
 ```
 
 <details><summary>result</summary>
 
 ```
 Command did not complete within its 120s timeout and was moved to the background (ID: byil7zq2z). Output is being written to: [tmp] You will be notified when it completes. To check interim output, use Read on that file path.
-Session cwd remains /Users/[redacted]/homeW/ai-dev-test; directory changes made by the backgrounded command do not apply to subsequent commands.
+Session cwd remains [redacted: local path] directory changes made by the backgrounded command do not apply to subsequent commands.
 ```
 </details>
 
@@ -3492,8 +3493,8 @@ cat [tmp] ps aux | grep -c '[d]ec.py'
 <details><summary>result</summary>
 
 ```
-  File "/Users/[redacted]/homeW/ai-dev-test/.work/cz/tools/dec.py", line 55
-    open("/Users/[redacted]/homeW/ai-dev-test/investor-db/data/sample/parts/cz.json"))
+  File "[redacted: local path]", line 55
+    open("[redacted: local path]"))
                                                                                 ^
 SyntaxError: unmatched ')'
 1
@@ -3502,7 +3503,7 @@ SyntaxError: unmatched ')'
 
 → `Bash` — Kill hung grep and inspect dec.py tail
 ```sh
-pkill -f "grep -c \^- " ; cd /Users/[redacted]/homeW/ai-dev-test/.work/cz/tools && sed -n 40,60p dec.py
+pkill -f "grep -c \^- " ; cd [redacted: local path] && sed -n 40,60p dec.py
 ```
 
 <details><summary>result</summary>
@@ -3530,25 +3531,25 @@ open("/
 
 → `Bash` — Repair and run decisions generator
 ```sh
-cd /Users/[redacted]/homeW/ai-dev-test/.work/cz/tools && python3 - <<'EOF'
+cd [redacted: local path] && python3 - <<'EOF'
 s=open('dec.py').read()
-i=s.index('lines = ["# Czech'); j=s.index('open("/Users/[redacted]/homeW/ai-dev-test/investor-db/data/sample/parts/cz.json"))\n')
-head=s[:i]; block=s[i:j]; rest=s[j+len('open("/Users/[redacted]/homeW/ai-dev-test/investor-db/data/sample/parts/cz.json"))\n'):]
+i=s.index('lines = ["# Czech'); j=s.index('open("[redacted: local path]"))\n')
+head=s[:i]; block=s[i:j]; rest=s[j+len('open("[redacted: local path]"))\n'):]
 k=rest.index('}\n')+2  # end of reason dict
 reasons=rest[:k]; tail=rest[k:]
 # drop old lines-generation remnants in tail, keep only final write
-w=tail.index('open("/Users/[redacted]/homeW/ai-dev-test/investor-db/data/sample/parts/cz-decisions.md"')
-out=head+'open("/Users/[redacted]/homeW/ai-dev-test/investor-db/data/sample/parts/cz.json"))\n'+reasons+block+tail[w:]
+w=tail.index('open("[redacted: local path]"')
+out=head+'open("[redacted: local path]"))\n'+reasons+block+tail[w:]
 open('dec.py','w').write(out)
 EOF
-head -3 dec.py; timeout 20 python3 dec.py; F=/Users/[redacted]/homeW/ai-dev-test/investor-db/data/sample/parts/cz-decisions.md; grep -c '^- ' "$F"; grep -n 'Tachles\|Národní\|Abris\|Pale Fire\|Sandberg' "$F"
+head -3 dec.py; timeout 20 python3 dec.py; F=[redacted: local path] grep -c '^- ' "$F"; grep -n 'Tachles\|Národní\|Abris\|Pale Fire\|Sandberg' "$F"
 ```
 
 <details><summary>result</summary>
 
 ```
 import json
-d = json.load(open("/Users/[redacted]/homeW/ai-dev-test/investor-db/data/sample/parts/cz.json"))
+d = json.load(open("[redacted: local path]"))
 reason = {
 (eval):12: command not found: timeout
 61
@@ -3562,14 +3563,14 @@ reason = {
 
 → `Bash` — Run decisions generator
 ```sh
-cd /Users/[redacted]/homeW/ai-dev-test/.work/cz/tools && python3 dec.py; F=/Users/[redacted]/homeW/ai-dev-test/investor-db/data/sample/parts/cz-decisions.md; grep -c '^- ' "$F"; grep -n 'Tachles\|Národní\|Abris\|Pale Fire\|Sandberg\|Enern' "$F"
+cd [redacted: local path] && python3 dec.py; F=[redacted: local path] grep -c '^- ' "$F"; grep -n 'Tachles\|Národní\|Abris\|Pale Fire\|Sandberg\|Enern' "$F"
 ```
 
 <details><summary>result</summary>
 
 ```
-  File "/Users/[redacted]/homeW/ai-dev-test/.work/cz/tools/dec.py", line 40
-    open("/Users/[redacted]/homeW/ai-dev-test/investor-db/data/sample/parts/cz.json"))
+  File "[redacted: local path]", line 40
+    open("[redacted: local path]"))
                                                                                 ^
 SyntaxError: unmatched ')'
 61
@@ -3584,7 +3585,7 @@ SyntaxError: unmatched ')'
 
 → `Bash` — Rebuild decisions generator cleanly and run
 ```sh
-cd /Users/[redacted]/homeW/ai-dev-test/.work/cz/tools && python3 - <<'EOF'
+cd [redacted: local path] && python3 - <<'EOF'
 import re
 s=open('dec.py').read()
 i=s.index('reason = {'); j=s.index('\n}\n', i)+3
@@ -3594,10 +3595,10 @@ if '"pale-fire-capital"' not in reasons:
     reasons=reasons.replace('\n}\n',',\n "pale-fire-capital": "CVCA associate member investing own capital in tickets of hundreds of millions of CZK into growth companies."\n}\n')
 k=s.index('lines = ["# Czech'); m=s.index('\n]\n', k)+3
 block=s[k:m]
-out='import json\nd = json.load(open("/Users/[redacted]/homeW/ai-dev-test/investor-db/data/sample/parts/cz.json"))\n'+reasons+block+'open("/Users/[redacted]/homeW/ai-dev-test/investor-db/data/sample/parts/cz-decisions.md", "w").write("\\n".join(lines) + "\\n")\nprint(len(lines))\n'
+out='import json\nd = json.load(open("[redacted: local path]"))\n'+reasons+block+'open("[redacted: local path]", "w").write("\\n".join(lines) + "\\n")\nprint(len(lines))\n'
 open('dec2.py','w').write(out)
 EOF
-python3 dec2.py; F=/Users/[redacted]/homeW/ai-dev-test/investor-db/data/sample/parts/cz-decisions.md; grep -c '^- ' 
+python3 dec2.py; F=[redacted: local path] grep -c '^- '
 … [104 more characters]
 ```
 
@@ -3607,7 +3608,7 @@ python3 dec2.py; F=/Users/[redacted]/homeW/ai-dev-test/investor-db/data/sample/p
 Traceback (most recent call last):
   File "<stdin>", line 8, in <module>
 ValueError: substring not found
-/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/[redacted]/homeW/ai-dev-test/.work/cz/tools/dec2.py': [Errno 2] No such file or directory
+/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python: can't open file '[redacted: local path]': [Errno 2] No such file or directory
 61
 24:- ČS Seed Starter — uncertain — I2 — Česká spořitelna's Prague CVC (Czech, not Slovak); one Tier A deal (Born Digital, 24 Nov 2023) but no published portfolio found, so I2 is unproven.
 37:- Tachles VC — uncertain — none — Ex-Springtide team with a Prague s.r.o. but US-based management company and Israel focus; probably outside the Czech pilot.
@@ -3625,9 +3626,9 @@ Access
 
 → `Bash` — Rewrite and run decisions generator
 ```sh
-cd /Users/[redacted]/homeW/ai-dev-test/.work/cz/tools && cat > dec2.py <<'EOF'
+cd [redacted: local path] && cat > dec2.py <<'EOF'
 import json
-d = json.load(open("/Users/[redacted]/homeW/ai-dev-test/investor-db/data/sample/parts/cz.json"))
+d = json.load(open("[redacted: local path]"))
 reason = {
  "credo-ventures": "Prague pre-seed VC, CVCA full member; latest dated deal Supernova (30 Sep 2025), Tier A holding in Delta Green (May 2024).",
  "presto-ventures": "Prague seed/Series A and defence VC; Presto Ventures II entered Lakmoos AI on 9 Jun 2026 (justice.cz).",
@@ -3656,8 +3657,8 @@ reason = {
 
 → `Bash` — Final status counts and validation
 ```sh
-cd /Users/[redacted]/homeW/ai-dev-test/investor-db && python3 -c "
-import json,collections;d=json.load(open('data/sample/parts/cz.json'));print(collections.Counter(r['decision']['status'] for r in d))" && .venv/bin/python -m investordb validate --records data/sample/parts/cz.json --today 2026-10-11 | tail -2 && /Users/[redacted]/homeW/ai-dev-test/investor-db/.venv/bin/python /Users/[redacted]/homeW/ai-dev-test/.work/cz/tools/verify.py | tail -1
+cd [redacted: local path] && python3 -c "
+import json,collections;d=json.load(open('data/sample/parts/cz.json'));print(collections.Counter(r['decision']['status'] for r in d))" && .venv/bin/python -m investordb validate --records data/sample/parts/cz.json --today 2026-10-11 | tail -2 && [redacted: local path] [redacted: local path] | tail -1
 ```
 
 <details><summary>result</summary>
@@ -3724,11 +3725,11 @@ After your schema update I moved NRI and Tachles to S1 and added the PE firms as
 - The candidate list had traps. "Seed Starter (SK)" is actually Czech: ČS Seed Starter, Česká spořitelna's fund in Prague. It is uncertain because its portfolio page returns 404.
 - lighthouse-ventures.com is an unrelated US real-estate site; the real one is lhv.vc.
 - bhm.cz is a driving school, not BHM group.
-- Halfway through, the temporary folder was wiped and I had to recreate the scripts. All working files now live in `/Users/[redacted]/homeW/ai-dev-test/.work/cz/`.
+- Halfway through, the temporary folder was wiped and I had to recreate the scripts. All working files now live in `[redacted: local path]`.
 
 **CVCA:** 27 full members are listed in `cvca-full-members.csv`, and all 27 are in `cz.json` (9 VC/CVC, 18 PE out of scope). One `grep` reading from stdin hung; I stopped it. Nothing was deleted outside `.work/cz`, and git was not touched.
 
-Files are in `/Users/[redacted]/homeW/ai-dev-test/investor-db/data/`:
+Files are in `[redacted: local path]`:
 - sample/parts/cz.json
 - sample/parts/cz-decisions.md
 - reference/cvca-full-members.csv

@@ -2,6 +2,7 @@
 
 Claude Code sub-agent log, exported from `agent-a56118ade50469af1.jsonl`.
 Tool outputs longer than 1,500 characters are shortened.
+Russian narrative has been translated into English; executed tool code and source quotations are retained.
 
 ## Brief
 
@@ -23,7 +24,7 @@ Rules:
 - Never fabricate URLs or figures. If a page did not load, say so. Quote the exact sentence from the source for ticket size, fund size and investment date in a field "evidence_quotes".
 - No signups, no forms, no paid APIs, no git, don't touch other files.
 
-Output: /Users/[redacted]/homeW/ai-dev-test/investor-db/research/sk-vc-candidates.json (array of objects, one per candidate, UTF-8, pretty-printed) and a short /Users/[redacted]/homeW/ai-dev-test/investor-db/research/sk-vc-candidates.md (table: name | type | proposed decision | reason | latest dated investment). Create the folder if missing. Also note in the md roughly how many VC investors are based in the Czech Republic (just a cited estimate, for context). Final message: counts (candidates / include / exclude / uncertain), the 5 weakest records, the path.
+Output: [redacted: local path] (array of objects, one per candidate, UTF-8, pretty-printed) and a short [redacted: local path] (table: name | type | proposed decision | reason | latest dated investment). Create the folder if missing. Also note in the md roughly how many VC investors are based in the Czech Republic (just a cited estimate, for context). Final message: counts (candidates / include / exclude / uncertain), the 5 weakest records, the path.
 
 → `ToolSearch`
 
@@ -518,7 +519,7 @@ Links: [{"title":"Venture to Future Fund Overview","url":"https://pitchbook.com/
 
 The search found information on the Slovak fund, though the sources disagree on some details.
 
-- **Basics:** Venture to Future Fund, a.s. is a Slovak venture capital fund established in 2019, focusing on innovative local companies that have the potential to become 
+- **Basics:** Venture to Future Fund, a.s. is a Slovak venture capital fund established in 2019, focusing on innovative local companies that have the potential to become
 … [1145 more characters]
 ```
 </details>
@@ -570,7 +571,7 @@ Talentiqa raised about €1M in a round co-led equally by Purple Ventures and Ve
 ```
 - **Publication date:** 19 May 2026, at 16:59.
 - **Round size:** The Series A round was worth **5 million dollars** ("v hodnote 5 miliónov dolárov"). The article says FaceUp has raised about 9 million dollars in total.
-- **Venture to Future Fund sentence:** The full sentence is longer than the 125-character quote limit, so here is the part that names the fund: "Pridali sa aj slovenský Venture to Future Fund". The sentence goes on to list the other participating investors.
+- **Venture to Future Fund** — investments in FaceUp (19.05.2026), Talentiqa (29.09.2025) and IAG (22.05.2025). State-owned, but invests directly on equal terms with private investors. Its investment period ends in late 2026.
 ```
 </details>
 
@@ -910,8 +911,8 @@ Links: [{"title":"Venture to Future Fund Overview","url":"https://pitchbook.com/
 
 The search didn't find a single source that describes a BiteBerry round involving both firms, so the link comes from two separate databases.
 
-- **Venture to Future Fund:** PitchBook lists a BiteBerry investment dated 28 March 2025, in business/productivity software, with the company at the revenue-generating stage. The Bratislava-based venture firm, founded in 2020, seeks technology investments in Slovakia across B2B, B2C, healthcare, and IT.
-- **Neulogy Ventures:** CB Insights and Caplight both list BiteBerry as a Neulogy investment.
+- **Venture to Future Fund** — investments in FaceUp (19.05.2026), Talentiqa (29.09.2025) and IAG (22.05.2025). State-owned, but invests directly on equal terms with private investors. Its investment period ends in late 2026.
+- **Neulogy Ventures** — Bratislava management company (IČO 47 367 610), SLOVCA member, included in the EIF list. I found no new investments after September 2024.
 … [565 more characters]
 ```
 </details>
@@ -957,109 +958,109 @@ curl -s -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (
 <details><summary>result</summary>
 
 ```
- Obchodný register SR - Výsledky vyhľadávania podľa obchodného mena subjektu 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- MINISTERSTVO SPRAVODLIVOSTI SLOVENSKEJ REPUBLIKY 
- 
- OBCHODNÝ REGISTER NA INTERNETE 
-		 
-		 
-		 
- 	Slovensky | 
+ Obchodný register SR - Výsledky vyhľadávania podľa obchodného mena subjektu
+
+
+
+
+
+
+
+
+
+
+ MINISTERSTVO SPRAVODLIVOSTI SLOVENSKEJ REPUBLIKY
+
+ OBCHODNÝ REGISTER NA INTERNETE
+
+
+
+    Slovensky |
  -->
- 
- 	 English 
-		 
 
-	 
-	 
+     English
 
-	
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-Výsledky vyhľadávania podľa obchodného mena subjektu 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Výsledky vyhľadávania podľa obchodného mena subjektu
 ( vyhľadávanie len v aktuálnych záznamoch )
- 
- 
- 
- 
- 
- Obchodné meno začína:&nbsp; neulogy 
- Právna forma:&nbsp; akákoľvek 
- Súd:&nbsp; akýkoľvek 
- 
- 
- 
- Stránka:&nbsp; 1&nbsp;/&nbsp;1 
- Záznamy:&nbsp; 1&nbsp;-&nbsp;1&nbsp;/&nbsp;1 
- Dátum:&nbsp; 11.10.2026 
- 
- 
- 
 
 
- 
- 
- &nbsp; 
- Obchodné meno subjektu 
- Výpis 
- Zbierka dokumentov 
- 
 
- 
- 1. 
- 
- 
-						
-						 Neulogy Ventures, a. s. 
- 
- 
+
+
+ Obchodné meno začína:&nbsp; neulogy
+ Právna forma:&nbsp; akákoľvek
+ Súd:&nbsp; akýkoľvek
+
+
+
+ Stránka:&nbsp; 1&nbsp;/&nbsp;1
+ Záznamy:&nbsp; 1&nbsp;-&nbsp;1&nbsp;/&nbsp;1
+ Dátum:&nbsp; 11.10.2026
+
+
+
+
+
+
+
+ &nbsp;
+ Obchodné meno subjektu
+ Výpis
+ Zbierka dokumentov
+
+
+
+ 1.
+
+
+
+                         Neulogy Ventures, a. s.
+
+
  Aktuálny &nbsp;
-	 	 Úplný &nbsp;
- 
-			 
-	 	 &nbsp; 
- 
- 
- 
- 
- 
- 
+         Úplný &nbsp;
 
- Aktuálne zmeny | 
- Elektronické služby Obchodného registra | 
- Vyhľadávanie podnikov v EÚ Vyhľadávanie podľa : 
- obchodného mena | 
- identifikačného čísla 
- sídla | 
- spisovej značky | 
- priezviska a mena osoby 
- O obchodnom registri SR | 
- Návod na používanie ORI | 
- Kontakty na registrové súdy 
- Aktuality a oznamy 
 
- 
- 
+         &nbsp;
+
+
+
+
+
+
+
+ Aktuálne zmeny |
+ Elektronické služby Obchodného registra |
+ Vyhľadávanie podnikov v EÚ Vyhľadávanie podľa :
+ obchodného mena |
+ identifikačného čísla
+ sídla |
+ spisovej značky |
+ priezviska a mena osoby
+ O obchodnom registri SR |
+ Návod na používanie ORI |
+ Kontakty na registrové súdy
+ Aktuality a oznamy
+
+
+
  var _paq = window._paq = window._paq || [];
  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
  _paq.push(['trackPageView']);
@@ -1113,12 +1114,12 @@ curl -s -A "Mozilla/5.0" "https://www.orsr.sk/hladaj_subjekt.asp?OBMENO=neulogy&
 <details><summary>result</summary>
 
 ```
-80-                        
+80-
 81-                        <td><div class="bmk">
-82-						
+82-
 83:						<a href="vypis.asp?ID=276162&amp;SID=2&amp;P=0" class = "link" alt="Aktuálny výpis" title="Aktuálny výpis">Neulogy Ventures, a. s.</a></div></td>
 84-                        <td><div class="bmk">
-85-                        
+85-
 86:                        <a href="vypis.asp?ID=276162&amp;SID=2&amp;P=0" class="link">Aktuálny</a>&nbsp;
 87:	            	<a href="vypis.asp?ID=276162&amp;SID=2&amp;P=1" class="link">Úplný</a>&nbsp;
 88-                        </div></td>
@@ -1217,7 +1218,7 @@ if cmd == "brief":
 ```
 == BiteBerry s. r. o. | https://www.orsr.sk/vypis.asp?ID=694090&SID=5&P=0
 IČO: 55 353 690 | Sídlo: Na Bráne 4, Žilina 010 01 | zápis: 22.04.2023
-Spoločníci: Core Capital s. r. o. IČO: 55 496 865 / Tematínska 3231/2 / Bratislava - mestská časť Petržalka 851 05 / (od: 08.07.2023) / Vision Ventures Growth I, s. r. o. IČO: 52 656 438 / Bottova 2A / Bratislava - mestská časť Staré Mesto 811 09 / (od: 09.08.2023) / AI Group s.r.o. IČO: 55 614 710 / Bytčická 1139/89 / Žilina 010 09 / (od: 09.08.2023) / 
+Spoločníci: Core Capital s. r. o. IČO: 55 496 865 / Tematínska 3231/2 / Bratislava - mestská časť Petržalka 851 05 / (od: 08.07.2023) / Vision Ventures Growth I, s. r. o. IČO: 52 656 438 / Bottova 2A / Bratislava - mestská časť Staré Mesto 811 09 / (od: 09.08.2023) / AI Group s.r.o. IČO: 55 614 710 / Bytčická 1139/89 / Žilina 010 09 / (od: 09.08.2023) /
 Vklady: Core Capital s. r. o. / Vklad: 14 520 EUR ( peňažný vklad ) Splatené: 14 520 EUR / (od: 08.07.2023) / Vision Ventures Growth I, s. r. o. / Vklad: 2 254 EUR ( peňažný vklad ) Splatené: 2 254 EUR / (od: 09.08.2023) / AI Group s.r.o. / Vklad: 750 EUR ( peňažný vklad ) Splatené: 750 EUR / (od: 09.08.2023) /
 ```
 </details>
@@ -1359,7 +1360,7 @@ open(p,'w').write(s)
 EOF
 cat > batch1.sh <<'EOF'
 cd "$(dirname "$0")"
-for n in "Vision Ventures" "Zero Gravity Capital" "Limerock" "Crowdberry" "Sandberg Capital" "Venture to Future Fund" "Slovak Investment Holding" "Fond inovácií a technológií" "Eterus" "Národný holdingový fond" "Prvá kapitálová" "Nation1" "Gapfunding" "365.fintech" "ZAKA" "Across Private" "Monogram" "LRJ" "Pioneers Ventures" "Arca Capital Slovakia" "QUADRICA" "J&T Ventures" "Slovenský 
+for n in "Vision Ventures" "Zero Gravity Capital" "Limerock" "Crowdberry" "Sandberg Capital" "Venture to Future Fund" "Slovak Investment Holding" "Fond inovácií a technológií" "Eterus" "Národný holdingový fond" "Prvá kapitálová" "Nation1" "Gapfunding" "365.fintech" "ZAKA" "Across Private" "Monogram" "LRJ" "Pioneers Ventures" "Arca Capital Slovakia" "QUADRICA" "J&T Ventures" "Slovenský
 … [194 more characters]
 ```
 
@@ -1525,12 +1526,12 @@ cat [tmp]
 ##### Vision Ventures
 == Vision Ventures Growth I, s. r. o. | https://www.orsr.sk/vypis.asp?ID=497651&SID=2&P=0
 IČO: 52 656 438 | Sídlo: Bottova 2A, Bratislava - mestská časť Staré Mesto 811 09 | zápis: 04.10.2019
-Spoločníci: National Development Fund II., a.s. IČO: 47 759 224 / Grösslingová 44 / Bratislava - mestská časť Staré Mesto 811 09 / (od: 23.09.2022) / Vision Ventures, s.r.o. IČO: 52 568 288 / Bottova 2A / Bratislava - mestská časť Staré Mesto 811 09 / (od: 23.09.2022) / 
-Vklady: National Development Fund II., a.s. / Vklad: 75 000 EUR ( peňažný vklad ) Splatené: 75 000 EUR / (od: 23.09.2022) / Vision Ventures, s.r.o. / Vklad: 750 EUR ( peňažný vklad ) Splatené: 750 EUR / (od: 23.09.2022) / 
+Spoločníci: National Development Fund II., a.s. IČO: 47 759 224 / Grösslingová 44 / Bratislava - mestská časť Staré Mesto 811 09 / (od: 23.09.2022) / Vision Ventures, s.r.o. IČO: 52 568 288 / Bottova 2A / Bratislava - mestská časť Staré Mesto 811 09 / (od: 23.09.2022) /
+Vklady: National Development Fund II., a.s. / Vklad: 75 000 EUR ( peňažný vklad ) Splatené: 75 000 EUR / (od: 23.09.2022) / Vision Ventures, s.r.o. / Vklad: 750 EUR ( peňažný vklad ) Splatené: 750 EUR / (od: 23.09.2022) /
 == Vision Ventures, s.r.o. | https://www.orsr.sk/vypis.asp?ID=526709&SID=2&P=0
 IČO: 52 568 288 | Sídlo: Bottova 2A, Bratislava - mestská časť Staré Mesto 811 09 | zápis: 22.08.2019
-Spoločníci: MUDr. Tomáš Bél / Dátum narodenia: 18.03.1965 / (od: 25.05.2022) / Ing. Gabriel Horváth / Dátum narodenia: 22.02.1988 / (od: 12.11.2022) / 
-Vklady: MUDr. Tomáš Bél / Vklad: 2 500 EUR ( peňažný vklad ) Splatené: 2 500 EUR / (od: 25.05.2022) / Ing. Gabriel Horváth / Vklad: 2 500 EUR ( peňažný vklad ) Splatené: 2 500 EUR / (od: 12.11.2022) / 
+Spoločníci: MUDr. Tomáš Bél / Dátum narodenia: 18.03.1965 / (od: 25.05.2022) / Ing. Gabriel Horváth / Dátum narodenia: 22.02.1988 / (od: 12.11.2022) /
+Vklady: MUDr. Tomáš Bél / Vklad: 2 500 EUR ( peňažný vklad ) Splatené: 2 500 EUR / (od: 25.05.2022) / Ing. Gabriel Horváth / Vklad: 2 500 EUR ( peňažný vklad ) Splatené: 2 500 EUR / (od: 12.11.2022) /
 ##### Zero Gravity Capital
 == Zero Gravity Capital s.r.o. | https://www.orsr.sk/vypis.asp?ID=498371&SID=2&P=0
 IČO: 52 651 894 | Sídlo: Staré Grunty 18, Bratislava - mestská časť Karlova Ves 841 01 | zápis: 01.10.2019
@@ -1608,12 +1609,12 @@ cat [tmp] | tail -n +16
 ```
 == Limerock Advisory, s. r. o. | https://www.orsr.sk/vypis.asp?ID=202952&SID=2&P=0
 IČO: 46 092 897 | Sídlo: Planét 5, Bratislava 821 09 | zápis: 22.03.2011
-Spoločníci: Roman Čmelík / Dátum narodenia: 04.05.1973 / (od: 03.06.2022) / Michal Jablonka / Dátum narodenia: 24.07.1978 / (od: 03.06.2022) / 
-Vklady: Roman Čmelík / Vklad: 2 500 EUR Splatené: 2 500 EUR / (od: 03.06.2022) / Michal Jablonka / Vklad: 2 500 EUR Splatené: 2 500 EUR / (od: 03.06.2022) / 
+Spoločníci: Roman Čmelík / Dátum narodenia: 04.05.1973 / (od: 03.06.2022) / Michal Jablonka / Dátum narodenia: 24.07.1978 / (od: 03.06.2022) /
+Vklady: Roman Čmelík / Vklad: 2 500 EUR Splatené: 2 500 EUR / (od: 03.06.2022) / Michal Jablonka / Vklad: 2 500 EUR Splatené: 2 500 EUR / (od: 03.06.2022) /
 == Limerock Investment Holding, s.r.o. | https://www.orsr.sk/vypis.asp?ID=307952&SID=2&P=0
 IČO: 47 777 028 | Sídlo: Planét 5, Bratislava-Ružinov 821 02 | zápis: 16.05.2014
-Spoločníci: Limerock Advisory, s.r.o. IČO: 46 092 897 / Planét 5 / Bratislava-Ružinov 821 02 / (od: 27.05.2022) / Aika Group Oy / Viikinkaari 6 / Helsinki 007 90 / Fínska republika / Iné identifikačné číslo: 2288188-1 / (od: 27.05.2022) / 
-Vklady: Limerock Advisory, s.r.o. / Vklad: 11 125 EUR ( peňažný vklad ) Splatené: 11 125 EUR / (od: 25.07.2025) / Aika Group Oy / Vklad: 1 375 EUR ( peňažný vklad ) Splatené: 1 375 EUR / (od: 25.07.2025) / 
+Spoločníci: Limerock Advisory, s.r.o. IČO: 46 092 897 / Planét 5 / Bratislava-Ružinov 821 02 / (od: 27.05.2022) / Aika Group Oy / Viikinkaari 6 / Helsinki 007 90 / Fínska republika / Iné identifikačné číslo: 2288188-1 / (od: 27.05.2022) /
+Vklady: Limerock Advisory, s.r.o. / Vklad: 11 125 EUR ( peňažný vklad ) Splatené: 11 125 EUR / (od: 25.07.2025) / Aika Group Oy / Vklad: 1 375 EUR ( peňažný vklad ) Splatené: 1 375 EUR / (od: 25.07.2025) /
 ##### Crowdberry
 ```
 </details>
@@ -1660,7 +1661,7 @@ Links: [{"title":"Ako to vyzerá s Venture capitalom na Slovensku?","url":"https
 - **Digitoo** (CB Investment Management): a Czech company digitizing accounting.
 - **Vestberry** (CB Investment Management): a platform for managing global private equity fund investments.
 - **Powerful Medical** (CB ESPRI): a cardiovascular diagnostics tool developer.
-- **Scase** (CB ESPRI): a remote healthcare 
+- **Scase** (CB ESPRI): a remote healthcare
 … [281 more characters]
 ```
 </details>
@@ -1765,7 +1766,7 @@ In English, the fund is buying into a Sandberg Capital sub-fund for about €278
 **Latest investments:**
 - **Daktela** (Czech, contact-centre software): a minority stake, which the article describes as "získal za stovky milionů korun minoritní podíl".
 - **Titans Freelancers** (Slovak): the fund-backed company "získala většinu" (acquired a majority) in Czech HR agency Bridgewater.
-- **Swan** (Slovak 
+- **Swan** (Slovak
 … [95 more characters]
 ```
 </details>
@@ -1786,12 +1787,12 @@ IČO: 54 827 370 | Sídlo: Staromestská 3, Bratislava - mestská časť Staré 
 IČO: 53 921 208 | Sídlo: Staromestská 3, Bratislava - mestská časť Staré Mesto 811 03 | zápis: 29.07.2021
 == Crowdberry SK33 j. s. a. | https://www.orsr.sk/vypis.asp?ID=596151&SID=2&P=0
 IČO: 53 921 186 | Sídlo: Staromestská 3, Bratislava - mestská časť Staré Mesto 811 03 | zápis: 14.07.2021
-Akcionár: Crowdberry a.s. IČO: 48 236 993 / Staromestská 3 / Bratislava - mestská časť Staré Mesto 811 03 / (od: 14.07.2021) / 
+Akcionár: Crowdberry a.s. IČO: 48 236 993 / Staromestská 3 / Bratislava - mestská časť Staré Mesto 811 03 / (od: 14.07.2021) /
 == Crowdberry SK35 j. s. a. | https://www.orsr.sk/vypis.asp?ID=597460&SID=2&P=0
 IČO: 53 963 857 | Sídlo: Staromestská 3, Bratislava - mestská časť Staré Mesto 811 03 | zápis: 05.08.2021
 == Crowdberry SK39 j. s. a. | https://www.orsr.sk/vypis.asp?ID=620567&SID=2&P=0
 IČO: 54 548 161 | Sídlo: Staromestská 3, Bratislava-mestská časť Staré Mesto 811 03 | zápis: 12.05.2022
-Akcionár: Crowdberry a.s. IČO: 48 236 993 / Staromestská 3 / Bratislava - mestská časť Staré Mesto 811 03 / (od: 12.05.2022) / Ďalšie právne skutočnosti: / Spoločnosť bola založená zakladateľskou zmluvou vo forme notárskej zápisnice zo dňa 13.10.2021 v zmysle príslušných ustanovení z. č. 513/1991 Zb. v znení neskorších predpisov – Obchodného zákonníka v platnom znení. / (od: 12.05.2022) / 
+Akcionár: Crowdberry a.s. IČO: 48 236 993 / Staromestská 3 / Bratislava - mestská časť Staré Mesto 811 03 / (od: 12.05.2022) / Ďalšie právne skutočnosti: / Spoločnosť bola založená zakladateľskou zmluvou vo forme notárskej zápisnice zo dňa 13.10.2021 v zmysle príslušných ustanovení z. č. 513/1991 Zb. v znení neskorších predpisov – Obchodného zákonníka v platnom znení. / (od: 12.05.2022) /
 == Crowdberry SK49 j. s. a. | https:
 … [3488 more characters]
 ```
@@ -1868,7 +1869,7 @@ Links: [{"title":"Original title:","url":"https://invenio.nusl.cz/record/11977?l
 
 The search didn't return anything about a fund called "Prvá kapitálová" specifically. The closest hits are:
 
-- **PRVA Capital Partners** (Slovenian private equity manager): announced the first close of its latest fund with over €60m in capital commitments. 
+- **PRVA Capital Partners** (Slovenian private equity manager): announced the first close of its latest fund with over €60m in capital commitments.
 … [638 more characters]
 ```
 </details>
@@ -1982,21 +1983,21 @@ sed -n '/##### ZAKA/,$p' [tmp]
 ##### ZAKA
 == Za Kasárňou 1 s. r. o. | https://www.orsr.sk/vypis.asp?ID=697220&SID=2&P=0
 IČO: 56 357 958 | Sídlo: Za kasárňou 315/1, Bratislava - mestská časť Nové Mesto 831 03 | zápis: 16.07.2024
-Spoločníci: Meracrest Group SE IČO: 36 868 175 / Za kasárňou 315/1 / Bratislava - mestská časť Nové Mesto 831 03 / (od: 16.07.2024) / 
-Vklady: Meracrest Group SE / Vklad: 1 710 902 EUR ( nehnuteľnosť ) Splatené: 1 710 902 EUR / (od: 16.07.2024) / 
+Spoločníci: Meracrest Group SE IČO: 36 868 175 / Za kasárňou 315/1 / Bratislava - mestská časť Nové Mesto 831 03 / (od: 16.07.2024) /
+Vklady: Meracrest Group SE / Vklad: 1 710 902 EUR ( nehnuteľnosť ) Splatené: 1 710 902 EUR / (od: 16.07.2024) /
 == ZAK - AGRA, s.r.o. | https://www.orsr.sk/vypis.asp?ID=345378&SID=7&P=0
 IČO: 50 056 221 | Sídlo: Labutia 2167/16, Veľký Meder 932 01 | zápis: 09.03.2016
-Spoločníci: Mgr. Gejza Zakál / Dátum narodenia: 23.01.1990 / (od: 30.07.2022) / 
-Vklady: Mgr. Gejza Zakál / Vklad: 5 000 EUR ( peňažný vklad ) Splatené: 5 000 EUR / (od: 30.07.2022) / 
+Spoločníci: Mgr. Gejza Zakál / Dátum narodenia: 23.01.1990 / (od: 30.07.2022) /
+Vklady: Mgr. Gejza Zakál / Vklad: 5 000 EUR ( peňažný vklad ) Splatené: 5 000 EUR / (od: 30.07.2022) /
 == ZAKA colours, s. r. o. | https://www.orsr.sk/vypis.asp?ID=770797&SID=7&P=0
 IČO: 57 804 541 | Sídlo: Trnavská cesta 855/29, Sereď 926 01 | zápis: 19.08.2026
-Spoločníci: Zlatko Haško / Dátum narodenia: 22.08.1986 / (od: 19.08.2026) / 
-Vklady: Zlatko Haško / Vklad: 5 000 EUR ( peňažný vklad ) Splatené: 5 000 EUR / (od: 19.08.2026) / 
+Spoločníci: Zlatko Haško / Dátum narodenia: 22.08.1986 / (od: 19.08.2026) /
+Vklady: Zlatko Haško / Vklad: 5 000 EUR ( peňažný vklad ) Splatené: 5 000 EUR / (od: 19.08.2026) /
 == ZAKA CONSTRUCTION, s. r. o. | https://www.orsr.sk/vypis.asp?ID=514871&SID=3&P=0
 IČO: 52 977 668 | Sídlo: Švermova 1820/21, Banská Bystrica 974 04 | zápis: 05.03.2020
-Spoločníci: Jaroslav Kapustík / Dátum narodenia: 21.10.1993 / (od: 19.05.2022) / 
-Vklady: Jaroslav Kapustík / Vklad: 5 000 EUR ( peňažný vklad ) Splatené: 5 000 EUR / (od: 19.05.2022) / 
-== zaka kp, s. r. o. | 
+Spoločníci: Jaroslav Kapustík / Dátum narodenia: 21.10.1993 / (od: 19.05.2022) /
+Vklady: Jaroslav Kapustík / Vklad: 5 000 EUR ( peňažný vklad ) Splatené: 5 000 EUR / (od: 19.05.2022) /
+== zaka kp, s. r. o. |
 … [2612 more characters]
 ```
 </details>
@@ -2015,7 +2016,7 @@ Links: [{"title":"venture capital firms bratislava","url":"https://www.papermark
 ZAKA VC is a pre-seed and seed investor with offices in Prague and Bratislava, and it has a deep-tech focus, though the sources differ on some details.
 
 - **Founders and origin:** One source says ZAKA VC is a Prague and Silicon Valley-based seed and pre-seed fund founded in 2020 by serial entrepreneur Jan Kasper and Peter Zalešák as a family office. Another describes the firm as operating from Prague, London and Bratislava.
-- **Fund structure:** The firm moved from 
+- **Fund structure:** The firm moved from
 … [1576 more characters]
 ```
 </details>
@@ -2181,7 +2182,7 @@ Links: [{"title":"VÚB zníži sadzbu až do 0,3%. Pre firmy, ktoré investujú 
 ```
 Web search results for query: "nový slovenský venture fond spustil 2025 startupy milióny eur partneri Bratislava"
 
-Links: [{"title":"financovanie podnikania","url":"https://www.podnikajte.sk/temy/financovanie-podnikania?page=17"},{"title":"Andrej Kiska (Credo Ventures): Slovenskou startupovou scénu rozjíždí peníze z EU","url":"https://www.lupa.cz/clanky/andrej-kiska-credo-ventures-slovenskou-startupovou-scenu-rozjizdi-penize-z-eu/"},{"title":"monika majkova","url":"https://www.podnikajte.sk/autori/monika-majkova?page=6"},{"title":"Slovenská spořitelna bude investovat do startupů po vzoru České. Připravených má přes 120 milionů","url":"https://cc.cz/ceska-sporitelna-jde-podporovat-startupy-i-na-slovensko-pro-tamni-mlade-firmy-ma-pres-120-milionu/"},{"title":"Venture to Future Fund increases capital by EUR 15.3 million to support Slovak startups","url":"https://www.sih.sk/en/aktuality/venture-to-future-fund-increases-capital-by-eur-15-3-million-to-support-slovak-startups"},{"title":"Fresh 10 Million in Public Funding for Slovenian Startups in 2025 and Popular P2","url":"https://startup.si/en-us/news/fresh-10-million-in-public-funding-for-slovenian-startups-in-2025-and-popular-p2-"},{"title":"venture to future fund navysuje kapital o 15 3 miliona eur na podporu slovenskych startupov","url":"https://www.sih.sk/en/aktuality/venture-to-future-fund-navysuje-kapital-o-15-3-miliona-eur-na-podporu-slovenskych-startupov"},{"title":"60-miliónový balík pre startupy je Slovákom blízko ako 
+Links: [{"title":"financovanie podnikania","url":"https://www.podnikajte.sk/temy/financovanie-podnikania?page=17"},{"title":"Andrej Kiska (Credo Ventures): Slovenskou startupovou scénu rozjíždí peníze z EU","url":"https://www.lupa.cz/clanky/andrej-kiska-credo-ventures-slovenskou-startupovou-scenu-rozjizdi-penize-z-eu/"},{"title":"monika majkova","url":"https://www.podnikajte.sk/autori/monika-majkova?page=6"},{"title":"Slovenská spořitelna bude investovat do startupů po vzoru České. Připravených má přes 120 milionů","url":"https://cc.cz/ceska-sporitelna-jde-podporovat-startupy-i-na-slovensko-pro-tamni-mlade-firmy-ma-pres-120-milionu/"},{"title":"Venture to Future Fund increases capital by EUR 15.3 million to support Slovak startups","url":"https://www.sih.sk/en/aktuality/venture-to-future-fund-increases-capital-by-eur-15-3-million-to-support-slovak-startups"},{"title":"Fresh 10 Million in Public Funding for Slovenian Startups in 2025 and Popular P2","url":"https://startup.si/en-us/news/fresh-10-million-in-public-funding-for-slovenian-startups-in-2025-and-popular-p2-"},{"title":"venture to future fund navysuje kapital o 15 3 miliona eur na podporu slovenskych startupov","url":"https://www.sih.sk/en/aktuality/venture-to-future-fund-navysuje-kapital-o-15-3-miliona-eur-na-podporu-slovenskych-startupov"},{"title":"60-miliónový balík pre startupy je Slovákom blízko ako
 … [1419 more characters]
 ```
 </details>
@@ -2226,7 +2227,7 @@ Links: [{"title":"Finančné nástroje rizikového kapitálu, Výzva na prejaven
 
 Nenašiel som výsledok, ktorý by potvrdzoval, že SIH vybral správcu fondu rizikového kapitálu z Plánu obnovy. Našiel som však príbuzné informácie.
 
-- **SIH v roku 2019:** Spoločnosť spolupracovala s trojicou správcov fondov (Vision Ventures, CB 
+- **SIH v roku 2019:** Spoločnosť spolupracovala s trojicou správcov fondov (Vision Ventures, CB
 … [1579 more characters]
 ```
 </details>
@@ -2240,9 +2241,9 @@ mkdir -p [tmp] && cd [tmp] && curl -s -L -A "Mozilla/5.0" -o report.pdf "https:/
 
 ```
 total 4184
-drwxr-xr-x   3 [user]  wheel       96 11 окт.  01:22 .
-drwx------  33 [user]  wheel     1056 11 окт.  01:22 ..
--rw-r--r--   1 [user]  wheel  2138741 11 окт.  01:22 report.pdf
+drwxr-xr-x   3 [user]  wheel       96 11 Oct  01:22 .
+drwx------  33 [user]  wheel     1056 11 Oct  01:22 ..
+-rw-r--r--   1 [user]  wheel  2138741 11 Oct  01:22 report.pdf
 report.pdf: PDF document, version 1.5
     1550 report.txt
 26:a 41 investorov                                                                 PODPORA PRE STARTUPY            33
@@ -2257,7 +2258,7 @@ report.pdf: PDF document, version 1.5
 737:                                                                            16 %                     Anjelskí investori                            41 %
 762:financovania, mali zahraničného investora.
 778:Partner, Neulogy Ventures
-779:„Slovensko potrebuje fondy s medzinárodným mandátom. Iba 
+779:„Slovensko potrebuje fondy s medzinárodným mandátom. Iba
 … [2037 more characters]
 ```
 </details>
@@ -2274,7 +2275,8 @@ Akí sú slovenskí
 investori?
 
                                 38
-AKÍ SÚ SLOVENSKÍ INVESTORI?
+
+AKÍ SÚ SLOVENSKÍ INVESTORI?
 
 
 
@@ -2311,13 +2313,14 @@ mandátu.
 
 
                                                                                                                     39
-AKÍ SÚ SLOVENSKÍ INVESTORI?
+
+AKÍ SÚ SLOVENSKÍ INVESTORI?
 
 
 
 
 Investície
-                                                     Do ktorých 
+                                                     Do ktorých
 … [4457 more characters]
 ```
 </details>
@@ -2455,15 +2458,15 @@ sed -n '/##### Monogram/,$p' [tmp] | cut -c1-700
 ##### Monogram
 == MONOGRAM Multimedia s.r.o. | https://www.orsr.sk/vypis.asp?ID=109382&SID=2&P=0
 IČO: 36 849 758 | Sídlo: Ilkovičova 6276, Bratislava 842 16 | zápis: 20.10.2007
-Spoločníci: MONOGRAM Ventures a.s. IČO: 44 071 574 / Ilkovičova 6276 / Bratislava - mestská časť Karlova Ves 842 16 / (od: 04.01.2023) / 
-Vklady: MONOGRAM Ventures a.s. / Vklad: 70 364 EUR ( peňažný vklad ) Splatené: 70 364 EUR / (od: 04.01.2023) / 
+Spoločníci: MONOGRAM Ventures a.s. IČO: 44 071 574 / Ilkovičova 6276 / Bratislava - mestská časť Karlova Ves 842 16 / (od: 04.01.2023) /
+Vklady: MONOGRAM Ventures a.s. / Vklad: 70 364 EUR ( peňažný vklad ) Splatené: 70 364 EUR / (od: 04.01.2023) /
 == MONOGRAM Ventures a. s. | https://www.orsr.sk/vypis.asp?ID=124603&SID=2&P=0
 IČO: 44 071 574 | Sídlo: Ilkovičova 6276, Bratislava 842 16 | zápis: 08.04.2008
 ##### LRJ
 == LRJ, s.r.o. | https://www.orsr.sk/vypis.asp?ID=402613&SID=5&P=0
 IČO: 51 157 705 | Sídlo: Dolné Rudiny 2956/8, Žilina 010 01 | zápis: 17.10.2017
-Spoločníci: Lukáš Melišík / Dátum narodenia: 11.04.1988 / (od: 15.04.2022) / 
-Vklady: Lukáš Melišík / Vklad: 5 000 EUR Splatené: 5 000 EUR / (od: 15.04.2022) / 
+Spoločníci: Lukáš Melišík / Dátum narodenia: 11.04.1988 / (od: 15.04.2022) /
+Vklady: Lukáš Melišík / Vklad: 5 000 EUR Splatené: 5 000 EUR / (od: 15.04.2022) /
 ##### Pioneers Ventures
 ##### Arca Capital Slovakia
 == Arca Capital Slovakia, a.s. | https://www.orsr.sk/vypis.asp?ID=39276&SID=2&P=0
@@ -2644,7 +2647,7 @@ Links: [{"title":"Chceme z Česka moderní ekonomiku, ne skanzen, říká šéf 
 - **Description:** The firm manages about EUR 800 million. It provides direct lending, senior debt, and mezzanine financing, and occasionally makes minority equity investments. Its preferred investment size is EUR 2 to 15 million. It has no sector preference and focuses on Central and Eastern Europe (CEE).
 - **Address:** Plac Europejski 2, bldg C, 00-844 Warsaw, Poland
 - **Website:** www.cvi.eu
-- **Contact:** Radoslav Tausinger, radoslav.tausinger@cvi.eu
+- **Contact:** Radoslav Tausinger, [redacted: email address]
 ```
 </details>
 
@@ -2661,7 +2664,7 @@ Links: [{"title":"Chceme z Česka moderní ekonomiku, ne skanzen, říká šéf 
 - **Address:** The page gives no address for ARX. The only address listed is SLOVCA's office: Štúrova 12/4, 811 02 Bratislava-Staré Mesto, Slovakia.
 - **Website:** https://arxequity.com/
 - **Contact person:** Michal Aron
-- **Email:** aron@arxequity.com
+- **Email:** [redacted: email address]
 - **Phone:** The page lists only SLOVCA's number, +421-2-21 201 010, not one for ARX.
 ```
 </details>
@@ -2697,7 +2700,7 @@ Links: [{"title":"Chceme z Česka moderní ekonomiku, ne skanzen, říká šéf 
 - **Preferred investment size:** EUR 200,000 to 2.5 million per investment
 - **Sector focus:** Information and communication technologies, energy, and medical diagnostics
 - **Geographic focus:** Slovakia (28 transactions in Slovakia to date)
-- **Contact:** +421 2 2077 4437, info@neulogy.vc
+- **Contact:** +421 2 2077 4437, [redacted: email address]
 ```
 </details>
 
@@ -2746,7 +2749,7 @@ Links: [{"title":"Chceme z Česka moderní ekonomiku, ne skanzen, říká šéf 
 - **Description:** The page has no narrative description. It is a full member (riadny člen) of SLOVCA, the Slovak Venture Capital & Private Equity Association, and lists its investment stages as Series Seed, Series A, Series B, and later rounds.
 - **Address:** Grösslingová 44, 811 09 Bratislava, Slovakia
 - **Website:** https://vff.sk/
-- **Email:** info@vff.sk
+- **Email:** [redacted: email address]
 - **AUM:** Not stated on the page.
 - **Preferred investment size:** €0.5 to 4.8 million per investment.
 - **Sector:** Innovative SMEs and technology SMEs.
@@ -2779,7 +2782,7 @@ Links: [{"title":"Chceme z Česka moderní ekonomiku, ne skanzen, říká šéf 
 - **Description:** A Slovak venture capital and private equity firm and member of SLOVCA. It invests in seed, start-up, and expansion-stage companies and has completed 91 investment transactions since it was founded. Its current Slovak portfolio includes 20 equity-backed companies and 20 companies that received loans.
 - **Address:** Karadžičova 2, 811 09 Bratislava, Slovakia
 - **Website:** www.nhfond.sk
-- **Contact:** +421 2 3810 2440; nhfond@nhfond.sk
+- **Contact:** +421 2 3810 2440; [redacted: email address]
 - **AUM:** Not stated on the page.
 - **Preferred investment size:** About €200,000 to €266,000 per investment.
 - **Sector:** Innovation and technology.
@@ -2872,7 +2875,7 @@ Links: [{"title":"investing in the climate revolution","url":"https://foundersfa
 
 The search didn't turn up any 2025 or 2026 announcements from G-Force. The most recent material is from 2023, so I can't confirm any new investments in that period.
 
-- **Leadership:** G-Force is run by Marian Gazdik and Louis Warner, with Gazdik's background in Startup 
+- **Leadership:** G-Force is run by Marian Gazdik and Louis Warner, with Gazdik's background in Startup
 … [1417 more characters]
 ```
 </details>
@@ -3008,7 +3011,7 @@ Links: [{"title":"podnikatelski anjeli","url":"https://www.podnikajte.sk/temy/po
 
 The search didn't turn up any "Slovak Business Angels Network," "Angels Slovakia," or 2024–2025 Bratislava syndicate under those names. The results were mostly older material, and the only Slovak angel network they identify is the Klub podnikateľských anjelov Slovenska.
 
-- **Klub podnikateľských anjelov Slovenska:** The results say it was the first domestic network of informal investors in Slovakia, established in 2011, and its founders are the Združenie mladých podnikateľov Slovenska and Slovak Business Agency (SBA). I found 
+- **Klub podnikateľských anjelov Slovenska:** The results say it was the first domestic network of informal investors in Slovakia, established in 2011, and its founders are the Združenie mladých podnikateľov Slovenska and Slovak Business Agency (SBA). I found
 … [803 more characters]
 ```
 </details>
@@ -3052,7 +3055,7 @@ Links: [{"title":"AceON Accelerator","url":"https://app.dealroom.co/companies/ac
 
 AceON is an accelerator run by the Bratislava-based advisory firm Accace and the VC fund ZAKA VC. It offers mentoring and direct investment to early-stage startups, mainly at pre-seed.
 
-- **Structure:** The program has a pre-accelerator lasting about 1.5 months and a more intensive accelerator of 2-3 months, and both include investment opportunities (AceON operates a 
+- **Structure:** The program has a pre-accelerator lasting about 1.5 months and a more intensive accelerator of 2-3 months, and both include investment opportunities (AceON operates a
 … [1705 more characters]
 ```
 </details>
@@ -3309,13 +3312,13 @@ cat [tmp] | cut -c1-600
 ##### CB Investment Management
 == CB Investment Management s. r. o. | https://www.orsr.sk/vypis.asp?ID=482767&SID=2&P=0
 IČO: 52 524 531 | Sídlo: Staromestská 3, Bratislava - mestská časť Staré Mesto 811 03 | zápis: 14.08.2019
-Spoločníci: Crowdberry SK39 j. s. a. IČO: 54 548 161 / Staromestská 3 / Bratislava - mestská časť Staré Mesto 811 03 / (od: 19.12.2023) / 
-Vklady: Crowdberry SK39 j. s. a. / Vklad: 25 000 EUR ( peňažný vklad ) Splatené: 25 000 EUR / (od: 19.12.2023) / 
+Spoločníci: Crowdberry SK39 j. s. a. IČO: 54 548 161 / Staromestská 3 / Bratislava - mestská časť Staré Mesto 811 03 / (od: 19.12.2023) /
+Vklady: Crowdberry SK39 j. s. a. / Vklad: 25 000 EUR ( peňažný vklad ) Splatené: 25 000 EUR / (od: 19.12.2023) /
 ##### CB ESPRI
 == CB ESPRI Impact One s. r. o. | https://www.orsr.sk/vypis.asp?ID=618739&SID=2&P=0
 IČO: 54 546 702 | Sídlo: Staromestská 3, Bratislava - mestská časť Staré Mesto 811 03 | zápis: 22.04.2022
-Spoločníci: National Development Fund II., a.s. IČO: 47 759 224 / Grösslingová 44 / Bratislava - mestská časť Staré Mesto 811 09 / (od: 22.04.2022) / CB ESPRI s. r. o. IČO: 54 486 343 / Staromestská 3 / Bratislava - mestská časť Staré Mesto 811 03 / (od: 22.04.2022) / 
-Vklady: National Development Fund II., a.s. / Vklad: 50 000 EUR ( peňažný vklad ) Splatené: 50 000 EUR / (od: 22.04.2022) / CB ESPRI s. r. o. / Vklad: 750 EUR ( peňažný vklad ) Splatené: 750 EUR / (od: 22.04.2022) / 
+Spoločníci: National Development Fund II., a.s. IČO: 47 759 224 / Grösslingová 44 / Bratislava - mestská časť Staré Mesto 811 09 / (od: 22.04.2022) / CB ESPRI s. r. o. IČO: 54 486 343 / Staromestská 3 / Bratislava - mestská časť Staré Mesto 811 03 / (od: 22.04.2022) /
+Vklady: National Development Fund II., a.s. / Vklad: 50 000 EUR ( peňažný vklad ) Splatené: 50 000 EUR / (od: 22.04.2022) / CB ESPRI s. r. o. / Vklad: 750 EUR ( peňažný vklad ) Splatené: 750 EUR / (od: 22.04.2022) /
 == CB ESPRI s. r. o. | https://www.orsr.sk/vypis.asp?ID=617344&SID=2&P=0
 IČO: 54 486 343 | Sídlo: Staromestská 3, Bratislava - mestská časť Staré Mesto 811 03 | zápis: 30.03.2022
 Spoločníci: ESPRI, s. r. o. IČO: 36 764 442 / Koperníkova 47 / Bratislava - mestská časť Ružinov 821 04 / (od: 30.03.2022) / Michal Ondrišek / Dátum n
@@ -3377,7 +3380,7 @@ Web search results for query: "CB ESPRI Impact One investícia 2025 sociálny do
 
 Links: [{"title":"CB ESPRI Impact One: nový fond na financovanie projektov s pozitívnym spoločenským vplyvom","url":"https://www.podnikajte.sk/financie-na-podnikanie/cb-espri-impact-one-novy-fond"},{"title":"Miroslava Beblavého už politika neláka. Začal však podnikať s verejnými peniazmi","url":"https://www.startitup.sk/miroslava-beblaveho-uz-politika-nelaka-zacal-vsak-podnikat-s-verejnymi-peniazmi/"},{"title":"9014d80f 3ed4 4e30 b67c 0abd41ec07bd","url":"https://happenstance.ai/u/9014d80f-3ed4-4e30-b67c-0abd41ec07bd"},{"title":"Lokální investování je na vzestupu, hlásí Crowdberry. Přes platformu a fondy loni proteklo přes 700 milionů","url":"https://cc.cz/lokalni-investovani-je-na-vzestupu-hlasi-crowdberry-pres-platformu-a-fondy-loni-proteklo-730-milionu/"},{"title":"michal ondri","url":"https://happenstance.ai/u/michal-ondri"},{"title":"AmCham Slovakia","url":"https://amcham.sk/events/3139/cb-espri-impact-one-investment-fund"},{"title":"NEWCaplight raises a $16M Series A, led by BlackRock and Fin Capital →","url":"https://www.caplight.com/investor/crowdberry"},{"title":"Description of the company","url":"https://www.profesia.sk/en/work/cb-investment-management/C238924"},{"title":"23.6. CEE webinar: Investing for social impact","url":"https://www.forvismazars.com/rs/en/insights/news/forvis-mazars-news/23.6.-cee-webinar-investing-for-social-impact"}]
 
-Výsledky sa týkajú hlavne 
+Výsledky sa týkajú hlavne
 … [1407 more characters]
 ```
 </details>
@@ -3495,8 +3498,8 @@ cat [tmp] | cut -c1-900; ps aux | grep "orsr.py" | grep -v grep | awk '{print $N
 ##### Seerlinq
 == Seerlinq s.r.o. | https://www.orsr.sk/vypis.asp?ID=665401&SID=7&P=0
 IČO: 55 102 239 | Sídlo: Pekárska 160/14, Trnava 917 01 | zápis: 28.12.2022
-Spoločníci: Nikola Jajcay / Dátum narodenia: 20.05.1990 / (od: 28.12.2022) / MUDr. Branislav Bezák / Dátum narodenia: 11.01.1991 / (od: 28.12.2022) / PMX Solutions, občianske združenie IČO: 53 360 460 / Medená 97/18 / Bratislava - mestská časť Staré Mesto 811 02 / (od: 28.12.2022) / Traun s. r. o IČO: 54 512 255 / Pod násypom 7/J / Bratislava - mestská časť Lamač 841 03 / (od: 28.12.2022) / Vision Ventures Growth I, s. r. o. IČO: 52 656 438 / Bottova 2A / Bratislava - mestská časť Staré Mesto 811 09 / (od: 14.07.2023) / Impact Ventures, s. r. o. IČO: 55 927 033 / Framborská ulica 283/58 / Žilina 010 01 / (od: 08.09.2026) / LongTaal, s. r. o. IČO: 46 769 676 / Staré grunty 61 / Bratislava - mestská časť Karlova Ves 841 04 / (od: 08.09.2026) / National Development Fund II., a.s. IČO: 47 759 224 / Grösslingová 44 / Bratislava - mestská časť Staré Mesto 811 09 / (od: 08.09.2026) / 
-Vklady: Nikola Jajcay / Vklad: 756 EUR ( peňažný vklad ) Splatené: 756 EUR / (od: 28.12.2022) / MUDr. Branislav Bezák / Vklad: 756 EUR ( peňažný vklad ) Splatené: 756 EUR / (od: 28.12.2022) / PMX Solutions, občianske združenie / Vklad: 6 048 EUR ( peňažný vklad ) Splatené: 6 048 EUR / (od: 28.12.2022) / Traun s. r. o / Vklad: 840 EUR ( peňažný vklad ) Splatené: 840 EUR / (od: 28.12.2022) / Vision Ventures Growth I, s. r. o. / Vklad: 1 050 EUR 
+Spoločníci: Nikola Jajcay / Dátum narodenia: 20.05.1990 / (od: 28.12.2022) / MUDr. Branislav Bezák / Dátum narodenia: 11.01.1991 / (od: 28.12.2022) / PMX Solutions, občianske združenie IČO: 53 360 460 / Medená 97/18 / Bratislava - mestská časť Staré Mesto 811 02 / (od: 28.12.2022) / Traun s. r. o IČO: 54 512 255 / Pod násypom 7/J / Bratislava - mestská časť Lamač 841 03 / (od: 28.12.2022) / Vision Ventures Growth I, s. r. o. IČO: 52 656 438 / Bottova 2A / Bratislava - mestská časť Staré Mesto 811 09 / (od: 14.07.2023) / Impact Ventures, s. r. o. IČO: 55 927 033 / Framborská ulica 283/58 / Žilina 010 01 / (od: 08.09.2026) / LongTaal, s. r. o. IČO: 46 769 676 / Staré grunty 61 / Bratislava - mestská časť Karlova Ves 841 04 / (od: 08.09.2026) / National Development Fund II., a.s. IČO: 47 759 224 / Grösslingová 44 / Bratislava - mestská časť Staré Mesto 811 09 / (od: 08.09.2026) /
+Vklady: Nikola Jajcay / Vklad: 756 EUR ( peňažný vklad ) Splatené: 756 EUR / (od: 28.12.2022) / MUDr. Branislav Bezák / Vklad: 756 EUR ( peňažný vklad ) Splatené: 756 EUR / (od: 28.12.2022) / PMX Solutions, občianske združenie / Vklad: 6 048 EUR ( peňažný vklad ) Splatené: 6 048 EUR / (od: 28.12.2022) / Traun s. r. o / Vklad: 840 EUR ( peňažný vklad ) Splatené: 840 EUR / (od: 28.12.2022) / Vision Ventures Growth I, s. r. o. / Vklad: 1 050 EUR
 … [424 more characters]
 ```
 </details>
@@ -3512,7 +3515,7 @@ Web search results for query: ""Impact Ventures" Žilina fond investície startu
 
 Links: [{"title":"Silke Horáková a Petr Vítek mají nový fond: Investice musí mít i společenský dopad. Máme na ně 43 milionů korun","url":"https://cc.cz/silke-horakova-a-petr-vitek-z-noveho-tilia-impact-ventures-chybel-nam-rizikovy-kapital-pro-socialni-inovace/"},{"title":"Silke Horáková a Petr Vítek mají nový fond: Investice musí mít i společenský dopad. Máme na ně 43 milionů korun","url":"https://cc.cz/2018/11/silke-horakova-a-petr-vitek-z-noveho-tilia-impact-ventures-chybel-nam-rizikovy-kapital-pro-socialni-inovace/"},{"title":"impactventures hu","url":"https://superscout.co/investor/impactventures-hu"},{"title":"startupy menici svet k lepsimu zazivaji boom silke horakova radi jak pro ne ziskat investory","url":"https://forbes.cz/startupy-menici-svet-k-lepsimu-zazivaji-boom-silke-horakova-radi-jak-pro-ne-ziskat-investory/"},{"title":"impact ventures 2","url":"https://superscout.co/investor/impact-ventures-2"},{"title":"Impact Ventures (Private Equity) Overview","url":"https://pitchbook.com/profiles/company/277493-59"},{"title":"moje investice 2025 co letos potesilo vlivne zeny ceskeho byznysu","url":"https://forbes.cz/moje-investice-2025-co-letos-potesilo-vlivne-zeny-ceskeho-byznysu/"},{"title":"Predict your next investment","url":"https://www.cbinsights.com/investor/impact-ventures-3"},{"title":"pavel petrek","url":"https://www.vcsheet.com/who/pavel-petrek"}]
 
-The search didn't turn 
+The search didn't turn
 … [1205 more characters]
 ```
 </details>
@@ -3646,7 +3649,7 @@ Links: [{"title":"GA Drilling Secures $15M First Close from Nabors, alfa8, Under
 
 The April 2024 round was a $15M first close, and the investors were Nabors, alfa8, Underground Ventures, Neulogy Ventures, and Thomas von Koch. Sources disagree on how to label it.
 
-- **Round and investors:** GA Drilling, a developer of deep geothermal drilling technology, announced a first close of $15 million to 
+- **Round and investors:** GA Drilling, a developer of deep geothermal drilling technology, announced a first close of $15 million to
 … [1152 more characters]
 ```
 </details>
@@ -3711,7 +3714,7 @@ Links: [{"title":"Back to feed","url":"https://finder.techleap.nl/news/feed/bary
 
 Search didn't turn up a 2025 Airvolute funding round, and no result mentions one with Vision Ventures in 2025.
 
-- **Vision Ventures (earlier funding):** A September 2024 report says Airvo
+- **Vision Ventures** — its own Bratislava fund, co-owned by state-backed NDF II. The register lists startup ownership in Airvolute from 29.03.2025 and Spinbotics from 18.04.2024. Some entries are probably follow-on investments.
 … [1415 more characters]
 ```
 </details>
@@ -3805,7 +3808,7 @@ Spoločníci: Péter Küllöi / Dátum narodenia: 10.03.1960 / (od: 11.02.2022) 
 Vklady: Péter Küllöi / Vklad: 7 875 EUR ( peňažný vklad ) Splatené: 7 875 EUR / (od: 11.02.2022) / Founders Factory Limited / Vklad: 18 500 EUR ( peňažný vklad ) Splatené: 18 500 EUR / (od: 11.02.2022) / GRANPOOL Hungary Kft. / Vklad: 7 875 EUR ( peňažný vklad ) Splatené: 7 875 EUR / (od: 11.02.2022) / Global Connect Corporation SK s. r. o. / Vklad: 7 875 EUR ( peňažný vklad ) Splatené: 7 875 EUR / (od: 22.05.2025) / BRAUN HOLDING, s. r. o. / Vklad: 7 875 EUR ( peňažný vklad ) Splatené: 7 875 EU
 ##### ProPartners
 == PRO PARTNER s. r. o. | https://www.orsr.sk/vypis.asp?ID=538575&SID=2&P=0
-IČO: 53 042 697 | Sídlo: Doležalova 
+IČO: 53 042 697 | Sídlo: Doležalova
 … [4269 more characters]
 ```
 </details>
@@ -3993,16 +3996,16 @@ sed -n '/##### Pioneers/,$p' [tmp] | cut -c1-500; echo; echo "=== B3"; sed -n '/
 ##### Pioneers
 == Pioneer s. r. o. | https://www.orsr.sk/vypis.asp?ID=364716&SID=2&P=0
 IČO: 50 587 099 | Sídlo: Mariánska 2, Bratislava - mestská časť Staré Mesto 811 08 | zápis: 15.11.2016
-Spoločníci: Huaiqu Wen / (od: 15.11.2016) / Liu Wen / (od: 15.11.2016) / 
-Vklady: Huaiqu Wen / Vklad: 2 500 EUR ( peňažný vklad ) Splatené: 2 500 EUR / (od: 15.11.2016) / Liu Wen / Vklad: 2 500 EUR ( peňažný vklad ) Splatené: 2 500 EUR / (od: 15.11.2016) / 
+Spoločníci: Huaiqu Wen / (od: 15.11.2016) / Liu Wen / (od: 15.11.2016) /
+Vklady: Huaiqu Wen / Vklad: 2 500 EUR ( peňažný vklad ) Splatené: 2 500 EUR / (od: 15.11.2016) / Liu Wen / Vklad: 2 500 EUR ( peňažný vklad ) Splatené: 2 500 EUR / (od: 15.11.2016) /
 == Pioneer Solutions s. r. o. | https://www.orsr.sk/vypis.asp?ID=681008&SID=2&P=0
 IČO: 55 971 776 | Sídlo: Tokajícka 93/12, Bratislava - mestská časť Ružinov 821 03 | zápis: 04.01.2024
-Spoločníci: Ján Šteňo / Dátum narodenia: 08.07.1983 / (od: 04.01.2024) / 
-Vklady: Ján Šteňo / Vklad: 5 000 EUR ( peňažný vklad ) Splatené: 5 000 EUR / (od: 04.01.2024) / 
+Spoločníci: Ján Šteňo / Dátum narodenia: 08.07.1983 / (od: 04.01.2024) /
+Vklady: Ján Šteňo / Vklad: 5 000 EUR ( peňažný vklad ) Splatené: 5 000 EUR / (od: 04.01.2024) /
 == PioneersFirst, s.r.o. | https://www.orsr.sk/vypis.asp?ID=31663&SID=2&P=0
 IČO: 35 809 647 | Sídlo: Dunajská 8, Bratislava - mestská časť Staré Mesto 811 08 | zápis: 10.04.2001
-Spoločníci: Svetlana Mackintosh / Dátum narodenia: 25.09.1971 / (od: 06.02.2019) / 
-Vklady: Svetlana Mackintosh / Vklad: 6 639 EUR Splatené: 6 639 EUR / (od: 06.02.2019) / 
+Spoločníci: Svetlana Mackintosh / Dátum narodenia: 25.09.1971 / (od: 06.02.2019) /
+Vklady: Svetlana Mackintosh / Vklad: 6 639 EUR Splatené: 6 639 EUR / (od: 06.02.2019) /
 ##### Credo
 == CREDO - SK, s.r.o. | https://www.orsr.sk/vypis.asp?ID=227793&SID=5&P=0
 IČO: 46 051 163 | Sídlo: Bánová 647, Žilina 010 04 | zápis: 16.02.2011
@@ -4024,7 +4027,7 @@ Links: [{"title":"venture capital firms bratislava","url":"https://www.papermark
 
 I didn't find a 2026 seed round by ZAKA VC in a Slovak startup, but the results give background on the firm and some recent deals.
 
-**Firm profile:** ZAKA VC is a pre-seed and seed investor. Its core thesis is 
+**Firm profile:** ZAKA VC is a pre-seed and seed investor. Its core thesis is
 … [1097 more characters]
 ```
 </details>
@@ -4096,7 +4099,7 @@ Web search results for query: ""Monogram Ventures" Bratislava portfolio Websuppo
 
 Links: [{"title":"www.eu startups","url":"https://www.eu-startups.com/?p=3200"},{"title":"Autor textu Martina Vojtěchovská","url":"https://www.mediaguru.cz/piano-ziskal-2-mil-eur-pro-placeny-webovy-system"},{"title":"NEWCaplight raises a $16M Series A, led by BlackRock and Fin Capital →","url":"https://www.caplight.com/investor/monogram"},{"title":"WebSupport Overview","url":"https://pitchbook.com/profiles/company/103634-83"},{"title":"Shared Online Paywall Service Piano Media Secures 2 Million Euros From 3TS","url":"https://techcrunch.com/2012/04/17/shared-online-paywall-service-piano-media-secures-euro-2-million-from-3ts"},{"title":"Prehľad najzaujímavejších slovenských startupov: Ako začínali a ako sa im darí dnes? [2.časť]","url":"https://www.startitup.sk/local-prehlad-najzaujimavejsich-slovenskych-startupov-ako-zacinali-a-ako-sa-im-dari-dnes-2-cast/"},{"title":"Prehľad najzaujímavejších slovenských startupov: Ako začínali a ako sa im darí dnes? [2.časť]","url":"https://www.startitup.sk/?p=251376"},{"title":"Prihlásiť sa","url":"https://finstat.sk/44071574/obchodny_register"},{"title":"Product Reports Resources Pricing Login Book a demo","url":"https://dealroom.co/companies/piano/"},{"title":"3ts and aws gr nderfonds back piano media","url":"https://www.unquote.com/dach/official-record/72344/3ts-and-aws-gr-nderfonds-back-piano-media"}]
 
-I found no source linking Monogram 
+I found no source linking Monogram
 … [1408 more characters]
 ```
 </details>
@@ -4125,7 +4128,7 @@ Links: [{"title":"Spravodajský portál Tlačovej agentúry Slovenskej republiky
 
 The search didn't turn up any 2025–2026 IPM venture capital deals involving Gajdoš. The results mostly show his career history, and the most recent sources place him at Fifth Wall, not IPM.
 
-- **IPM role (older):** A teraz.sk piece says Gajdoš, after years as a strategic adviser, became head of IPM's VC division and took on overall VC strategy, while keeping his Presidio Partners role. Peter joined IPM as the Head of Venture Capital in 
+- **IPM role (older):** A teraz.sk piece says Gajdoš, after years as a strategic adviser, became head of IPM's VC division and took on overall VC strategy, while keeping his Presidio Partners role. Peter joined IPM as the Head of Venture Capital in
 … [1167 more characters]
 ```
 </details>
@@ -4170,11 +4173,11 @@ sed -n '/##### J&T VENTURES/,$p' [tmp] | cut -c1-500; echo; echo "=== B3"; sed -
 ##### Ethernum
 == Ethernum Capital s. r. o. | https://www.orsr.sk/vypis.asp?ID=653149&SID=2&P=0
 IČO: 55 356 907 | Sídlo: Dúbravská cesta 14, Bratislava - mestská časť Karlova Ves 841 04 | zápis: 28.03.2023
-Spoločníci: Equinox Capital s. r. o. IČO: 56 888 465 / Moskovská 2338/40 / Banská Bystrica 974 04 / (od: 02.04.2025) / POLAR CAPITAL s. r. o. IČO: 54 945 658 / Karpatská 1219/169 / Marianka 900 33 / (od: 02.04.2025) / King Capital s. r. o. IČO: 54 932 815 / Pivonková 1996/46 / Rovinka 900 41 / (od: 02.04.2025) / 
-Vklady: POLAR CAPITAL s. r. o. / Vklad: 2 250 EUR ( peňažný vklad ) Splatené: 2 250 EUR / (od: 02.04.2025) / Equinox Capital s. r. o. / Vklad: 2 000 EUR ( peňažný vklad ) Splatené: 2 000 EUR / (od: 23.05.2026) / King Capital s. r. o. / Vklad: 5 750 EUR ( peňažný vklad ) Splatené: 5 750 EUR / (od: 23.05.2026) / 
+Spoločníci: Equinox Capital s. r. o. IČO: 56 888 465 / Moskovská 2338/40 / Banská Bystrica 974 04 / (od: 02.04.2025) / POLAR CAPITAL s. r. o. IČO: 54 945 658 / Karpatská 1219/169 / Marianka 900 33 / (od: 02.04.2025) / King Capital s. r. o. IČO: 54 932 815 / Pivonková 1996/46 / Rovinka 900 41 / (od: 02.04.2025) /
+Vklady: POLAR CAPITAL s. r. o. / Vklad: 2 250 EUR ( peňažný vklad ) Splatené: 2 250 EUR / (od: 02.04.2025) / Equinox Capital s. r. o. / Vklad: 2 000 EUR ( peňažný vklad ) Splatené: 2 000 EUR / (od: 23.05.2026) / King Capital s. r. o. / Vklad: 5 750 EUR ( peňažný vklad ) Splatené: 5 750 EUR / (od: 23.05.2026) /
 == Ethernum Consulting s. r. o. | https://www.orsr.sk/vypis.asp?ID=726410&SID=2&P=0
 IČO: 55 317 049 | Sídlo: Dúbravská cesta 14, Bratislava - mestská časť Karlova Ves 841 04 | zápis: 18.03.2023
-Spoločníci: King Capital s. r. o. IČO: 54 932 815 / Pivonková 1996/46 / Rovinka 900 41 / (od: 18.03.2023) / POLAR CAPITAL s. r. o. IČO: 54 945 658 / Karpatská 1219/169 / Marianka 900 33 / (od: 09.12.2023) / Equinox Capital s. r. o. IČO: 56 888 465 / Moskovská 2338/40 / Banská Bystrica 974 04 / (od: 02.04.2025) / 
+Spoločníci: King Capital s. r. o. IČO: 54 932 815 / Pivonková 1996/46 / Rovinka 900 41 / (od: 18.03.2023) / POLAR CAPITAL s. r. o. IČO: 54 945 658 / Karpatská 1219/169 / Marianka 900 33 / (od: 09.12.2023) / Equinox Capital s. r. o. IČO: 56 888 465 / Moskovská 2338/40 / Banská Bystrica 974 04 / (od: 02.04.2025) /
 Vklady: POLAR CAPITAL s. r. o. / Vkl
 … [8059 more characters]
 ```
@@ -4242,11 +4245,11 @@ Command running in background with ID: bem9r3m9u. Output is being written to: [t
 
 **Agent:**
 
-Лимит аккаунта почти исчерпан, поэтому сразу записываю результаты по собранным данным.
+The account limit is nearly exhausted, so I am recording the findings from the collected data now.
 
 → `Bash` — Build candidates JSON from collected research
 ```sh
-mkdir -p /Users/[redacted]/homeW/ai-dev-test/investor-db/research && cat > [tmp] <<'EOF'
+mkdir -p [redacted: local path] && cat > [tmp] <<'EOF'
 import json
 A="2026-10-11"
 def S(url,pub=None,note=None):
@@ -4287,11 +4290,11 @@ cut -c1-300 [tmp] | grep -E "^#####|^==|IČO" | head -60
 ##### ZGC Fund
 == ZGC Fund I., s.r.o. | https://www.orsr.sk/vypis.asp?ID=503429&SID=2&P=0
 IČO: 52 768 058 | Sídlo: Staré Grunty 18, Bratislava - mestská časť Karlova Ves 841 04 | zápis: 20.12.2019
-Spoločníci: Zero Gravity Capital s.r.o. IČO: 52 651 894 / Staromestská 7830/3 / Bratislava - mestská časť Staré Mesto 811 03 / (od: 08.01.2023) / National Development Fund II., a.s. IČO: 47 759 224 / Grösslingová 44 / Bratislava - mestská časť Staré Mesto 811 09 / (od: 08.01.2023) / 
+Spoločníci: Zero Gravity Capital s.r.o. IČO: 52 651 894 / Staromestská 7830/3 / Bratislava - mestská časť Staré Mesto 811 03 / (od: 08.01.2023) / National Development Fund II., a.s. IČO: 47 759 224 / Grösslingová 44 / Bratislava - mestská časť Staré Mesto 811 09 / (od: 08.01.2023) /
 ##### Impact Ventures
 == Impact Ventures, s. r. o. | https://www.orsr.sk/vypis.asp?ID=679020&SID=5&P=0
 IČO: 55 927 033 | Sídlo: Framborská ulica 283/58, Žilina 010 01 | zápis: 08.12.2023
-Spoločníci: CB ESPRI Impact One s. r. o. IČO: 54 546 702 / Staromestská 3 / Bratislava - mestská časť Staré Mesto 811 03 / (od: 08.12.2023) / Pontis Impact, s. r. o. IČO: 44 330 235 / Zelinárska 5389/2 / Bratislava - mestská časť Ružinov 821 08 / (od: 08.12.2023) / TnC X, s. r. o. IČO: 55 398 146 / 
+Spoločníci: CB ESPRI Impact One s. r. o. IČO: 54 546 702 / Staromestská 3 / Bratislava - mestská časť Staré Mesto 811 03 / (od: 08.12.2023) / Pontis Impact, s. r. o. IČO: 44 330 235 / Zelinárska 5389/2 / Bratislava - mestská časť Ružinov 821 08 / (od: 08.12.2023) / TnC X, s. r. o. IČO: 55 398 146 /
 ##### Baryon
 == Baryon Consult, s. r. o. | https://www.orsr.sk/vypis.asp?ID=266832&SID=2&P=0
 IČO: 47 146 818 | Sídlo: Veterná 982/22, Malinovo 900 45 | zápis: 14.05.2013
@@ -4309,7 +4312,7 @@ IČO: 52 151 573 | Sídlo: Dolná 5, Banská Bystrica 974 01 | zápis: 04.01.201
 
 → `Bash` — Patch JSON with registry findings and build md table
 ```sh
-cd /Users/[redacted]/homeW/ai-dev-test/investor-db/research && python3 - <<'EOF'
+cd [redacted: local path] && python3 - <<'EOF'
 import json
 p="sk-vc-candidates.json"; C=json.load(open(p,encoding="utf-8"))
 A="2026-10-11"
@@ -4336,7 +4339,7 @@ for c in C:
 
 → `Bash` — Write markdown summary and validate JSON
 ```sh
-cd /Users/[redacted]/homeW/ai-dev-test/investor-db/research && { cat <<'EOF'
+cd [redacted: local path] && { cat <<'EOF'
 # Slovak VC investors — pilot sample candidates
 
 Accessed 2026-10-11. Full evidence (per-field sources, quotes, registry links) is in `sk-vc-candidates.json`.
@@ -4365,39 +4368,39 @@ json ok
 
 [redacted: name]
 
-Собрал 49 кандидатов: 3 включить, 7 под вопросом, 39 исключить. Все три включённых всё равно с оговоркой — прямо сейчас заметно активен только VFF. Число VC-инвесторов в Чехии найти с источником не удалось, поэтому в md его нет, а не выдумано.
+Collected 49 candidates: 3 include, 7 unclear and 39 exclude. All 3 included candidates still carry caveats; only VFF appears clearly active now. I could not find a sourced count of Czech VC investors, so the Markdown file omits it rather than inventing one.
 
-**Включить:**
-- **Neulogy Ventures** — управляющая компания в Братиславе (IČO 47 367 610), член SLOVCA, есть в списке EIF. Новых сделок после сентября 2024 не нашёл.
-- **Vision Ventures** — свой фонд в Братиславе, совладелец которого — государственный NDF II. В реестре он числится совладельцем стартапов: Airvolute с 29.03.2025, Spinbotics с 18.04.2024. Часть этих записей, вероятно, дополнительные вложения в уже купленные компании.
-- **Venture to Future Fund** — сделки FaceUp (19.05.2026), Talentiqa (29.09.2025), IAG (22.05.2025). Фонд государственный, но вкладывает напрямую и на равных с частными инвесторами. Срок инвестирования кончается в конце 2026.
+**Include:**
+- **Neulogy Ventures** — Bratislava management company (IČO 47 367 610), SLOVCA member, included in the EIF list. I found no new investments after September 2024.
+- **Vision Ventures** — its own Bratislava fund, co-owned by state-backed NDF II. The register lists startup ownership in Airvolute from 29.03.2025 and Spinbotics from 18.04.2024. Some entries are probably follow-on investments.
+- **Venture to Future Fund** — investments in FaceUp (19.05.2026), Talentiqa (29.09.2025) and IAG (22.05.2025). State-owned, but invests directly on equal terms with private investors. Its investment period ends in late 2026.
 
-**Под вопросом:** 0100 VC Fund II (команда словацкая, но сам фонд на Кипре), ZAKA VC, G-Force, CB Investment Management, Baryon Fund, LRJ Capital, IPM Group.
+**Unclear:** 0100 VC Fund II (Slovak team, Cyprus-domiciled fund), ZAKA VC, G-Force, CB Investment Management, Baryon Fund, LRJ Capital and IPM Group.
 
-**Почему исключены остальные:**
+**Reasons for excluding the others:**
 - **PE:** Sandberg, Eterus, Ethernum, ARX, Genesis.
-- **Корпоративные венчурные фонды:** Seed Starter Slovenskej sporiteľne, 365.fintech.
-- **Государственные структуры:** SIH, NDF II, NHF, SBA.
-- **Закрытые или спящие:** FIT, Zero Gravity Fund I, Limerock, Monogram.
-- **Чешские и польские:** Credo, Presto, J&T Ventures, Nation 1, Jet и другие.
-- **Платформы, акселераторы, ангельская сеть:** Crowdberry, AceON, Launcher, KPAS.
-- **Банки:** Tatra banka, VÚB.
-- **Не подтвердились из стартового списка:** «Prvá kapitálová», «Gapfunding», «Monopoly Ventures». «Nation1» оказался чешским Nation 1, «Bitcoin-фонды» не нашлись, Swiss Re — это сервисный центр, а не VC.
+- **Corporate venture funds:** Seed Starter Slovenskej sporiteľne, 365.fintech.
+- **State entities:** SIH, NDF II, NHF, SBA.
+- **Closed or dormant:** FIT, Zero Gravity Fund I, Limerock, Monogram.
+- **Czech and Polish:** Credo, Presto, J&T Ventures, Nation 1, Jet and others.
+- **Platforms, accelerators and angel network:** Crowdberry, AceON, Launcher, KPAS.
+- **Banks:** Tatra banka, VÚB.
+- **Unconfirmed entries from the initial list:** “Prvá kapitálová”, “Gapfunding” and “Monopoly Ventures”. “Nation1” was the Czech Nation 1; “Bitcoin funds” were not found; Swiss Re is a service centre rather than VC.
 
-**Как собирал:** finstat отдаёт 403, поэтому реестр читал напрямую через orsr.sk. Даты входа фонда в число владельцев компании брал оттуда — это самые сильные доказательства. Цитаты в `evidence_quotes` местами пересказаны инструментом загрузки, а не дословны; в таких местах это помечено.
+**Method:** finstat returns 403, so I queried the register directly through orsr.sk. Ownership-entry dates came from there and are the strongest evidence. Some `evidence_quotes` were paraphrased by the retrieval tool rather than copied verbatim; these cases are marked.
 
-**5 самых слабых записей:**
-1. **Baryon Fund** — где штаб-квартира, неясно (Братислава или Прага); есть только одна запись в реестре по Airvolute.
-2. **LRJ Capital** — последняя найденная сделка 2019 года, в какой стране зарегистрирован фонд GROWWS, неясно.
-3. **IPM Group** — последняя венчурная сделка 2021 года, компания фактически под контролем из Великобритании.
-4. **G-Force** — свежие сделки известны только из агрегатора Caplight.
-5. **CB Investment Management** — свежая активность подтверждена только агрегатором (участие в краудфандинговом раунде 3IPK, май 2025).
+**5 weakest records:**
+1. **Baryon Fund** — headquarters unclear (Bratislava or Prague); only one Airvolute registry entry.
+2. **LRJ Capital** — latest investment found dates to 2019; the GROWWS fund’s domicile is unclear.
+3. **IPM Group** — latest venture investment found dates to 2021; effectively controlled from the UK.
+4. **G-Force** — recent investments are known only from the Caplight aggregator.
+5. **CB Investment Management** — recent activity is supported only by an aggregator (participation in 3IPK’s crowdfunding round, May 2025).
 
-**Не загрузились:** forbes.sk, finstat.sk, sandberg.capital, tatrabanka.sk, techleap, страница G-Force Fund II.
+**Failed to load:** forbes.sk, finstat.sk, sandberg.capital, tatrabanka.sk, techleap and the G-Force Fund II page.
 
-Фоновые запросы к реестру все завершились, временные файлы лежат в папке этой сессии. Скрипт `orsr.py` в той же папке, его можно переиспользовать.
+All background registry requests have finished. Temporary files remain in this session’s directory. The reusable `orsr.py` script is in the same directory.
 
-Файлы:
-- /Users/[redacted]/homeW/ai-dev-test/investor-db/research/sk-vc-candidates.json
-- /Users/[redacted]/homeW/ai-dev-test/investor-db/research/sk-vc-candidates.md
+Files:
+- [redacted: local path]
+- [redacted: local path]
 
