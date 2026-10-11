@@ -5,7 +5,7 @@ from pathlib import Path
 
 from investordb.records import TIER_RANK, Target, iter_targets, parse_date, primary_source
 from investordb.textnorm import name_key
-from investordb.verify import PASS, read_rows
+from investordb.verify import PASS, read_rows, target_fingerprint
 
 CSV_COLUMNS = [
     "id", "name", "type", "hq_country", "hq_city", "website", "legal_entities",
@@ -31,10 +31,11 @@ class Checks:
         if self.ignore:
             return True
         r = self.by_key.get((rid, t.key, i))
-        if r is None or r["url"] != source.get("url"):
+        if (r is None or r["url"] != source.get("url")
+                or r.get("target_fingerprint") != target_fingerprint(t)):
             return False  # not verified, or verification is stale
         value = r.get("claim_value_status") or r["value_status"]
-        return r["quote_status"] in PASS and value != "value_not_in_quote"
+        return r["quote_status"] in PASS and value in ("ok", "n/a")
 
 
 def _best(tiers) -> str | None:

@@ -101,6 +101,11 @@ def match_quote(quote: str, text: str | None, norm_text: str | None = None) -> t
     page_nums = set(_DIGITS.findall(window))
     if any(n not in page_nums for n in _DIGITS.findall(nq)):
         return "missing", round(score, 3)
+    # The digit can stay the same while its scale or currency changes.
+    if not _scaled_numbers(nq).issubset(_scaled_numbers(window)):
+        return "missing", round(score, 3)
+    if not _currencies(nq).issubset(_currencies(window)):
+        return "missing", round(score, 3)
     return "fuzzy", round(score, 3)
 
 
@@ -134,6 +139,17 @@ _WORD_NUMS = {
 }
 _WORD_NUM = re.compile(
     r"\b(" + "|".join(_WORD_NUMS) + r")(?=\s+(?:milion|miliard|tisic|mil\b|mld))")
+
+
+def _scaled_numbers(text: str) -> set[float]:
+    text = _WORD_NUM.sub(lambda m: str(_WORD_NUMS[m.group(1)]), text)
+    return {float(m.group(1)) * _mult(m.group(2)) for m in _NUM.finditer(text)}
+
+
+def _currencies(text: str) -> set[str]:
+    aliases = {"€": "eur", "euros": "eur", "$": "usd", "£": "gbp", "kc": "czk"}
+    tokens = re.findall(r"€|\$|£|\b(?:eur|euros|usd|czk|kc|gbp|chf)\b", text)
+    return {aliases.get(token, token) for token in tokens}
 
 
 def numbers_in(text: str) -> list[float]:

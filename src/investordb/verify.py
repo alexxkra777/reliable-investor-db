@@ -1,4 +1,6 @@
 import csv
+import hashlib
+import json
 from collections import Counter
 from pathlib import Path
 
@@ -7,11 +9,19 @@ from investordb.records import Target, iter_targets, parse_date
 from investordb.textnorm import date_match, match_quote, normalize, number_in
 
 COLUMNS = [
-    "record_id", "record_name", "target", "kind", "label", "source_index", "url", "tier",
+    "record_id", "record_name", "target", "target_fingerprint", "kind", "label", "source_index",
+    "url", "tier",
     "publisher", "quote_status", "similarity", "value_status", "value_detail",
     "claim_value_status", "fetch_used", "http_status", "final_url",
 ]
 PASS = ("exact", "fuzzy")
+
+
+def target_fingerprint(t: Target) -> str:
+    # Bind a check to the whole claim, including the sources supporting it together.
+    payload = {"kind": t.kind, "value": t.value, "label": t.label, "sources": t.sources}
+    raw = json.dumps(payload, sort_keys=True, ensure_ascii=False, separators=(",", ":"))
+    return hashlib.sha256(raw.encode("utf-8")).hexdigest()
 
 
 def _fmt(x: float) -> str:
@@ -21,7 +31,7 @@ def _fmt(x: float) -> str:
 def value_facts(t: Target, source: dict, nquote: str) -> list[tuple[str, str]]:
     """(fact, status) pairs for numbers and dates the claim relies on.
 
-    status: ok | published | partial | missing
+    status: ok | published (asserted metadata) | partial | missing
     """
     facts: list[tuple[str, str]] = []
 
@@ -51,7 +61,7 @@ def value_facts(t: Target, source: dict, nquote: str) -> list[tuple[str, str]]:
             if how == "full":
                 st = "ok"
             elif source.get("published") == v.get("date"):
-                st = "published"  # announcement dated by its own publication date
+                st = "published"  # asserted metadata, not checked against the fetched page
             elif how in ("month", "year"):
                 st = "partial"
             else:
@@ -66,7 +76,7 @@ def value_status(facts: list[tuple[str, str]]) -> str:
     if not facts:
         return "n/a"
     states = [s for _, s in facts]
-    if all(s in ("ok", "published") for s in states):
+    if all(s == "ok" for s in states):
         return "ok"
     if all(s == "missing" for s in states):
         return "value_not_in_quote"
@@ -78,7 +88,7 @@ def check_records(records: list[dict], index: dict, cache_dir) -> list[dict]:
     rows = []
     for rec in records:
         for t in iter_targets(rec):
-            target_rows, passing_quotes = [], []
+            target_rows, passing_quotes, passing_sources = [], [], []
             for i, s in enumerate(t.sources):
                 url = s.get("url", "")
                 entry = index.get(url)
@@ -94,13 +104,15 @@ def check_records(records: list[dict], index: dict, cache_dir) -> list[dict]:
                 nquote = normalize(quote)
                 if status in PASS:
                     passing_quotes.append(nquote)
+                    passing_sources.append(s)
                 facts = value_facts(t, s, nquote)
                 detail = "; ".join(f"{f}:{st}" for f, st in facts)
                 if t.kind == "investment" and t.label and normalize(t.label) not in nquote:
                     detail = (detail + "; " if detail else "") + "company_not_in_quote"
                 target_rows.append({
                     "record_id": rec.get("id"), "record_name": rec.get("name"),
-                    "target": t.key, "kind": t.kind, "label": t.label, "source_index": i,
+                    "target": t.key, "target_fingerprint": target_fingerprint(t),
+                    "kind": t.kind, "label": t.label, "source_index": i,
                     "url": url, "tier": s.get("tier"), "publisher": s.get("publisher"),
                     "quote_status": status, "similarity": sim,
                     "value_status": value_status(facts), "value_detail": detail,
@@ -110,10 +122,14 @@ def check_records(records: list[dict], index: dict, cache_dir) -> list[dict]:
                 })
             # sources often split a claim: one names the investor, another has the date and amount.
             # the claim holds if the verified quotes together carry every number and date
-            published = {s.get("published") for s in t.sources}
+            published = {s.get("published") for s in passing_sources}
             date = t.value.get("date") if isinstance(t.value, dict) else None
             merged = {"published": date if date in published else None}
-            claim = value_status(value_facts(t, merged, " | ".join(passing_quotes)))
+            merged_quote = " | ".join(passing_quotes)
+            facts = value_facts(t, merged, merged_quote)
+            if t.kind == "investment" and t.label:
+                facts.append(("company", "ok" if normalize(t.label) in merged_quote else "missing"))
+            claim = value_status(facts)
             for row in target_rows:
                 row["claim_value_status"] = claim
             rows.extend(target_rows)

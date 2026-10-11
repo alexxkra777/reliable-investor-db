@@ -1,5 +1,7 @@
 import copy
 
+import pytest
+
 from investordb.fetch import load_index
 from investordb.grade import Checks, flat_row, grade_record
 from investordb.verify import check_records
@@ -35,8 +37,8 @@ def test_value_not_in_quote_does_not_count(records, fixtures_dir):
         if r["target"] == "fields.funds":
             r["value_status"] = r["claim_value_status"] = "value_not_in_quote"
     g = grade_record(records[0], Checks(rows))
-    # registry entry (Tier A investment) still proves existence
-    assert g["confidence"] == "A"
+    # The other Tier A quote lacks the company name, so it cannot rescue this claim.
+    assert g["confidence"] == "C"
     assert g["evidence"]["fields.funds"] == "unsupported"
 
 
@@ -89,3 +91,29 @@ def test_split_claim_counts_when_quotes_together_carry_the_values(records, fixtu
             r["value_status"], r["claim_value_status"] = "value_not_in_quote", "ok"
     g = grade_record(records[0], Checks(rows))
     assert g["evidence"]["fields.funds"] != "unsupported"
+
+
+def test_partial_claim_is_not_verified(records, fixtures_dir):
+    rows = rows_for(records, fixtures_dir)
+    for row in rows:
+        if row["target"] == "investments[0]":
+            row["claim_value_status"] = "partial"
+    grade = grade_record(records[0], Checks(rows))
+    assert grade["evidence"]["investments[0]"] == "unsupported"
+    assert grade["last_investment_date"] != "2025-03-12"
+
+
+@pytest.mark.parametrize("change", ["value", "quote", "tier", "other_source"])
+def test_same_url_with_changed_evidence_is_not_reused(records, fixtures_dir, change):
+    rows = rows_for(records, fixtures_dir)
+    rec = copy.deepcopy(records[0])
+    funds = rec["fields"]["funds"]
+    if change == "value":
+        funds["value"][0]["size"] = 999_000_000
+    elif change == "quote":
+        funds["sources"][0]["quote"] = "A different statement on the same page."
+    elif change == "tier":
+        funds["sources"][0]["tier"] = "A" if funds["sources"][0]["tier"] != "A" else "B"
+    else:
+        funds["sources"].append(dict(funds["sources"][0], url="https://example.org/new"))
+    assert grade_record(rec, Checks(rows))["evidence"]["fields.funds"] == "unsupported"

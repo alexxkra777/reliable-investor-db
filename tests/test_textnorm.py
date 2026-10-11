@@ -129,3 +129,13 @@ def test_small_number_words_before_scale():
     assert number_in(5_000_000, normalize("Pět milionů eur si připravila Slovenská spořitelna"))
     assert number_in(3_000_000, normalize("investovali tri milióny eur"))
     assert not number_in(5, normalize("pět let"))
+
+
+@pytest.mark.parametrize("quote,page", [
+    ("Alpha committed 10 million euros to Company One in 2024.",
+     "Alpha committed 10 billion euros to Company One in 2024."),
+    ("Alpha committed 10 million EUR to Company One in 2024.",
+     "Alpha committed 10 million USD to Company One in 2024."),
+])
+def test_fuzzy_changed_scale_or_currency_is_missing(quote, page):
+    assert match_quote(quote, page)[0] == "missing"
