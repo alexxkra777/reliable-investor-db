@@ -1,0 +1,92 @@
+record_id,name,type,stored_status,stored_rules,computed_status,computed_rules,agreement,last_ab_investment,months_since,reasons
+365-fintech,365.fintech,cvc,uncertain,I3,uncertain,I3?,agree,,,investment on 2023-10-26 is shown only by Tier C sources
+abris-capital,Abris Capital,pe,out_of_scope,S1,uncertain,I3?,human_only,,,no dated investment with a Tier A/B source
+aceon-accelerator,AceON Accelerator,accelerator,excluded,E9,uncertain,I1?;I2?,human_only,2025-12-22,9,accelerator: keep out of ticket statistics; no registry identifier; no registration/FoF evidence and only 1 sourced portfolio companies
+air-ventures,Air Ventures,vc,uncertain,I2;I3,uncertain,I3?,agree,,,no dated investment with a Tier A/B source
+arca-capital-slovakia,Arca Capital Slovakia,pe,excluded,I3,uncertain,I3?,DISAGREE,,,no dated investment with a Tier A/B source
+arx-equity-partners,ARX Equity Partners,pe,out_of_scope,S1,uncertain,I3?,human_only,,,no dated investment with a Tier A/B source
+baryon-fund,Baryon Fund,vc,uncertain,I2,uncertain,I2?,agree,2026-01-09,9,no registration/FoF evidence and only 1 sourced portfolio companies
+bhm-ventures,BHM Ventures (BHM group),private_investor,uncertain,I3,uncertain,I3?,agree,2019-02-21,91,investment on 2025-08-20 is shown only by Tier C sources
+bic-bratislava,BIC Bratislava,other,excluded,I3,uncertain,I3?,DISAGREE,,,no dated investment with a Tier A/B source
+cb-espri-impact-one,CB ESPRI Impact One,other,excluded,E9,uncertain,I3?,human_only,,,no dated investment with a Tier A/B source
+cb-investment-management,CB Investment Management,vc,included,I1;I2;I3;I4,included,I1;I2;I3;I4,agree,2023-12-30,33,Tier A source for existence
+credo-ventures,Credo Ventures,vc,included,I1;I2;I3;I4,included,I1;I2;I3;I4,agree,2025-09-30,12,existence evidence: association_full_member
+crowdberry,Crowdberry,platform,excluded,E1,excluded,E1,agree,,,type is platform (routes other people's money)
+cs-seed-starter,ČS Seed Starter,cvc,uncertain,I2,uncertain,I2?,agree,2023-11-24,34,no registration/FoF evidence and only 1 sourced portfolio companies
+cvi,CVI,other,excluded,E3,uncertain,I3?,human_only,,,no dated investment with a Tier A/B source
+czech-founders-vc,Czech Founders VC,vc,included,I1;I2;I3;I4,included,I1;I2;I3;I4,agree,2026-03-25,6,existence evidence: portfolio_page
+depo-ventures,DEPO Ventures,vc,included,I1;I2;I3;I4,included,I1;I2;I3;I4,agree,2024-08-26,25,Tier A source for funds
+energy-venture-pals,Energy Venture Pals,vc,out_of_scope,S1,uncertain,I3?,human_only,,,no dated investment with a Tier A/B source
+enterprise-investors,Enterprise Investors,pe,out_of_scope,S1,uncertain,I3?,human_only,,,no dated investment with a Tier A/B source
+espira-investments,Espira Investments,pe,out_of_scope,S1,uncertain,I3?,human_only,,,no dated investment with a Tier A/B source
+eterus-capital,Eterus Capital,pe,out_of_scope,S1,uncertain,I3?,human_only,,,no dated investment with a Tier A/B source
+ethernum-capital,Ethernum Capital,private_investor,out_of_scope,S1,uncertain,I3?,human_only,,,no dated investment with a Tier A/B source
+everita-capital,EVERITA Capital,pe,out_of_scope,S1,uncertain,I3?,human_only,,,no dated investment with a Tier A/B source
+fond-inovacii-a-technologii,Fond inovácií a technológií,vc,dormant,E4,uncertain,I3?,DISAGREE,,,no dated investment with a Tier A/B source
+g-force,G-Force,accelerator,included,I1;I2;I3;I4,included,I1;I2;I3;I4,agree,2025-03-11,19,accelerator: keep out of ticket statistics; Tier A source for existence
+gain-ventures,GAIN Ventures,vc,excluded,I2,uncertain,I2?,DISAGREE,2025-03-18,18,no registration/FoF evidence and only 1 sourced portfolio companies
+gapfunding,Gapfunding,other,excluded,I1,uncertain,I3?,DISAGREE,,,no dated investment with a Tier A/B source
+genesis-capital,Genesis Capital,pe,out_of_scope,S1,uncertain,I3?,human_only,,,no dated investment with a Tier A/B source
+ii-biotech-fund,i&i Biotech Fund,vc,included,I1;I2;I3;I4,included,I1;I2;I3;I4,agree,2026-01-01,9,existence evidence: association_full_member
+impact-ventures-zilina,"Impact Ventures, s. r. o.",other,excluded,E9,uncertain,I2?,human_only,2026-09-08,1,no registration/FoF evidence and only 1 sourced portfolio companies
+impulse-ventures,Impulse Ventures,vc,uncertain,I2;I3,uncertain,I3?,agree,,,investment on 2023-12-20 is shown only by Tier C sources
+innova-capital,Innova Capital,pe,out_of_scope,S1,uncertain,I3?,human_only,,,no dated investment with a Tier A/B source
+integral-capital-group,Integral Capital Group,pe,out_of_scope,S1,uncertain,I3?,human_only,,,no dated investment with a Tier A/B source
+inven-capital,Inven Capital,cvc,included,I1;I2;I3;I4,included,I1;I2;I3;I4,agree,2026-07-02,3,Tier A source for existence
+ipm-group,IPM Group,vc,dormant,E4,uncertain,I2?,DISAGREE,2024-12-20,21,no registration/FoF evidence and only 2 sourced portfolio companies
+ivbf,IVBF (Impulse Ventures Blockchain Fund),other,excluded,E7,uncertain,I3?,human_only,,,no dated investment with a Tier A/B source
+jet-investment,Jet Investment,pe,out_of_scope,S1,uncertain,I3?,human_only,,,no dated investment with a Tier A/B source
+jt-ventures,J&T Ventures,vc,included,I1;I2;I3;I4,included,I1;I2;I3;I4,agree,2025-09-30,12,existence evidence: portfolio_page
+kaya-vc,KAYA VC,vc,included,I1;I2;I3;I4,included,I1;I2;I3;I4,agree,2025-07-28,14,Tier A source for funds
+koopeo-ventures,KOOPEO Ventures,vc,uncertain,I3,uncertain,I3?,agree,,,investment on 2025-07-17 is shown only by Tier C sources
+kpas,Klub podnikateľských anjelov Slovenska,other,excluded,E1,uncertain,I3?,DISAGREE,,,no dated investment with a Tier A/B source
+launcher,Launcher,accelerator,excluded,I3,uncertain,I3?,DISAGREE,,,accelerator: keep out of ticket statistics; no dated investment with a Tier A/B source
+lighthouse-ventures,Lighthouse Ventures,vc,included,I1;I2;I3;I4,included,I1;I2;I3;I4,agree,2026-08-31,1,existence evidence: fund_of_funds_commitment
+limerock,Limerock,vc,dormant,E4,uncertain,I3?,DISAGREE,,,no dated investment with a Tier A/B source
+lrj-capital,LRJ Capital,vc,dormant,E4,dormant,E4,agree,,,last dated investment 2019-03-15 is before 2023-10-11
+mam-private-equity,MAM Private Equity Fund SICAV a.s.,pe,out_of_scope,S1,uncertain,I3?,human_only,,,no dated investment with a Tier A/B source
+mid-europa-partners,Mid Europa Partners,pe,out_of_scope,S1,uncertain,I3?,human_only,,,no dated investment with a Tier A/B source
+miton,Miton,vc,included,I1;I2;I3;I4,included,I1;I2;I3;I4,agree,2026-10-01,0,existence evidence: portfolio_page
+monogram-ventures,Monogram Ventures,vc,dormant,E4,uncertain,I3?,DISAGREE,,,no dated investment with a Tier A/B source
+monopoly-ventures,Monopoly Ventures,other,excluded,I1,uncertain,I3?,DISAGREE,,,no dated investment with a Tier A/B source
+narodny-holdingovy-fond,Národný holdingový fond,public_dfi,out_of_scope,S1,uncertain,I3?,human_only,,,type belongs to the separate fund-of-funds / DFI list; no dated investment with a Tier A/B source
+nation-1,N1 (Nation 1),vc,included,I1;I2;I3;I4,included,I1;I2;I3;I4,agree,2024-07-03,27,existence evidence: association_full_member
+national-development-fund-ii,"National Development Fund II., a.s.",public_dfi,excluded,E9,uncertain,I2?,human_only,2026-09-08,1,type belongs to the separate fund-of-funds / DFI list; no registration/FoF evidence and only 1 sourced portfolio companies
+neulogy-ventures,Neulogy Ventures,vc,included,I1;I2;I3;I4,included,I1;I2;I3;I4,agree,2026-01-17,8,Tier A source for funds
+nri,Národní rozvojová investiční (NRI),public_dfi,out_of_scope,S1,uncertain,I3?,human_only,,,type belongs to the separate fund-of-funds / DFI list; no dated investment with a Tier A/B source
+orbit-capital,Orbit Capital,vc,uncertain,I3,uncertain,I3?,agree,,,no dated investment with a Tier A/B source
+pale-fire-capital,Pale Fire Capital,pe,out_of_scope,S1,uncertain,I3?,human_only,,,no dated investment with a Tier A/B source
+presto-ventures,Presto Ventures,vc,included,I1;I2;I3;I4,included,I1;I2;I3;I4,agree,2026-06-09,4,existence evidence: portfolio_page
+pro-partners-holding,Pro Partners Holding,private_investor,excluded,I3,uncertain,I3?,DISAGREE,,,no dated investment with a Tier A/B source
+prva-kapitalova,Prvá kapitálová,other,excluded,I1,uncertain,I3?,DISAGREE,,,no dated investment with a Tier A/B source
+purple-ventures,Purple Ventures,vc,included,I1;I2;I3;I4,included,I1;I2;I3;I4,agree,2025-01-10,21,Tier A source for funds
+reflex-capital,Reflex Capital,vc,included,I1;I2;I3;I4,included,I1;I2;I3;I4,agree,2026-10-07,0,existence evidence: portfolio_page
+rockaway-ventures,Rockaway Ventures,vc,included,I1;I2;I3;I4,included,I1;I2;I3;I4,agree,2025-06-24,15,existence evidence: portfolio_page
+rockawayx,RockawayX,vc,uncertain,I2,uncertain,I2?,agree,2026-05-05,5,no registration/FoF evidence and only 2 sourced portfolio companies
+sandberg-capital,Sandberg Capital,pe,out_of_scope,S1,uncertain,I3?,human_only,,,no dated investment with a Tier A/B source
+seed-starter-slovenskej-sporitelne,Seed Starter Slovenskej sporiteľne,cvc,included,I1;I2;I3;I4,included,I1;I2;I3;I4,agree,2026-06-08,4,existence evidence: portfolio_page
+skylimit-investments,SkyLimit Investments,pe,out_of_scope,S1,uncertain,I3?,human_only,,,no dated investment with a Tier A/B source
+slovak-business-agency,Slovak Business Agency,public_dfi,excluded,E6,uncertain,I3?,human_only,,,type belongs to the separate fund-of-funds / DFI list; no dated investment with a Tier A/B source
+slovak-investment-holding,Slovak Investment Holding,public_dfi,out_of_scope,S1,uncertain,I3?,human_only,,,type belongs to the separate fund-of-funds / DFI list; no dated investment with a Tier A/B source
+soulmates-ventures,Soulmates Ventures,vc,included,I1;I2;I3;I4,included,I1;I2;I3;I4,agree,2026-09-07,1,existence evidence: portfolio_page
+springtide-ventures,Springtide Ventures,cvc,uncertain,I2,uncertain,I2?,agree,2025-01-07,21,no registration/FoF evidence and only 1 sourced portfolio companies
+startguide,STARTGUIDE,vc,included,I1;I2;I3;I4,included,I1;I2;I3;I4,agree,2025-03-18,18,existence evidence: portfolio_page
+startupyard,StartupYard,accelerator,included,I1;I2;I3;I4,included,I1;I2;I3;I4,agree,2026-08-20,1,accelerator: keep out of ticket statistics; existence evidence: portfolio_page
+stratum-partners,Stratum Partners,pe,out_of_scope,S1,uncertain,I3?,human_only,,,no dated investment with a Tier A/B source
+swiss-re-bratislava,Swiss Re (Bratislava),other,excluded,I2,uncertain,I3?,DISAGREE,,,no dated investment with a Tier A/B source
+tachles-vc,Tachles VC,vc,out_of_scope,S1,uncertain,I3?,human_only,,,no dated investment with a Tier A/B source
+tatra-banka,Tatra banka,other,excluded,E3,uncertain,I3?,human_only,,,no dated investment with a Tier A/B source
+tensor-ventures,Tensor Ventures,vc,included,I1;I2;I3;I4,included,I1;I2;I3;I4,agree,2025-12-03,10,Tier A source for funds
+thein,Thein,pe,out_of_scope,S1,uncertain,I3?,human_only,,,no dated investment with a Tier A/B source
+tilia-impact-ventures,Tilia Impact Ventures,vc,included,I1;I2;I3;I4,included,I1;I2;I3;I4,agree,2026-02-27,7,Tier A source for funds
+united-founders,United Founders,vc,out_of_scope,S1,uncertain,I3?,human_only,,,no dated investment with a Tier A/B source
+up21,UP21,accelerator,dormant,E4,dormant,E4,agree,,,accelerator: keep out of ticket statistics; last dated investment 2019-08-06 is before 2023-10-11
+v4c-investment-advisers,V4C Investment Advisers Limited,pe,out_of_scope,S1,uncertain,I3?,human_only,,,no dated investment with a Tier A/B source
+venture-to-future-fund,Venture to Future Fund,vc,included,I1;I2;I3;I4,included,I1;I2;I3;I4,agree,2026-01-17,8,Tier A source for existence
+versute-investments,Versute Investments,pe,out_of_scope,S1,uncertain,I3?,human_only,,,no dated investment with a Tier A/B source
+vision-ventures,Vision Ventures,vc,included,I1;I2;I3;I4,included,I1;I2;I3;I4,agree,2026-01-09,9,Tier A source for funds
+vub-banka,VÚB banka,other,excluded,E3,uncertain,I3?,human_only,,,no dated investment with a Tier A/B source
+y-soft-ventures,Y Soft Ventures,cvc,included,I1;I2;I3;I4,included,I1;I2;I3;I4,agree,2025-06-23,15,existence evidence: portfolio_page
+zaka-vc,ZAKA VC,vc,included,I1;I2;I3;I4,included,I1;I2;I3;I4,agree,2026-08-18,1,existence evidence: portfolio_page
+zero-gravity-capital,Zero Gravity Capital,vc,excluded,E9,uncertain,I3?,human_only,,,no dated investment with a Tier A/B source
+zero-one-hundred,Zero One Hundred (0100 Ventures),vc,included,I1;I2;I3;I4,included,I1;I2;I3;I4,agree,2024-11-01,23,Tier A source for existence
