@@ -1,6 +1,6 @@
 # Investor database: evidence review
 
-Human source verification and final sign-off: [redacted: name], 11 October 2026. I and a colleague manually checked all 60 sampled claims against their sources and confirmed the final labels. AI-assisted preparation and model checks are recorded separately from this human review.
+Human source verification and final sign-off: 11 October 2026. Two reviewers manually checked all 60 sampled claims against their sources and confirmed the final labels. AI-assisted preparation and model checks are recorded separately from this human review.
 
 ## Review outcome
 

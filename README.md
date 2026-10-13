@@ -63,7 +63,7 @@ python3 -m venv .venv && .venv/bin/pip install -e '.[dev]'
 .venv/bin/pytest                                 # 117 tests
 ```
 
-## Decisions I made where the brief was open
+## Decisions made where the brief was open
 
 - **Unit of a record is the manager, not the fund.** 64 % of "VC funds" in a year of SEC Form D
   filings are single-deal SPVs; counting vehicles would triple the database with noise.
@@ -79,13 +79,13 @@ python3 -m venv .venv && .venv/bin/pip install -e '.[dev]'
 
 ## Human review and final sign-off
 
-**Reviewer: [redacted: name] · 11 October 2026.** I and a colleague manually checked all
+**Human review · 11 October 2026.** Two reviewers manually checked all
 60 sampled claims against their sources and confirmed the final labels. AI-assisted preparation
 and automated tests are recorded separately from this human verification.
 
 The fixed historical sample of **60 claims out of 264** remains in [eval/claims.csv](eval/claims.csv)
 and [eval/review.html](eval/review.html). AI reviewers read full source pages and records, recorded
-English notes, and identified two unsupported claims. My confirmed labels are in
+English notes, and identified two unsupported claims. The confirmed labels are in
 [eval/labels.csv](eval/labels.csv). The reported accuracy measures this source-by-source human review of the original sample.
 
 | Review of the historical snapshot | Correct | Wrong | Can't verify | Accuracy (strict, 95% CI) |
@@ -117,13 +117,13 @@ cache rather than fetching every page again.
   different sources (registry shareholder entries, rich lists for seeding only).
 - **No scheduled refresh** yet; the monthly re-check is a cron job over the existing commands.
 
-## How I worked with AI
+## How we worked with AI
 
-See [the appendix](#appendix-how-i-worked-with-ai).
+See [the appendix](#appendix-how-we-worked-with-ai).
 
 ---
 
-## Appendix: how I worked with AI
+## Appendix: how we worked with AI
 
 **Setup.** One orchestrating Claude Code session did the planning, wrote every brief, reviewed
 every result and made all decisions. The research and build work went to sub-agents with written
@@ -139,9 +139,9 @@ figure, write *not found*", "quotes must be copied from the raw page text"), wha
 (counts, weakest records, what couldn't be verified). Full briefs are at the top of each agent's
 log in [ai-log/](ai-log/).
 
-**How the output was checked — I didn't trust reports, I re-ran things.**
+**How the output was checked — we didn't trust reports, we re-ran things.**
 - Every agent report was compared with the actual files and commits (git log, file timestamps,
-  re-running the tests myself).
+  re-running the tests ourselves).
 - Numbers: automatic quote check against the live page for every value; the claimed number/date
   must be inside the quote; a rule engine recomputes every decision and lists disagreements.
 - A blind second review by another model on everything that was kept, then adjudication of each
@@ -172,18 +172,18 @@ log in [ai-log/](ai-log/).
   4 of 45 kept records that the first pass had marked dormant or dead (Y Soft Ventures, Springtide,
   365.fintech, KOOPEO). Settled in `eval/second-opinion/adjudication.md`; the plan now requires a
   targeted second search before a record is called dormant.
-- **My own seed list was wrong.** The candidate list in the first brief contained names
+- **Our own seed list was wrong.** The candidate list in the first brief contained names
   that don't exist or are Czech; the agent was told not to trust it and refuted them.
-- **A field the pipeline didn't read.** I added `fields.existence` to the schema but not to the
+- **A field the pipeline didn't read.** We added `fields.existence` to the schema but not to the
   list of fields the pipeline iterates; the enrichment agent noticed that verify/grade ignored it.
-- **Over-matching in my own script.** A bulk change of "out of scope" records matched the word
+- **Over-matching in our own script.** A bulk change of "out of scope" records matched the word
   "scope" in three unrelated notes; caught by reading the printed list, reverted.
 - **Misleading metrics on the first run.** Recall showed 24/27 because of name variants and a
   reference row with a label in the name; value support was counted per source instead of per
   claim. Both fixed in code, with tests, before reporting numbers.
 - **Instructions leaking between contexts.** A research agent wrote its notes in Russian because it
-  picked up my personal assistant settings; the brief didn't say "write in English". Caught when
+  picked up personal assistant settings; the brief didn't say "write in English". Caught when
   reading the file before committing; fixed, and every later brief states the language.
 - **Shared resources.** One agent's "clean up my scratch files" deleted other agents' files in a
-  shared temp folder (including a brief); a research agent's browser navigation took over a tab I
-  was using. Fix: every agent gets its own work folder and its own headless browser.
+  shared temp folder (including a brief); a research agent's browser navigation took over a tab we
+  were using. Fix: every agent gets its own work folder and its own headless browser.

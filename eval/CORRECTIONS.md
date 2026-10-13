@@ -3,7 +3,7 @@
 ## Historical assessment
 
 `claims.csv` and `review.html` preserve the original 60-claim stratified sample of 264 claims.
-`labels.csv` contains the labels confirmed after [redacted: name] and a colleague manually checked
+`labels.csv` contains the labels confirmed after two human reviewers manually checked
 all 60 sampled claims against their sources: 58 correct, 2 wrong, no unverifiable claims
 (96.7%, 95% Wilson CI 88.6–99.1%). AI reviewers prepared findings and checked sources before
 this human verification. The author explicitly confirmed the source-by-source human check on

@@ -12,7 +12,7 @@ The initial scope was Slovak venture investors. It expanded to Czech and Slovak 
 2. Assign separate source-landscape, candidate-collection and pipeline tasks with explicit output contracts and source requirements.
 3. Assemble 91 candidate records. Validate the schema, cache source pages, check quotations and values, recompute decisions and grade evidence. These lexical and rule checks have stated semantic limits.
 4. Obtain a blind review from a different model family and adjudicate disagreements. This caught status errors and did not replace a human sample review.
-5. Preserve the original stratified 60-claim sample. Prepare detailed findings; [redacted: name] and a colleague manually check each sampled claim against its sources and confirm labels.
+5. Preserve the original stratified 60-claim sample. Prepare detailed findings; two human reviewers manually check each sampled claim against its sources and confirm labels.
 6. Correct the two unsupported facts: Inven committed capital was mislabelled AUM; an exact IntellCRE announcement date was supported only by its URL. Keep the historical wrong labels and 58/60 result instead of rewriting history.
 7. Strengthen evidence checking and verification invalidation, rerun validation, and preserve review provenance alongside the historical claims hash.
 
