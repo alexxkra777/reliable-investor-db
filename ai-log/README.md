@@ -11,7 +11,7 @@ Source quotations and executed code retain their original language where it matt
 - `0N-codex-*.md`: actual Codex CLI sessions and their tool evidence.
 - `*-final-review.md`: an editorial process summary of the October 11 continuation, explicitly not a transcript.
 
-AI models researched and checked sources. [redacted: name] and a colleague subsequently manually checked all 60 sampled claims against their sources and confirmed the final labels. Model actions in the transcripts retain their original attribution. The original model review and its disagreements with the author’s labels remain visible.
+AI models researched and checked sources. Two human reviewers subsequently manually checked all 60 sampled claims against their sources and confirmed the final labels. Model actions in the transcripts retain their original attribution. The original model review and its disagreements with the author’s labels remain visible.
 
 ## Native export status
 

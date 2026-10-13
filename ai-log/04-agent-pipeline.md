@@ -902,7 +902,7 @@ S=[tmp] cat $S/cache3/files/c6720d71ee6e9f0034512b7fed99787027f23f70.txt; echo; 
 ```
 Dummy PDF file
 commit 5dc4f6b0083fe55513babff4a5a82751a3659e1f
-Author: [redacted: name] <[redacted: email]>
+Author: [redacted: name] [redacted: email]
 Date:   Sun Oct 11 01:35:54 2026 +0200
 
     Add Slovak VC candidate research with registry evidence
