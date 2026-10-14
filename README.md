@@ -2,6 +2,12 @@
 
 [![CI](https://github.com/alexxkra777/reliable-investor-db/actions/workflows/ci.yml/badge.svg)](https://github.com/alexxkra777/reliable-investor-db/actions/workflows/ci.yml)
 
+**Live review page: https://reliable-investor-db.vercel.app** — all 60 sampled claims with the
+verbatim quote, the source link and the reviewers' verdict (58 correct, 2 wrong). It's the same tool
+the accuracy was measured with; change a verdict to try it, your marks stay in your browser.
+
+[![Review page: each claim with its quote, source and verdict](docs/review-page.png)](https://reliable-investor-db.vercel.app)
+
 Assignment A: a database of investors in companies (VC, PE, family offices, angels, large private
 investors) where every record is a real investor, and every value says where it comes from.
 
@@ -19,6 +25,7 @@ code checks them; a second model re-checks blind; the author and a colleague ver
 | Blind second review and how disagreements were settled | [eval/second-opinion/](eval/second-opinion/) |
 | Cost of scaling to the world, from measured pilot usage | [docs/COST.md](docs/COST.md) |
 | Verification pipeline (Python) | [src/investordb/](src/investordb/), tests in [tests/](tests/) |
+| Review page (live copy of the tool the sample was checked with) | https://reliable-investor-db.vercel.app, built by [scripts/build_site.py](scripts/build_site.py) |
 | Process and review stages | [docs/PROCESS.md](docs/PROCESS.md) |
 | Conversation exports | [ai-log/](ai-log/) |
 
@@ -62,7 +69,7 @@ python3 -m venv .venv && .venv/bin/pip install -e '.[dev]'
 .venv/bin/python -m investordb grade             # confidence A/B/C, flat CSV
 .venv/bin/python -m investordb review-pack --html eval/review-current.html --claims eval/claims-current.csv  # optional NEW snapshot
 .venv/bin/python -m investordb eval --labels eval/labels.csv
-.venv/bin/pytest                                 # 117 tests
+.venv/bin/pytest                                 # 119 tests
 ```
 
 ## Decisions made where the brief was open
