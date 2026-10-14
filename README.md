@@ -1,5 +1,7 @@
 # Reliable investor database — plan, pilot and measured accuracy
 
+[![CI](https://github.com/alexxkra777/reliable-investor-db/actions/workflows/ci.yml/badge.svg)](https://github.com/alexxkra777/reliable-investor-db/actions/workflows/ci.yml)
+
 Assignment A: a database of investors in companies (VC, PE, family offices, angels, large private
 investors) where every record is a real investor, and every value says where it comes from.
 
